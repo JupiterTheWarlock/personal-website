@@ -47,7 +47,7 @@ export default async function HomePage({
           <h1 className="text-3xl md:text-4xl mb-2 glow-text">
             {t.title}
           </h1>
-          <h2 className="text-xl md:text-2xl text-[var(--terminal-cyan)] glow-cyan mb-4">
+          <h2 className="text-xl md:text-2xl text-[var(--terminal-white)] glow-white mb-4">
             {t.subtitle}
           </h2>
           <p className="text-lg text-[var(--text-secondary)] mb-4">
@@ -59,7 +59,7 @@ export default async function HomePage({
       {/* About Section */}
       <section className="terminal-window p-6 mb-8">
         <div className="ascii-border p-4">
-          <h3 className="text-xl mb-4 glow-text text-[var(--terminal-green)]">
+          <h3 className="text-xl mb-4 glow-text text-[var(--terminal-gray)]">
             {'// ABOUT ME'}
           </h3>
           <p className="mb-4 whitespace-pre-wrap leading-relaxed">
@@ -68,7 +68,7 @@ export default async function HomePage({
 
           {/* Skills */}
           <div className="mt-6">
-            <h4 className="text-lg mb-3 text-[var(--terminal-cyan)] glow-cyan">
+            <h4 className="text-lg mb-3 text-[var(--terminal-white)] glow-white">
               {'// SKILLS'}
             </h4>
             <div className="flex flex-wrap gap-2">
@@ -88,7 +88,7 @@ export default async function HomePage({
       {/* Social Links */}
       <section className="terminal-window p-6 mb-8">
         <div className="ascii-border p-4">
-          <h3 className="text-xl mb-4 glow-text text-[var(--terminal-green)]">
+          <h3 className="text-xl mb-4 glow-text text-[var(--terminal-gray)]">
             {'// ' + t.social_title.toUpperCase()}
           </h3>
           <SocialLinks />
@@ -98,7 +98,7 @@ export default async function HomePage({
       {/* Contact Section */}
       <section className="terminal-window p-6">
         <div className="ascii-border p-4 text-center">
-          <p className="text-[var(--terminal-cyan)] glow-cyan text-lg mb-2">
+          <p className="text-[var(--terminal-white)] glow-white text-lg mb-2">
             {t.contact}
           </p>
           <p className="text-[var(--text-secondary)] text-sm">

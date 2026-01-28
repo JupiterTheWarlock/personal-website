@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header className="terminal-window mb-8 p-4">
       <div className="ascii-border p-2 mb-2">
-        <pre className="text-[var(--terminal-green)] glow-text">
+        <pre className="text-[var(--terminal-gray)] glow-text">
 {`╔══════════════════════════════════════════════════════╗
 ║  JUPITER THE WARLOCK - INDIE GAME DEVELOPER        ║
 ╚════════════════════════════════════════════════════╝`}

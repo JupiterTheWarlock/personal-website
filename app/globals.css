@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  /* ASCII 风格颜色 */
-  --terminal-green: #00FF00;
-  --terminal-cyan: #00FFFF;
-  --neon-magenta: #FF00FF;
-  --deep-black: #0D0D0D;
-  --dark-bg: #1A1A2E;
-  --text-primary: #E0E0E0;
+  /* ASCII 风格颜色 - 灰白色系 */
+  --terminal-gray: #CCCCCC;
+  --terminal-white: #F5F5F5;
+  --terminal-border: #A0A0A0;
+  --deep-black: #1A1A1A;
+  --dark-bg: #252525;
+  --text-primary: #D0D0D0;
   --text-secondary: #888888;
 
   /* ASCII 边框 */
@@ -44,11 +44,11 @@ body {
 
 /* Glow 效果 */
 .glow-text {
-  text-shadow: 0 0 10px var(--terminal-green);
+  text-shadow: 0 0 10px var(--terminal-gray);
 }
 
-.glow-cyan {
-  text-shadow: 0 0 10px var(--terminal-cyan);
+.glow-white {
+  text-shadow: 0 0 10px var(--terminal-white);
 }
 
 /* 闪烁光标动画 */
@@ -63,34 +63,34 @@ body {
 
 /* ASCII 边框 */
 .ascii-border {
-  border: 2px solid var(--terminal-green);
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+  border: 2px solid var(--terminal-border);
+  box-shadow: 0 0 10px rgba(192, 192, 192, 0.3);
 }
 
 /* 终端窗口 */
 .terminal-window {
-  background-color: rgba(0, 0, 0, 0.8);
-  border: 1px solid var(--terminal-green);
+  background-color: rgba(30, 30, 30, 0.95);
+  border: 1px solid var(--terminal-border);
   border-radius: 4px;
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  box-shadow: 0 0 20px rgba(160, 160, 160, 0.2);
 }
 
 /* 链接样式 */
 a {
-  color: var(--terminal-cyan);
+  color: var(--terminal-white);
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 a:hover {
-  text-shadow: 0 0 10px var(--terminal-cyan);
+  text-shadow: 0 0 10px var(--terminal-white);
 }
 
 /* 按钮样式 */
 .ascii-button {
   background-color: transparent;
-  border: 1px solid var(--terminal-green);
-  color: var(--terminal-green);
+  border: 1px solid var(--terminal-border);
+  color: var(--terminal-gray);
   padding: 0.5rem 1rem;
   font-family: inherit;
   cursor: pointer;
@@ -98,7 +98,7 @@ a:hover {
 }
 
 .ascii-button:hover {
-  background-color: var(--terminal-green);
+  background-color: var(--terminal-gray);
   color: var(--deep-black);
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  box-shadow: 0 0 10px rgba(160, 160, 160, 0.5);
 }
