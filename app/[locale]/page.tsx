@@ -1,5 +1,10 @@
 import React from 'react';
 import SocialLinks from '@/components/content/SocialLinks';
+import { locales } from '@/app/i18n/config';
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 const translations = {
   'zh-CN': {
@@ -26,11 +31,12 @@ I love blending technology with art to create memorable works.`,
   },
 };
 
-export default function HomePage({
-  params: { locale }
+export default async function HomePage({
+  params
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   const t = translations[locale as keyof typeof translations] || translations['zh-CN'];
 
   return (
