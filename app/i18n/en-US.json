@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "tools": "Tools",
+    "projects": "Projects",
+    "about": "About"
+  },
+  "home": {
+    "title": "Jupiter The Warlock",
+    "subtitle": "Indie Game Developer",
+    "intro": "Welcome to my personal space",
+    "about": "About Me"
+  },
+  "social": {
+    "x": "Follow me on X",
+    "github": "Check out my GitHub",
+    "itch": "Browse my games",
+    "makerworld": "View my designs"
+  },
+  "common": {
+    "contact": "Contact Me",
+    "view_project": "View Project",
+    "coming_soon": "Coming Soon",
+    "scroll": "Scroll Down"
+  },
+  "links": {
+    "blog_url": "https://blog.jthewl.cc"
+  }
+}

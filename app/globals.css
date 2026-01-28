@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ASCII 风格颜色 */
+  --terminal-green: #00FF00;
+  --terminal-cyan: #00FFFF;
+  --neon-magenta: #FF00FF;
+  --deep-black: #0D0D0D;
+  --dark-bg: #1A1A2E;
+  --text-primary: #E0E0E0;
+  --text-secondary: #888888;
+
+  /* ASCII 边框 */
+  --ascii-width: 1ch;
+  --ascii-height: 1.6ch;
+  --border-char: '+';
+  --border-h: '-';
+  --border-v: '|';
+}
+
+body {
+  background-color: var(--deep-black);
+  color: var(--text-primary);
+  font-family: 'Courier New', 'Fira Code', monospace;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* CRT 扫描线效果 */
+.crt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Glow 效果 */
+.glow-text {
+  text-shadow: 0 0 10px var(--terminal-green);
+}
+
+.glow-cyan {
+  text-shadow: 0 0 10px var(--terminal-cyan);
+}
+
+/* 闪烁光标动画 */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blink-cursor {
+  animation: blink 1s infinite;
+}
+
+/* ASCII 边框 */
+.ascii-border {
+  border: 2px solid var(--terminal-green);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+/* 终端窗口 */
+.terminal-window {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--terminal-green);
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+/* 链接样式 */
+a {
+  color: var(--terminal-cyan);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 10px var(--terminal-cyan);
+}
+
+/* 按钮样式 */
+.ascii-button {
+  background-color: transparent;
+  border: 1px solid var(--terminal-green);
+  color: var(--terminal-green);
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ascii-button:hover {
+  background-color: var(--terminal-green);
+  color: var(--deep-black);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}

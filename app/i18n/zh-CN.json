@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "home": "首页",
+    "blog": "博客",
+    "tools": "工具集",
+    "projects": "项目",
+    "about": "关于"
+  },
+  "home": {
+    "title": "术士木星",
+    "subtitle": "独立游戏开发者",
+    "intro": "欢迎来到我的个人空间",
+    "about": "关于我"
+  },
+  "social": {
+    "x": "在 X 上关注我",
+    "github": "查看我的 GitHub",
+    "itch": "浏览我的游戏",
+    "makerworld": "查看我的设计"
+  },
+  "common": {
+    "contact": "联系我",
+    "view_project": "查看项目",
+    "coming_soon": "即将推出",
+    "scroll": "向下滚动"
+  },
+  "links": {
+    "blog_url": "https://blog.jthewl.cc"
+  }
+}
