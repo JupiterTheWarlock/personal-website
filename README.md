@@ -10,10 +10,10 @@
 
 ## 🛠️ 技术栈
 
-- **框架**: Next.js 15
+- **框架**: Next.js 14.2.15 (修复 CVE-2025-66478)
 - **语言**: TypeScript
-- **样式**: Tailwind CSS
-- **部署**: GitHub Pages → Vercel
+- **样式**: Tailwind CSS 3.4.17
+- **部署**: GitHub Pages / Vercel
 
 ## 📁 项目结构
 
@@ -34,6 +34,8 @@ personal-website/
 │   │   └── LanguageSwitcher.tsx
 │   └── content/          # 内容组件
 │       └── SocialLinks.tsx
+├── vercel.json           # Vercel 配置
+├── .nvmrc               # Node 版本 (18)
 └── lib/                  # 工具函数
 ```
 
@@ -71,7 +73,12 @@ npm run build
 
 ### Vercel
 
-连接 GitHub 仓库到 Vercel，自动部署。
+Vercel 应该会自动检测到新提交并部署。
+
+如果需要手动触发：
+1. 访问：https://vercel.com/dashboard
+2. 选择项目：`JupiterTheWarlock/personal-website`
+3. 点击 "Redeploy" → "Redeploy to Production"
 
 ## 🌐 多语言
 

@@ -5,7 +5,6 @@ const nextConfig = {
     unoptimized: true
   },
   trailingSlash: true,
-  assetPrefix: '/personal-website'
 };
 
 module.exports = nextConfig;
