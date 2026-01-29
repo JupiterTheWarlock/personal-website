@@ -4,6 +4,10 @@
   "framework": null,
   "installCommand": "npm install",
   "regions": ["hkg1"],
-  "cleanUrls": true,
-  "trailingSlash": false
+  "rewrites": [
+    {
+      "source": "/personal-website/:path*",
+      "destination": "/:path*"
+    }
+  ]
 }
