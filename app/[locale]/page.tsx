@@ -31,13 +31,17 @@ I love blending technology with art to create memorable works.`,
   },
 };
 
-export default async function HomePage({
+// Helper function to get translations for a locale
+function getTranslations(locale: string) {
+  return translations[locale as keyof typeof translations] || translations['zh-CN'];
+}
+
+export default function HomePage({
   params
 }: {
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }) {
-  const { locale } = await params;
-  const t = translations[locale as keyof typeof translations] || translations['zh-CN'];
+  const t = getTranslations(params.locale);
 
   return (
     <div>
