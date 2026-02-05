@@ -1,33 +1,112 @@
-# dependencies
-/node_modules
+# ========================================
+# Dependencies
+# ========================================
+node_modules/
 /.pnp
 .pnp.js
+.yarn
+.yarn-integrity
+pnpm-lock.yaml
 
-# testing
+# ========================================
+# Testing & Coverage
+# ========================================
 /coverage
+.nyc_output
+*.lcov
+.coverage*.json
 
-# next.js
-/.next/
+# ========================================
+# Next.js
+# ========================================
+.next/
 /out/
+sw.js
+build/
 
-# production
-/build
+# ========================================
+# Production & Distribution
+# ========================================
+dist/
+*.tgz
+*.zip
 
-# misc
-.DS_Store
-*.pem
+# ========================================
+# Environment Variables
+# ========================================
+# Keep all .env files out of version control
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# debug
+# ========================================
+# IDE & Editors
+# ========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-*
+
+# ========================================
+# Logs & Debug
+# ========================================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+*.log
 
-# local env files
-.env*.local
+# ========================================
+# OS & System
+# ========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.lnk
 
-# vercel
+# ========================================
+# Vercel
+# ========================================
 .vercel
 
-# typescript
+# ========================================
+# TypeScript
+# ========================================
 *.tsbuildinfo
 next-env.d.ts
+tsconfig.json
+tsconfig.tsbuildinfo
+*.d.ts.map
+
+# ========================================
+# Misc
+# ========================================
+*.pid
+*.seed
+*.pid.lock
+.cache
+.parcel-cache
+.eslintcache
+
+# ========================================
+# Sensitive Files
+# ========================================
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+credentials/
