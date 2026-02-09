@@ -1,7 +1,7 @@
 import React from 'react';
 import SocialLinks from '@/components/content/SocialLinks';
 import AsciiAvatar from '@/components/content/AsciiAvatar';
-import AsciiJupiter from '@/components/content/AsciiJupiter';
+// import AsciiJupiter from '@/components/content/AsciiJupiter'; // 临时注释：oklch 颜色函数兼容性问题
 import { locales } from '@/app/i18n/config';
 
 export function generateStaticParams() {
@@ -70,9 +70,9 @@ export default async function HomePage({
               </p>
             </div>
             {/* 右侧木星 - 自适应左侧内容高度 */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginLeft: 'auto', height: '100%' }}>
+            {/* <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginLeft: 'auto', height: '100%' }}>
               <AsciiJupiter className="hover:scale-105 transition-transform" fitContainer />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
