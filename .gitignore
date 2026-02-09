@@ -110,3 +110,4 @@ tsconfig.tsbuildinfo
 *.pfx
 secrets/
 credentials/
+.claude/settings.local.json

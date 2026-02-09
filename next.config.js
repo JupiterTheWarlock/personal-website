@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basePath: '/personal-website',
+  // output: 'export', // 注释掉以便本地开发
+  // basePath: '/personal-website', // 注释掉以便本地开发
   images: {
     unoptimized: true
   },
