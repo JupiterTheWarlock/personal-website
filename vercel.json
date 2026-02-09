@@ -1,8 +1,4 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "out",
-  "framework": null,
-  "installCommand": "npm install",
   "regions": ["hkg1"],
   "rewrites": [
     {
