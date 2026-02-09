@@ -37,7 +37,7 @@ export default function AsciiAvatar({
 
     // 重置状态
     setError('');
-    setAsciiArt('');
+    setAsciiArt([]);
 
     const img = new Image();
     img.crossOrigin = 'anonymous';
