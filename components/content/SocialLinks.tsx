@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import AsciiIcon from './AsciiIcon';
 
 const socialLinks = [
   {
@@ -45,7 +46,7 @@ export default function SocialLinks() {
           className="hover:opacity-80 transition-opacity"
           title={link.name}
         >
-          <img
+          <AsciiIcon
             src={link.icon}
             alt={link.name}
             width={link.width}

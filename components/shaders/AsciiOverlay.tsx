@@ -149,7 +149,7 @@ export default function AsciiOverlay() {
         }}
         orthographic
         dpr={[1, 2]} // 限制 DPR
-        style={{ width: '100%', height: '100%' }}
+        style={{ width: '100%', height: '100%', pointerEvents: 'none' }}
       >
         <Scene texture={texture} />
       </Canvas>

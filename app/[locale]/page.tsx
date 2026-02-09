@@ -1,5 +1,7 @@
 import React from 'react';
 import SocialLinks from '@/components/content/SocialLinks';
+import AsciiAvatar from '@/components/content/AsciiAvatar';
+import AsciiJupiter from '@/components/content/AsciiJupiter';
 import { locales } from '@/app/i18n/config';
 
 export function generateStaticParams() {
@@ -44,15 +46,34 @@ export default async function HomePage({
       {/* Hero Section */}
       <section className="terminal-window p-6 mb-8">
         <div className="ascii-border p-4">
-          <h1 className="text-3xl md:text-4xl mb-2 glow-text">
-            {t.title}
-          </h1>
-          <h2 className="text-xl md:text-2xl text-[var(--terminal-white)] glow-white mb-4">
-            {t.subtitle}
-          </h2>
-          <p className="text-lg text-[var(--text-secondary)] mb-4">
-            {t.intro}
-          </p>
+          <div className="flex flex-row flex-nowrap items-stretch gap-6" style={{ display: 'flex', flexDirection: 'row' }}>
+            {/* 左侧内容区域 */}
+            <div className="flex-1" style={{ minWidth: 0 }}>
+              <div className="flex flex-col items-center gap-6 mb-4">
+                <AsciiAvatar
+                  src="https://cfr2cdn.jthewl.cc/头像.jpg"
+                  alt="Jupiter The Warlock"
+                  size={128}
+                  className="hover:scale-105 transition-transform"
+                />
+                <div className="text-center">
+                  <h1 className="text-3xl md:text-4xl mb-2 glow-text">
+                    {t.title}
+                  </h1>
+                  <h2 className="text-xl md:text-2xl text-[var(--terminal-white)] glow-white">
+                    {t.subtitle}
+                  </h2>
+                </div>
+              </div>
+              <p className="text-lg text-[var(--text-secondary)]">
+                {t.intro}
+              </p>
+            </div>
+            {/* 右侧木星 - 自适应左侧内容高度 */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginLeft: 'auto', height: '100%' }}>
+              <AsciiJupiter className="hover:scale-105 transition-transform" fitContainer />
+            </div>
+          </div>
         </div>
       </section>
 
