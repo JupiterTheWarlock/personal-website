@@ -102,3 +102,50 @@ a:hover {
   color: var(--deep-black);
   box-shadow: 0 0 10px rgba(160, 160, 160, 0.5);
 }
+
+/* ASCII 图标样式 */
+.ascii-icon-wrapper {
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.ascii-icon-wrapper:hover {
+  border-color: var(--terminal-border);
+  background-color: rgba(30, 30, 30, 0.8);
+  box-shadow: 0 0 15px rgba(192, 192, 192, 0.3);
+}
+
+/* ASCII 标题容器 */
+.ascii-title-container {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* 扫描线效果增强 */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scanline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(192, 192, 192, 0.03),
+    transparent
+  );
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+}
