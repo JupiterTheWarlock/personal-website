@@ -65,9 +65,19 @@ export default function HomeContent({ translations: t }: HomeContentProps) {
                 {t.intro}
               </p>
             </div>
-            {/* 右侧木星 - 带星环，高度自适应；min-w 保证右侧有宽度，子项 w-full 后 pre 在容器内居中 */}
-            <div className="h-full min-w-[320px]" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginLeft: 'auto', alignSelf: 'stretch' }}>
-              <SaturnJupiterVector className="hover:scale-105 transition-transform w-full" size={jupiterSize} />
+            {/* 右侧木星 - 带星环，高度自适应基本信息栏 */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
+                marginLeft: 'auto',
+                alignSelf: 'stretch',
+                height: 'auto',
+              }}
+            >
+              <SaturnJupiterVector className="hover:scale-105 transition-transform" size={jupiterSize} />
             </div>
           </div>
         </div>

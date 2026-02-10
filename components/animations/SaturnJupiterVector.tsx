@@ -178,16 +178,14 @@ export default function SaturnJupiterVector({
   const canvasWidth = Math.round(size * RING_OUTER_RATIO);
 
   return (
-    <div className={`h-full w-full ${className}`}>
-      <AsciiAnimation
-        sketch={sketch}
-        width={canvasWidth}
-        height={canvasHeight}
-        charSize={charSize}
-        inverted={true}
-        color="#D4A574"
-        fillContainer={true}
-      />
-    </div>
+    <AsciiAnimation
+      sketch={sketch}
+      width={canvasWidth}
+      height={canvasHeight}
+      charSize={charSize}
+      inverted={true}
+      color="#D4A574"
+      className={className}
+    />
   );
 }

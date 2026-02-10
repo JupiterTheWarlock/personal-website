@@ -140,17 +140,17 @@ export default function AsciiAnimation({
     };
   }, [canvas, renderToAscii]);
 
-  // fillContainer: 测量容器并计算等比缩放（只缩小不裁剪）
+  // fillContainer: 只按高度等比缩放（让宽度由内容本身决定），只缩小不裁剪
   useEffect(() => {
     if (!fillContainer || intrinsicPreW <= 0 || intrinsicPreH <= 0) return;
     const el = wrapperRef.current;
     if (!el) return;
 
     const updateScale = () => {
-      const cw = el.clientWidth;
       const ch = el.clientHeight;
-      if (cw <= 0 || ch <= 0) return;
-      const s = Math.min(cw / intrinsicPreW, ch / intrinsicPreH, 1);
+      if (ch <= 0) return;
+      // 目标：pre 的显示高度贴合容器高度，宽度按同一比例缩放，由自身决定
+      const s = Math.min(ch / intrinsicPreH, 1);
       setScale(s);
     };
 
@@ -162,7 +162,7 @@ export default function AsciiAnimation({
 
   return (
     <div
-      className={`relative ${fillContainer ? 'h-full w-full' : 'inline-block'} ${className}`}
+      className={`relative ${fillContainer ? 'h-full inline-block' : 'inline-block'} ${className}`}
     >
       {/* 隐藏的 p5 canvas - 使用多种方式确保完全不可见 */}
       <div style={{ display: 'none', visibility: 'hidden', position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}>
@@ -187,7 +187,7 @@ export default function AsciiAnimation({
           ref={wrapperRef}
           style={{
             height: '100%',
-            width: '100%',
+            width: 'auto',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
