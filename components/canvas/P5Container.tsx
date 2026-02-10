@@ -41,6 +41,11 @@ export default function P5Container({
         const canvas = p.createCanvas(width, height);
         canvas.parent(containerRef.current!);
 
+        // 直接隐藏 p5.js 创建的 canvas 元素
+        if (canvas.elt) {
+          (canvas.elt as HTMLCanvasElement).style.cssText = 'display: none !important; visibility: hidden !important; position: absolute !important; width: 0 !important; height: 0 !important;';
+        }
+
         // 调用用户的 sketch 函数
         sketch({ p, width, height });
 

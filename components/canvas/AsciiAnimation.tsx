@@ -127,8 +127,8 @@ export default function AsciiAnimation({
 
   return (
     <div className={`relative inline-block ${className}`}>
-      {/* 隐藏的 p5 canvas */}
-      <div className="hidden">
+      {/* 隐藏的 p5 canvas - 使用多种方式确保完全不可见 */}
+      <div style={{ display: 'none', visibility: 'hidden', position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}>
         <P5Container
           sketch={sketch}
           width={width}

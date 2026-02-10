@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import RotatingSquare from '@/components/animations/RotatingSquare';
 import WaveParticles from '@/components/animations/WaveParticles';
 import FractalTree from '@/components/animations/FractalTree';
@@ -18,6 +18,42 @@ interface AnimationsShowcaseProps {
     back: string;
   };
   locale: string;
+}
+
+// 懒加载动画组件的包装器
+function LazyAnimation({
+  children,
+  placeholder,
+}: {
+  children: React.ReactNode;
+  placeholder: string;
+}) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="flex justify-center items-center py-8 bg-black/20 min-h-[300px]">
+      {isVisible ? children : <div className="text-[var(--text-secondary)]">{placeholder}</div>}
+    </div>
+  );
 }
 
 export default function AnimationsShowcase({ translations, locale }: AnimationsShowcaseProps) {
@@ -46,9 +82,9 @@ export default function AnimationsShowcase({ translations, locale }: AnimationsS
             <h3 className="text-xl mb-4 glow-text text-[var(--terminal-gray)] text-center">
               {'// ' + translations.examples.rotating.toUpperCase()}
             </h3>
-            <div className="flex justify-center items-center py-8 bg-black/20">
+            <LazyAnimation placeholder="Loading animation...">
               <RotatingSquare size={300} charSize={10} />
-            </div>
+            </LazyAnimation>
           </div>
         </div>
 
@@ -58,9 +94,9 @@ export default function AnimationsShowcase({ translations, locale }: AnimationsS
             <h3 className="text-xl mb-4 glow-text text-[var(--terminal-gray)] text-center">
               {'// ' + translations.examples.wave.toUpperCase()}
             </h3>
-            <div className="flex justify-center items-center py-8 bg-black/20">
+            <LazyAnimation placeholder="Loading animation...">
               <WaveParticles width={500} height={200} charSize={8} color="#7DD3FC" />
-            </div>
+            </LazyAnimation>
           </div>
         </div>
 
@@ -70,9 +106,9 @@ export default function AnimationsShowcase({ translations, locale }: AnimationsS
             <h3 className="text-xl mb-4 glow-text text-[var(--terminal-gray)] text-center">
               {'// ' + translations.examples.fractal.toUpperCase()}
             </h3>
-            <div className="flex justify-center items-center py-8 bg-black/20">
+            <LazyAnimation placeholder="Loading animation...">
               <FractalTree size={350} charSize={8} color="#90EE90" />
-            </div>
+            </LazyAnimation>
           </div>
         </div>
       </section>
