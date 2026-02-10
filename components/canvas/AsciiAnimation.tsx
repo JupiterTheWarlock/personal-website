@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import P5Container, { P5SketchProps, P5Sketch } from './P5Container';
 
 // ASCII 字符集 - 从暗到亮
 const ASCII_CHARS = ['@', '%', '#', '*', '+', '=', ':', '-', '.', ' '];
+const ASCII_SAMPLE_SCALE = 0.5;
 
 export interface AsciiAnimationProps {
   sketch: P5Sketch;
@@ -15,6 +16,7 @@ export interface AsciiAnimationProps {
   inverted?: boolean;
   color?: string;
   showCanvas?: boolean; // 调试用，显示原始 canvas
+  fillContainer?: boolean;
 }
 
 /**
@@ -30,10 +32,24 @@ export default function AsciiAnimation({
   inverted = false,
   color = '#D4A574',
   showCanvas = false,
+  fillContainer = false,
 }: AsciiAnimationProps) {
   const [asciiOutput, setAsciiOutput] = useState<string>('');
   const [canvas, setCanvas] = useState<HTMLCanvasElement | null>(null);
   const animationRef = useRef<number>();
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  const intrinsicPreW = useMemo(() => {
+    const scaledW = Math.floor(width * ASCII_SAMPLE_SCALE);
+    const gridW = Math.ceil(scaledW / charSize);
+    return gridW * charSize;
+  }, [width, charSize]);
+  const intrinsicPreH = useMemo(() => {
+    const scaledH = Math.floor(height * ASCII_SAMPLE_SCALE);
+    const gridH = Math.ceil(scaledH / charSize);
+    return gridH * (charSize * 0.8);
+  }, [height, charSize]);
 
   // 处理 canvas 就绪
   const handleCanvasReady = useCallback((canvasEl: HTMLCanvasElement) => {
@@ -49,9 +65,8 @@ export default function AsciiAnimation({
     const canvasHeight = canvasEl.height;
 
     // 缩放采样以提高性能
-    const scale = 0.5;
-    const scaledWidth = Math.floor(canvasWidth * scale);
-    const scaledHeight = Math.floor(canvasHeight * scale);
+    const scaledWidth = Math.floor(canvasWidth * ASCII_SAMPLE_SCALE);
+    const scaledHeight = Math.floor(canvasHeight * ASCII_SAMPLE_SCALE);
 
     const tempCanvas = document.createElement('canvas');
     tempCanvas.width = scaledWidth;
@@ -125,8 +140,30 @@ export default function AsciiAnimation({
     };
   }, [canvas, renderToAscii]);
 
+  // fillContainer: 测量容器并计算等比缩放（只缩小不裁剪）
+  useEffect(() => {
+    if (!fillContainer || intrinsicPreW <= 0 || intrinsicPreH <= 0) return;
+    const el = wrapperRef.current;
+    if (!el) return;
+
+    const updateScale = () => {
+      const cw = el.clientWidth;
+      const ch = el.clientHeight;
+      if (cw <= 0 || ch <= 0) return;
+      const s = Math.min(cw / intrinsicPreW, ch / intrinsicPreH, 1);
+      setScale(s);
+    };
+
+    updateScale();
+    const ro = new ResizeObserver(updateScale);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [fillContainer, intrinsicPreW, intrinsicPreH, asciiOutput]);
+
   return (
-    <div className={`relative inline-block ${className}`}>
+    <div
+      className={`relative ${fillContainer ? 'h-full w-full' : 'inline-block'} ${className}`}
+    >
       {/* 隐藏的 p5 canvas - 使用多种方式确保完全不可见 */}
       <div style={{ display: 'none', visibility: 'hidden', position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}>
         <P5Container
@@ -145,19 +182,51 @@ export default function AsciiAnimation({
       )}
 
       {/* ASCII 输出 */}
-      <pre
-        style={{
-          fontFamily: 'monospace',
-          fontSize: `${charSize}px`,
-          lineHeight: `${charSize * 0.8}px`,
-          whiteSpace: 'pre',
-          color,
-          textShadow: `0 0 10px ${color}40`,
-          filter: `drop-shadow(0 0 5px ${color}30)`,
-        }}
-      >
-        {asciiOutput}
-      </pre>
+      {fillContainer ? (
+        <div
+          ref={wrapperRef}
+          style={{
+            height: '100%',
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: 0,
+          }}
+        >
+          <pre
+            style={{
+              fontFamily: 'monospace',
+              fontSize: `${charSize}px`,
+              lineHeight: `${charSize * 0.8}px`,
+              whiteSpace: 'pre',
+              color,
+              textShadow: `0 0 10px ${color}40`,
+              filter: `drop-shadow(0 0 5px ${color}30)`,
+              transform: `scale(${scale})`,
+              transformOrigin: 'center center',
+              width: intrinsicPreW,
+              height: intrinsicPreH,
+            }}
+          >
+            {asciiOutput}
+          </pre>
+        </div>
+      ) : (
+        <pre
+          style={{
+            fontFamily: 'monospace',
+            fontSize: `${charSize}px`,
+            lineHeight: `${charSize * 0.8}px`,
+            whiteSpace: 'pre',
+            color,
+            textShadow: `0 0 10px ${color}40`,
+            filter: `drop-shadow(0 0 5px ${color}30)`,
+          }}
+        >
+          {asciiOutput}
+        </pre>
+      )}
     </div>
   );
 }

@@ -169,15 +169,22 @@ export default function SaturnJupiterVector({
     };
   };
 
+  // 画布比例适配图形：星环外径 = planetRadius*2.2，水平需 4.4*planetRadius，planetRadius=min(w,h)*0.35
+  // 以高度为基准时需 width >= height * 4.4*0.35 ≈ 1.54*height，取 1.6 留边
+  const canvasHeight = size;
+  const canvasWidth = Math.round(size * 1.6);
+
   return (
-    <AsciiAnimation
-      sketch={sketch}
-      width={size}
-      height={size}
-      charSize={charSize}
-      inverted={true}
-      color="#D4A574"
-      className={className}
-    />
+    <div className={`h-full w-full ${className}`}>
+      <AsciiAnimation
+        sketch={sketch}
+        width={canvasWidth}
+        height={canvasHeight}
+        charSize={charSize}
+        inverted={true}
+        color="#D4A574"
+        fillContainer={true}
+      />
+    </div>
   );
 }
