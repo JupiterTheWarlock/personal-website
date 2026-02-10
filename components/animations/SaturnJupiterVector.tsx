@@ -3,6 +3,10 @@
 import AsciiAnimation from '../canvas/AsciiAnimation';
 import { P5SketchProps } from '../canvas/P5Container';
 
+// 与绘制逻辑一致：画布比例由图形边界推导，改这里即可同步
+const PLANET_RADIUS_RATIO = 0.35; // planetRadius = min(w,h) * this
+const RING_OUTER_RATIO = 2.2;    // outerRadius = planetRadius * this，水平半径 = outerRadius => 宽/高 = RING_OUTER_RATIO
+
 interface SaturnJupiterVectorProps {
   size?: number;
   charSize?: number;
@@ -26,7 +30,7 @@ export default function SaturnJupiterVector({
 
       const centerX = width / 2;
       const centerY = height / 2;
-      const planetRadius = Math.min(width, height) * 0.35;
+      const planetRadius = Math.min(width, height) * PLANET_RADIUS_RATIO;
 
       rotation += 0.02;
 
@@ -126,7 +130,7 @@ export default function SaturnJupiterVector({
       p.rotate(0.3);
 
       const innerRadius = planetRadius * 1.4;
-      const outerRadius = planetRadius * 2.2;
+      const outerRadius = planetRadius * RING_OUTER_RATIO;
 
       // 绘制多个同心圆环
       const ringCount = 8;
@@ -169,10 +173,9 @@ export default function SaturnJupiterVector({
     };
   };
 
-  // 画布比例适配图形：星环外径 = planetRadius*2.2，水平需 4.4*planetRadius，planetRadius=min(w,h)*0.35
-  // 以高度为基准时需 width >= height * 4.4*0.35 ≈ 1.54*height，取 1.6 留边
+  // 画布比例由图形边界推导：水平半径 = outerRadius = planetRadius * RING_OUTER_RATIO => width/height = RING_OUTER_RATIO
   const canvasHeight = size;
-  const canvasWidth = Math.round(size * 1.6);
+  const canvasWidth = Math.round(size * RING_OUTER_RATIO);
 
   return (
     <div className={`h-full w-full ${className}`}>
