@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import SectionCard from './SectionCard';
 import SocialLinks from './SocialLinks';
 
@@ -35,7 +34,7 @@ export default function HomeContent({ translations: t }: HomeContentProps) {
             <SocialLinks />
           </div>
         </div>
-        <div className="scroll-indicator">
+        <div className="scroll-indicator" aria-hidden="true">
           <span className="blink-cursor">▼</span>
         </div>
       </section>
