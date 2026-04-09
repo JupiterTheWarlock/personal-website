@@ -3,6 +3,10 @@ import * as THREE from 'three';
 /**
  * ASCII post-processing shader
  * Converts rendered scene to ASCII character grid
+ *
+ * IMPORTANT: The shader source uses GLSL 300 es syntax (in/out, layout qualifiers).
+ * Consumers MUST set `glslVersion: THREE.GLSL3` on the ShaderMaterial constructor
+ * options when using these shaders. Omitting this will cause WebGL compilation errors.
  */
 
 export const AsciiVertexShader = `

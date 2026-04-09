@@ -1,4 +1,4 @@
-import { ShaderMaterial, Uniform } from 'three';
+import * as THREE from 'three';
 
 /**
  * Procedural Jupiter texture shader
@@ -101,10 +101,11 @@ export interface JupiterMaterialConfig {
   speed?: number;
 }
 
-export function createJupiterMaterial(config: JupiterMaterialConfig = {}): ShaderMaterial {
+export function createJupiterMaterial(config: JupiterMaterialConfig = {}): THREE.ShaderMaterial {
   const { speed = 1.0 } = config;
 
-  return new ShaderMaterial({
+  return new THREE.ShaderMaterial({
+    glslVersion: THREE.GLSL3,
     uniforms: {
       time: { value: 0 },
       speed: { value: speed }
@@ -114,7 +115,7 @@ export function createJupiterMaterial(config: JupiterMaterialConfig = {}): Shade
   });
 }
 
-export function updateJupiterMaterial(material: ShaderMaterial, deltaTime: number): void {
+export function updateJupiterMaterial(material: THREE.ShaderMaterial, deltaTime: number): void {
   if (material.uniforms.time) {
     material.uniforms.time.value += deltaTime * 0.5;
   }
