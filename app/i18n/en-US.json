@@ -6,11 +6,25 @@
     "projects": "Projects",
     "about": "About"
   },
-  "home": {
+  "hero": {
     "title": "Jupiter The Warlock",
     "subtitle": "Indie Game Developer",
-    "intro": "Welcome to my personal space",
-    "about": "About Me"
+    "tagline": "Welcome to my personal space",
+    "scroll_hint": "▼ scroll"
+  },
+  "about": {
+    "title": "About",
+    "description": "I am an indie game developer focused on creating unique gaming experiences. My work spans game design, development, and creative programming. I love blending technology with art to create memorable works.",
+    "skills_title": "Skills"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "projects": []
+  },
+  "contact": {
+    "title": "Contact",
+    "email_label": "Email",
+    "github_label": "GitHub"
   },
   "social": {
     "x": "Follow me on X",
@@ -26,5 +40,14 @@
   },
   "links": {
     "blog_url": "https://blog.jthewl.cc"
-  }
+  },
+  "skills": [
+    "Game Development",
+    "Indie Creation",
+    "Creative Programming",
+    "Game Design",
+    "React",
+    "Three.js",
+    "TypeScript"
+  ]
 }
