@@ -5,9 +5,9 @@ import { ShaderMaterial, Uniform } from 'three';
  * Creates horizontal bands with noise and animated Great Red Spot
  */
 export const jupiterVertexShader = `
-  varying vec2 vUv;
-  varying vec3 vNormal;
-  varying vec3 vPosition;
+  out vec2 vUv;
+  out vec3 vNormal;
+  out vec3 vPosition;
 
   void main() {
     vUv = uv;
@@ -19,10 +19,11 @@ export const jupiterVertexShader = `
 
 export const jupiterFragmentShader = `
   uniform float time;
+  uniform float speed;
 
-  varying vec2 vUv;
-  varying vec3 vNormal;
-  varying vec3 vPosition;
+  in vec2 vUv;
+  in vec3 vNormal;
+  in vec3 vPosition;
 
   // Simple noise function
   float hash(vec2 p) {
@@ -53,6 +54,8 @@ export const jupiterFragmentShader = `
     return sum;
   }
 
+  layout(location = 0) out vec4 fragColor;
+
   void main() {
     // Base Jupiter colors
     vec3 color1 = vec3(0.85, 0.75, 0.65); // Light tan
@@ -62,14 +65,14 @@ export const jupiterFragmentShader = `
 
     // Latitude-based bands with noise
     float latitude = vUv.y;
-    float bandNoise = fbm(vec2(latitude * 20.0, time * 0.05));
+    float bandNoise = fbm(vec2(latitude * 20.0, time * 0.05 * speed));
 
     vec3 color = mix(color1, color2, latitude + bandNoise * 0.3);
     color = mix(color, color3, sin(latitude * 15.0 + bandNoise) * 0.5 + 0.5);
 
     // Great Red Spot
     float spotLatitude = 0.65;
-    float spotLongitude = mod(time * 0.1, 1.0);
+    float spotLongitude = mod(time * 0.1 * speed, 1.0);
 
     float distToSpot = distance(
       vec2(vUv.x, vUv.y),
@@ -81,7 +84,7 @@ export const jupiterFragmentShader = `
     float spot = smoothstep(spotSize, spotSize * 0.5, distToSpot);
 
     // Blend spot with surrounding area
-    color = mix(spotColor, color, spot);
+    color = mix(color, spotColor, spot);
 
     // Lighting
     vec3 lightDir = normalize(vec3(1.0, 0.5, 1.0));
@@ -90,7 +93,7 @@ export const jupiterFragmentShader = `
 
     color *= (ambient + diff * 0.6);
 
-    gl_FragColor = vec4(color, 1.0);
+    fragColor = vec4(color, 1.0);
   }
 `;
 
