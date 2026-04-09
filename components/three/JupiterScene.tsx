@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useMemo, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Sphere, Ring, Points } from '@react-three/drei';
 import * as THREE from 'three';
@@ -16,41 +16,52 @@ export default function JupiterScene() {
   const jupiterMaterial = useMemo(() => createJupiterMaterial({ speed: 1.0 }), []);
 
   // Create star field positions
-  const starPositions = useMemo(() => {
+  const { starPositions, originalStarX } = useMemo(() => {
     const positions = new Float32Array(500 * 3);
+    const origX = new Float32Array(500);
     for (let i = 0; i < 500; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 50;
+      const x = (Math.random() - 0.5) * 50;
+      positions[i * 3] = x;
+      origX[i] = x;
       positions[i * 3 + 1] = (Math.random() - 0.5) * 50;
       positions[i * 3 + 2] = (Math.random() - 0.5) * 50 - 10;
     }
-    return positions;
+    return { starPositions: positions, originalStarX: origX };
   }, []);
 
+  // Dispose material on unmount
+  useEffect(() => {
+    return () => {
+      jupiterMaterial.dispose();
+    };
+  }, [jupiterMaterial]);
+
   useFrame((state, delta) => {
+    const clampedDelta = Math.min(delta, 0.1);
+
     // Rotate Jupiter slowly
     if (jupiterRef.current) {
-      jupiterRef.current.rotation.y += delta * 0.05;
+      jupiterRef.current.rotation.y += clampedDelta * 0.05;
       // Update shader time
       if (jupiterRef.current.material instanceof THREE.ShaderMaterial) {
-        updateJupiterMaterial(jupiterRef.current.material, delta);
+        updateJupiterMaterial(jupiterRef.current.material, clampedDelta);
       }
     }
 
     // Subtle ring rotation
     if (frontRingRef.current) {
-      frontRingRef.current.rotation.z += delta * 0.01;
+      frontRingRef.current.rotation.z += clampedDelta * 0.01;
     }
     if (backRingRef.current) {
-      backRingRef.current.rotation.z += delta * 0.01;
+      backRingRef.current.rotation.z += clampedDelta * 0.01;
     }
 
-    // Twinkle stars
+    // Twinkle stars (offset from original positions to prevent drift)
     if (starsRef.current) {
       const positions = starsRef.current.geometry.attributes.position.array as Float32Array;
       for (let i = 0; i < 500; i++) {
         const i3 = i * 3;
-        // Subtle position wobble for twinkle effect
-        positions[i3] += Math.sin(state.clock.elapsedTime + i) * 0.001;
+        positions[i3] = originalStarX[i] + Math.sin(state.clock.elapsedTime + i) * 0.02;
       }
       starsRef.current.geometry.attributes.position.needsUpdate = true;
     }
