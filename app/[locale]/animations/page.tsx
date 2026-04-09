@@ -1,12 +1,5 @@
 import React from 'react';
 import { locales } from '@/app/i18n/config';
-import dynamic from 'next/dynamic';
-
-// 动态导入以禁用 SSR
-const AnimationsShowcase = dynamic(
-  () => import('@/components/content/AnimationsShowcase'),
-  { ssr: false }
-);
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -15,24 +8,12 @@ export function generateStaticParams() {
 const translations = {
   'zh-CN': {
     title: 'ASCII 动画展示',
-    subtitle: '使用 p5.js 和创意编程',
-    description: '这里展示了一些基于 p5.js 的抽象几何动画，通过 Canvas 渲染后转换为 ASCII 字符显示。',
-    examples: {
-      rotating: '旋转正方形',
-      wave: '波浪粒子',
-      fractal: '分形树',
-    },
+    comingSoon: '即将推出...',
     back: '返回首页',
   },
   'en-US': {
     title: 'ASCII Animation Showcase',
-    subtitle: 'Powered by p5.js & Creative Coding',
-    description: 'A showcase of abstract geometric animations created with p5.js, rendered as ASCII art.',
-    examples: {
-      rotating: 'Rotating Square',
-      wave: 'Wave Particles',
-      fractal: 'Fractal Tree',
-    },
+    comingSoon: 'Coming Soon...',
     back: 'Back to Home',
   },
 };
@@ -45,5 +26,10 @@ export default async function AnimationsPage({
   const { locale } = await params;
   const t = translations[locale as keyof typeof translations] || translations['zh-CN'];
 
-  return <AnimationsShowcase translations={t} locale={locale} />;
+  return (
+    <div className="flex flex-col items-center justify-center min-h-[50vh] gap-6">
+      <h1 className="text-3xl font-bold">{t.title}</h1>
+      <p className="text-xl text-gray-400">{t.comingSoon}</p>
+    </div>
+  );
 }
