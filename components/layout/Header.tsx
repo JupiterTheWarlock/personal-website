@@ -19,7 +19,7 @@ export default function Header() {
   const handleNav = (item: typeof navItems[0]) => {
     if (item.disabled) return;
     if (item.external) {
-      window.open(item.external, '_blank');
+      window.open(item.external, '_blank', 'noopener,noreferrer');
     } else if (item.key === 'home') {
       router.push(`/${locale}`);
     }
@@ -28,42 +28,42 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/30 border-b border-[var(--terminal-border)]">
       <div className="container mx-auto px-4 py-3">
-      <div className="ascii-border p-2 mb-2 bg-black/40">
-        <pre className="text-[var(--terminal-gray)] glow-text text-sm">
+        <div className="ascii-border p-2 mb-2 bg-black/40">
+          <pre className="text-[var(--terminal-gray)] glow-text text-sm">
 {`╔══════════════════════════════════════════════════════╗
 ║  JUPITER THE WARLOCK - INDIE GAME DEVELOPER        ║
 ╚════════════════════════════════════════════════════╝`}
-        </pre>
-      </div>
-
-      <nav className="flex flex-wrap gap-2 justify-center">
-        {navItems.map((item) => {
-          const label = item.label[locale as keyof typeof item.label] || item.label['zh-CN'];
-          const isDisabled = item.disabled;
-
-          return (
-            <button
-              key={item.key}
-              onClick={() => handleNav(item)}
-              disabled={isDisabled}
-              className={`ascii-button text-sm ${
-                isDisabled
-                  ? 'opacity-50 cursor-not-allowed border-gray-600 text-gray-600'
-                  : ''
-              }`}
-            >
-              {isDisabled ? `${label} (Coming Soon)` : label}
-            </button>
-          );
-        })}
-      </nav>
-
-      <div className="flex justify-between items-center mt-2">
-        <div className="text-xs text-[var(--text-secondary)]">
-          <span className="blink-cursor">_</span>
+          </pre>
         </div>
-        <LanguageSwitcher />
-      </div>
+
+        <nav className="flex flex-wrap gap-2 justify-center">
+          {navItems.map((item) => {
+            const label = item.label[locale as keyof typeof item.label] || item.label['zh-CN'];
+            const isDisabled = item.disabled;
+
+            return (
+              <button
+                key={item.key}
+                onClick={() => handleNav(item)}
+                disabled={isDisabled}
+                className={`ascii-button text-sm ${
+                  isDisabled
+                    ? 'opacity-50 cursor-not-allowed border-gray-600 text-gray-600'
+                    : ''
+                }`}
+              >
+                {isDisabled ? `${label} (Coming Soon)` : label}
+              </button>
+            );
+          })}
+        </nav>
+
+        <div className="flex justify-between items-center mt-2">
+          <div className="text-xs text-[var(--text-secondary)]">
+            <span className="blink-cursor">_</span>
+          </div>
+          <LanguageSwitcher />
+        </div>
       </div>
     </header>
   );
