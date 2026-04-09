@@ -6,7 +6,7 @@ import * as THREE from 'three';
  */
 
 export const AsciiVertexShader = `
-  varying vec2 vUv;
+  out vec2 vUv;
 
   void main() {
     vUv = uv;
@@ -21,7 +21,8 @@ export const AsciiFragmentShader = `
   uniform float invert;
   uniform vec3 color;
 
-  varying vec2 vUv;
+  in vec2 vUv;
+  layout(location = 0) out vec4 fragColor;
 
   // ASCII character set ordered by brightness (dark to light)
   // .:-=+*#%@
@@ -41,7 +42,7 @@ export const AsciiFragmentShader = `
     vec2 cellCenter = cellUV + charSize * 0.5 / resolution;
 
     // Sample the original texture at cell center
-    vec4 originalColor = texture2D(tDiffuse, cellCenter);
+    vec4 originalColor = texture(tDiffuse, cellCenter);
 
     // Calculate brightness
     float brightness = dot(originalColor.rgb, vec3(0.299, 0.587, 0.114));
@@ -91,7 +92,7 @@ export const AsciiFragmentShader = `
     // Apply color tint
     vec3 finalColor = color * charPattern * brightness;
 
-    gl_FragColor = vec4(finalColor, 1.0);
+    fragColor = vec4(finalColor, 1.0);
   }
 `;
 
