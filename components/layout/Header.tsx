@@ -26,9 +26,10 @@ export default function Header() {
   };
 
   return (
-    <header className="terminal-window mb-8 p-4">
-      <div className="ascii-border p-2 mb-2">
-        <pre className="text-[var(--terminal-gray)] glow-text">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/30 border-b border-[var(--terminal-border)]">
+      <div className="container mx-auto px-4 py-3">
+      <div className="ascii-border p-2 mb-2 bg-black/40">
+        <pre className="text-[var(--terminal-gray)] glow-text text-sm">
 {`╔══════════════════════════════════════════════════════╗
 ║  JUPITER THE WARLOCK - INDIE GAME DEVELOPER        ║
 ╚════════════════════════════════════════════════════╝`}
@@ -62,6 +63,7 @@ export default function Header() {
           <span className="blink-cursor">_</span>
         </div>
         <LanguageSwitcher />
+      </div>
       </div>
     </header>
   );
