@@ -20,7 +20,7 @@ const translations = {
     description: `我是一个独立游戏开发者，专注于创造独特的游戏体验。
 我的工作涵盖了游戏设计、开发和创意编程。
 我热爱将技术与艺术融合，创造令人难忘的作品。`,
-    skills: ['游戏开发', '独立创作', '创意编程', '游戏设计'],
+    skills: ['游戏开发', '独立创作', '创意编程', '游戏设计', 'React', 'Three.js', 'TypeScript'],
     contact: '联系我',
     social_title: '社交媒体',
   },
@@ -31,7 +31,7 @@ const translations = {
     description: `I am an indie game developer focused on creating unique gaming experiences.
 My work spans game design, development, and creative programming.
 I love blending technology with art to create memorable works.`,
-    skills: ['Game Development', 'Indie Creation', 'Creative Programming', 'Game Design'],
+    skills: ['Game Development', 'Indie Creation', 'Creative Programming', 'Game Design', 'React', 'Three.js', 'TypeScript'],
     contact: 'Contact Me',
     social_title: 'Social Media',
   },
