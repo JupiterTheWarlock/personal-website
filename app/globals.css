@@ -112,6 +112,7 @@ a:hover {
 /* Section Card */
 .section-card {
   background: var(--backdrop-bg);
+  -webkit-backdrop-filter: blur(var(--backdrop-blur));
   backdrop-filter: blur(var(--backdrop-blur));
   border: 1px solid var(--terminal-border);
   border-radius: 4px;
@@ -154,6 +155,7 @@ a:hover {
 
 .hero-content {
   background: var(--backdrop-bg);
+  -webkit-backdrop-filter: blur(var(--backdrop-blur));
   backdrop-filter: blur(var(--backdrop-blur));
   border: 1px solid var(--terminal-border);
   border-radius: 4px;
