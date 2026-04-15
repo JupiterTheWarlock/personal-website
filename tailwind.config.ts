@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'terminal-green': '#00FF00',
-        'terminal-cyan': '#00FFFF',
-        'neon-magenta': '#FF00FF',
-        'deep-black': '#0D0D0D',
-        'dark-bg': '#1A1A2E',
+        'accent':        '#DA7756',
+        'accent-bright': '#E8985C',
+        'accent-dim':    '#B85D3A',
+        'deep-black':    '#0A0908',
+        'dark-bg':       '#141210',
       },
       fontFamily: {
         mono: ['Courier New', 'Fira Code', 'monospace'],

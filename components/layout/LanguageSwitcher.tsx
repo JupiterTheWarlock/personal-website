@@ -22,7 +22,7 @@ export default function LanguageSwitcher() {
           onClick={() => handleLocaleChange(locale)}
           className={`ascii-button text-sm ${
             locale === currentLocale
-              ? 'bg-[var(--terminal-green)] text-[var(--deep-black)]'
+              ? 'bg-[var(--accent)] text-[var(--bg-deep)] border-[var(--accent)]'
               : ''
           }`}
           title={localeNames[locale]}

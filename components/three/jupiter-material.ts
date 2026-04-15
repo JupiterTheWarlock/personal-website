@@ -25,7 +25,7 @@ export const jupiterFragmentShader = `
   in vec3 vNormal;
   in vec3 vPosition;
 
-  // Simple noise function
+  // Noise functions
   float hash(vec2 p) {
     return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
   }
@@ -46,7 +46,7 @@ export const jupiterFragmentShader = `
   float fbm(vec2 p) {
     float sum = 0.0;
     float amplitude = 0.5;
-    for(int i = 0; i < 4; i++) {
+    for(int i = 0; i < 5; i++) {
       sum += amplitude * noise(p);
       p *= 2.0;
       amplitude *= 0.5;
@@ -57,41 +57,58 @@ export const jupiterFragmentShader = `
   layout(location = 0) out vec4 fragColor;
 
   void main() {
-    // Base Jupiter colors
-    vec3 color1 = vec3(0.85, 0.75, 0.65); // Light tan
-    vec3 color2 = vec3(0.65, 0.50, 0.40); // Brown
-    vec3 color3 = vec3(0.45, 0.35, 0.30); // Dark brown
-    vec3 spotColor = vec3(0.75, 0.35, 0.30); // Red spot
+    // Enhanced Jupiter palette — warm oranges and browns
+    vec3 color1 = vec3(0.90, 0.72, 0.50); // Light orange-tan
+    vec3 color2 = vec3(0.78, 0.55, 0.35); // Medium brown-orange
+    vec3 color3 = vec3(0.50, 0.32, 0.22); // Dark chocolate
+    vec3 color4 = vec3(0.95, 0.82, 0.60); // Cream highlight
+    vec3 spotColor = vec3(0.85, 0.35, 0.25); // Vivid red spot
 
-    // Latitude-based bands with noise
     float latitude = vUv.y;
-    float bandNoise = fbm(vec2(latitude * 20.0, time * 0.05 * speed));
+    float longitude = vUv.x;
 
-    vec3 color = mix(color1, color2, latitude + bandNoise * 0.3);
-    color = mix(color, color3, sin(latitude * 15.0 + bandNoise) * 0.5 + 0.5);
+    // Distorted band pattern using fbm noise
+    float bandNoise = fbm(vec2(latitude * 25.0, time * 0.03 * speed));
+    float bandEdge = fbm(vec2(latitude * 12.0 + 3.7, time * 0.02 * speed));
 
-    // Great Red Spot
-    float spotLatitude = 0.65;
-    float spotLongitude = mod(time * 0.1 * speed, 1.0);
+    // Create 6-7 visible bands (Jupiter has distinct horizontal bands)
+    float bandPattern = sin(latitude * 18.0 + bandEdge * 1.5);
+    float bandDetail = sin(latitude * 40.0 + bandNoise * 2.0) * 0.15;
 
-    float distToSpot = distance(
-      vec2(vUv.x, vUv.y),
-      vec2(spotLongitude, spotLatitude)
-    );
+    // Mix band colors
+    vec3 color = mix(color1, color2, smoothstep(-0.3, 0.3, bandPattern));
+    color = mix(color, color3, smoothstep(0.1, 0.6, bandPattern + bandDetail));
+    color = mix(color, color4, smoothstep(-0.8, -0.5, bandPattern) * 0.4);
 
-    // Elliptical spot
-    float spotSize = 0.08;
-    float spot = smoothstep(spotSize, spotSize * 0.5, distToSpot);
+    // Swirling horizontal detail (jet streams)
+    float swirl = fbm(vec2(longitude * 15.0 + latitude * 5.0, time * 0.05 * speed));
+    color = mix(color, color3, smoothstep(0.4, 0.7, swirl) * 0.3);
 
-    // Blend spot with surrounding area
-    color = mix(color, spotColor, spot);
+    // Great Red Spot — larger and more visible
+    float spotLatitude = 0.62;
+    float spotLongitude = mod(time * 0.08 * speed, 1.4) - 0.2;
 
-    // Lighting
+    vec2 spotUV = vec2((vUv.x - spotLongitude) * 1.5, (vUv.y - spotLatitude) * 2.2);
+    float distToSpot = length(spotUV);
+    float spotSize = 0.12;
+
+    // Spot with swirling edge
+    float spot = smoothstep(spotSize, spotSize * 0.3, distToSpot);
+    float spotSwirl = fbm(vec2(spotUV * 8.0 + time * 0.1 * speed));
+    spot *= smoothstep(0.3, 0.6, spotSwirl) * 0.4 + 0.6;
+
+    vec3 spotFinal = mix(spotColor, vec3(0.70, 0.28, 0.20), spotSwirl * 0.5);
+    color = mix(color, spotFinal, spot);
+
+    // Lighting — stronger contrast
     vec3 lightDir = normalize(vec3(1.0, 0.5, 1.0));
     float diff = max(dot(vNormal, lightDir), 0.0);
-    float ambient = 0.4;
+    float ambient = 0.35;
 
-    color *= (ambient + diff * 0.6);
+    // Limb darkening
+    float limb = pow(max(dot(vNormal, vec3(0.0, 0.0, 1.0)), 0.0), 0.4);
+
+    color *= (ambient + diff * 0.65) * limb;
 
     fragColor = vec4(color, 1.0);
   }

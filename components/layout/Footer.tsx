@@ -11,21 +11,21 @@ export default function Footer() {
         <div className="section-card">
           <div className="text-center">
             <p className="text-[var(--text-secondary)] text-sm mb-2">
-              © {currentYear} Jupiter The Warlock
+              &copy; {currentYear} Jupiter The Warlock
             </p>
             <div className="flex justify-center gap-4 text-sm">
               <a
                 href="https://github.com/JupiterTheWarlock"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--terminal-gray)] hover:text-[var(--terminal-white)]"
+                className="text-[var(--text-primary)] hover:text-[var(--accent-bright)]"
               >
                 GitHub
               </a>
-              <span className="text-[var(--text-secondary)]">|</span>
+              <span className="text-[var(--border-light)]">|</span>
               <a
                 href="mailto:contact@jthewl.cc"
-                className="text-[var(--terminal-gray)] hover:text-[var(--terminal-white)]"
+                className="text-[var(--text-primary)] hover:text-[var(--accent-bright)]"
               >
                 Email
               </a>

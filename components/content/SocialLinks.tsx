@@ -6,14 +6,14 @@ const socialLinks = [
   {
     name: 'X',
     url: 'https://x.com/JupiterTheWL',
-    icon: 'https://api.iconify.design/simple-icons/x.svg?color=%23888888',
+    icon: 'https://api.iconify.design/simple-icons/x.svg?color=%23DA7756',
     width: 32,
     height: 32,
   },
   {
     name: 'GitHub',
     url: 'https://github.com/JupiterTheWarlock',
-    icon: 'https://api.iconify.design/simple-icons/github.svg?color=%23888888',
+    icon: 'https://api.iconify.design/simple-icons/github.svg?color=%23DA7756',
     width: 32,
     height: 32,
   },
@@ -51,7 +51,7 @@ export default function SocialLinks() {
             alt={link.name}
             width={link.width}
             height={link.height}
-            className="hover:shadow-[0_0_10px_currentColor] transition-shadow"
+            className="hover:drop-shadow-[0_0_8px_rgba(218,119,86,0.6)] transition-all"
           />
         </a>
       ))}

@@ -26,11 +26,11 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/30 border-b border-[var(--terminal-border)]">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[var(--bg-card)] border-b border-[var(--border)]">
       <div className="container mx-auto px-4 py-3">
-        <div className="ascii-border p-2 mb-2 bg-black/40">
-          <pre className="text-[var(--terminal-gray)] glow-text text-sm">
-{`╔══════════════════════════════════════════════════════╗
+        <div className="ascii-border p-2 mb-2 bg-[var(--bg-deep)]/60">
+          <pre className="text-[var(--accent)] glow-text text-sm">
+{`╔════════════════════════════════════════════════════╗
 ║  JUPITER THE WARLOCK - INDIE GAME DEVELOPER        ║
 ╚════════════════════════════════════════════════════╝`}
           </pre>
@@ -48,7 +48,7 @@ export default function Header() {
                 disabled={isDisabled}
                 className={`ascii-button text-sm ${
                   isDisabled
-                    ? 'opacity-50 cursor-not-allowed border-gray-600 text-gray-600'
+                    ? 'opacity-50 cursor-not-allowed border-[var(--border)] text-[var(--text-secondary)]'
                     : ''
                 }`}
               >
@@ -59,7 +59,7 @@ export default function Header() {
         </nav>
 
         <div className="flex justify-between items-center mt-2">
-          <div className="text-xs text-[var(--text-secondary)]">
+          <div className="text-xs text-[var(--accent)]">
             <span className="blink-cursor">_</span>
           </div>
           <LanguageSwitcher />

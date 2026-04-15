@@ -3,29 +3,32 @@
 @tailwind utilities;
 
 :root {
-  /* ASCII 风格颜色 - 灰白色系 */
-  --terminal-gray: #CCCCCC;
-  --terminal-white: #F5F5F5;
-  --terminal-border: #A0A0A0;
-  --deep-black: #1A1A1A;
-  --dark-bg: #252525;
-  --text-primary: #D0D0D0;
-  --text-secondary: #888888;
+  /* Claude Code Orange Theme */
+  --accent:        #DA7756;
+  --accent-bright: #E8985C;
+  --accent-dim:    #B85D3A;
+  --accent-glow:   rgba(218, 119, 86, 0.4);
 
-  /* Section backdrop */
-  --backdrop-bg: rgba(10, 10, 10, 0.75);
-  --backdrop-blur: 8px;
+  --bg-deep:       #0A0908;
+  --bg-card:       rgba(14, 12, 10, 0.85);
+  --bg-blur:       12px;
 
-  /* ASCII 边框 */
-  --ascii-width: 1ch;
-  --ascii-height: 1.6ch;
-  --border-char: '+';
-  --border-h: '-';
-  --border-v: '|';
+  --text-primary:  #E8E0D8;
+  --text-secondary:#8A7E74;
+  --text-bright:   #FAF0E8;
+
+  --border:        #2E2520;
+  --border-light:  #4A3D33;
+}
+
+/* Scroll snap for full-viewport sections */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: transparent;
+  background-color: var(--bg-deep);
   color: var(--text-primary);
   font-family: 'Courier New', 'Fira Code', monospace;
   margin: 0;
@@ -33,7 +36,7 @@ body {
   min-height: 100vh;
 }
 
-/* CRT 扫描线效果 */
+/* CRT scanline overlay */
 .crt-overlay {
   position: fixed;
   top: 0;
@@ -46,16 +49,16 @@ body {
   z-index: 999;
 }
 
-/* Glow 效果 */
+/* Glow effects */
 .glow-text {
-  text-shadow: 0 0 10px var(--terminal-gray);
+  text-shadow: 0 0 10px var(--accent-glow);
 }
 
-.glow-white {
-  text-shadow: 0 0 10px var(--terminal-white);
+.glow-bright {
+  text-shadow: 0 0 12px var(--accent-glow);
 }
 
-/* 闪烁光标动画 */
+/* Blink cursor */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -65,37 +68,38 @@ body {
   animation: blink 1s infinite;
 }
 
-/* ASCII 边框 */
+/* ASCII border */
 .ascii-border {
-  border: 2px solid var(--terminal-border);
-  box-shadow: 0 0 10px rgba(192, 192, 192, 0.3);
+  border: 2px solid var(--border-light);
+  box-shadow: 0 0 10px var(--accent-glow);
 }
 
-/* 终端窗口 */
+/* Terminal window */
 .terminal-window {
-  background-color: rgba(30, 30, 30, 0.95);
-  border: 1px solid var(--terminal-border);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
   border-radius: 4px;
-  box-shadow: 0 0 20px rgba(160, 160, 160, 0.2);
+  box-shadow: 0 0 20px rgba(218, 119, 86, 0.15);
 }
 
-/* 链接样式 */
+/* Links */
 a {
-  color: var(--terminal-white);
+  color: var(--text-bright);
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 a:hover {
-  text-shadow: 0 0 10px var(--terminal-white);
+  color: var(--accent-bright);
+  text-shadow: 0 0 8px var(--accent-glow);
   text-decoration: underline;
 }
 
-/* 按钮样式 */
+/* Buttons */
 .ascii-button {
   background-color: transparent;
-  border: 1px solid var(--terminal-border);
-  color: var(--terminal-gray);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
   padding: 0.5rem 1rem;
   font-family: inherit;
   cursor: pointer;
@@ -104,76 +108,73 @@ a:hover {
 }
 
 .ascii-button:hover:not(:disabled) {
-  background-color: var(--terminal-gray);
-  color: var(--deep-black);
-  box-shadow: 0 0 10px rgba(160, 160, 160, 0.5);
+  background-color: var(--accent);
+  color: var(--bg-deep);
+  box-shadow: 0 0 12px var(--accent-glow);
+  border-color: var(--accent);
 }
 
 /* Section Card */
 .section-card {
-  background: var(--backdrop-bg);
-  -webkit-backdrop-filter: blur(var(--backdrop-blur));
-  backdrop-filter: blur(var(--backdrop-blur));
-  border: 1px solid var(--terminal-border);
+  background: var(--bg-card);
+  -webkit-backdrop-filter: blur(var(--bg-blur));
+  backdrop-filter: blur(var(--bg-blur));
+  border: 1px solid var(--border);
   border-radius: 4px;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
+  padding: 2rem;
   transition: all 0.3s ease;
 }
 
 .section-card:hover {
-  box-shadow: 0 0 15px rgba(192, 192, 192, 0.3);
-  border-color: #B0B0B0;
+  box-shadow: 0 0 20px var(--accent-glow);
+  border-color: var(--border-light);
 }
 
 .section-card-header {
   margin-bottom: 1rem;
-  border-bottom: 1px solid var(--terminal-border);
-  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.75rem;
 }
 
 .section-card-content {
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-/* Hero Section */
-.home-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.hero-section {
+/* Content sections — full viewport with scroll snap */
+.content-section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 2rem;
+  padding: 6rem 2rem;
+  scroll-snap-align: start;
   position: relative;
 }
 
+/* Hero Section */
 .hero-content {
-  background: var(--backdrop-bg);
-  -webkit-backdrop-filter: blur(var(--backdrop-blur));
-  backdrop-filter: blur(var(--backdrop-blur));
-  border: 1px solid var(--terminal-border);
+  background: var(--bg-card);
+  -webkit-backdrop-filter: blur(var(--bg-blur));
+  backdrop-filter: blur(var(--bg-blur));
+  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 3rem;
   max-width: 600px;
+  text-align: center;
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: bold;
-  color: var(--terminal-white);
-  text-shadow: 0 0 20px var(--terminal-gray);
+  color: var(--text-bright);
+  text-shadow: 0 0 20px var(--accent-glow);
   margin-bottom: 1rem;
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
-  color: var(--terminal-gray);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--accent);
   margin-bottom: 1.5rem;
 }
 
@@ -191,7 +192,7 @@ a:hover {
   position: absolute;
   bottom: 2rem;
   font-size: 1.5rem;
-  color: var(--terminal-gray);
+  color: var(--accent);
   animation: bounce 2s infinite;
 }
 
@@ -206,6 +207,8 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  max-width: 800px;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -230,8 +233,8 @@ a:hover {
 
 .skill-tag {
   background-color: transparent;
-  border: 1px solid var(--terminal-border);
-  color: var(--terminal-gray);
+  border: 1px solid var(--border-light);
+  color: var(--accent);
   padding: 0.25rem 0.75rem;
   font-family: 'Courier New', 'Fira Code', monospace;
   font-size: 0.875rem;
@@ -240,9 +243,10 @@ a:hover {
 }
 
 .skill-tag:hover {
-  background-color: var(--terminal-gray);
-  color: var(--deep-black);
-  box-shadow: 0 0 8px rgba(160, 160, 160, 0.5);
+  background-color: var(--accent);
+  color: var(--bg-deep);
+  box-shadow: 0 0 8px var(--accent-glow);
+  border-color: var(--accent);
 }
 
 /* Contact Section */
@@ -250,7 +254,7 @@ a:hover {
   padding: 1rem 0;
 }
 
-/* ASCII 图标样式 */
+/* ASCII icon hover */
 .ascii-icon-wrapper {
   padding: 8px;
   border: 1px solid transparent;
@@ -259,19 +263,15 @@ a:hover {
 }
 
 .ascii-icon-wrapper:hover {
-  border-color: var(--terminal-border);
-  background-color: rgba(30, 30, 30, 0.8);
-  box-shadow: 0 0 15px rgba(192, 192, 192, 0.3);
+  border-color: var(--border-light);
+  background-color: var(--bg-card);
+  box-shadow: 0 0 15px var(--accent-glow);
 }
 
-/* 扫描线效果增强 */
+/* Scanline sweep animation */
 @keyframes scanline {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
 }
 
 .scanline::after {
@@ -284,7 +284,7 @@ a:hover {
   background: linear-gradient(
     to bottom,
     transparent,
-    rgba(192, 192, 192, 0.03),
+    rgba(218, 119, 86, 0.03),
     transparent
   );
   animation: scanline 8s linear infinite;

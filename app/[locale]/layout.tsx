@@ -9,13 +9,15 @@ export default function LocaleLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
       <AsciiBackground />
-      <Header />
-      <main className="flex-1 container mx-auto px-4 pt-40 pb-8 relative z-10">
-        {children}
-      </main>
-      <Footer />
-    </div>
+      <div className="min-h-screen flex flex-col relative z-10">
+        <Header />
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 }

@@ -13,7 +13,7 @@ export default function SectionCard({ children, title, className = '' }: Section
     <section className={`section-card ${className}`}>
       {title && (
         <div className="section-card-header">
-          <pre className="text-[var(--terminal-gray)]">
+          <pre className="text-[var(--accent)] glow-text">
             {`── ${title} ${'─'.repeat(Math.max(0, 40 - title.length))}`}
           </pre>
         </div>

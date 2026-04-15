@@ -18,8 +18,8 @@ interface HomeContentProps {
 export default function HomeContent({ translations: t }: HomeContentProps) {
   return (
     <div className="home-content">
-      {/* Hero Section */}
-      <section className="hero-section">
+      {/* Layer 1: Hero — full viewport */}
+      <section className="content-section">
         <div className="hero-content">
           <h1 className="hero-title">
             {t.title}
@@ -39,38 +39,46 @@ export default function HomeContent({ translations: t }: HomeContentProps) {
         </div>
       </section>
 
-      {/* About Section */}
-      <SectionCard title="// ABOUT">
-        <div className="about-section">
-          <div className="about-text">
-            <p className="whitespace-pre-wrap leading-relaxed">
-              {t.description}
-            </p>
-          </div>
-          <div className="skills-section">
-            <h4 className="text-lg mb-3 text-[var(--terminal-white)] glow-white">
-              {'// SKILLS'}
-            </h4>
-            <div className="skills-tags">
-              {t.skills.map((skill) => (
-                <span key={skill} className="skill-tag">
-                  [{skill}]
-                </span>
-              ))}
+      {/* Layer 2: About — full viewport */}
+      <section className="content-section">
+        <div className="w-full max-w-3xl">
+          <SectionCard title="// ABOUT">
+            <div className="about-section">
+              <div className="about-text">
+                <p className="whitespace-pre-wrap leading-relaxed">
+                  {t.description}
+                </p>
+              </div>
+              <div className="skills-section">
+                <h4 className="text-lg mb-3 text-[var(--accent)] glow-text">
+                  {'// SKILLS'}
+                </h4>
+                <div className="skills-tags">
+                  {t.skills.map((skill) => (
+                    <span key={skill} className="skill-tag">
+                      [{skill}]
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
+          </SectionCard>
         </div>
-      </SectionCard>
+      </section>
 
-      {/* Contact Section */}
-      <SectionCard title={`// ${t.social_title.toUpperCase()}`}>
-        <div className="contact-section text-center">
-          <p className="text-[var(--terminal-white)] glow-white text-lg mb-2">
-            {t.contact}
-          </p>
-          <SocialLinks />
+      {/* Layer 3: Contact — full viewport */}
+      <section className="content-section">
+        <div className="w-full max-w-3xl">
+          <SectionCard title={`// ${t.social_title.toUpperCase()}`}>
+            <div className="contact-section text-center">
+              <p className="text-[var(--text-bright)] glow-bright text-lg mb-4">
+                {t.contact}
+              </p>
+              <SocialLinks />
+            </div>
+          </SectionCard>
         </div>
-      </SectionCard>
+      </section>
     </div>
   );
 }

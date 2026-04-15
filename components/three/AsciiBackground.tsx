@@ -12,7 +12,18 @@ interface AsciiBackgroundProps {
 
 export default function AsciiBackground({ className = '', asciiEnabled = true }: AsciiBackgroundProps) {
   return (
-    <div className={`fixed inset-0 -z-10 ${className}`}>
+    <div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: 0,
+        pointerEvents: 'none',
+      }}
+      className={className}
+    >
       <Canvas
         camera={{ position: [0, 0, 10], fov: 50 }}
         gl={{
@@ -20,16 +31,16 @@ export default function AsciiBackground({ className = '', asciiEnabled = true }:
           alpha: true,
           powerPreference: 'high-performance'
         }}
-        style={{ background: '#0A0A0A' }}
+        style={{ background: '#0A0908' }}
       >
         <Suspense fallback={null}>
           <JupiterScene />
           {asciiEnabled && (
             <AsciiEffect
               config={{
-                charSize: 8,
+                charSize: 6,
                 invert: false,
-                color: [0.82, 0.82, 0.82] // #D0D0D0
+                color: [0.85, 0.47, 0.34] // Claude Code orange ~#DA7756
               }}
             />
           )}

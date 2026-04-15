@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
-      <body className="min-h-screen bg-[var(--deep-black)] text-[var(--text-primary)]">
+      <body className="min-h-screen bg-[var(--bg-deep)] text-[var(--text-primary)]">
         {children}
         <div className="crt-overlay fixed inset-0 pointer-events-none z-50" />
       </body>
