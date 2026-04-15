@@ -69,7 +69,7 @@ export default function JupiterScene() {
   });
 
   return (
-    <group position={[2.5, 0, -1]}>
+    <group position={[5, 0, -1]}>
       {/* Star field */}
       <Points ref={starsRef}>
         <bufferGeometry>
@@ -89,30 +89,35 @@ export default function JupiterScene() {
         />
       </Points>
 
-      {/* Back ring (renders before Jupiter) */}
-      <Ring ref={backRingRef} args={[4.5, 6.0, 64]} position={[0, 0, -0.8]}>
-        <meshBasicMaterial
-          color="#C4A882"
-          side={THREE.BackSide}
-          transparent
-          opacity={0.5}
-        />
-      </Ring>
+      {/* Ring group — tilted 35° to show traditional Jupiter angle */}
+      <group rotation={[-Math.PI * 0.65, -Math.PI * 0.15, 0]}>
+        {/* Back half of ring (renders before Jupiter, occluded by planet body) */}
+        <Ring ref={backRingRef} args={[4.5, 6.0, 64]} position={[0, 0, -0.01]}>
+          <meshBasicMaterial
+            color="#C4A882"
+            side={THREE.BackSide}
+            transparent
+            opacity={0.5}
+            depthWrite={false}
+          />
+        </Ring>
 
-      {/* Jupiter sphere — large and prominent */}
-      <Sphere ref={jupiterRef} args={[3.5, 64, 64]}>
-        <primitive object={jupiterMaterial} attach="material" />
-      </Sphere>
+        {/* Jupiter sphere — tilted to match ring plane */}
+        <Sphere ref={jupiterRef} args={[3.5, 64, 64]} rotation={[-Math.PI * 0.19, 0, 0]}>
+          <primitive object={jupiterMaterial} attach="material" />
+        </Sphere>
 
-      {/* Front ring (renders after Jupiter) */}
-      <Ring ref={frontRingRef} args={[4.5, 6.0, 64]} position={[0, 0, 0.8]}>
-        <meshBasicMaterial
-          color="#D4B896"
-          side={THREE.FrontSide}
-          transparent
-          opacity={0.6}
-        />
-      </Ring>
+        {/* Front half of ring (renders after Jupiter, visible in front of planet) */}
+        <Ring ref={frontRingRef} args={[4.5, 6.0, 64]} position={[0, 0, 0.01]}>
+          <meshBasicMaterial
+            color="#D4B896"
+            side={THREE.FrontSide}
+            transparent
+            opacity={0.6}
+            depthWrite={false}
+          />
+        </Ring>
+      </group>
     </group>
   );
 }

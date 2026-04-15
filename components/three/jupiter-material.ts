@@ -7,12 +7,12 @@ import * as THREE from 'three';
 export const jupiterVertexShader = `
   out vec2 vUv;
   out vec3 vNormal;
-  out vec3 vPosition;
+  out vec3 vWorldNormal;
 
   void main() {
     vUv = uv;
     vNormal = normalize(normalMatrix * normal);
-    vPosition = position;
+    vWorldNormal = normalize(mat3(modelMatrix) * normal);
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   }
 `;
@@ -23,7 +23,7 @@ export const jupiterFragmentShader = `
 
   in vec2 vUv;
   in vec3 vNormal;
-  in vec3 vPosition;
+  in vec3 vWorldNormal;
 
   // Noise functions
   float hash(vec2 p) {
@@ -62,7 +62,7 @@ export const jupiterFragmentShader = `
     vec3 color2 = vec3(0.78, 0.55, 0.35); // Medium brown-orange
     vec3 color3 = vec3(0.50, 0.32, 0.22); // Dark chocolate
     vec3 color4 = vec3(0.95, 0.82, 0.60); // Cream highlight
-    vec3 spotColor = vec3(0.85, 0.35, 0.25); // Vivid red spot
+    vec3 spotColor = vec3(0, 0, 0); // Vivid red spot
 
     float latitude = vUv.y;
     float longitude = vUv.x;
@@ -71,38 +71,82 @@ export const jupiterFragmentShader = `
     float bandNoise = fbm(vec2(latitude * 25.0, time * 0.03 * speed));
     float bandEdge = fbm(vec2(latitude * 12.0 + 3.7, time * 0.02 * speed));
 
-    // Create 6-7 visible bands (Jupiter has distinct horizontal bands)
+    // 1) Horizontal bands — subtle latitude-based color variation
     float bandPattern = sin(latitude * 18.0 + bandEdge * 1.5);
-    float bandDetail = sin(latitude * 40.0 + bandNoise * 2.0) * 0.15;
 
-    // Mix band colors
     vec3 color = mix(color1, color2, smoothstep(-0.3, 0.3, bandPattern));
-    color = mix(color, color3, smoothstep(0.1, 0.6, bandPattern + bandDetail));
     color = mix(color, color4, smoothstep(-0.8, -0.5, bandPattern) * 0.4);
 
-    // Swirling horizontal detail (jet streams)
-    float swirl = fbm(vec2(longitude * 15.0 + latitude * 5.0, time * 0.05 * speed));
-    color = mix(color, color3, smoothstep(0.4, 0.7, swirl) * 0.3);
+    // 2) Domain-warped turbulence — nested fbm creates organic Jupiter swirls
+    //    Based on Inigo Quilez's domain warping technique
+    vec2 warpP = vec2(longitude * 6.0, latitude * 12.0) + vec2(time * 0.02 * speed, 0.0);
 
-    // Great Red Spot — larger and more visible
-    float spotLatitude = 0.62;
-    float spotLongitude = mod(time * 0.08 * speed, 1.4) - 0.2;
+    // First warp level
+    vec2 q = vec2(
+      fbm(warpP + vec2(0.0, 0.0)),
+      fbm(warpP + vec2(5.2, 1.3))
+    );
 
-    vec2 spotUV = vec2((vUv.x - spotLongitude) * 1.5, (vUv.y - spotLatitude) * 2.2);
-    float distToSpot = length(spotUV);
-    float spotSize = 0.12;
+    // Second warp level — feeds back into itself for deep spirals
+    vec2 r = vec2(
+      fbm(warpP + 4.0 * q + vec2(1.7, 9.2)),
+      fbm(warpP + 4.0 * q + vec2(8.3, 2.8))
+    );
 
-    // Spot with swirling edge
-    float spot = smoothstep(spotSize, spotSize * 0.3, distToSpot);
-    float spotSwirl = fbm(vec2(spotUV * 8.0 + time * 0.1 * speed));
-    spot *= smoothstep(0.3, 0.6, spotSwirl) * 0.4 + 0.6;
+    float warp = fbm(warpP + 4.0 * r);
 
-    vec3 spotFinal = mix(spotColor, vec3(0.70, 0.28, 0.20), spotSwirl * 0.5);
-    color = mix(color, spotFinal, spot);
+    // Use warp intermediate values for multi-toned coloring
+    color = mix(color, color2, clamp(length(q) * 0.8, 0.0, 1.0) * 0.4);
+    color = mix(color, color3, clamp(warp * warp * 1.5, 0.0, 1.0) * 0.3);
+    color = mix(color, color4, clamp(length(r.x) * 0.6, 0.0, 1.0) * 0.25);
 
-    // Lighting — stronger contrast
+    // 3) Small scattered vortices — spiral storms of varying sizes
+    for (int i = 0; i < 4; i++) {
+      float fi = float(i);
+      // Each vortex at a different position, slowly drifting
+      vec2 vortexCenter = vec2(
+        fract(fi * 0.37 + 0.1 + time * 0.008 * speed),
+        fract(fi * 0.53 + 0.2) * 0.6 + 0.2
+      );
+
+      vec2 toCenter = vec2(longitude, latitude) - vortexCenter;
+      // Wrap around longitude
+      toCenter.x = toCenter.x - floor(toCenter.x + 0.5);
+      float dist = length(toCenter);
+      float angle = atan(toCenter.y, toCenter.x);
+
+      // Differential rotation — center spins faster than edges
+      float vortexSize = 0.04 + fract(fi * 0.71) * 0.06;
+      float twist = angle + 3.0 / (dist * 8.0 + 0.2) + time * 0.15 * speed * (1.0 + fi * 0.3);
+
+      vec2 swirlUV = vortexCenter + vec2(cos(twist), sin(twist)) * dist;
+      float vortexDetail = fbm(swirlUV * 25.0 + vec2(fi * 10.0));
+      float vortex = smoothstep(vortexSize, vortexSize * 0.2, dist) * (0.5 + 0.5 * vortexDetail);
+
+      // Alternate between lighter and darker vortex tones
+      vec3 vortexColor = (mod(fi, 2.0) < 1.0) ? color3 : color4;
+      color = mix(color, vortexColor, vortex * 0.2);
+    }
+
+    // Great Red Spot — hollow ring, positioned for current viewing angle
+    // Camera sees the south pole (UV y≈0), so spot goes at low y
+    float spotLat = 0.42;
+    float spotLon = mod(-0.12 - time * 0.0159, 1.0);
+
+    vec2 sUV = vec2((vUv.x - spotLon) * 2.0, (vUv.y - spotLat) * 2.8);
+    float sDist = length(sUV);
+    float outerR = 0.08;
+    float innerR = 0.04;
+
+    // Ring shape: 1 inside the ring band, 0 elsewhere
+    float ring = smoothstep(outerR, outerR * 0.7, sDist) * (1.0 - smoothstep(innerR, innerR * 0.6, sDist));
+
+    // Spot alpha: 1 = invisible (same as surroundings), 0 = fully transparent hole
+    float spotIntensity = 0.52;
+
+    // Lighting — world-space normal so terminator stays fixed as sphere rotates
     vec3 lightDir = normalize(vec3(1.0, 0.5, 1.0));
-    float diff = max(dot(vNormal, lightDir), 0.0);
+    float diff = max(dot(vWorldNormal, lightDir), 0.0);
     float ambient = 0.35;
 
     // Limb darkening
@@ -110,7 +154,9 @@ export const jupiterFragmentShader = `
 
     color *= (ambient + diff * 0.65) * limb;
 
-    fragColor = vec4(color, 1.0);
+    // Alpha: ring area is semi-transparent, rest is solid
+    float finalAlpha = mix(spotIntensity, 1.0, 1.0 - ring);
+    fragColor = vec4(color, finalAlpha);
   }
 `;
 
@@ -123,6 +169,7 @@ export function createJupiterMaterial(config: JupiterMaterialConfig = {}): THREE
 
   return new THREE.ShaderMaterial({
     glslVersion: THREE.GLSL3,
+    transparent: true,
     uniforms: {
       time: { value: 0 },
       speed: { value: speed }

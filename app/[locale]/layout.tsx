@@ -10,7 +10,7 @@ export default function LocaleLayout({
 }) {
   return (
     <>
-      <AsciiBackground />
+      <AsciiBackground asciiEnabled={true} />
       <div className="min-h-screen flex flex-col relative z-10">
         <Header />
         <main className="flex-1">
