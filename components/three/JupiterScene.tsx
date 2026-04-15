@@ -5,6 +5,7 @@ import { useFrame } from '@react-three/fiber';
 import { Sphere, Ring, Points } from '@react-three/drei';
 import * as THREE from 'three';
 import { createJupiterMaterial, updateJupiterMaterial } from './jupiter-material';
+import { createRingMaterial, updateRingMaterial } from './ring-material';
 
 export default function JupiterScene() {
   const jupiterRef = useRef<THREE.Mesh>(null);
@@ -14,6 +15,10 @@ export default function JupiterScene() {
 
   // Create Jupiter material
   const jupiterMaterial = useMemo(() => createJupiterMaterial({ speed: 1.0 }), []);
+
+  // Create ring materials (back side and front side)
+  const backRingMaterial = useMemo(() => createRingMaterial({ speed: 1.0 }), []);
+  const frontRingMaterial = useMemo(() => createRingMaterial({ speed: 1.0 }), []);
 
   // Create star field positions — denser for richer background
   const { starPositions, originalStarX } = useMemo(() => {
@@ -30,12 +35,14 @@ export default function JupiterScene() {
     return { starPositions: positions, originalStarX: origX };
   }, []);
 
-  // Dispose material on unmount
+  // Dispose materials on unmount
   useEffect(() => {
     return () => {
       jupiterMaterial.dispose();
+      backRingMaterial.dispose();
+      frontRingMaterial.dispose();
     };
-  }, [jupiterMaterial]);
+  }, [jupiterMaterial, backRingMaterial, frontRingMaterial]);
 
   useFrame((state, delta) => {
     const clampedDelta = Math.min(delta, 0.1);
@@ -49,12 +56,18 @@ export default function JupiterScene() {
       }
     }
 
-    // Subtle ring rotation
+    // Update ring shader time for noise animation
     if (frontRingRef.current) {
-      frontRingRef.current.rotation.z += clampedDelta * 0.01;
+      frontRingRef.current.rotation.z += clampedDelta * 0.02;
+      if (frontRingRef.current.material instanceof THREE.ShaderMaterial) {
+        updateRingMaterial(frontRingRef.current.material, clampedDelta);
+      }
     }
     if (backRingRef.current) {
-      backRingRef.current.rotation.z += clampedDelta * 0.01;
+      backRingRef.current.rotation.z += clampedDelta * 0.02;
+      if (backRingRef.current.material instanceof THREE.ShaderMaterial) {
+        updateRingMaterial(backRingRef.current.material, clampedDelta);
+      }
     }
 
     // Twinkle stars
@@ -89,17 +102,11 @@ export default function JupiterScene() {
         />
       </Points>
 
-      {/* Ring group — tilted 35° to show traditional Jupiter angle */}
-      <group rotation={[-Math.PI * 0.65, -Math.PI * 0.15, 0]}>
+      {/* Ring group — tilted for traditional Jupiter angle */}
+      <group rotation={[-Math.PI * 0.655, -Math.PI * 0.155, 0]}>
         {/* Back half of ring (renders before Jupiter, occluded by planet body) */}
         <Ring ref={backRingRef} args={[4.5, 6.0, 64]} position={[0, 0, -0.01]}>
-          <meshBasicMaterial
-            color="#C4A882"
-            side={THREE.BackSide}
-            transparent
-            opacity={0.5}
-            depthWrite={false}
-          />
+          <primitive object={backRingMaterial} attach="material" />
         </Ring>
 
         {/* Jupiter sphere — tilted to match ring plane */}
@@ -109,13 +116,7 @@ export default function JupiterScene() {
 
         {/* Front half of ring (renders after Jupiter, visible in front of planet) */}
         <Ring ref={frontRingRef} args={[4.5, 6.0, 64]} position={[0, 0, 0.01]}>
-          <meshBasicMaterial
-            color="#D4B896"
-            side={THREE.FrontSide}
-            transparent
-            opacity={0.6}
-            depthWrite={false}
-          />
+          <primitive object={frontRingMaterial} attach="material" />
         </Ring>
       </group>
     </group>

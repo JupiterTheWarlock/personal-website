@@ -79,7 +79,12 @@ export const jupiterFragmentShader = `
 
     // 2) Domain-warped turbulence — nested fbm creates organic Jupiter swirls
     //    Based on Inigo Quilez's domain warping technique
-    vec2 warpP = vec2(longitude * 6.0, latitude * 12.0) + vec2(time * 0.02 * speed, 0.0);
+    //    Use sin/cos for seamless wrapping (no discontinuity at UV seam)
+    float lonAngle = longitude * 6.28318; // 2π
+    float cx = cos(lonAngle);
+    float sx = sin(lonAngle);
+    vec2 warpP = vec2(cx * 3.0 + latitude * 2.0, sx * 3.0 + latitude * 12.0)
+               + vec2(time * 0.02 * speed, 0.0);
 
     // First warp level
     vec2 q = vec2(
@@ -133,7 +138,9 @@ export const jupiterFragmentShader = `
     float spotLat = 0.42;
     float spotLon = mod(-0.12 - time * 0.0159, 1.0);
 
-    vec2 sUV = vec2((vUv.x - spotLon) * 2.0, (vUv.y - spotLat) * 2.8);
+    // Wrap longitude difference to avoid UV seam artifact
+    float dLon = mod(vUv.x - spotLon + 0.5, 1.0) - 0.5;
+    vec2 sUV = vec2(dLon * 2.0, (vUv.y - spotLat) * 2.8);
     float sDist = length(sUV);
     float outerR = 0.08;
     float innerR = 0.04;
@@ -154,9 +161,13 @@ export const jupiterFragmentShader = `
 
     color *= (ambient + diff * 0.65) * limb;
 
-    // Alpha: ring area is semi-transparent, rest is solid
-    float finalAlpha = mix(spotIntensity, 1.0, 1.0 - ring);
-    fragColor = vec4(color, finalAlpha);
+    // Spot visibility: blend spot area with background color (no alpha channel needed)
+    // This avoids transparency sorting artifacts with the rings
+    vec3 bgColor = vec3(0.039, 0.035, 0.031); // #0A0908
+    float spotVisibility = mix(1.0, spotIntensity, ring);
+    color = mix(bgColor, color, spotVisibility);
+
+    fragColor = vec4(color, 1.0);
   }
 `;
 
@@ -169,7 +180,7 @@ export function createJupiterMaterial(config: JupiterMaterialConfig = {}): THREE
 
   return new THREE.ShaderMaterial({
     glslVersion: THREE.GLSL3,
-    transparent: true,
+    transparent: false,
     uniforms: {
       time: { value: 0 },
       speed: { value: speed }
