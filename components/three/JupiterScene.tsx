@@ -7,7 +7,14 @@ import * as THREE from 'three';
 import { createJupiterMaterial, updateJupiterMaterial } from './jupiter-material';
 import { createRingMaterial, updateRingMaterial } from './ring-material';
 
+// Jupiter group depth in world space
+const JUPITER_Z = -1;
+
+// Distance from the right edge of the viewport to Jupiter's center (world units)
+const RIGHT_EDGE_OFFSET = 4;
+
 export default function JupiterScene() {
+  const groupRef = useRef<THREE.Group>(null);
   const jupiterRef = useRef<THREE.Mesh>(null);
   const frontRingRef = useRef<THREE.Mesh>(null);
   const backRingRef = useRef<THREE.Mesh>(null);
@@ -47,6 +54,16 @@ export default function JupiterScene() {
   useFrame((state, delta) => {
     const clampedDelta = Math.min(delta, 0.1);
 
+    // Anchor Jupiter's X to the right edge of the viewport
+    if (groupRef.current) {
+      const cam = state.camera as THREE.PerspectiveCamera;
+      const dist = cam.position.z - JUPITER_Z;
+      const halfH = dist * Math.tan((cam.fov / 2) * (Math.PI / 180));
+      const aspect = state.size.width / state.size.height;
+      const rightEdge = halfH * aspect;
+      groupRef.current.position.x = rightEdge - RIGHT_EDGE_OFFSET;
+    }
+
     // Rotate Jupiter slowly
     if (jupiterRef.current) {
       jupiterRef.current.rotation.y += clampedDelta * 0.05;
@@ -82,7 +99,7 @@ export default function JupiterScene() {
   });
 
   return (
-    <group position={[5, 0, -1]}>
+    <group ref={groupRef} position={[0, 0, JUPITER_Z]}>
       {/* Star field */}
       <Points ref={starsRef}>
         <bufferGeometry>
