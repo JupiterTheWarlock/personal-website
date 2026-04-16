@@ -254,6 +254,69 @@ a:hover {
   padding: 1rem 0;
 }
 
+/* My Sites Section */
+.sites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.site-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--bg-deep);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.site-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+  text-decoration: none;
+}
+
+.site-card:hover .site-card-link {
+  color: var(--accent-bright);
+  text-shadow: 0 0 8px var(--accent-glow);
+}
+
+.site-card-ascii {
+  color: var(--accent);
+  line-height: 1;
+}
+
+.site-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.site-card-name {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: var(--text-bright);
+}
+
+.site-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.site-card-link {
+  font-size: 0.875rem;
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
 /* ASCII icon hover */
 .ascii-icon-wrapper {
   padding: 8px;

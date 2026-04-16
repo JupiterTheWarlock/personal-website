@@ -24,7 +24,7 @@ export default function Footer() {
               </a>
               <span className="text-[var(--border-light)]">|</span>
               <a
-                href="mailto:contact@jthewl.cc"
+                href="mailto:jupiterthewarlock679@gmail.com"
                 className="text-[var(--text-primary)] hover:text-[var(--accent-bright)]"
               >
                 Email

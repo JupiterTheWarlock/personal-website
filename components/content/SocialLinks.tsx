@@ -31,6 +31,27 @@ const socialLinks = [
     width: 32,
     height: 32,
   },
+  {
+    name: 'Bilibili',
+    url: 'https://space.bilibili.com/76543088',
+    icon: 'https://api.iconify.design/simple-icons/bilibili.svg?color=%2300A1D6',
+    width: 32,
+    height: 32,
+  },
+  {
+    name: 'Zhihu',
+    url: 'https://www.zhihu.com/people/ying-ying-ying-ying-ying-hua-san-27',
+    icon: 'https://api.iconify.design/simple-icons/zhihu.svg?color=%230066FF',
+    width: 32,
+    height: 32,
+  },
+  {
+    name: 'Gcores',
+    url: 'https://www.gcores.com/users/744716',
+    icon: 'https://www.gcores.com/favicon.ico',
+    width: 32,
+    height: 32,
+  },
 ];
 
 export default function SocialLinks() {

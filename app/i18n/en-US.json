@@ -2,20 +2,35 @@
   "nav": {
     "home": "Home",
     "blog": "Blog",
+    "stars": "Stars",
     "tools": "Tools",
     "projects": "Projects",
     "about": "About"
   },
   "hero": {
     "title": "Jupiter The Warlock",
-    "subtitle": "Indie Game Developer",
-    "tagline": "Welcome to my personal space",
+    "subtitle": "AI Native Indie Game Developer",
+    "tagline": "AI handles the low-dimensional, humans focus on the high-dimensional",
     "scroll_hint": "▼ scroll"
   },
   "about": {
     "title": "About",
     "description": "I am an indie game developer focused on creating unique gaming experiences. My work spans game design, development, and creative programming. I love blending technology with art to create memorable works.",
     "skills_title": "Skills"
+  },
+  "sites": {
+    "title": "My Sites",
+    "visit": "Visit",
+    "blog": {
+      "name": "Blog",
+      "url": "https://blog.jthewl.cc",
+      "description": "Personal blog powered by NotionNext — tech, gamedev, and thoughts"
+    },
+    "stars": {
+      "name": "Stars",
+      "url": "https://stars.jthewl.cc",
+      "description": "GitHub Stars board — curated open source projects and tools"
+    }
   },
   "portfolio": {
     "title": "Portfolio",
@@ -39,7 +54,8 @@
     "scroll": "Scroll Down"
   },
   "links": {
-    "blog_url": "https://blog.jthewl.cc"
+    "blog_url": "https://blog.jthewl.cc",
+    "stars_url": "https://stars.jthewl.cc"
   },
   "skills": [
     "Game Development",

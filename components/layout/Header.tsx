@@ -7,6 +7,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 const navItems = [
   { key: 'home', label: { 'zh-CN': '首页', 'en-US': 'Home' } },
   { key: 'blog', label: { 'zh-CN': '博客', 'en-US': 'Blog' }, external: 'https://blog.jthewl.cc' },
+  { key: 'stars', label: { 'zh-CN': 'Stars', 'en-US': 'Stars' }, external: 'https://stars.jthewl.cc' },
   { key: 'tools', label: { 'zh-CN': '工具集', 'en-US': 'Tools' }, disabled: true },
   { key: 'projects', label: { 'zh-CN': '项目', 'en-US': 'Projects' }, disabled: true },
 ];

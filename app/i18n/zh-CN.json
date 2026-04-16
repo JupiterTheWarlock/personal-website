@@ -2,20 +2,35 @@
   "nav": {
     "home": "首页",
     "blog": "博客",
+    "stars": "Stars",
     "tools": "工具集",
     "projects": "项目",
     "about": "关于"
   },
   "hero": {
     "title": "术士木星",
-    "subtitle": "独立游戏开发者",
-    "tagline": "欢迎来到我的个人空间",
+    "subtitle": "AI Native的独立游戏开发者",
+    "tagline": "AI接管低维，人类专注高维",
     "scroll_hint": "▼ 滚动"
   },
   "about": {
     "title": "关于",
     "description": "我是一个独立游戏开发者，专注于创造独特的游戏体验。我的工作涵盖了游戏设计、开发和创意编程。我热爱将技术与艺术融合，创造令人难忘的作品。",
     "skills_title": "技能"
+  },
+  "sites": {
+    "title": "我的站点",
+    "visit": "访问",
+    "blog": {
+      "name": "Blog",
+      "url": "https://blog.jthewl.cc",
+      "description": "基于 NotionNext 的个人博客，记录技术、游戏开发与思考"
+    },
+    "stars": {
+      "name": "Stars",
+      "url": "https://stars.jthewl.cc",
+      "description": "GitHub Stars 看板，收藏的开源项目与工具集"
+    }
   },
   "portfolio": {
     "title": "作品集",
@@ -39,7 +54,8 @@
     "scroll": "向下滚动"
   },
   "links": {
-    "blog_url": "https://blog.jthewl.cc"
+    "blog_url": "https://blog.jthewl.cc",
+    "stars_url": "https://stars.jthewl.cc"
   },
   "skills": [
     "游戏开发",
