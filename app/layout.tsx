@@ -4,6 +4,9 @@ import '@/app/globals.css';
 export const metadata: Metadata = {
   title: 'Jupiter The Warlock - Personal Website',
   description: 'Indie Game Developer - Personal Website with ASCII art terminal style',
+  icons: {
+    icon: 'https://cfr2cdn.jthewl.cc/头像.jpg',
+  },
 };
 
 export default function RootLayout({
