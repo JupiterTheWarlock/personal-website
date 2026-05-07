@@ -317,6 +317,43 @@ a:hover {
   transition: all 0.3s ease;
 }
 
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-deep);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 16px var(--accent-glow);
+  text-decoration: none;
+}
+
+.project-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-name {
+  padding: 0.75rem;
+  color: var(--text-bright);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
 /* ASCII icon hover */
 .ascii-icon-wrapper {
   padding: 8px;

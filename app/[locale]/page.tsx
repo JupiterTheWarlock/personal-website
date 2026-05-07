@@ -24,6 +24,7 @@ const translations = {
     contact: '联系我',
     social_title: '社交媒体',
     sites_title: '我的站点',
+    projects_title: '项目',
     visit: '访问',
     sites: [
       {
@@ -45,6 +46,38 @@ const translations = {
   ╚═══╝`,
       },
     ],
+    projects: [
+      {
+        name: '矩形之巢+分形之巢+矩形之墓+茧+天空匣',
+        url: 'https://jupiter-the-warlock.itch.io/nest-of-rectangles',
+        cover: 'https://img.itch.zone/aW1nLzIwNDMwNDkyLnBuZw==/original/jy5pVb.png',
+      },
+      {
+        name: '野食狂想曲 YeShit Rhapsody',
+        url: 'https://jupiter-the-warlock.itch.io/yeshit-rhapsody',
+        cover: 'https://img.itch.zone/aW1nLzE3MTI2NTQ1LnBuZw==/original/fos7%2FL.png',
+      },
+      {
+        name: '咸鱼不想死 The Reluctant Salted Fish',
+        url: 'https://jupiter-the-warlock.itch.io/the-reluctant-salted-fish',
+        cover: 'https://img.itch.zone/aW1nLzE0OTM5ODkyLnBuZw==/original/kNZy2N.png',
+      },
+      {
+        name: 'Single-vector Strike',
+        url: 'https://jupiter-the-warlock.itch.io/single-vector-strike',
+        cover: 'https://img.itch.zone/aW1nLzIwMTgxMjU3LnBuZw==/original/pMZsrs.png',
+      },
+      {
+        name: '石油之王',
+        url: 'https://jupiter-the-warlock.itch.io/kingofpetroleum',
+        cover: 'https://img.itch.zone/aW1nLzE5NDYxMjMwLnBuZw==/original/BdTW1G.png',
+      },
+      {
+        name: '诸天尽头的垃圾场',
+        url: 'https://jupiter-the-warlock.itch.io/thejunkyardoftheend',
+        cover: 'https://img.itch.zone/aW1nLzE5MjYzNDU2LnBuZw==/original/xxFdsS.png',
+      }
+    ],
   },
   'en-US': {
     title: 'Jupiter The Warlock',
@@ -57,6 +90,7 @@ I love blending technology with art to create memorable works.`,
     contact: 'Contact Me',
     social_title: 'Social Media',
     sites_title: 'My Sites',
+    projects_title: 'Projects',
     visit: 'Visit',
     sites: [
       {
@@ -76,6 +110,38 @@ I love blending technology with art to create memorable works.`,
 `  ╔═══╗
   ║ ★ ║  STARS
   ╚═══╝`,
+      },
+    ],
+    projects: [
+      {
+        name: 'Nest of Rectangles',
+        url: 'https://jupiter-the-warlock.itch.io/nest-of-rectangles',
+        cover: 'https://img.itch.zone/aW1nLzIwNDMwNDkyLnBuZw==/original/jy5pVb.png',
+      },
+      {
+        name: 'Single-vector Strike',
+        url: 'https://jupiter-the-warlock.itch.io/single-vector-strike',
+        cover: 'https://img.itch.zone/aW1nLzIwMTgxMjU3LnBuZw==/original/pMZsrs.png',
+      },
+      {
+        name: 'King of Petroleum',
+        url: 'https://jupiter-the-warlock.itch.io/kingofpetroleum',
+        cover: 'https://img.itch.zone/aW1nLzE5NDYxMjMwLnBuZw==/original/BdTW1G.png',
+      },
+      {
+        name: 'The Junkyard of the End',
+        url: 'https://jupiter-the-warlock.itch.io/thejunkyardoftheend',
+        cover: 'https://img.itch.zone/aW1nLzE5MjYzNDU2LnBuZw==/original/xxFdsS.png',
+      },
+      {
+        name: 'YeShit Rhapsody',
+        url: 'https://jupiter-the-warlock.itch.io/yeshit-rhapsody',
+        cover: 'https://img.itch.zone/aW1nLzE3MTI2NTQ1LnBuZw==/original/fos7%2FL.png',
+      },
+      {
+        name: 'The Reluctant Salted Fish',
+        url: 'https://jupiter-the-warlock.itch.io/the-reluctant-salted-fish',
+        cover: 'https://img.itch.zone/aW1nLzE0OTM5ODkyLnBuZw==/original/kNZy2N.png',
       },
     ],
   },

@@ -10,6 +10,12 @@ interface SiteLink {
   ascii: string;
 }
 
+interface ProjectLink {
+  name: string;
+  url: string;
+  cover: string;
+}
+
 interface HomeContentProps {
   translations: {
     title: string;
@@ -20,7 +26,9 @@ interface HomeContentProps {
     contact: string;
     social_title: string;
     sites_title: string;
+    projects_title: string;
     sites: SiteLink[];
+    projects: ProjectLink[];
     visit: string;
   };
 }
@@ -104,6 +112,33 @@ export default function HomeContent({ translations: t }: HomeContentProps) {
       </section>
 
       {/* Layer 4: Contact — full viewport */}
+      <section className="content-section">
+        <div className="w-full max-w-3xl">
+          <SectionCard title={`// ${t.projects_title.toUpperCase()}`}>
+            <div className="projects-grid">
+              {t.projects.map((project) => (
+                <a
+                  key={project.name}
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-card"
+                >
+                  <img
+                    src={project.cover}
+                    alt={project.name}
+                    className="project-cover"
+                    loading="lazy"
+                  />
+                  <div className="project-name">{project.name}</div>
+                </a>
+              ))}
+            </div>
+          </SectionCard>
+        </div>
+      </section>
+
+      {/* Layer 5: Contact — full viewport */}
       <section className="content-section">
         <div className="w-full max-w-3xl">
           <SectionCard title={`// ${t.social_title.toUpperCase()}`}>

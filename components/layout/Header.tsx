@@ -9,7 +9,7 @@ const navItems = [
   { key: 'blog', label: { 'zh-CN': '博客', 'en-US': 'Blog' }, external: 'https://blog.jthewl.cc' },
   { key: 'stars', label: { 'zh-CN': 'Stars', 'en-US': 'Stars' }, external: 'https://stars.jthewl.cc' },
   { key: 'tools', label: { 'zh-CN': '工具集', 'en-US': 'Tools' }, disabled: true },
-  { key: 'projects', label: { 'zh-CN': '项目', 'en-US': 'Projects' }, disabled: true },
+  { key: 'projects', label: { 'zh-CN': '项目', 'en-US': 'Projects' }, external: 'https://jupiter-the-warlock.itch.io/' },
 ];
 
 export default function Header() {
@@ -19,9 +19,7 @@ export default function Header() {
 
   const handleNav = (item: typeof navItems[0]) => {
     if (item.disabled) return;
-    if (item.external) {
-      window.open(item.external, '_blank', 'noopener,noreferrer');
-    } else if (item.key === 'home') {
+    if (item.key === 'home') {
       router.push(`/${locale}`);
     }
   };
@@ -41,6 +39,20 @@ export default function Header() {
           {navItems.map((item) => {
             const label = item.label[locale as keyof typeof item.label] || item.label['zh-CN'];
             const isDisabled = item.disabled;
+
+            if (item.external && !isDisabled) {
+              return (
+                <a
+                  key={item.key}
+                  href={item.external}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ascii-button text-sm"
+                >
+                  {label}
+                </a>
+              );
+            }
 
             return (
               <button
