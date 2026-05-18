@@ -25,17 +25,14 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[var(--bg-card)] border-b border-[var(--border)]">
-      <div className="container mx-auto px-4 py-3">
-        <div className="ascii-border p-2 mb-2 bg-[var(--bg-deep)]/60">
-          <pre className="text-[var(--accent)] glow-text text-sm">
-{`╔════════════════════════════════════════════════════╗
-║  JUPITER THE WARLOCK - INDIE GAME DEVELOPER        ║
-╚════════════════════════════════════════════════════╝`}
-          </pre>
+    <header className="site-header fixed top-0 left-0 right-0 z-50">
+      <div className="site-header-inner">
+        <div className="site-mark">
+          <span className="site-mark-dot" aria-hidden="true" />
+          <span>JTW</span>
         </div>
 
-        <nav className="flex flex-wrap gap-2 justify-center">
+        <nav className="site-nav">
           {navItems.map((item) => {
             const label = item.label[locale as keyof typeof item.label] || item.label['zh-CN'];
             const isDisabled = item.disabled;
@@ -47,7 +44,7 @@ export default function Header() {
                   href={item.external}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ascii-button text-sm"
+                  className="nav-link"
                 >
                   {label}
                 </a>
@@ -59,9 +56,9 @@ export default function Header() {
                 key={item.key}
                 onClick={() => handleNav(item)}
                 disabled={isDisabled}
-                className={`ascii-button text-sm ${
+                className={`nav-link ${
                   isDisabled
-                    ? 'opacity-50 cursor-not-allowed border-[var(--border)] text-[var(--text-secondary)]'
+                    ? 'opacity-50 cursor-not-allowed text-[var(--text-secondary)]'
                     : ''
                 }`}
               >
@@ -71,12 +68,7 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="flex justify-between items-center mt-2">
-          <div className="text-xs text-[var(--accent)]">
-            <span className="blink-cursor">_</span>
-          </div>
-          <LanguageSwitcher />
-        </div>
+        <LanguageSwitcher />
       </div>
     </header>
   );

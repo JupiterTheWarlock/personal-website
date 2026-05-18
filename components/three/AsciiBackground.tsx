@@ -22,7 +22,7 @@ export default function AsciiBackground({ className = '', asciiEnabled = true }:
         zIndex: 0,
         pointerEvents: 'none',
       }}
-      className={className}
+      className={`ascii-background ${className}`}
     >
       <Canvas
         camera={{ position: [0, 0, 10], fov: 50 }}

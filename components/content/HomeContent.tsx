@@ -34,20 +34,64 @@ interface HomeContentProps {
 }
 
 export default function HomeContent({ translations: t }: HomeContentProps) {
+  const featuredProjects = t.projects.slice(0, 3);
+
   return (
     <div className="home-content">
       {/* Layer 1: Hero — full viewport */}
-      <section className="content-section">
+      <section className="content-section hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">
-            {t.title}
-          </h1>
-          <h2 className="hero-subtitle">
-            {t.subtitle}
-          </h2>
-          <p className="hero-intro">
-            {t.intro}
-          </p>
+          <div className="hero-copy">
+            <p className="hero-kicker">JUPITER_THE_WARLOCK / PERSONAL HUB</p>
+            <h1 className="hero-title">
+              {t.title}
+            </h1>
+            <h2 className="hero-subtitle">
+              {t.subtitle}
+            </h2>
+            <p className="hero-intro">
+              {t.intro}
+            </p>
+            <div className="hero-actions">
+              <a className="hero-action primary" href="https://jupiter-the-warlock.itch.io/" target="_blank" rel="noopener noreferrer">
+                PLAY_GAMES
+              </a>
+              <a className="hero-action" href="https://blog.jthewl.cc" target="_blank" rel="noopener noreferrer">
+                READ_BLOG
+              </a>
+            </div>
+          </div>
+
+          <aside className="hero-console" aria-label="featured projects">
+            <div className="hero-console-header">
+              <span>live_index</span>
+              <span>public</span>
+            </div>
+            <div className="hero-console-body">
+              <div className="hero-status-row">
+                <span>focus</span>
+                <strong>{t.subtitle}</strong>
+              </div>
+              <div className="hero-status-row">
+                <span>motto</span>
+                <strong>{t.intro}</strong>
+              </div>
+              <div className="hero-project-list">
+                {featuredProjects.map((project, index) => (
+                  <a
+                    key={project.name}
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hero-project-link"
+                  >
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    <strong>{project.name}</strong>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </aside>
         </div>
         <div className="scroll-indicator" aria-hidden="true">
           <span className="blink-cursor">▼</span>
