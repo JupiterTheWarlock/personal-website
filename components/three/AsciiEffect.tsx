@@ -168,7 +168,7 @@ export default function AsciiEffect({
   // Destructure config to primitive values for stable useMemo dependencies
   const charSize = config.charSize ?? 8.0;
   const invert = config.invert ?? false;
-  const colorArr = config.color ?? [1, 1, 1];
+  const [colorR = 1, colorG = 1, colorB = 1] = config.color ?? [];
 
   const resolution = useMemo(
     () => new Vector2(size.width, size.height),
@@ -176,8 +176,8 @@ export default function AsciiEffect({
   );
 
   const color = useMemo(
-    () => new Vector3(colorArr[0], colorArr[1], colorArr[2]),
-    [colorArr[0], colorArr[1], colorArr[2]],
+    () => new Vector3(colorR, colorG, colorB),
+    [colorR, colorG, colorB],
   );
 
   return (

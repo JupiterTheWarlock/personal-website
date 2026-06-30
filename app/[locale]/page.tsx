@@ -30,7 +30,7 @@ const translations = {
       {
         name: 'Blog',
         url: 'https://blog.jthewl.cc',
-        description: '基于 NotionNext 的个人博客，记录技术、游戏开发与思考',
+        description: '基于 Quartz + Obsidian 的个人博客，记录技术、游戏开发与思考',
         ascii:
 `  ╔═══╗
   ║ ▶ ║  BLOG
@@ -96,7 +96,7 @@ I love blending technology with art to create memorable works.`,
       {
         name: 'Blog',
         url: 'https://blog.jthewl.cc',
-        description: 'Personal blog powered by NotionNext — tech, gamedev, and thoughts',
+        description: 'Personal blog powered by Quartz + Obsidian — tech, gamedev, and thoughts',
         ascii:
 `  ╔═══╗
   ║ ▶ ║  BLOG
@@ -155,5 +155,5 @@ export default async function HomePage({
   const { locale } = await params;
   const t = translations[locale as keyof typeof translations] || translations['zh-CN'];
 
-  return <HomeContent translations={t} />;
+  return <HomeContent locale={locale} translations={t} />;
 }

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { locales, localeNames, localeFlags, type Locale } from '@/app/i18n/config';
+import { locales, localeNames, type Locale } from '@/app/i18n/config';
 
 export default function LanguageSwitcher() {
   const router = useRouter();
@@ -15,19 +15,20 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex gap-2 items-center">
+    <div className="language-switcher" aria-label="Language switcher">
       {locales.map((locale) => (
         <button
           key={locale}
           onClick={() => handleLocaleChange(locale)}
-          className={`ascii-button text-sm ${
+          className={`language-button ${
             locale === currentLocale
-              ? 'bg-[var(--accent)] text-[var(--bg-deep)] border-[var(--accent)]'
+              ? 'is-active'
               : ''
           }`}
           title={localeNames[locale]}
+          aria-pressed={locale === currentLocale}
         >
-          {localeFlags[locale]} {localeNames[locale]}
+          {locale === 'zh-CN' ? '中' : 'EN'}
         </button>
       ))}
     </div>
