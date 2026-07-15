@@ -48,6 +48,11 @@ export default function HomeContent({ locale, translations: t }: HomeContentProp
   const featuredCopy = isZh
     ? [
         {
+          status: 'released · 2026 CGJ',
+          roles: ['concept', 'AI workflow', 'game jam'],
+          summary: '通过锚定陨石给飞船旋转充能加速的街机游戏，也是我和鸵鸟居士近期完成的 CiGA Game Jam 作品。',
+        },
+        {
           status: 'released',
           roles: ['design', 'code', 'weird systems'],
           summary: '一组关于几何、嵌套空间和失控增殖的小游戏。它们不追求体面，更像把一个怪规则推到尽头。',
@@ -57,13 +62,13 @@ export default function HomeContent({ locale, translations: t }: HomeContentProp
           roles: ['design', 'prototype', 'jam energy'],
           summary: '一个带脏脏幽默感的轻量实验，保留了 Game Jam 的粗粝和直接。',
         },
-        {
-          status: 'released',
-          roles: ['design', 'narrative', 'game feel'],
-          summary: '咸鱼当然不想死。它把荒诞角色、低成本表达和可玩的求生小循环放在一起。',
-        },
       ]
     : [
+        {
+          status: 'released · 2026 CGJ',
+          roles: ['concept', 'AI workflow', 'game jam'],
+          summary: 'An arcade game about anchoring asteroids to spin-charge a ship, recently made with Ostrich Hermit for CiGA Game Jam.',
+        },
         {
           status: 'released',
           roles: ['design', 'code', 'weird systems'],
@@ -73,11 +78,6 @@ export default function HomeContent({ locale, translations: t }: HomeContentProp
           status: 'released',
           roles: ['design', 'prototype', 'jam energy'],
           summary: 'A rough little experiment with dirty humor and the direct texture of a game jam build.',
-        },
-        {
-          status: 'released',
-          roles: ['design', 'narrative', 'game feel'],
-          summary: 'A salted fish would rather stay alive. This one mixes absurd characters with a tiny survival loop.',
         },
       ];
 

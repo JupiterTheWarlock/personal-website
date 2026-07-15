@@ -48,6 +48,11 @@ const translations = {
     ],
     projects: [
       {
+        name: '你抛不过我你信吗？',
+        url: 'https://ostrich-hermit.itch.io/2026cgj',
+        cover: 'https://img.itch.zone/aW1nLzI4MzI5NDU0LnBuZw==/original/8R98el.png',
+      },
+      {
         name: '矩形之巢+分形之巢+矩形之墓+茧+天空匣',
         url: 'https://jupiter-the-warlock.itch.io/nest-of-rectangles',
         cover: 'https://img.itch.zone/aW1nLzIwNDMwNDkyLnBuZw==/original/jy5pVb.png',
@@ -113,6 +118,11 @@ I love blending technology with art to create memorable works.`,
       },
     ],
     projects: [
+      {
+        name: '你抛不过我你信吗？',
+        url: 'https://ostrich-hermit.itch.io/2026cgj',
+        cover: 'https://img.itch.zone/aW1nLzI4MzI5NDU0LnBuZw==/original/8R98el.png',
+      },
       {
         name: 'Nest of Rectangles',
         url: 'https://jupiter-the-warlock.itch.io/nest-of-rectangles',
