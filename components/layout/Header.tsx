@@ -6,9 +6,8 @@ import LanguageSwitcher from './LanguageSwitcher';
 
 const navItems = [
   { key: 'work', label: { 'zh-CN': '作品', 'en-US': 'Work' } },
-  { key: 'method', label: { 'zh-CN': '方法', 'en-US': 'Method' } },
+  { key: 'exploring', label: { 'zh-CN': '探索', 'en-US': 'Exploring' } },
   { key: 'notes', label: { 'zh-CN': '笔记', 'en-US': 'Notes' } },
-  { key: 'workshop', label: { 'zh-CN': '工作台', 'en-US': 'Workshop' } },
   { key: 'contact', label: { 'zh-CN': '联系', 'en-US': 'Contact' } },
 ];
 
