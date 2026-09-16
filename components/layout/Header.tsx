@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const navItems = [
-  { key: 'work', label: { 'zh-CN': '作品', 'en-US': 'Work' } },
+  { key: 'games', label: { 'zh-CN': '游戏', 'en-US': 'Games' } },
   { key: 'exploring', label: { 'zh-CN': '探索', 'en-US': 'Exploring' } },
   { key: 'notes', label: { 'zh-CN': '笔记', 'en-US': 'Notes' } },
   { key: 'contact', label: { 'zh-CN': '联系', 'en-US': 'Contact' } },
@@ -18,11 +18,6 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="site-header-inner">
-        <a className="site-mark" href={`/${locale}/#home`} aria-label="Jupiter The Warlock home">
-          <span className="site-mark-dot" aria-hidden="true" />
-          <span>JTW</span>
-        </a>
-
         <nav className="site-nav" aria-label="Primary navigation">
           {navItems.map((item) => {
             const label = item.label[locale as keyof typeof item.label] || item.label['zh-CN'];

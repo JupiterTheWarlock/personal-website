@@ -1,0 +1,51 @@
+html,
+body,
+#junkyardSystemStage {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #020307;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#junkyardSystemStage {
+  position: relative;
+  isolation: isolate;
+}
+
+.junkyard-system-canvas,
+.spatial-map-labels {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.junkyard-system-canvas {
+  display: block;
+  touch-action: none;
+  user-select: none;
+}
+
+.spatial-map-labels,
+.spatial-map-tooltip {
+  display: none !important;
+}
+
+.home-jellyfish-raster-source {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  width: 240px;
+  height: 350px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.home-jellyfish-raster-source .void-jellyfish-state {
+  display: none;
+}

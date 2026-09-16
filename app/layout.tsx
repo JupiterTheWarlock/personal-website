@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import JunkyardLegacyBackground from '@/components/content/JunkyardLegacyBackground';
 import '@/app/globals.css';
 
 export const metadata: Metadata = {
@@ -16,9 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
-      <body className="min-h-screen bg-[var(--bg-deep)] text-[var(--text-primary)]">
+      <body className="min-h-screen text-[var(--text-primary)]">
+        <JunkyardLegacyBackground />
         {children}
-        <div className="crt-overlay fixed inset-0 pointer-events-none z-50" />
       </body>
     </html>
   );

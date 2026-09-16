@@ -1,0 +1,87 @@
+.void-jellyfish-host {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  isolation: isolate;
+}
+
+.void-jellyfish-shell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: #fff5dc;
+}
+
+.void-jellyfish-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .42));
+}
+
+.vj-body {
+  fill: #120d2b;
+  stroke: #65499e;
+  stroke-width: 8;
+  stroke-linejoin: round;
+}
+
+.vj-eye-white { fill: #fff5dc; }
+.vj-iris { fill: #f0a90e; }
+.vj-pupil { fill: #100b25; }
+.vj-spiral {
+  fill: none;
+  stroke: #f0a90e;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+}
+.vj-lid { fill: #120d2b; }
+.vj-eye-line { fill: none; stroke: rgba(101, 73, 158, .72); stroke-width: 2; }
+.vj-closed-eye { fill: none; stroke: #8d71c5; stroke-width: 5; stroke-linecap: round; opacity: 0; }
+.vj-tentacle-outline, .vj-tentacle { fill: none; stroke-linecap: round; }
+.vj-tentacle-outline { stroke: #65499e; stroke-width: 10; }
+.vj-tentacle { stroke: #120d2b; stroke-width: 5; }
+
+.void-jellyfish-state {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 2px 5px;
+  border: 1px solid rgba(101, 73, 158, .5);
+  color: #b6a6d4;
+  background: rgba(9, 7, 22, .76);
+  font: 8px/1.2 var(--mono, monospace);
+  letter-spacing: .08em;
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+}
+
+.void-jellyfish-host:hover .void-jellyfish-state,
+.void-jellyfish-host:focus-within .void-jellyfish-state {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.void-jellyfish-shell[data-connection="offline"] .void-jellyfish-svg {
+  opacity: .7;
+  filter: grayscale(.18) drop-shadow(0 10px 18px rgba(0, 0, 0, .42));
+}
+
+.void-jellyfish-shell[data-state="success"] .vj-eye-line {
+  stroke: rgba(240, 169, 14, .72);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .void-jellyfish-state { transition: none; }
+}

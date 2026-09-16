@@ -1,0 +1,3122 @@
+{
+  "schemaVersion": "junkyard.visual-runtime-config.v1",
+  "worldPortrait": {
+    "catalogVersion": "junkyard-world-portrait-catalog.v2",
+    "heroCompositionBlueprints": {
+      "embraced-core": {
+        "name": "环抱核心",
+        "desc": "主体居中，结构附件形成包围或承托关系，小锚点沿同一中心轴呼应。",
+        "orientation": [
+          0.3,
+          -0.36,
+          -0.06
+        ],
+        "mainModels": [
+          "city-mesa",
+          "mountain-realm",
+          "world-tree-domain",
+          "stellar-cradle",
+          "rail-citadel"
+        ],
+        "attachmentModels": [
+          "orbital-rail",
+          "bridge-spine",
+          "containment-shell",
+          "crown-arches"
+        ],
+        "anchorModels": [
+          "crystal-beacons",
+          "satellite-pair",
+          "tower-sentinels",
+          "debris-gates",
+          "sun-moons"
+        ],
+        "displayDesc": "主体居中，附件形成包围或承托，锚点沿同一中心轴呼应。",
+        "mainTransform": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            0.98,
+            0.98,
+            0.9
+          ]
+        },
+        "attachmentTransform": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            0.96,
+            0.9
+          ]
+        },
+        "anchorSlots": [
+          [
+            -1.04,
+            0.12,
+            0.08
+          ],
+          [
+            1.04,
+            -0.1,
+            -0.08
+          ],
+          [
+            0,
+            0.92,
+            -0.12
+          ]
+        ]
+      },
+      "axial-procession": {
+        "name": "轴向行列",
+        "desc": "主体沿一条清晰方向展开，附件承担桥接或脊柱关系，小锚点落在端点与节拍位置。",
+        "orientation": [
+          0.24,
+          -0.42,
+          -0.08
+        ],
+        "mainModels": [
+          "city-mesa",
+          "mountain-realm",
+          "floating-archipelago",
+          "stellar-cradle",
+          "rail-citadel"
+        ],
+        "attachmentModels": [
+          "orbital-rail",
+          "bridge-spine",
+          "containment-shell",
+          "root-network"
+        ],
+        "anchorModels": [
+          "crystal-beacons",
+          "satellite-pair",
+          "tower-sentinels",
+          "debris-gates",
+          "sun-moons"
+        ],
+        "displayDesc": "主体沿单一方向展开，附件负责桥接，锚点落在端点与节拍位置。",
+        "mainTransform": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.08,
+            0.9,
+            0.86
+          ]
+        },
+        "attachmentTransform": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.08,
+            0.86,
+            0.86
+          ]
+        },
+        "anchorSlots": [
+          [
+            -1.16,
+            -0.02,
+            0.08
+          ],
+          [
+            1.16,
+            0.02,
+            -0.08
+          ],
+          [
+            0.34,
+            0.76,
+            -0.12
+          ]
+        ]
+      },
+      "crowned-archipelago": {
+        "name": "冠冕群域",
+        "desc": "主体形成向上的层级，附件提供冠顶、边界或托举关系，小锚点维持左右秩序。",
+        "orientation": [
+          0.34,
+          -0.34,
+          -0.1
+        ],
+        "mainModels": [
+          "city-mesa",
+          "mountain-realm",
+          "floating-archipelago",
+          "world-tree-domain",
+          "stellar-cradle"
+        ],
+        "attachmentModels": [
+          "bridge-spine",
+          "containment-shell",
+          "crown-arches",
+          "root-network"
+        ],
+        "anchorModels": [
+          "crystal-beacons",
+          "satellite-pair",
+          "tower-sentinels",
+          "debris-gates",
+          "sun-moons"
+        ],
+        "displayDesc": "主体向上分层，附件建立冠顶或托举，锚点维持左右秩序。",
+        "mainTransform": {
+          "position": [
+            0,
+            -0.12,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            0.96,
+            0.98,
+            0.88
+          ]
+        },
+        "attachmentTransform": {
+          "position": [
+            0,
+            0.06,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            0.98,
+            0.88
+          ]
+        },
+        "anchorSlots": [
+          [
+            -0.84,
+            0.66,
+            0.08
+          ],
+          [
+            0.84,
+            0.66,
+            -0.08
+          ],
+          [
+            0,
+            1.02,
+            -0.14
+          ]
+        ]
+      }
+    },
+    "mainModels": {
+      "city-mesa": {
+        "name": "城市台地",
+        "desc": "低矮城区与少量高点共同形成一块可读的城市世界轮廓。",
+        "variants": [
+          "broad-district",
+          "high-citadel"
+        ],
+        "variantLabels": {
+          "broad-district": "平展城区",
+          "high-citadel": "高城核心"
+        }
+      },
+      "mountain-realm": {
+        "name": "山脉疆域",
+        "desc": "连续地台、山脊与盆地构成非球形的山河世界。",
+        "variants": [
+          "ridge-basin",
+          "split-peaks"
+        ],
+        "variantLabels": {
+          "ridge-basin": "山脊盆地",
+          "split-peaks": "分列群峰"
+        }
+      },
+      "floating-archipelago": {
+        "name": "浮空群岛",
+        "desc": "少量具备层级和方向关系的浮岛共同承担整体轮廓。",
+        "variants": [
+          "ascending-isles",
+          "twin-shelves"
+        ],
+        "variantLabels": {
+          "ascending-isles": "递升群岛",
+          "twin-shelves": "双层岛台"
+        }
+      },
+      "world-tree-domain": {
+        "name": "巨树世界",
+        "desc": "树干、主枝与冠层作为同一巨型结构支撑世界。",
+        "variants": [
+          "wide-canopy",
+          "spire-canopy"
+        ],
+        "variantLabels": {
+          "wide-canopy": "横展冠层",
+          "spire-canopy": "高耸冠层"
+        }
+      },
+      "stellar-cradle": {
+        "name": "恒星摇篮",
+        "desc": "核心与厚重承托结构共同形成一个小型自洽宇宙，而不是单颗行星。",
+        "variants": [
+          "open-cradle",
+          "split-vault"
+        ],
+        "variantLabels": {
+          "open-cradle": "开放摇篮",
+          "split-vault": "分裂穹库"
+        }
+      },
+      "rail-citadel": {
+        "name": "轨道城塞",
+        "desc": "连续舱段与城塞节点组成沿单一方向延伸的封闭世界。",
+        "variants": [
+          "continuous-line",
+          "segmented-line"
+        ],
+        "variantLabels": {
+          "continuous-line": "连续舱城",
+          "segmented-line": "分节舱城"
+        }
+      }
+    },
+    "attachmentModels": {
+      "orbital-rail": {
+        "name": "环行轨道",
+        "desc": "一至两条厚轨道围绕主体建立清晰闭环。",
+        "variants": [
+          "single-loop",
+          "crossing-loop"
+        ],
+        "variantLabels": {
+          "single-loop": "单一闭环",
+          "crossing-loop": "交叉双环"
+        }
+      },
+      "bridge-spine": {
+        "name": "桥梁脊柱",
+        "desc": "一条粗壮桥梁穿接主体的关键部分。",
+        "variants": [
+          "low-span",
+          "raised-span"
+        ],
+        "variantLabels": {
+          "low-span": "低位横梁",
+          "raised-span": "抬升桥架"
+        }
+      },
+      "containment-shell": {
+        "name": "边界壳层",
+        "desc": "少量厚壳片明确包围或保护主体。",
+        "variants": [
+          "split-shell",
+          "high-shell"
+        ],
+        "variantLabels": {
+          "split-shell": "分片边壳",
+          "high-shell": "高位边壳"
+        }
+      },
+      "crown-arches": {
+        "name": "冠顶拱架",
+        "desc": "粗拱在主体上方形成统一冠顶关系。",
+        "variants": [
+          "triple-crown",
+          "gate-crown"
+        ],
+        "variantLabels": {
+          "triple-crown": "三重冠拱",
+          "gate-crown": "门式冠拱"
+        }
+      },
+      "root-network": {
+        "name": "根系托架",
+        "desc": "少量相交根梁从下方托举并连接主体。",
+        "variants": [
+          "three-roots",
+          "forked-roots"
+        ],
+        "variantLabels": {
+          "three-roots": "三向根梁",
+          "forked-roots": "分叉根梁"
+        }
+      }
+    },
+    "anchorModels": {
+      "crystal-beacons": {
+        "name": "晶体信标",
+        "desc": "有限晶体沿蓝图槽位形成方向提示。",
+        "variants": [
+          "paired-prisms",
+          "fractured-triad"
+        ],
+        "variantLabels": {
+          "paired-prisms": "成对晶柱",
+          "fractured-triad": "裂晶三点"
+        }
+      },
+      "satellite-pair": {
+        "name": "伴行节点",
+        "desc": "两至三个伴行体以对称或尾随关系标记主体。",
+        "variants": [
+          "balanced-pair",
+          "trailing-triad"
+        ],
+        "variantLabels": {
+          "balanced-pair": "平衡双点",
+          "trailing-triad": "尾随三点"
+        }
+      },
+      "tower-sentinels": {
+        "name": "塔楼哨点",
+        "desc": "少量塔楼在边界或高点维持构图秩序。",
+        "variants": [
+          "twin-towers",
+          "watch-triad"
+        ],
+        "variantLabels": {
+          "twin-towers": "双塔",
+          "watch-triad": "三处哨塔"
+        }
+      },
+      "debris-gates": {
+        "name": "残骸门标",
+        "desc": "成对残骸像门柱一样限定世界的入口或断口。",
+        "variants": [
+          "paired-gates",
+          "broken-gates"
+        ],
+        "variantLabels": {
+          "paired-gates": "成对门标",
+          "broken-gates": "断裂门标"
+        }
+      },
+      "sun-moons": {
+        "name": "日月伴体",
+        "desc": "有限天体作为世界内部尺度锚点，不把主体重新变成行星。",
+        "variants": [
+          "binary-lights",
+          "high-moon"
+        ],
+        "variantLabels": {
+          "binary-lights": "双伴体",
+          "high-moon": "高位单体"
+        }
+      }
+    },
+    "motionPresets": {
+      "co-rotation": {
+        "name": "同向轮转",
+        "periodSeconds": 48.0,
+        "channels": [
+          {
+            "target": "attachment",
+            "mode": "spin",
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "cyclesPerPeriod": 1,
+            "phaseOffset": 0.0
+          },
+          {
+            "target": "anchors",
+            "mode": "orbit",
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "cyclesPerPeriod": 2,
+            "phaseOffset": 1.5708
+          },
+          {
+            "target": "anchor-items",
+            "mode": "spin",
+            "axis": [
+              0.18,
+              1.0,
+              -0.08
+            ],
+            "cyclesPerPeriod": 4,
+            "phaseOffset": 0.0
+          }
+        ]
+      },
+      "counter-rotation": {
+        "name": "反向轮转",
+        "periodSeconds": 48.0,
+        "channels": [
+          {
+            "target": "attachment",
+            "mode": "spin",
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "cyclesPerPeriod": 1,
+            "phaseOffset": 0.0
+          },
+          {
+            "target": "anchors",
+            "mode": "orbit",
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "cyclesPerPeriod": -2,
+            "phaseOffset": 0.7854
+          },
+          {
+            "target": "anchor-items",
+            "mode": "spin",
+            "axis": [
+              0.12,
+              1.0,
+              0.12
+            ],
+            "cyclesPerPeriod": 4,
+            "phaseOffset": 1.5708
+          }
+        ]
+      },
+      "nested-orbit": {
+        "name": "嵌套环行",
+        "periodSeconds": 56.0,
+        "channels": [
+          {
+            "target": "attachment",
+            "mode": "spin",
+            "axis": [
+              0.24,
+              1.0,
+              0.12
+            ],
+            "cyclesPerPeriod": 2,
+            "phaseOffset": 0.7854
+          },
+          {
+            "target": "anchors",
+            "mode": "orbit",
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "cyclesPerPeriod": 1,
+            "phaseOffset": 0.0
+          },
+          {
+            "target": "anchor-items",
+            "mode": "spin",
+            "axis": [
+              0.34,
+              1.0,
+              -0.18
+            ],
+            "cyclesPerPeriod": -4,
+            "phaseOffset": 1.5708
+          }
+        ]
+      },
+      "cross-axis-turn": {
+        "name": "交轴轮转",
+        "periodSeconds": 52.0,
+        "channels": [
+          {
+            "target": "attachment",
+            "mode": "spin",
+            "axis": [
+              0.86,
+              0.22,
+              0.46
+            ],
+            "cyclesPerPeriod": 2,
+            "phaseOffset": 0.0
+          },
+          {
+            "target": "anchors",
+            "mode": "orbit",
+            "axis": [
+              0.12,
+              1.0,
+              0.18
+            ],
+            "cyclesPerPeriod": -1,
+            "phaseOffset": 0.7854
+          },
+          {
+            "target": "anchor-items",
+            "mode": "spin",
+            "axis": [
+              0.48,
+              0.22,
+              1.0
+            ],
+            "cyclesPerPeriod": 4,
+            "phaseOffset": 0.0
+          }
+        ]
+      }
+    },
+    "anchorVariantRepeat": {
+      "paired-prisms": 2,
+      "fractured-triad": 3,
+      "balanced-pair": 2,
+      "trailing-triad": 3,
+      "twin-towers": 2,
+      "watch-triad": 3,
+      "paired-gates": 2,
+      "broken-gates": 3,
+      "binary-lights": 2,
+      "high-moon": 1
+    },
+    "presets": [
+      {
+        "presetId": "quarantine-city",
+        "blueprintId": "embraced-core",
+        "main": {
+          "modelId": "city-mesa",
+          "variantId": "broad-district"
+        },
+        "attachment": {
+          "modelId": "containment-shell",
+          "variantId": "split-shell"
+        },
+        "anchors": {
+          "modelId": "crystal-beacons",
+          "variantId": "fractured-triad",
+          "repeat": 3
+        },
+        "motionPresetId": "nested-orbit"
+      },
+      {
+        "presetId": "research-vault",
+        "blueprintId": "embraced-core",
+        "main": {
+          "modelId": "stellar-cradle",
+          "variantId": "split-vault"
+        },
+        "attachment": {
+          "modelId": "bridge-spine",
+          "variantId": "low-span"
+        },
+        "anchors": {
+          "modelId": "crystal-beacons",
+          "variantId": "paired-prisms",
+          "repeat": 2
+        },
+        "motionPresetId": "cross-axis-turn"
+      },
+      {
+        "presetId": "orbital-sanctuary",
+        "blueprintId": "embraced-core",
+        "main": {
+          "modelId": "world-tree-domain",
+          "variantId": "wide-canopy"
+        },
+        "attachment": {
+          "modelId": "orbital-rail",
+          "variantId": "single-loop"
+        },
+        "anchors": {
+          "modelId": "sun-moons",
+          "variantId": "binary-lights",
+          "repeat": 2
+        },
+        "motionPresetId": "co-rotation"
+      },
+      {
+        "presetId": "sealed-engine-line",
+        "blueprintId": "axial-procession",
+        "main": {
+          "modelId": "rail-citadel",
+          "variantId": "segmented-line"
+        },
+        "attachment": {
+          "modelId": "orbital-rail",
+          "variantId": "single-loop"
+        },
+        "anchors": {
+          "modelId": "satellite-pair",
+          "variantId": "trailing-triad",
+          "repeat": 3
+        },
+        "motionPresetId": "counter-rotation"
+      },
+      {
+        "presetId": "fractured-ridge",
+        "blueprintId": "axial-procession",
+        "main": {
+          "modelId": "mountain-realm",
+          "variantId": "split-peaks"
+        },
+        "attachment": {
+          "modelId": "bridge-spine",
+          "variantId": "low-span"
+        },
+        "anchors": {
+          "modelId": "crystal-beacons",
+          "variantId": "paired-prisms",
+          "repeat": 2
+        },
+        "motionPresetId": "co-rotation"
+      },
+      {
+        "presetId": "ascending-islands",
+        "blueprintId": "axial-procession",
+        "main": {
+          "modelId": "floating-archipelago",
+          "variantId": "ascending-isles"
+        },
+        "attachment": {
+          "modelId": "root-network",
+          "variantId": "forked-roots"
+        },
+        "anchors": {
+          "modelId": "debris-gates",
+          "variantId": "broken-gates",
+          "repeat": 3
+        },
+        "motionPresetId": "nested-orbit"
+      },
+      {
+        "presetId": "city-corridor",
+        "blueprintId": "axial-procession",
+        "main": {
+          "modelId": "city-mesa",
+          "variantId": "broad-district"
+        },
+        "attachment": {
+          "modelId": "containment-shell",
+          "variantId": "high-shell"
+        },
+        "anchors": {
+          "modelId": "tower-sentinels",
+          "variantId": "twin-towers",
+          "repeat": 2
+        },
+        "motionPresetId": "cross-axis-turn"
+      },
+      {
+        "presetId": "tree-crown",
+        "blueprintId": "crowned-archipelago",
+        "main": {
+          "modelId": "world-tree-domain",
+          "variantId": "spire-canopy"
+        },
+        "attachment": {
+          "modelId": "root-network",
+          "variantId": "three-roots"
+        },
+        "anchors": {
+          "modelId": "sun-moons",
+          "variantId": "high-moon",
+          "repeat": 1
+        },
+        "motionPresetId": "co-rotation"
+      },
+      {
+        "presetId": "sky-island-crown",
+        "blueprintId": "crowned-archipelago",
+        "main": {
+          "modelId": "floating-archipelago",
+          "variantId": "twin-shelves"
+        },
+        "attachment": {
+          "modelId": "crown-arches",
+          "variantId": "triple-crown"
+        },
+        "anchors": {
+          "modelId": "debris-gates",
+          "variantId": "paired-gates",
+          "repeat": 2
+        },
+        "motionPresetId": "nested-orbit"
+      },
+      {
+        "presetId": "imperial-citadel",
+        "blueprintId": "crowned-archipelago",
+        "main": {
+          "modelId": "city-mesa",
+          "variantId": "high-citadel"
+        },
+        "attachment": {
+          "modelId": "crown-arches",
+          "variantId": "gate-crown"
+        },
+        "anchors": {
+          "modelId": "tower-sentinels",
+          "variantId": "watch-triad",
+          "repeat": 3
+        },
+        "motionPresetId": "co-rotation"
+      },
+      {
+        "presetId": "stellar-throne",
+        "blueprintId": "crowned-archipelago",
+        "main": {
+          "modelId": "stellar-cradle",
+          "variantId": "open-cradle"
+        },
+        "attachment": {
+          "modelId": "containment-shell",
+          "variantId": "high-shell"
+        },
+        "anchors": {
+          "modelId": "sun-moons",
+          "variantId": "binary-lights",
+          "repeat": 2
+        },
+        "motionPresetId": "cross-axis-turn"
+      },
+      {
+        "presetId": "mountain-temples",
+        "blueprintId": "crowned-archipelago",
+        "main": {
+          "modelId": "mountain-realm",
+          "variantId": "ridge-basin"
+        },
+        "attachment": {
+          "modelId": "bridge-spine",
+          "variantId": "raised-span"
+        },
+        "anchors": {
+          "modelId": "tower-sentinels",
+          "variantId": "watch-triad",
+          "repeat": 3
+        },
+        "motionPresetId": "counter-rotation"
+      }
+    ],
+    "legacyMainSelections": {
+      "terraced-disc": [
+        "axial-procession",
+        "city-mesa",
+        "broad-district"
+      ],
+      "split-core": [
+        "embraced-core",
+        "stellar-cradle",
+        "split-vault"
+      ],
+      "spire-field": [
+        "crowned-archipelago",
+        "city-mesa",
+        "high-citadel"
+      ],
+      "nested-system": [
+        "axial-procession",
+        "rail-citadel",
+        "segmented-line"
+      ],
+      "folded-plane": [
+        "axial-procession",
+        "mountain-realm",
+        "ridge-basin"
+      ]
+    },
+    "legacyAttachmentSelections": {
+      "ring-band": [
+        "orbital-rail",
+        "single-loop"
+      ],
+      "halo-arches": [
+        "containment-shell",
+        "split-shell"
+      ],
+      "shard-cluster": [
+        "root-network",
+        "forked-roots"
+      ],
+      "orbiting-nodes": [
+        "crown-arches",
+        "gate-crown"
+      ]
+    },
+    "legacyAnchorSelections": {
+      "ring-band": [
+        "satellite-pair",
+        "balanced-pair"
+      ],
+      "halo-arches": [
+        "tower-sentinels",
+        "twin-towers"
+      ],
+      "shard-cluster": [
+        "crystal-beacons",
+        "fractured-triad"
+      ],
+      "orbiting-nodes": [
+        "satellite-pair",
+        "trailing-triad"
+      ]
+    }
+  },
+  "worldAppearance": {
+    "materialTextureOptions": [
+      {
+        "id": "plain-matte",
+        "name": "纯色哑光",
+        "desc": "保持原始五档分面，不叠加纹理。",
+        "developerDefaultsKey": "plainMatte"
+      },
+      {
+        "id": "contour-stone",
+        "name": "高对比层岩",
+        "desc": "用深色断层与暖亮岩脊切开大面，形成远距离可见的粗层理。",
+        "developerDefaultsKey": "contourStone"
+      },
+      {
+        "id": "brushed-alloy",
+        "name": "锻铁鳞甲",
+        "desc": "用焦黑铁片与赤铜鳞块交错咬合，替代原来的冰蓝宽带。",
+        "developerDefaultsKey": "brushedAlloy"
+      },
+      {
+        "id": "flowing-veins",
+        "name": "亮脉流纹",
+        "desc": "让近黑基底被粗亮脉络贯穿，强化感染、生长或能量循环。",
+        "developerDefaultsKey": "flowingVeins"
+      },
+      {
+        "id": "crystal-facets",
+        "name": "棱镜晶面",
+        "desc": "用紫黑暗面、冰蓝亮面和硬边晶棱制造强烈切面反差。",
+        "developerDefaultsKey": "crystalFacets"
+      },
+      {
+        "id": "ceramic-rings",
+        "name": "重环陶瓷",
+        "desc": "用近黑与暖白宽环交替包裹结构，形成醒目的靶环节奏。",
+        "developerDefaultsKey": "ceramicRings"
+      },
+      {
+        "id": "molten-cracks",
+        "name": "熔裂黑曜",
+        "desc": "用黑曜石大面承托赤橙裂隙，形成灼热但不自发光的断裂网络。",
+        "developerDefaultsKey": "moltenCracks"
+      },
+      {
+        "id": "eclipse-cells",
+        "name": "蚀月晶格",
+        "desc": "用紫黑胞格与金色粗边拼成密集、硬朗的结构网。",
+        "developerDefaultsKey": "eclipseCells"
+      },
+      {
+        "id": "storm-vortex",
+        "name": "风暴银涡",
+        "desc": "让石墨暗面与银白旋臂绕轴卷动，形成大尺度涡旋。",
+        "developerDefaultsKey": "stormVortex"
+      },
+      {
+        "id": "sunburst-shell",
+        "name": "日轮放射",
+        "desc": "用酒红与象牙白放射扇面切开外壳，形成强烈徽记感。",
+        "developerDefaultsKey": "sunburstShell"
+      }
+    ],
+    "materialTextureParameterPolicy": {
+      "schemaVersion": "junkyard-world-material-parameters.v1",
+      "patternScale": {
+        "minimum": 0.5,
+        "maximum": 2.0,
+        "step": 0.01,
+        "default": 1.0
+      },
+      "effectStrength": {
+        "minimum": 0.0,
+        "maximum": 1.5,
+        "step": 0.01,
+        "default": 1.0
+      },
+      "motionSpeed": {
+        "minimum": 0.0,
+        "maximum": 2.0,
+        "step": 0.01,
+        "default": 1.0
+      },
+      "phaseOffset": {
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "step": 0.01,
+        "default": 0.0
+      }
+    },
+    "skyStyles": [
+      {
+        "id": "classic",
+        "name": "经典球面星空（默认）",
+        "palette": [
+          "#0a1317",
+          "#0b191d",
+          "#404f54",
+          "#ffffff"
+        ]
+      },
+      {
+        "id": "generated-equirect",
+        "name": "生成式 2:1 环状星空（备选）",
+        "palette": [
+          "#030711",
+          "#11203d",
+          "#4d315e",
+          "#28909a"
+        ]
+      }
+    ],
+    "skyStarControlPolicy": {
+      "schemaVersion": "junkyard-sky-star-controls.v1",
+      "starDensity": {
+        "minimum": 0.0,
+        "maximum": 2.0,
+        "step": 0.01,
+        "default": 1.0
+      },
+      "starSize": {
+        "minimum": 0.01,
+        "maximum": 0.4,
+        "step": 0.005,
+        "default": 0.2
+      },
+      "starOpacity": {
+        "minimum": 0.1,
+        "maximum": 2.0,
+        "step": 0.01,
+        "default": 1.0
+      },
+      "specialStarDensity": {
+        "minimum": 0.0,
+        "maximum": 2.0,
+        "step": 0.01,
+        "default": 1.0
+      }
+    },
+    "defaultCardPostFx": {
+      "schemaVersion": "junkyard-card-postfx.v1",
+      "enabled": true,
+      "scanline": 0.22,
+      "glow": 0.12,
+      "phosphor": 0.08,
+      "vignette": 0.36,
+      "grain": 0.025,
+      "pixelate": false,
+      "pixelSize": 4,
+      "curvature": 0,
+      "chromaticAberration": 0,
+      "jitter": true,
+      "jitterIntensity": 0.18,
+      "glitch": true,
+      "glitchIntensity": 0.14
+    },
+    "defaultHomePostFx": {
+      "schemaVersion": "junkyard-home-postfx.v1",
+      "enabled": true,
+      "processSky": true,
+      "scanline": 0.18,
+      "glow": 0.05,
+      "phosphor": 0.05,
+      "vignette": 0.24,
+      "grain": 0.01,
+      "pixelate": false,
+      "pixelSize": 4,
+      "curvature": 0.05,
+      "chromaticAberration": 0.02,
+      "jitter": false,
+      "jitterIntensity": 0.14,
+      "glitch": false,
+      "glitchIntensity": 0.1
+    },
+    "defaultWorldProfile": {
+      "schemaVersion": "junkyard-world-appearance-profile.v1",
+      "appearanceSource": "random",
+      "generator": {
+        "family": "JunkyardFacetedWorlds",
+        "version": "faceted-structure-portrait.v5",
+        "sourceCommit": "project-owned"
+      },
+      "recipe": {
+        "schemaVersion": "junkyard-world-structure-recipe.v5",
+        "seed": 1701,
+        "factors": {
+          "main": {
+            "id": "legacy-world-structure",
+            "name": "世界结构",
+            "desc": "共享有界生成合同。"
+          },
+          "auxiliaries": [
+            {
+              "id": "legacy-world-attachment",
+              "name": "结构边界",
+              "desc": "统一兼容构图的结构边界。"
+            },
+            {
+              "id": "legacy-world-anchors",
+              "name": "方向锚点",
+              "desc": "统一兼容构图的有限锚点。"
+            }
+          ],
+          "motion": {
+            "id": "legacy-world-motion",
+            "name": "缓慢运转",
+            "desc": "共享低频固有运动。"
+          },
+          "identityColor": "#5b9d8b"
+        },
+        "identityColor": "#5b9d8b",
+        "materialTexture": {
+          "schemaVersion": "junkyard-world-material-texture.v2",
+          "presetId": "plain-matte",
+          "parameters": {
+            "patternScale": 1.0,
+            "effectStrength": 1.0,
+            "motionSpeed": 1.0,
+            "phaseOffset": 0.0
+          }
+        },
+        "composition": {
+          "catalogVersion": "junkyard-world-portrait-catalog.v2",
+          "blueprintId": "embraced-core",
+          "main": {
+            "modelId": "city-mesa",
+            "variantId": "broad-district"
+          },
+          "attachment": {
+            "modelId": "containment-shell",
+            "variantId": "split-shell",
+            "factorId": "legacy-world-attachment"
+          },
+          "anchors": {
+            "modelId": "crystal-beacons",
+            "variantId": "fractured-triad",
+            "factorId": "legacy-world-anchors",
+            "repeat": 3
+          },
+          "motionPresetId": "nested-orbit"
+        },
+        "orientation": [
+          0.3,
+          -0.36,
+          -0.06
+        ],
+        "motion": {
+          "schemaVersion": "junkyard-world-self-motion.v1",
+          "presetId": "nested-orbit",
+          "periodSeconds": 56.0,
+          "phase": 3.1416,
+          "channels": [
+            {
+              "target": "attachment",
+              "mode": "spin",
+              "axis": [
+                0.24,
+                1.0,
+                0.12
+              ],
+              "cyclesPerPeriod": 2,
+              "phaseOffset": 0.7854
+            },
+            {
+              "target": "anchors",
+              "mode": "orbit",
+              "axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "cyclesPerPeriod": 1,
+              "phaseOffset": 0.0
+            },
+            {
+              "target": "anchor-items",
+              "mode": "spin",
+              "axis": [
+                0.34,
+                1.0,
+                -0.18
+              ],
+              "cyclesPerPeriod": -4,
+              "phaseOffset": 1.5708
+            }
+          ]
+        }
+      },
+      "cardPostFXOverride": null
+    },
+    "compatibilityPortraitFactors": {
+      "main": {
+        "id": "legacy-world-structure",
+        "name": "世界结构",
+        "desc": "旧存档没有人工冻结的肖像因素，暂用统一兼容构图重建。"
+      },
+      "auxiliaries": [
+        {
+          "id": "legacy-world-attachment",
+          "name": "结构边界",
+          "desc": "统一兼容构图使用一层明确边界承托主体。"
+        },
+        {
+          "id": "legacy-world-anchors",
+          "name": "方向锚点",
+          "desc": "统一兼容构图使用有限锚点维持整体秩序。"
+        }
+      ],
+      "motion": {
+        "id": "legacy-world-motion",
+        "name": "缓慢运转",
+        "desc": "旧存档使用共享的低频固有运动。"
+      },
+      "identityColor": "#5b9d8b"
+    },
+    "defaultSkyProfile": {
+      "schemaVersion": "junkyard-sky-appearance-profile.v1",
+      "appearanceSource": "random",
+      "generator": {
+        "family": "PixelSpace",
+        "version": "pixelspace-webui-port.v1",
+        "sourceCommit": "4d86a586"
+      },
+      "projection": "equirect-v1",
+      "recipe": {
+        "schemaVersion": "pixelspace-sky-recipe.v1",
+        "style": "classic",
+        "seed": 3107,
+        "sourceRenderMode": "smooth",
+        "palette": [
+          "#0a1317",
+          "#0b191d",
+          "#404f54",
+          "#ffffff"
+        ],
+        "sourceResolution": [
+          2048,
+          1024
+        ],
+        "starDensity": 1.0,
+        "starSize": 0.2,
+        "starOpacity": 1.0,
+        "nebulaIntensity": 0.58,
+        "dustIntensity": 0.34,
+        "specialStarDensity": 1.0,
+        "noiseScale": 2.6,
+        "octaves": 4,
+        "poleFade": 0.18,
+        "contrast": 1.08
+      }
+    },
+    "legacyDefaultSkyPalette": [
+      "#020307",
+      "#10162b",
+      "#0d0617",
+      "#c7d8ff"
+    ],
+    "legacyDefaultSkyStarValues": {
+      "starDensity": 0.54,
+      "starSize": 0.065,
+      "starOpacity": 0.8,
+      "specialStarDensity": 0.0
+    },
+    "legacyWorldMotionTypeMap": {
+      "steady-turn": "co-rotation",
+      "counter-orbit": "counter-rotation",
+      "drift": "nested-orbit",
+      "pulse": "cross-axis-turn"
+    },
+    "legacyMainStructureModules": [
+      "terraced-disc",
+      "split-core",
+      "spire-field",
+      "nested-system",
+      "folded-plane"
+    ],
+    "legacyAuxiliaryStructureModules": [
+      "ring-band",
+      "shard-cluster",
+      "orbiting-nodes",
+      "halo-arches"
+    ]
+  },
+  "assetIcons": {
+    "presentationVersion": "junkyard-asset-icon-presentation.v2",
+    "groups": [
+      {
+        "id": "general",
+        "name": "通用",
+        "desc": "普通资产、工具、材料与暂未细分的对象。"
+      },
+      {
+        "id": "weapon",
+        "name": "武器",
+        "desc": "冷兵器、枪械与战斗装备。"
+      },
+      {
+        "id": "creature",
+        "name": "生物",
+        "desc": "人物、动物与具有独立生命的对象。"
+      },
+      {
+        "id": "record",
+        "name": "记录",
+        "desc": "书籍、卷轴、文档与数据载体。"
+      },
+      {
+        "id": "signal",
+        "name": "信号",
+        "desc": "网络、连接、终端与通信能力。"
+      },
+      {
+        "id": "mark",
+        "name": "标志",
+        "desc": "效果、状态、风险与超常现象。"
+      }
+    ],
+    "catalog": [
+      {
+        "id": "general-cube",
+        "name": "通用立方",
+        "desc": "适合未细分的实体、材料或模块。",
+        "tags": [
+          "通用",
+          "实体",
+          "模块",
+          "材料",
+          "cube"
+        ],
+        "group": "general",
+        "source": null,
+        "rendererId": "general-cube"
+      },
+      {
+        "id": "general-package",
+        "name": "包裹",
+        "desc": "适合货物、补给、箱体或成套物资。",
+        "tags": [
+          "包裹",
+          "货物",
+          "补给",
+          "箱子",
+          "package"
+        ],
+        "group": "general",
+        "source": null,
+        "rendererId": "general-package"
+      },
+      {
+        "id": "general-tool",
+        "name": "工具",
+        "desc": "适合维修工具、机械器具或工程能力。",
+        "tags": [
+          "工具",
+          "维修",
+          "机械",
+          "扳手",
+          "tool"
+        ],
+        "group": "general",
+        "source": null,
+        "rendererId": "general-tool"
+      },
+      {
+        "id": "general-key",
+        "name": "钥匙",
+        "desc": "适合权限、钥匙、通行证或解锁媒介。",
+        "tags": [
+          "钥匙",
+          "权限",
+          "解锁",
+          "通行",
+          "key"
+        ],
+        "group": "general",
+        "source": null,
+        "rendererId": "general-key"
+      },
+      {
+        "id": "general-vial",
+        "name": "样本瓶",
+        "desc": "适合药剂、病毒样本、液体或实验材料。",
+        "tags": [
+          "样本",
+          "药剂",
+          "液体",
+          "实验",
+          "vial"
+        ],
+        "group": "general",
+        "source": null,
+        "rendererId": "general-vial"
+      },
+      {
+        "id": "general-gear",
+        "name": "齿轮",
+        "desc": "适合机械组件、自动化系统或制造能力。",
+        "tags": [
+          "齿轮",
+          "机械",
+          "制造",
+          "系统",
+          "gear"
+        ],
+        "group": "general",
+        "source": null,
+        "rendererId": "general-gear"
+      },
+      {
+        "id": "general-compass",
+        "name": "罗盘",
+        "desc": "适合导航、定位、追踪或方向性能力。",
+        "tags": [
+          "罗盘",
+          "导航",
+          "定位",
+          "追踪",
+          "compass"
+        ],
+        "group": "general",
+        "source": null,
+        "rendererId": "general-compass"
+      },
+      {
+        "id": "general-gem",
+        "name": "晶体",
+        "desc": "适合晶石、能源核心、珍贵材料或结晶物。",
+        "tags": [
+          "晶体",
+          "宝石",
+          "核心",
+          "能源",
+          "gem"
+        ],
+        "group": "general",
+        "source": null,
+        "rendererId": "general-gem"
+      },
+      {
+        "id": "general-hammer",
+        "name": "锤",
+        "desc": "适合锻造、建筑、维修、重型工具或钝击装备。",
+        "tags": [
+          "锤",
+          "锻造",
+          "建筑",
+          "维修",
+          "hammer"
+        ],
+        "group": "general",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "hammer",
+          "upstreamVersion": "1.47"
+        },
+        "rendererId": "general-hammer"
+      },
+      {
+        "id": "general-magnet",
+        "name": "磁铁",
+        "desc": "适合磁场、吸附、牵引、金属回收或极性能力。",
+        "tags": [
+          "磁铁",
+          "磁场",
+          "吸附",
+          "牵引",
+          "magnet"
+        ],
+        "group": "general",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "magnet",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "general-magnet"
+      },
+      {
+        "id": "general-telescope",
+        "name": "望远镜",
+        "desc": "适合远距观测、天文设备、侦察器材或视野能力。",
+        "tags": [
+          "望远镜",
+          "观测",
+          "天文",
+          "侦察",
+          "telescope"
+        ],
+        "group": "general",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "telescope",
+          "upstreamVersion": "1.59"
+        },
+        "rendererId": "general-telescope"
+      },
+      {
+        "id": "weapon-sword",
+        "name": "剑",
+        "desc": "直刃双锋剑，适合剑类武器与近战技能。",
+        "tags": [
+          "剑",
+          "直剑",
+          "双锋",
+          "近战",
+          "sword"
+        ],
+        "group": "weapon",
+        "source": null,
+        "rendererId": "weapon-sword"
+      },
+      {
+        "id": "weapon-saber",
+        "name": "刀",
+        "desc": "单刃弯刀，适合刀类武器与迅捷斩击。",
+        "tags": [
+          "刀",
+          "弯刀",
+          "单刃",
+          "斩击",
+          "saber"
+        ],
+        "group": "weapon",
+        "source": null,
+        "rendererId": "weapon-saber"
+      },
+      {
+        "id": "weapon-spear",
+        "name": "枪／矛",
+        "desc": "枪头与长柄一线相接，适合刺击、守距与阵列武器。",
+        "tags": [
+          "枪",
+          "矛",
+          "长枪",
+          "长矛",
+          "刺击",
+          "长柄",
+          "spear"
+        ],
+        "group": "weapon",
+        "source": null,
+        "rendererId": "weapon-spear"
+      },
+      {
+        "id": "weapon-staff",
+        "name": "棍",
+        "desc": "平直长棍，适合棍术、法杖或非致命武器。",
+        "tags": [
+          "棍",
+          "长棍",
+          "法杖",
+          "棍术",
+          "staff"
+        ],
+        "group": "weapon",
+        "source": null,
+        "rendererId": "weapon-staff"
+      },
+      {
+        "id": "weapon-club",
+        "name": "棒槌",
+        "desc": "重头短棒，适合钝击、震荡或粗制武器。",
+        "tags": [
+          "棒",
+          "棒槌",
+          "钝器",
+          "震荡",
+          "club"
+        ],
+        "group": "weapon",
+        "source": null,
+        "rendererId": "weapon-club"
+      },
+      {
+        "id": "weapon-axe",
+        "name": "斧",
+        "desc": "单手战斧，适合劈砍、破拆与伐木工具。",
+        "tags": [
+          "斧",
+          "战斧",
+          "劈砍",
+          "破拆",
+          "axe"
+        ],
+        "group": "weapon",
+        "source": null,
+        "rendererId": "weapon-axe"
+      },
+      {
+        "id": "weapon-pistol",
+        "name": "手枪",
+        "desc": "紧凑枪械，适合手枪、射击技能或警用装备。",
+        "tags": [
+          "手枪",
+          "枪械",
+          "射击",
+          "警用",
+          "pistol"
+        ],
+        "group": "weapon",
+        "source": null,
+        "rendererId": "weapon-pistol"
+      },
+      {
+        "id": "weapon-rifle",
+        "name": "步枪",
+        "desc": "长枪械，适合步枪、远程火力或军用装备。",
+        "tags": [
+          "步枪",
+          "枪械",
+          "远程",
+          "军用",
+          "rifle"
+        ],
+        "group": "weapon",
+        "source": null,
+        "rendererId": "weapon-rifle"
+      },
+      {
+        "id": "creature-person",
+        "name": "人物",
+        "desc": "适合人类、类人生物或具有身份的角色。",
+        "tags": [
+          "人",
+          "人物",
+          "角色",
+          "类人",
+          "person"
+        ],
+        "group": "creature",
+        "source": null,
+        "rendererId": "creature-person"
+      },
+      {
+        "id": "creature-cat",
+        "name": "猫",
+        "desc": "适合家猫、猫科动物或猫形生物。",
+        "tags": [
+          "猫",
+          "猫科",
+          "宠物",
+          "动物",
+          "cat"
+        ],
+        "group": "creature",
+        "source": null,
+        "rendererId": "creature-cat"
+      },
+      {
+        "id": "creature-dog",
+        "name": "狗",
+        "desc": "适合家犬、犬科动物或忠诚伙伴。",
+        "tags": [
+          "狗",
+          "犬",
+          "宠物",
+          "伙伴",
+          "dog"
+        ],
+        "group": "creature",
+        "source": null,
+        "rendererId": "creature-dog"
+      },
+      {
+        "id": "creature-fish",
+        "name": "鱼",
+        "desc": "适合鱼类、水生动物或游动生物。",
+        "tags": [
+          "鱼",
+          "水生",
+          "动物",
+          "游动",
+          "fish"
+        ],
+        "group": "creature",
+        "source": null,
+        "rendererId": "creature-fish"
+      },
+      {
+        "id": "creature-bird",
+        "name": "鸟",
+        "desc": "适合鸟类、飞行生物或信使动物。",
+        "tags": [
+          "鸟",
+          "飞行",
+          "羽翼",
+          "信使",
+          "bird"
+        ],
+        "group": "creature",
+        "source": null,
+        "rendererId": "creature-bird"
+      },
+      {
+        "id": "creature-jellyfish",
+        "name": "虚空水母",
+        "desc": "复用垃圾场助手的瘦长水滴独眼形象，适合虚空水母与虚空侧生命。",
+        "tags": [
+          "水母",
+          "虚空",
+          "漂浮",
+          "生物",
+          "jellyfish"
+        ],
+        "group": "creature",
+        "source": null,
+        "rendererId": "creature-jellyfish"
+      },
+      {
+        "id": "creature-horse",
+        "name": "马",
+        "desc": "适合马匹、坐骑、驮兽或具名的马类生物。",
+        "tags": [
+          "马",
+          "马匹",
+          "坐骑",
+          "驮兽",
+          "horse"
+        ],
+        "group": "creature",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "horse",
+          "upstreamVersion": "2.31"
+        },
+        "rendererId": "creature-horse"
+      },
+      {
+        "id": "creature-bug",
+        "name": "昆虫",
+        "desc": "适合昆虫、寄生体、微型生物或程序故障拟物。",
+        "tags": [
+          "昆虫",
+          "虫",
+          "寄生",
+          "故障",
+          "bug"
+        ],
+        "group": "creature",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "bug",
+          "upstreamVersion": "1.1"
+        },
+        "rendererId": "creature-bug"
+      },
+      {
+        "id": "record-scroll",
+        "name": "卷轴",
+        "desc": "适合古籍、法诀、档案卷或长卷记录。",
+        "tags": [
+          "卷轴",
+          "古籍",
+          "法诀",
+          "档案",
+          "scroll"
+        ],
+        "group": "record",
+        "source": null,
+        "rendererId": "record-scroll"
+      },
+      {
+        "id": "record-book",
+        "name": "书籍",
+        "desc": "适合闭合书籍、手册、典籍或知识资产。",
+        "tags": [
+          "书",
+          "书籍",
+          "手册",
+          "典籍",
+          "book"
+        ],
+        "group": "record",
+        "source": null,
+        "rendererId": "record-book"
+      },
+      {
+        "id": "record-open-book",
+        "name": "展开书",
+        "desc": "适合正在阅读的知识、教程或双页档案。",
+        "tags": [
+          "展开书",
+          "阅读",
+          "知识",
+          "教程",
+          "open book"
+        ],
+        "group": "record",
+        "source": null,
+        "rendererId": "record-open-book"
+      },
+      {
+        "id": "record-document",
+        "name": "文档",
+        "desc": "适合报告、图纸、协议或单页资料。",
+        "tags": [
+          "文档",
+          "报告",
+          "图纸",
+          "协议",
+          "document"
+        ],
+        "group": "record",
+        "source": null,
+        "rendererId": "record-document"
+      },
+      {
+        "id": "record-usb",
+        "name": "U盘",
+        "desc": "适合便携数据、存储设备或离线密钥。",
+        "tags": [
+          "U盘",
+          "存储",
+          "数据",
+          "便携",
+          "usb"
+        ],
+        "group": "record",
+        "source": null,
+        "rendererId": "record-usb"
+      },
+      {
+        "id": "record-chip",
+        "name": "芯片",
+        "desc": "适合处理器、数据芯片、智能模块或电子核心。",
+        "tags": [
+          "芯片",
+          "处理器",
+          "电子",
+          "模块",
+          "chip"
+        ],
+        "group": "record",
+        "source": null,
+        "rendererId": "record-chip"
+      },
+      {
+        "id": "record-database",
+        "name": "数据库",
+        "desc": "适合数据库、档案库、结构化记录或持久存储。",
+        "tags": [
+          "数据库",
+          "数据",
+          "档案",
+          "存储",
+          "database"
+        ],
+        "group": "record",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "database",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "record-database"
+      },
+      {
+        "id": "signal-network",
+        "name": "网络",
+        "desc": "适合节点网络、分布式系统或群体连接。",
+        "tags": [
+          "网络",
+          "节点",
+          "连接",
+          "分布式",
+          "network"
+        ],
+        "group": "signal",
+        "source": null,
+        "rendererId": "signal-network"
+      },
+      {
+        "id": "signal-wifi",
+        "name": "无线信号",
+        "desc": "适合无线连接、广播、遥控或感应范围。",
+        "tags": [
+          "无线",
+          "WiFi",
+          "广播",
+          "遥控",
+          "wifi"
+        ],
+        "group": "signal",
+        "source": null,
+        "rendererId": "signal-wifi"
+      },
+      {
+        "id": "signal-globe",
+        "name": "全球网络",
+        "desc": "适合跨地域通信、世界网络或公共信息。",
+        "tags": [
+          "全球",
+          "世界",
+          "网络",
+          "通信",
+          "globe"
+        ],
+        "group": "signal",
+        "source": null,
+        "rendererId": "signal-globe"
+      },
+      {
+        "id": "signal-link",
+        "name": "链接",
+        "desc": "适合绑定、接口、引用或两端连接。",
+        "tags": [
+          "链接",
+          "绑定",
+          "接口",
+          "引用",
+          "link"
+        ],
+        "group": "signal",
+        "source": null,
+        "rendererId": "signal-link"
+      },
+      {
+        "id": "signal-terminal",
+        "name": "终端",
+        "desc": "适合命令行、控制台、黑客工具或计算接口。",
+        "tags": [
+          "终端",
+          "命令行",
+          "控制台",
+          "黑客",
+          "terminal"
+        ],
+        "group": "signal",
+        "source": null,
+        "rendererId": "signal-terminal"
+      },
+      {
+        "id": "signal-satellite",
+        "name": "卫星",
+        "desc": "适合卫星通信、轨道设备、空间定位或远距中继。",
+        "tags": [
+          "卫星",
+          "通信",
+          "轨道",
+          "中继",
+          "satellite"
+        ],
+        "group": "signal",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "satellite",
+          "upstreamVersion": "1.39"
+        },
+        "rendererId": "signal-satellite"
+      },
+      {
+        "id": "signal-radar",
+        "name": "雷达",
+        "desc": "适合扫描、定位、探测范围或持续监视系统。",
+        "tags": [
+          "雷达",
+          "扫描",
+          "定位",
+          "探测",
+          "radar"
+        ],
+        "group": "signal",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "radar",
+          "upstreamVersion": "1.54"
+        },
+        "rendererId": "signal-radar"
+      },
+      {
+        "id": "mark-sparkle",
+        "name": "闪光",
+        "desc": "适合增益、稀有效果、净化或显著亮点。",
+        "tags": [
+          "闪光",
+          "星芒",
+          "增益",
+          "稀有",
+          "sparkle"
+        ],
+        "group": "mark",
+        "source": null,
+        "rendererId": "mark-sparkle"
+      },
+      {
+        "id": "mark-flash",
+        "name": "爆闪",
+        "desc": "适合爆发、冲击、警示闪光或瞬时效果。",
+        "tags": [
+          "爆闪",
+          "爆发",
+          "冲击",
+          "瞬时",
+          "flash"
+        ],
+        "group": "mark",
+        "source": null,
+        "rendererId": "mark-flash"
+      },
+      {
+        "id": "mark-portal",
+        "name": "传送门",
+        "desc": "适合空间通道、召唤口、跨界入口或跃迁。",
+        "tags": [
+          "传送门",
+          "通道",
+          "跨界",
+          "跃迁",
+          "portal"
+        ],
+        "group": "mark",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "door-enter",
+          "upstreamVersion": "1.43"
+        },
+        "rendererId": "mark-portal"
+      },
+      {
+        "id": "mark-eye",
+        "name": "眼睛",
+        "desc": "适合观测、侦察、感知、监视或揭示。",
+        "tags": [
+          "眼",
+          "观测",
+          "侦察",
+          "感知",
+          "eye"
+        ],
+        "group": "mark",
+        "source": null,
+        "rendererId": "mark-eye"
+      },
+      {
+        "id": "mark-lightning",
+        "name": "闪电",
+        "desc": "适合电力、速度、突发能量或攻击效果。",
+        "tags": [
+          "闪电",
+          "电力",
+          "速度",
+          "能量",
+          "lightning"
+        ],
+        "group": "mark",
+        "source": null,
+        "rendererId": "mark-lightning"
+      },
+      {
+        "id": "mark-shield",
+        "name": "护盾",
+        "desc": "适合防御、保护、免疫、权限或安全状态。",
+        "tags": [
+          "护盾",
+          "防御",
+          "保护",
+          "安全",
+          "shield"
+        ],
+        "group": "mark",
+        "source": null,
+        "rendererId": "mark-shield"
+      },
+      {
+        "id": "mark-warning",
+        "name": "警告",
+        "desc": "适合危险、异常、限制、故障或高风险状态。",
+        "tags": [
+          "警告",
+          "危险",
+          "异常",
+          "故障",
+          "warning"
+        ],
+        "group": "mark",
+        "source": null,
+        "rendererId": "mark-warning"
+      },
+      {
+        "id": "mark-biohazard",
+        "name": "生物危害",
+        "desc": "适合病毒、毒素、污染、检疫或生物异常警告。",
+        "tags": [
+          "生物危害",
+          "病毒",
+          "毒素",
+          "污染",
+          "biohazard"
+        ],
+        "group": "mark",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "biohazard",
+          "upstreamVersion": "1.18"
+        },
+        "rendererId": "mark-biohazard"
+      },
+      {
+        "id": "general-backpack",
+        "name": "背包",
+        "desc": "适合随身装备、旅行物资、收纳组件或探险用品。",
+        "tags": [
+          "背包",
+          "旅行",
+          "收纳",
+          "探险",
+          "backpack"
+        ],
+        "group": "general",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "backpack",
+          "upstreamVersion": "1.43"
+        },
+        "rendererId": "general-backpack"
+      },
+      {
+        "id": "general-bottle",
+        "name": "瓶子",
+        "desc": "适合饮品、药液、化学液体或密封容器。",
+        "tags": [
+          "瓶子",
+          "药液",
+          "饮品",
+          "容器",
+          "bottle"
+        ],
+        "group": "general",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "bottle",
+          "upstreamVersion": "1.40"
+        },
+        "rendererId": "general-bottle"
+      },
+      {
+        "id": "general-first-aid-kit",
+        "name": "急救箱",
+        "desc": "适合医疗用品、救援工具、药品套装或恢复资产。",
+        "tags": [
+          "急救箱",
+          "医疗",
+          "救援",
+          "药品",
+          "first aid kit"
+        ],
+        "group": "general",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "first-aid-kit",
+          "upstreamVersion": "1.44"
+        },
+        "rendererId": "general-first-aid-kit"
+      },
+      {
+        "id": "general-shovel",
+        "name": "铲",
+        "desc": "适合挖掘、施工、清理、农业或破拆工具。",
+        "tags": [
+          "铲",
+          "挖掘",
+          "施工",
+          "农业",
+          "shovel"
+        ],
+        "group": "general",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "shovel",
+          "upstreamVersion": "1.68"
+        },
+        "rendererId": "general-shovel"
+      },
+      {
+        "id": "general-pick",
+        "name": "镐",
+        "desc": "适合采矿、凿击、开路、地质勘探或重型工具。",
+        "tags": [
+          "镐",
+          "采矿",
+          "凿击",
+          "勘探",
+          "pick"
+        ],
+        "group": "general",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "pick",
+          "upstreamVersion": "2.24"
+        },
+        "rendererId": "general-pick"
+      },
+      {
+        "id": "general-scissors",
+        "name": "剪刀",
+        "desc": "适合裁剪、手术、加工、拆解或精细工具。",
+        "tags": [
+          "剪刀",
+          "裁剪",
+          "手术",
+          "加工",
+          "scissors"
+        ],
+        "group": "general",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "scissors",
+          "upstreamVersion": "1.1"
+        },
+        "rendererId": "general-scissors"
+      },
+      {
+        "id": "general-lock",
+        "name": "锁",
+        "desc": "适合封印、权限、安全设备、加密或受限对象。",
+        "tags": [
+          "锁",
+          "封印",
+          "权限",
+          "安全",
+          "lock"
+        ],
+        "group": "general",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "lock",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "general-lock"
+      },
+      {
+        "id": "general-crown",
+        "name": "王冠",
+        "desc": "适合王权、首领、珍品、统治凭证或高价值收藏。",
+        "tags": [
+          "王冠",
+          "王权",
+          "首领",
+          "珍品",
+          "crown"
+        ],
+        "group": "general",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "crown",
+          "upstreamVersion": "1.24"
+        },
+        "rendererId": "general-crown"
+      },
+      {
+        "id": "weapon-bow",
+        "name": "弓",
+        "desc": "适合弓箭、远程射击、狩猎武器或蓄力技能。",
+        "tags": [
+          "弓",
+          "弓箭",
+          "射击",
+          "狩猎",
+          "bow"
+        ],
+        "group": "weapon",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "bow",
+          "upstreamVersion": "1.61"
+        },
+        "rendererId": "weapon-bow"
+      },
+      {
+        "id": "weapon-bomb",
+        "name": "炸弹",
+        "desc": "适合爆炸物、爆破装备、范围攻击或危险物品。",
+        "tags": [
+          "炸弹",
+          "爆炸物",
+          "爆破",
+          "范围攻击",
+          "bomb"
+        ],
+        "group": "weapon",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "bomb",
+          "upstreamVersion": "1.110"
+        },
+        "rendererId": "weapon-bomb"
+      },
+      {
+        "id": "weapon-shield",
+        "name": "盾牌",
+        "desc": "适合实体盾牌、防御装备、格挡技能或护卫能力。",
+        "tags": [
+          "盾牌",
+          "防御",
+          "格挡",
+          "护卫",
+          "shield"
+        ],
+        "group": "weapon",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "shield",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "weapon-shield"
+      },
+      {
+        "id": "weapon-target",
+        "name": "靶心",
+        "desc": "适合瞄准设备、射击训练、精准攻击或指定目标。",
+        "tags": [
+          "靶心",
+          "瞄准",
+          "射击",
+          "精准",
+          "target"
+        ],
+        "group": "weapon",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "target",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "weapon-target"
+      },
+      {
+        "id": "weapon-crosshair",
+        "name": "准星",
+        "desc": "适合瞄具、锁定、火控系统或精准技能。",
+        "tags": [
+          "准星",
+          "瞄具",
+          "锁定",
+          "火控",
+          "crosshair"
+        ],
+        "group": "weapon",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "crosshair",
+          "upstreamVersion": "1.11"
+        },
+        "rendererId": "weapon-crosshair"
+      },
+      {
+        "id": "creature-paw",
+        "name": "兽爪",
+        "desc": "适合野兽、宠物、足迹、兽化生物或动物特征。",
+        "tags": [
+          "兽爪",
+          "野兽",
+          "宠物",
+          "足迹",
+          "paw"
+        ],
+        "group": "creature",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "paw",
+          "upstreamVersion": "1.52"
+        },
+        "rendererId": "creature-paw"
+      },
+      {
+        "id": "creature-butterfly",
+        "name": "蝴蝶",
+        "desc": "适合蝴蝶、飞虫、蜕变生物或轻盈生命。",
+        "tags": [
+          "蝴蝶",
+          "飞虫",
+          "蜕变",
+          "昆虫",
+          "butterfly"
+        ],
+        "group": "creature",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "butterfly",
+          "upstreamVersion": "1.51"
+        },
+        "rendererId": "creature-butterfly"
+      },
+      {
+        "id": "creature-spider",
+        "name": "蜘蛛",
+        "desc": "适合蜘蛛、蛛形生物、寄生体或多足怪物。",
+        "tags": [
+          "蜘蛛",
+          "蛛形",
+          "寄生",
+          "多足",
+          "spider"
+        ],
+        "group": "creature",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "spider",
+          "upstreamVersion": "1.78"
+        },
+        "rendererId": "creature-spider"
+      },
+      {
+        "id": "creature-feather",
+        "name": "羽毛",
+        "desc": "适合鸟类材料、羽毛、轻盈特征或飞行生物遗留物。",
+        "tags": [
+          "羽毛",
+          "鸟类",
+          "轻盈",
+          "飞行",
+          "feather"
+        ],
+        "group": "creature",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "feather",
+          "upstreamVersion": "1.39"
+        },
+        "rendererId": "creature-feather"
+      },
+      {
+        "id": "creature-bone",
+        "name": "骨骼",
+        "desc": "适合骨骼、生物样本、遗骸材料或亡灵生物。",
+        "tags": [
+          "骨骼",
+          "骨头",
+          "样本",
+          "亡灵",
+          "bone"
+        ],
+        "group": "creature",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "bone",
+          "upstreamVersion": "1.35"
+        },
+        "rendererId": "creature-bone"
+      },
+      {
+        "id": "creature-egg",
+        "name": "卵",
+        "desc": "适合蛋、虫卵、胚胎、孵化物或未知生物样本。",
+        "tags": [
+          "卵",
+          "蛋",
+          "胚胎",
+          "孵化",
+          "egg"
+        ],
+        "group": "creature",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "egg",
+          "upstreamVersion": "1.3"
+        },
+        "rendererId": "creature-egg"
+      },
+      {
+        "id": "record-notebook",
+        "name": "笔记本",
+        "desc": "适合研究笔记、手册、日记或装订资料。",
+        "tags": [
+          "笔记本",
+          "研究",
+          "手册",
+          "日记",
+          "notebook"
+        ],
+        "group": "record",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "notebook",
+          "upstreamVersion": "1.3"
+        },
+        "rendererId": "record-notebook"
+      },
+      {
+        "id": "record-notes",
+        "name": "笔记",
+        "desc": "适合文字记录、线索摘要、清单或短篇资料。",
+        "tags": [
+          "笔记",
+          "文字",
+          "线索",
+          "清单",
+          "notes"
+        ],
+        "group": "record",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "notes",
+          "upstreamVersion": "1.2"
+        },
+        "rendererId": "record-notes"
+      },
+      {
+        "id": "record-file-description",
+        "name": "资料文件",
+        "desc": "适合说明文件、报告、档案或带正文的数据文档。",
+        "tags": [
+          "资料",
+          "文件",
+          "报告",
+          "档案",
+          "file description"
+        ],
+        "group": "record",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "file-description",
+          "upstreamVersion": "1.55"
+        },
+        "rendererId": "record-file-description"
+      },
+      {
+        "id": "record-photo",
+        "name": "照片",
+        "desc": "适合照片、影像证据、地图快照或视觉记录。",
+        "tags": [
+          "照片",
+          "影像",
+          "证据",
+          "快照",
+          "photo"
+        ],
+        "group": "record",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "photo",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "record-photo"
+      },
+      {
+        "id": "record-certificate",
+        "name": "证书",
+        "desc": "适合凭证、执照、认证记录或正式文书。",
+        "tags": [
+          "证书",
+          "凭证",
+          "执照",
+          "认证",
+          "certificate"
+        ],
+        "group": "record",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "certificate",
+          "upstreamVersion": "1.33"
+        },
+        "rendererId": "record-certificate"
+      },
+      {
+        "id": "record-qrcode",
+        "name": "二维码",
+        "desc": "适合编码数据、机器凭证、扫描信息或数字密钥。",
+        "tags": [
+          "二维码",
+          "编码",
+          "扫描",
+          "数字密钥",
+          "qrcode"
+        ],
+        "group": "record",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "qrcode",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "record-qrcode"
+      },
+      {
+        "id": "signal-antenna",
+        "name": "天线",
+        "desc": "适合无线设备、接收器、发射阵列或通信组件。",
+        "tags": [
+          "天线",
+          "无线",
+          "接收",
+          "发射",
+          "antenna"
+        ],
+        "group": "signal",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "antenna",
+          "upstreamVersion": "1.61"
+        },
+        "rendererId": "signal-antenna"
+      },
+      {
+        "id": "signal-bluetooth",
+        "name": "蓝牙",
+        "desc": "适合近距连接、配对设备、无线接口或数字信标。",
+        "tags": [
+          "蓝牙",
+          "近距",
+          "连接",
+          "配对",
+          "bluetooth"
+        ],
+        "group": "signal",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "bluetooth",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "signal-bluetooth"
+      },
+      {
+        "id": "signal-broadcast",
+        "name": "广播",
+        "desc": "适合广播站、信标、范围通信或持续发射。",
+        "tags": [
+          "广播",
+          "信标",
+          "通信",
+          "发射",
+          "broadcast"
+        ],
+        "group": "signal",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "broadcast",
+          "upstreamVersion": "1.69"
+        },
+        "rendererId": "signal-broadcast"
+      },
+      {
+        "id": "signal-cloud",
+        "name": "云端",
+        "desc": "适合云存储、远程服务、同步系统或网络空间。",
+        "tags": [
+          "云端",
+          "云存储",
+          "远程",
+          "同步",
+          "cloud"
+        ],
+        "group": "signal",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "cloud",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "signal-cloud"
+      },
+      {
+        "id": "signal-server",
+        "name": "服务器",
+        "desc": "适合服务器、计算节点、数据主机或网络设备。",
+        "tags": [
+          "服务器",
+          "节点",
+          "主机",
+          "网络设备",
+          "server"
+        ],
+        "group": "signal",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "server",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "signal-server"
+      },
+      {
+        "id": "signal-router",
+        "name": "路由器",
+        "desc": "适合路由设备、网络中继、无线网关或控制节点。",
+        "tags": [
+          "路由器",
+          "中继",
+          "网关",
+          "网络",
+          "router"
+        ],
+        "group": "signal",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "router",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "signal-router"
+      },
+      {
+        "id": "signal-webhook",
+        "name": "网络钩子",
+        "desc": "适合自动触发、系统联动、事件接口或服务连接。",
+        "tags": [
+          "网络钩子",
+          "自动触发",
+          "联动",
+          "接口",
+          "webhook"
+        ],
+        "group": "signal",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "webhook",
+          "upstreamVersion": "1.54"
+        },
+        "rendererId": "signal-webhook"
+      },
+      {
+        "id": "mark-snowflake",
+        "name": "雪花",
+        "desc": "适合寒冷、冰冻、减速、冬季或低温效果。",
+        "tags": [
+          "雪花",
+          "寒冷",
+          "冰冻",
+          "低温",
+          "snowflake"
+        ],
+        "group": "mark",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "snowflake",
+          "upstreamVersion": "1.8"
+        },
+        "rendererId": "mark-snowflake"
+      },
+      {
+        "id": "mark-skull",
+        "name": "骷髅",
+        "desc": "适合死亡、致命危险、亡灵、毒性或严重警告。",
+        "tags": [
+          "骷髅",
+          "死亡",
+          "亡灵",
+          "致命",
+          "skull"
+        ],
+        "group": "mark",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "skull",
+          "upstreamVersion": "1.78"
+        },
+        "rendererId": "mark-skull"
+      },
+      {
+        "id": "mark-heart",
+        "name": "心形",
+        "desc": "适合生命、友好、治疗、喜爱或关系效果。",
+        "tags": [
+          "心形",
+          "生命",
+          "治疗",
+          "喜爱",
+          "heart"
+        ],
+        "group": "mark",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "heart",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "mark-heart"
+      },
+      {
+        "id": "mark-star",
+        "name": "星形",
+        "desc": "适合收藏、评级、幸运、重点或特殊目标。",
+        "tags": [
+          "星形",
+          "收藏",
+          "幸运",
+          "重点",
+          "star"
+        ],
+        "group": "mark",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "star",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "mark-star"
+      },
+      {
+        "id": "mark-moon",
+        "name": "月亮",
+        "desc": "适合夜晚、阴影、梦境、静谧或月相效果。",
+        "tags": [
+          "月亮",
+          "夜晚",
+          "梦境",
+          "月相",
+          "moon"
+        ],
+        "group": "mark",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "moon",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "mark-moon"
+      },
+      {
+        "id": "mark-sun",
+        "name": "太阳",
+        "desc": "适合光照、炎热、白昼、活力或太阳能效果。",
+        "tags": [
+          "太阳",
+          "光照",
+          "炎热",
+          "白昼",
+          "sun"
+        ],
+        "group": "mark",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "sun",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "mark-sun"
+      },
+      {
+        "id": "mark-atom",
+        "name": "原子",
+        "desc": "适合科学、核能、微观结构、研究或高科技效果。",
+        "tags": [
+          "原子",
+          "科学",
+          "核能",
+          "研究",
+          "atom"
+        ],
+        "group": "mark",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "atom",
+          "upstreamVersion": "1.3"
+        },
+        "rendererId": "mark-atom"
+      },
+      {
+        "id": "mark-alert-triangle",
+        "name": "危险三角",
+        "desc": "适合风险、故障、注意事项、禁区或紧急状态。",
+        "tags": [
+          "危险三角",
+          "风险",
+          "故障",
+          "紧急",
+          "alert triangle"
+        ],
+        "group": "mark",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "alert-triangle",
+          "upstreamVersion": "1.0"
+        },
+        "rendererId": "mark-alert-triangle"
+      },
+      {
+        "id": "mark-infinity",
+        "name": "无限",
+        "desc": "适合循环、持续、无限供给、永恒或不间断效果。",
+        "tags": [
+          "无限",
+          "循环",
+          "持续",
+          "永恒",
+          "infinity"
+        ],
+        "group": "mark",
+        "source": {
+          "library": "Tabler Icons",
+          "license": "MIT",
+          "revision": "7007ad520bf85301bc464501d03619487369559f",
+          "upstreamName": "infinity",
+          "upstreamVersion": "1.2"
+        },
+        "rendererId": "mark-infinity"
+      }
+    ],
+    "parameterPolicy": {
+      "iconStrokeWidth": {
+        "minimum": 0.2,
+        "maximum": 1.8,
+        "step": 0.05,
+        "default": 1.5,
+        "randomValues": [
+          1.35,
+          1.4,
+          1.45,
+          1.5,
+          1.55,
+          1.6,
+          1.65
+        ]
+      },
+      "iconScale": {
+        "minimum": 0.6,
+        "maximum": 1.5,
+        "step": 0.01,
+        "default": 1.0,
+        "randomValues": [
+          0.94,
+          0.96,
+          0.98,
+          1.0,
+          1.02,
+          1.04,
+          1.06
+        ]
+      },
+      "iconRotation": {
+        "minimum": -180,
+        "maximum": 180,
+        "step": 1,
+        "default": 0,
+        "randomValues": []
+      }
+    },
+    "defaultStroke": "#D7A64C",
+    "defaultFill": "#182227",
+    "defaultAppearanceByCategory": {
+      "item": {
+        "iconKey": "general-cube",
+        "iconStroke": "#D7A64C",
+        "iconFill": "#182227",
+        "iconStrokeWidth": 1.5,
+        "iconScale": 1,
+        "iconRotation": 0
+      },
+      "skill": {
+        "iconKey": "mark-sparkle",
+        "iconStroke": "#7BB7A1",
+        "iconFill": "#10201D",
+        "iconStrokeWidth": 1.5,
+        "iconScale": 1,
+        "iconRotation": 0
+      },
+      "creature": {
+        "iconKey": "creature-person",
+        "iconStroke": "#7BB7A1",
+        "iconFill": "#161D24",
+        "iconStrokeWidth": 1.5,
+        "iconScale": 1,
+        "iconRotation": 0
+      },
+      "body": {
+        "iconKey": "creature-person",
+        "iconStroke": "#D7A64C",
+        "iconFill": "#161D24",
+        "iconStrokeWidth": 1.5,
+        "iconScale": 1,
+        "iconRotation": 0
+      },
+      "knowledge": {
+        "iconKey": "record-scroll",
+        "iconStroke": "#D7A64C",
+        "iconFill": "#182127",
+        "iconStrokeWidth": 1.5,
+        "iconScale": 1,
+        "iconRotation": 0
+      },
+      "default": {
+        "iconKey": "general-cube",
+        "iconStroke": "#D7A64C",
+        "iconFill": "#182227",
+        "iconStrokeWidth": 1.5,
+        "iconScale": 1,
+        "iconRotation": 0
+      }
+    }
+  },
+  "dialogue": {
+    "profileTextLimits": {
+      "id": 160,
+      "name": 120,
+      "role": 120
+    },
+    "intelLabelLimit": 24,
+    "knownIntelFields": [
+      {
+        "field": "socialPosition",
+        "label": "公开位置"
+      },
+      {
+        "field": "history",
+        "label": "已知经历"
+      },
+      {
+        "field": "goal",
+        "label": "公开目标"
+      },
+      {
+        "field": "fear",
+        "label": "公开顾虑"
+      },
+      {
+        "field": "leverage",
+        "label": "公开筹码"
+      },
+      {
+        "field": "strategy",
+        "label": "公开做法"
+      },
+      {
+        "field": "latestImpact",
+        "label": "最近变化"
+      }
+    ],
+    "significanceLabel": "关键情报",
+    "playerBodyProfile": {
+      "defaultOwnerName": "垃圾场主人",
+      "locationLabel": "位置",
+      "statusLabel": "状态",
+      "injuriesLabel": "伤势",
+      "defaultBodyName": "当前身体",
+      "bodyRole": "当前身体",
+      "lifecycleStates": {
+        "active": "可行动",
+        "injured": "受伤",
+        "disabled": "无法行动",
+        "stored": "已收纳"
+      }
+    }
+  }
+}
