@@ -8,6 +8,7 @@ import {
   notes,
   type ContentCardData,
 } from '@/app/content/home';
+import { useTiltCardMotion } from '@/hooks/useTiltCardMotion';
 import SocialLinks from './SocialLinks';
 
 interface HomeContentProps {
@@ -35,6 +36,7 @@ function ContentGrid({
         <a
           key={item.url}
           className={`content-card${articleLayout ? ' content-card--article' : ''}${!item.image ? ' content-card--text-only' : ''}`}
+          data-tilt-card
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"
@@ -56,6 +58,7 @@ function ContentGrid({
 
 export default function HomeContent({ locale, title }: HomeContentProps) {
   const isZh = locale === 'zh-CN';
+  useTiltCardMotion();
 
   return (
     <div className="home-shell">
