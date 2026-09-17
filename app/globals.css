@@ -96,16 +96,38 @@ img {
   display: contents;
 }
 
+body.business-card-mode,
+body.scene-only-mode {
+  overflow: hidden;
+}
+
+body.business-card-mode .site-header,
+body.business-card-mode .home-panels,
+body.scene-only-mode .site-header,
+body.scene-only-mode .home-shell {
+  display: none;
+}
+
+body.business-card-mode .home-shell {
+  height: 100svh;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+body.business-card-mode .lab-hero {
+  min-height: 100svh;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .site-header {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 80;
-  border-bottom: 1px solid var(--border);
-  background: rgba(10, 9, 8, 0.82);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
+  border-bottom: 0;
+  background: transparent;
 }
 
 .site-header-inner {

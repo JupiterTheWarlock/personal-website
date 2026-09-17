@@ -8,6 +8,7 @@ import {
   notes,
   type ContentCardData,
 } from '@/app/content/home';
+import { usePresentationModeCycle } from '@/hooks/usePresentationModeCycle';
 import { useTiltCardMotion } from '@/hooks/useTiltCardMotion';
 import SocialLinks from './SocialLinks';
 
@@ -58,6 +59,7 @@ function ContentGrid({
 
 export default function HomeContent({ locale, title }: HomeContentProps) {
   const isZh = locale === 'zh-CN';
+  usePresentationModeCycle();
   useTiltCardMotion();
 
   return (
@@ -65,7 +67,8 @@ export default function HomeContent({ locale, title }: HomeContentProps) {
       <section id="home" className="lab-hero">
         <div className="hero-copy">
           <h1>{title}</h1>
-          <p className="hero-subtitle">{isZh ? '独立游戏开发者' : 'Indie game developer'}</p>
+          <p className="hero-subtitle">{isZh ? '独立游戏开发者与设计师' : 'Indie game developer and designer'}</p>
+          <p className="hero-slogan">{isZh ? '杀死旧自我，成为新人类' : 'Kill the old self. Become a new human.'}</p>
         </div>
       </section>
 
