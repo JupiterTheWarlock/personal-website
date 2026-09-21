@@ -9,6 +9,9 @@ import { appearanceState, developerTuning, projection } from './scene-data.js';
 const stage = document.querySelector('#junkyardSystemStage');
 const jellyfishSource = document.querySelector('#homeJellyfishSource');
 const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+const mobileQuery = window.matchMedia('(max-width: 800px)');
+const profile = new URLSearchParams(location.search).get('profile') || 'home';
+const prefersStillScene = () => motionQuery.matches || mobileQuery.matches || profile === 'blog';
 
 const jellyfish = mountVoidJellyfish(jellyfishSource, {
   variant: 'home-sprite',
@@ -16,7 +19,7 @@ const jellyfish = mountVoidJellyfish(jellyfishSource, {
   showTentacles: false,
   allowBlink: false,
   autoSchedule: false,
-  reducedMotion: motionQuery.matches,
+  reducedMotion: prefersStillScene(),
 });
 
 jellyfish.setState('idle', { force: true });
@@ -38,7 +41,7 @@ const scene = mountJunkyardSystemView(stage, projection, {
   developerTuning,
   sceneMode: 'home',
   visible: true,
-  reducedMotion: motionQuery.matches,
+  reducedMotion: prefersStillScene(),
   homeJellyfishSvg: jellyfish.svg,
   onBeforeRender: (timestamp) => jellyfish.advance(timestamp),
   onAnimationLoopChange: () => {},
@@ -58,20 +61,27 @@ window.__junkyardBackground = Object.freeze({
   projection: () => jellyfishProjection,
 });
 
-const onMotionChange = (event) => {
-  jellyfish.setReducedMotion(event.matches);
-  scene.setReducedMotion(event.matches);
+const onMotionChange = () => {
+  jellyfish.setReducedMotion(prefersStillScene());
+  scene.setReducedMotion(prefersStillScene());
 };
 motionQuery.addEventListener('change', onMotionChange);
+mobileQuery.addEventListener('change', onMotionChange);
+const onVisibilityChange = () => scene.setVisibility(!document.hidden);
+document.addEventListener('visibilitychange', onVisibilityChange);
+onVisibilityChange();
 
 const onParentPointer = (event) => {
   if (event.origin !== window.location.origin || event.data?.type !== 'junkyard-pointer') return;
+  if (event.source !== window.parent || prefersStillScene() || document.hidden) return;
   pointJellyfishAt(Number(event.data.clientX) || 0, Number(event.data.clientY) || 0);
 };
 window.addEventListener('message', onParentPointer);
 
 window.addEventListener('pagehide', () => {
   motionQuery.removeEventListener('change', onMotionChange);
+  mobileQuery.removeEventListener('change', onMotionChange);
+  document.removeEventListener('visibilitychange', onVisibilityChange);
   window.removeEventListener('message', onParentPointer);
   delete window.__junkyardBackground;
   scene.dispose();

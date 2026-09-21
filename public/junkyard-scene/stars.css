@@ -1,0 +1,29 @@
+/* Stars adapter; all visual values come from the shared brand palette. */
+body[data-brand-profile="stars"] {
+  --term-bg: var(--brand-bg);
+  --term-surface: var(--brand-panel);
+  --term-surface-2: var(--brand-panel-strong);
+  --term-border: var(--brand-border-light);
+  --term-text: var(--brand-text);
+  --term-muted: var(--brand-muted);
+  --term-dim: var(--brand-muted);
+  --term-accent: var(--brand-accent);
+  --term-accent-bright: var(--brand-accent-bright);
+  --term-accent-glow: var(--brand-bright);
+  --term-accent-dim: var(--brand-accent-dim);
+  background: var(--brand-bg);
+}
+body[data-brand-profile="stars"] #root { position: relative; z-index: 1; }
+body[data-brand-profile="stars"] #root > div { background: transparent; height: 100dvh; }
+body[data-brand-profile="stars"] header,
+body[data-brand-profile="stars"] aside { background: var(--brand-panel-strong); }
+body[data-brand-profile="stars"] main { min-width: 0; }
+body[data-brand-profile="stars"] main a.term-animate {
+  background: var(--brand-panel);
+  border-radius: 4px;
+}
+body[data-brand-profile="stars"] main a.term-animate:hover { border-color: var(--brand-accent); }
+body[data-brand-profile="stars"] main > .flex.overflow-x-auto,
+body[data-brand-profile="stars"] footer { background: var(--brand-panel-strong); }
+body[data-brand-profile="stars"] .font-terminal,
+body[data-brand-profile="stars"] .term-input { font-family: var(--brand-font-ui); }

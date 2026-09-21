@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --accent: #DA7756;
-  --accent-bright: #E8985C;
-  --accent-dim: #B85D3A;
-  --accent-glow: rgba(218, 119, 86, 0.36);
+  --accent: var(--brand-accent);
+  --accent-bright: var(--brand-accent-bright);
+  --accent-dim: var(--brand-accent-dim);
+  --accent-glow: var(--brand-accent-glow);
   --signal: #5AB8A8;
-  --bg-deep: #0A0908;
-  --bg-panel: rgba(14, 12, 10, 0.82);
-  --bg-panel-strong: rgba(20, 17, 14, 0.94);
-  --text-primary: #E8E0D8;
-  --text-secondary: #B1A398;
-  --text-bright: #FAF0E8;
-  --border: #2E2520;
-  --border-light: #4A3D33;
+  --bg-deep: var(--brand-bg);
+  --bg-panel: var(--brand-panel);
+  --bg-panel-strong: var(--brand-panel-strong);
+  --text-primary: var(--brand-text);
+  --text-secondary: var(--brand-muted);
+  --text-bright: var(--brand-bright);
+  --border: var(--brand-border);
+  --border-light: var(--brand-border-light);
 }
 
 * {
@@ -37,20 +37,7 @@ body {
     var(--bg-deep);
   background-size: 32px 32px;
   color: var(--text-primary);
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-}
-
-.junkyard-legacy-background {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  width: 100vw;
-  height: 100vh;
-  border: 0;
-  pointer-events: none;
-  background: #020307;
+  font-family: var(--brand-font-body);
 }
 
 a {

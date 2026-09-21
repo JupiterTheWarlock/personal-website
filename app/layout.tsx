@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
+import Script from 'next/script';
 import JunkyardLegacyBackground from '@/components/content/JunkyardLegacyBackground';
+import '@/public/junkyard-scene/brand.css';
 import '@/app/globals.css';
 
 export const metadata: Metadata = {
@@ -20,6 +22,7 @@ export default function RootLayout({
       <body className="min-h-screen text-[var(--text-primary)]">
         <JunkyardLegacyBackground />
         {children}
+        <Script src="/junkyard-scene/host.js" data-brand-profile="home" strategy="afterInteractive" />
       </body>
     </html>
   );

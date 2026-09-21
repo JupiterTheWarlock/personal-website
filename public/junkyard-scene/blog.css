@@ -1,0 +1,59 @@
+/* Quartz adapter: dark terminal navigation, quiet long-form reading surface. */
+:root, :root[saved-theme] {
+  color-scheme: dark;
+  --light: var(--brand-bg);
+  --lightgray: var(--brand-border-light);
+  --gray: var(--brand-muted);
+  --darkgray: var(--brand-text);
+  --dark: var(--brand-bright);
+  --secondary: var(--brand-accent);
+  --tertiary: var(--brand-accent-bright);
+  --highlight: rgba(218, 119, 86, .1);
+  --textHighlight: rgba(218, 119, 86, .22);
+  --bodyFont: var(--brand-font-body);
+  --headerFont: var(--brand-font-body);
+  --codeFont: var(--brand-font-ui);
+}
+body { background: var(--brand-bg); }
+#quartz-root { position: relative; z-index: 1; }
+.page > #quartz-body > .center {
+  box-sizing: border-box;
+  padding: 0 clamp(1rem, 2.5vw, 2rem) 2rem;
+  background: var(--brand-panel-strong);
+  border-inline: 1px solid var(--brand-border);
+}
+.page > #quartz-body > .sidebar {
+  background: var(--brand-panel);
+  min-width: 0;
+}
+.page > #quartz-body > footer {
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+  background: var(--brand-panel-strong);
+}
+.page-title, .explorer, .toc, .search-button, .content-meta, .breadcrumb-container {
+  font-family: var(--brand-font-ui);
+}
+.page-title { font-size: 1.3rem; line-height: 1.5; }
+article { line-height: 1.85; }
+article a:hover { text-decoration: underline; text-underline-offset: .2em; }
+article a[href]:hover { text-shadow: none; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 3px;
+}
+.graph > .graph-outer, pre { background: var(--brand-bg); }
+.search > .search-container, .popover .popover-inner { background: var(--brand-panel-strong); }
+@media (max-width: 800px) {
+  .page > #quartz-body { padding-inline: .75rem; }
+  .page > #quartz-body > .center { padding: 1rem; border: 1px solid var(--brand-border); border-radius: 4px; }
+  .page > #quartz-body .sidebar.left:has(.explorer) { background: var(--brand-panel-strong); padding-inline: .5rem; gap: .5rem; }
+  .page-title { font-size: 1rem; min-width: 0; }
+  .explorer-content { max-width: 100%; box-sizing: border-box; }
+  .explorer .explorer-content { position: fixed; left: 0; width: 100%; }
+  .page > #quartz-body > .sidebar.right { padding: 1rem; box-sizing: border-box; }
+}
+@media print {
+  :root, :root[saved-theme] { --light: white; --darkgray: #222; --dark: black; }
+  .page > #quartz-body > .center { background: white; border: 0; }
+}
