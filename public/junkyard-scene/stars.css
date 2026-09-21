@@ -16,14 +16,22 @@ body[data-brand-profile="stars"] {
 body[data-brand-profile="stars"] #root { position: relative; z-index: 1; }
 body[data-brand-profile="stars"] #root > div { background: transparent; height: 100dvh; }
 body[data-brand-profile="stars"] header,
-body[data-brand-profile="stars"] aside { background: var(--brand-panel-strong); }
+body[data-brand-profile="stars"] aside { background: transparent; }
 body[data-brand-profile="stars"] main { min-width: 0; }
 body[data-brand-profile="stars"] main a.term-animate {
-  background: var(--brand-panel);
+  background: rgba(14, 12, 10, .58);
   border-radius: 4px;
+  animation: none;
+  opacity: 1;
+  transform: perspective(850px) rotateX(var(--card-rx, 0deg)) rotateY(var(--card-ry, 0deg));
+  transition: transform 160ms ease-out, border-color 160ms ease, background 160ms ease;
 }
 body[data-brand-profile="stars"] main a.term-animate:hover { border-color: var(--brand-accent); }
 body[data-brand-profile="stars"] main > .flex.overflow-x-auto,
-body[data-brand-profile="stars"] footer { background: var(--brand-panel-strong); }
+body[data-brand-profile="stars"] footer { background: transparent; }
+body[data-brand-profile="stars"] main a.term-animate:hover { background: rgba(14, 12, 10, .7); }
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  body[data-brand-profile="stars"] main a.term-animate { transform: none; }
+}
 body[data-brand-profile="stars"] .font-terminal,
 body[data-brand-profile="stars"] .term-input { font-family: var(--brand-font-ui); }

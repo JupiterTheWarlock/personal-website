@@ -4,6 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>诸天尽头垃圾场</title>
+  <script>
+    // Static hosts may redirect index.html to a directory URL without a slash.
+    const sceneBase = document.createElement('base');
+    sceneBase.href = location.pathname.replace(/\/index(?:\.html)?$/, '').replace(/\/?$/, '/');
+    document.head.appendChild(sceneBase);
+  </script>
   <link rel="stylesheet" href="./runtime/void_jellyfish.css" />
   <link rel="stylesheet" href="./scene.css" />
 </head>

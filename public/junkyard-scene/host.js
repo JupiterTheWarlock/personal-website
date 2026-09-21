@@ -24,6 +24,33 @@
   window.__jthewlBrandHost = { profile, ensureFrame };
   ensureFrame();
   document.addEventListener('nav', ensureFrame);
+  if (profile === 'stars') {
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    let activeCard;
+    const resetCard = () => {
+      activeCard?.style.removeProperty('--card-rx');
+      activeCard?.style.removeProperty('--card-ry');
+      activeCard = null;
+    };
+    document.addEventListener('pointermove', event => {
+      if (event.pointerType !== 'mouse' || motion.matches) return;
+      const card = event.target.closest('main a.term-animate');
+      if (activeCard !== card) resetCard();
+      if (!card) return;
+      activeCard = card;
+      const box = card.getBoundingClientRect();
+      const x = Math.max(-.5, Math.min(.5, (event.clientX - box.left) / box.width - .5));
+      const y = Math.max(-.5, Math.min(.5, (event.clientY - box.top) / box.height - .5));
+      card.style.setProperty('--card-rx', `${-y * 9}deg`);
+      card.style.setProperty('--card-ry', `${x * 9}deg`);
+    }, { passive: true });
+    document.addEventListener('pointerout', event => {
+      if (activeCard && !activeCard.contains(event.relatedTarget)) resetCard();
+    });
+    window.addEventListener('blur', resetCard);
+    document.addEventListener('scroll', resetCard, true);
+    motion.addEventListener('change', resetCard);
+  }
   if (profile === 'blog') {
     // A desktop-open directory should not cover the article after rotation.
     const mobile = matchMedia('(max-width: 800px)');

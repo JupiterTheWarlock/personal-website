@@ -27,9 +27,9 @@
   filter: brightness(var(--brand-scene-brightness, 1));
 }
 .jthewl-scene[data-brand-profile="stars"] { --brand-scene-brightness: .58; }
-.jthewl-scene[data-brand-profile="blog"] { --brand-scene-brightness: .48; }
+.jthewl-scene[data-brand-profile="blog"] { --brand-scene-brightness: .7; }
 @media (max-width: 800px) {
   .jthewl-scene[data-brand-profile="stars"] { --brand-scene-brightness: .45; }
-  .jthewl-scene[data-brand-profile="blog"] { --brand-scene-brightness: .36; }
+  .jthewl-scene[data-brand-profile="blog"] { --brand-scene-brightness: .55; }
 }
 @media print { .jthewl-scene { display: none; } }

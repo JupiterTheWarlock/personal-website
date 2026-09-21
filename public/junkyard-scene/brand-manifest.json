@@ -1,13 +1,13 @@
 {
   "package": "@jthewl/brand",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "source": "tools/jthewl-brand/scene",
   "files": {
-    "blog.css": "f567f144b129b8568c032d2f471d6c0619eb215f98adfe57f46daca7d9f1b678",
+    "blog.css": "99c514c1038bae69907881e057f5e46f972d464079a754817ce917789dc4948d",
     "bootstrap.js": "bb4f0121daf72601cc4fae2a3f967cae3c2ccbddc32c821fe975276e18bd957f",
-    "brand.css": "e5695899bd4c18af0209dd69e0e55f8ef93c1ed84c25292ef1d1f7a12ce4fbe9",
-    "host.js": "6ef66009a79fbb8f90abe6c16957800013edc847f8d7e9334b8815da6f9c7f32",
-    "index.html": "3d3f33dc82a8322a2422335d172ee09cf1578838daae8d93b49ad8e3315d30df",
+    "brand.css": "11c04ac8546de930f9bf88ed57b7daa12a539eacf3b36ba1eb0cec0b526a27ba",
+    "host.js": "a0a71b2fe37d4e2f4be8b4e55207bca004a2195292848f6655808fdd0a5e67ad",
+    "index.html": "a89f8002ca569ad93416283d471f11864562552097ce374457861b2a118a5dc0",
     "runtime/canvas_data_probe.mjs": "b219e835c99e257f11bba7c2dcdb83bfd111503baddfafc834d5d917a8c92d6f",
     "runtime/overlay_label_layout.mjs": "c8d87c394f174698a5b445d4dc59def6340d4797122eff5f314a498286789760",
     "runtime/spatial_maps.js": "4ae1b6c9c32141ae758bacfdfb4d2ddf36930f84ab72c57694c454fa77526099",
@@ -30,6 +30,6 @@
     "runtime/world_appearance/void_jellyfish_sprite.js": "614b5420f005126f881f1a2b7bb5201353e9c7b3876b2f4dbd80d87286a6a8e1",
     "scene-data.js": "a4d6db6138403ef99ab2c5e2d739cbc44e0958dbb413541cd4b45321df3ecb41",
     "scene.css": "cc7dd6fbe2b61c2f8ed34c4d356e22f1b1dd856826347cfd2210c0f8568c1850",
-    "stars.css": "d0c7acfc0ecd9d2d0fbe3a7bee98f060a045f3b957557d25b31390eeb5aa9c46"
+    "stars.css": "ceac9a1a7230b88b32d7571919a806fc680eacd20c2d5ca5b2f9de0c8f1c8e73"
   }
 }

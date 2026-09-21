@@ -19,17 +19,17 @@ body { background: var(--brand-bg); }
 .page > #quartz-body > .center {
   box-sizing: border-box;
   padding: 0 clamp(1rem, 2.5vw, 2rem) 2rem;
-  background: var(--brand-panel-strong);
+  background: rgba(14, 12, 10, .68);
   border-inline: 1px solid var(--brand-border);
 }
 .page > #quartz-body > .sidebar {
-  background: var(--brand-panel);
+  background: transparent;
   min-width: 0;
 }
 .page > #quartz-body > footer {
   box-sizing: border-box;
   padding: 1rem 2rem;
-  background: var(--brand-panel-strong);
+  background: rgba(14, 12, 10, .5);
 }
 .page-title, .explorer, .toc, .search-button, .content-meta, .breadcrumb-container {
   font-family: var(--brand-font-ui);
@@ -47,7 +47,7 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 800px) {
   .page > #quartz-body { padding-inline: .75rem; }
   .page > #quartz-body > .center { padding: 1rem; border: 1px solid var(--brand-border); border-radius: 4px; }
-  .page > #quartz-body .sidebar.left:has(.explorer) { background: var(--brand-panel-strong); padding-inline: .5rem; gap: .5rem; }
+  .page > #quartz-body .sidebar.left:has(.explorer) { background: rgba(14, 12, 10, .3); padding-inline: .5rem; gap: .5rem; }
   .page-title { font-size: 1rem; min-width: 0; }
   .explorer-content { max-width: 100%; box-sizing: border-box; }
   .explorer .explorer-content { position: fixed; left: 0; width: 100%; }
