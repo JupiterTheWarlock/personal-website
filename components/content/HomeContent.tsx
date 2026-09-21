@@ -37,7 +37,7 @@ function ContentGrid({
         <a
           key={item.url}
           className={`content-card${articleLayout ? ' content-card--article' : ''}${!item.image ? ' content-card--text-only' : ''}`}
-          data-tilt-card
+          data-tilt-card={articleLayout ? undefined : true}
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"
