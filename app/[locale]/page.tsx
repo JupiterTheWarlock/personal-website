@@ -1,10 +1,5 @@
-import dynamic from 'next/dynamic';
+import HomeContent from '@/components/content/HomeContent';
 import { locales } from '@/app/i18n/config';
-
-const HomeContent = dynamic(
-  () => import('@/components/content/HomeContent'),
-  { ssr: false }
-);
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
