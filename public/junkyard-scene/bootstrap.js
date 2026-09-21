@@ -10,8 +10,7 @@ const stage = document.querySelector('#junkyardSystemStage');
 const jellyfishSource = document.querySelector('#homeJellyfishSource');
 const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 const mobileQuery = window.matchMedia('(max-width: 800px)');
-const profile = new URLSearchParams(location.search).get('profile') || 'home';
-const prefersStillScene = () => motionQuery.matches || mobileQuery.matches || profile === 'blog';
+const prefersStillScene = () => motionQuery.matches || mobileQuery.matches;
 
 const jellyfish = mountVoidJellyfish(jellyfishSource, {
   variant: 'home-sprite',
