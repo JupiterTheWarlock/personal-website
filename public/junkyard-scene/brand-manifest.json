@@ -1,13 +1,13 @@
 {
   "package": "@jthewl/brand",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "source": "tools/jthewl-brand/scene",
   "files": {
     "blog.css": "99c514c1038bae69907881e057f5e46f972d464079a754817ce917789dc4948d",
     "bootstrap.js": "bb4f0121daf72601cc4fae2a3f967cae3c2ccbddc32c821fe975276e18bd957f",
     "brand.css": "11c04ac8546de930f9bf88ed57b7daa12a539eacf3b36ba1eb0cec0b526a27ba",
     "host.js": "a0a71b2fe37d4e2f4be8b4e55207bca004a2195292848f6655808fdd0a5e67ad",
-    "index.html": "a89f8002ca569ad93416283d471f11864562552097ce374457861b2a118a5dc0",
+    "index.html": "6986d60459dc8546c6db1c8b75e1100ce731a096fe04d312900899e40e88e073",
     "runtime/canvas_data_probe.mjs": "b219e835c99e257f11bba7c2dcdb83bfd111503baddfafc834d5d917a8c92d6f",
     "runtime/overlay_label_layout.mjs": "c8d87c394f174698a5b445d4dc59def6340d4797122eff5f314a498286789760",
     "runtime/spatial_maps.js": "4ae1b6c9c32141ae758bacfdfb4d2ddf36930f84ab72c57694c454fa77526099",

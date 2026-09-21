@@ -9,13 +9,23 @@
     const sceneBase = document.createElement('base');
     sceneBase.href = location.pathname.replace(/\/index(?:\.html)?$/, '').replace(/\/?$/, '/');
     document.head.appendChild(sceneBase);
+    // Create links after the base is known; avoid speculative requests to the wrong directory.
+    for (const href of ['./runtime/void_jellyfish.css', './scene.css']) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      document.head.appendChild(link);
+    }
   </script>
-  <link rel="stylesheet" href="./runtime/void_jellyfish.css" />
-  <link rel="stylesheet" href="./scene.css" />
 </head>
 <body>
   <main id="junkyardSystemStage" aria-label="诸天尽头垃圾场、环绕世界与虚空水母"></main>
   <div id="homeJellyfishSource" class="home-jellyfish-raster-source" aria-hidden="true"></div>
-  <script type="module" src="./bootstrap.js"></script>
+  <script>
+    const bootstrap = document.createElement('script');
+    bootstrap.type = 'module';
+    bootstrap.src = './bootstrap.js';
+    document.body.appendChild(bootstrap);
+  </script>
 </body>
 </html>
