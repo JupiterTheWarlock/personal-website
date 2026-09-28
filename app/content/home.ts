@@ -87,12 +87,16 @@ export const notes: ContentCardData[] = [
     id: 'ai-game-music',
     title: '用AI零基础做出像《小丑牌》一样的游戏配乐',
     description: '我一直很羡慕那些一听就能认出来的游戏音乐。画面都不用出现，前几个音一响，玩过的人就知道是哪款游戏',
+    // Original X article cover: https://pbs.twimg.com/media/HSeS6FubEAAjNTO?format=jpg&name=orig
+    image: '/images/notes/ai-game-music.jpg',
     url: 'https://x.com/JupiterTheWL/status/2100813911104872633?s=20',
   },
   {
     id: 'ai-native-game',
     title: 'AI 原生游戏不是让 AI 接管世界',
     description: '我现在越来越觉得，很多关于 AI 原生游戏的讨论，一开始就把问题想偏了。',
+    // Original X article cover: https://pbs.twimg.com/media/HKT7r0vbIAAymdg?format=jpg&name=orig
+    image: '/images/notes/ai-native-game.jpg',
     url: 'https://x.com/JupiterTheWL/status/2064052795721085254?s=20',
   },
 ];

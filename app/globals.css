@@ -524,6 +524,12 @@ body.business-card-mode .lab-hero {
   border-bottom: 0;
 }
 
+.content-card--article .content-card-image img {
+  object-fit: contain;
+  transform: none;
+  will-change: auto;
+}
+
 .content-card--article .content-card-copy {
   align-content: center;
   padding: clamp(1rem, 2.5vw, 2rem);
@@ -931,6 +937,17 @@ body.business-card-mode .lab-hero {
 }
 
 @media (max-width: 720px) {
+  .content-card--article {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .content-card--article .content-card-image {
+    min-height: 0;
+    aspect-ratio: 5 / 2;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
   html {
     scroll-padding-top: 7rem;
   }
