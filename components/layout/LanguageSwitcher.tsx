@@ -2,35 +2,33 @@
 
 import React from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { locales, localeNames, type Locale } from '@/app/i18n/config';
+import { locales, localeNames, localeCookie, isLocale, fallbackLocale, type Locale } from '@/app/i18n/config';
+import { localizedPath } from '@/app/i18n/routing';
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({ label }: { label: string }) {
   const router = useRouter();
   const params = useParams();
-  const currentLocale = (params?.locale as Locale) || 'zh-CN';
+  const currentLocale = isLocale(params?.locale as string) ? params.locale as Locale : fallbackLocale;
 
   const handleLocaleChange = (newLocale: Locale) => {
-    const path = window.location.pathname.replace(`/${currentLocale}`, `/${newLocale}`);
-    router.push(path);
+    if (!isLocale(newLocale) || newLocale === currentLocale) return;
+    document.cookie = `${localeCookie}=${newLocale}; Path=/; Max-Age=31536000; SameSite=Lax${window.location.protocol === 'https:' ? '; Secure' : ''}`;
+    const path = localizedPath(window.location.pathname, newLocale);
+    router.push(`${path}${window.location.search}${window.location.hash}`, { scroll: false });
   };
 
   return (
-    <div className="language-switcher" aria-label="Language switcher">
-      {locales.map((locale) => (
-        <button
-          key={locale}
-          onClick={() => handleLocaleChange(locale)}
-          className={`language-button ${
-            locale === currentLocale
-              ? 'is-active'
-              : ''
-          }`}
-          title={localeNames[locale]}
-          aria-pressed={locale === currentLocale}
-        >
-          {locale === 'zh-CN' ? '中' : 'EN'}
-        </button>
-      ))}
-    </div>
+    <label className="language-switcher">
+      <span className="sr-only">{label}</span>
+      <select
+        className="language-select"
+        value={currentLocale}
+        onChange={(event) => handleLocaleChange(event.target.value as Locale)}
+      >
+        {locales.map((locale) => (
+          <option key={locale} value={locale} lang={locale}>{localeNames[locale]}</option>
+        ))}
+      </select>
+    </label>
   );
 }

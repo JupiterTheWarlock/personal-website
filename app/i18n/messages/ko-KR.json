@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "games": "게임",
+    "exploring": "탐색",
+    "notes": "노트",
+    "contact": "연락처",
+    "label": "주 메뉴"
+  },
+  "language": "언어 선택",
+  "hero": {
+    "title": "Jupiter The Warlock",
+    "subtitle": "인디 게임 개발자 및 디자이너",
+    "slogan": "과거의 나를 죽이고, 새로운 인간이 되자."
+  },
+  "meta": {
+    "title": "Jupiter The Warlock — 인디 게임 개발자 및 디자이너",
+    "description": "Jupiter The Warlock의 게임, 오픈 소스 프로젝트와 개발 노트."
+  },
+  "animations": {
+    "title": "ASCII 애니메이션 전시",
+    "comingSoon": "곧 공개됩니다…"
+  },
+  "social": {
+    "bilibili": "Bilibili",
+    "zhihu": "Zhihu",
+    "gcores": "Gcores"
+  },
+  "content": {
+    "orbital-throw": {
+      "title": "나보다 멀리 못 던진다니까?",
+      "description": "소행성에 닻을 걸어 우주선을 회전시키고 에너지를 모아 가속하는 아케이드 게임. 2026 CiGA Game Jam 광저우 행사 출품작."
+    },
+    "nest-of-rectangles": {
+      "title": "직사각형의 둥지 + 프랙탈의 둥지 + 직사각형의 무덤 + 고치 + 스카이박스",
+      "description": "직사각형의 둥지에 발을 들이면, 그곳은 더 이상 단순한 직사각형의 둥지가 아닙니다."
+    },
+    "yeshit-rhapsody": {
+      "title": "야식 광시곡 — YeShit Rhapsody",
+      "description": "후한 말, 전쟁과 혼란이 계속되며 백성들은 굶주린다. 막다른 길에 몰린 세 사람은 깊은 산으로 도망쳐 똥을 먹기 시작한다."
+    },
+    "reluctant-salted-fish": {
+      "title": "죽기 싫은 절인 생선",
+      "description": "2024 Global Game Jam 출품작. 광저우 공각 행사장 투표 4위."
+    },
+    "single-vector-strike": {
+      "title": "단일 벡터 공격",
+      "description": "단일 벡터 공격에서 탈출하세요."
+    },
+    "king-of-petroleum": {
+      "title": "석유왕",
+      "description": "2025 Global Game Jam 출품작. 2~4인 로컬 멀티플레이 지원(컨트롤러 전용)."
+    },
+    "godot-game-dev-skill": {
+      "title": "godot-game-dev-skill",
+      "description": "AI 코딩 에이전트를 위한 이식 가능한 Godot 게임 개발 지식 스킬."
+    },
+    "game-design-skill": {
+      "title": "game-design-skill",
+      "description": "Claude-Code-Game-Studios에서 추출한, 출처에 근거한 게임 디자인 방법론. Claude Code와 Codex용."
+    },
+    "llm-wiki-cli": {
+      "title": "llm-wiki-cli",
+      "description": "AI 네이티브 개인 지식 엔진 CLI."
+    },
+    "jthewl-skills": {
+      "title": "jthewl-skills",
+      "description": "Jupiter The Warlock의 개인 Agent Skills Marketplace."
+    },
+    "ai-game-music": {
+      "title": "지식 없이 시작해 AI로 《Balatro》 같은 게임 음악 만들기",
+      "description": "듣자마자 알아볼 수 있는 게임 음악이 늘 부러웠다. 화면이 나오기도 전에 첫 몇 음만 들으면, 해 본 사람은 어떤 게임인지 바로 안다."
+    },
+    "ai-native-game": {
+      "title": "AI 네이티브 게임은 AI에게 세계를 맡기는 것이 아니다",
+      "description": "AI 네이티브 게임에 대한 많은 논의가 처음부터 문제를 잘못 바라보고 있다는 생각이 점점 강해진다."
+    }
+  }
+}

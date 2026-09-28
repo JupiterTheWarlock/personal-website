@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "games": "Games",
+    "exploring": "Exploring",
+    "notes": "Notes",
+    "contact": "Contact",
+    "label": "Main navigation"
+  },
+  "language": "Choose language",
+  "hero": {
+    "title": "Jupiter The Warlock",
+    "subtitle": "Indie game developer and designer",
+    "slogan": "Kill the old self. Become a new human."
+  },
+  "meta": {
+    "title": "Jupiter The Warlock — Indie Game Developer and Designer",
+    "description": "Games, open-source projects, and development notes by Jupiter The Warlock."
+  },
+  "animations": {
+    "title": "ASCII Animation Showcase",
+    "comingSoon": "Coming soon…"
+  },
+  "social": {
+    "bilibili": "Bilibili",
+    "zhihu": "Zhihu",
+    "gcores": "Gcores"
+  },
+  "content": {
+    "orbital-throw": {
+      "title": "Bet You Can’t Out-Throw Me!",
+      "description": "An arcade game where you anchor to asteroids to spin up and accelerate your spaceship. Made at the Guangzhou site of CiGA Game Jam 2026."
+    },
+    "nest-of-rectangles": {
+      "title": "Nest of Rectangles + Nest of Fractals + Tomb of Rectangles + Cocoon + Skybox",
+      "description": "Once you step into the Nest of Rectangles, it will no longer be just a nest of rectangles."
+    },
+    "yeshit-rhapsody": {
+      "title": "YeShit Rhapsody",
+      "description": "In the final years of the Eastern Han dynasty, war and turmoil leave people starving. Three desperate people flee into the mountains and start eating shit."
+    },
+    "reluctant-salted-fish": {
+      "title": "The Reluctant Salted Fish",
+      "description": "A Global Game Jam 2024 entry, voted fourth at the Guangzhou Gongke jam site."
+    },
+    "single-vector-strike": {
+      "title": "Single-vector Strike",
+      "description": "Escape the Single-vector Strike"
+    },
+    "king-of-petroleum": {
+      "title": "King of Petroleum",
+      "description": "A Global Game Jam 2025 entry for 2–4 local players. Controllers only."
+    },
+    "godot-game-dev-skill": {
+      "title": "godot-game-dev-skill",
+      "description": "Portable Godot game development knowledge skill for AI coding agents"
+    },
+    "game-design-skill": {
+      "title": "game-design-skill",
+      "description": "Source-grounded game design methodology distilled from Claude-Code-Game-Studios for Claude Code and Codex."
+    },
+    "llm-wiki-cli": {
+      "title": "llm-wiki-cli",
+      "description": "AI-native personal knowledge engine CLI"
+    },
+    "jthewl-skills": {
+      "title": "jthewl-skills",
+      "description": "Jupiter The Warlock’s personal Agent Skills Marketplace."
+    },
+    "ai-game-music": {
+      "title": "Making a Balatro-Like Game Soundtrack with AI, Starting from Zero",
+      "description": "I have always envied game music you can recognize immediately. Before any visuals appear, the first few notes tell anyone who has played it which game it is."
+    },
+    "ai-native-game": {
+      "title": "AI-Native Games Don’t Mean Letting AI Take Over the World",
+      "description": "I increasingly feel that many discussions of AI-native games start by approaching the problem from the wrong angle."
+    }
+  }
+}

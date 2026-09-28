@@ -1,4 +1,5 @@
 'use client';
+import type { Messages } from '@/app/i18n/messages';
 
 const socialLinks = [
   { name: 'X', url: 'https://x.com/JupiterTheWL' },
@@ -10,12 +11,12 @@ const socialLinks = [
   { name: 'Gcores', url: 'https://www.gcores.com/users/744716' },
 ];
 
-export default function SocialLinks() {
+export default function SocialLinks({ labels }: { labels: Messages['social'] }) {
   return (
     <div className="social-links">
       {socialLinks.map((link) => (
         <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="social-link">
-          {link.name} <span aria-hidden="true">↗</span>
+          {labels[link.name.toLowerCase() as keyof typeof labels] ?? link.name} <span aria-hidden="true">↗</span>
         </a>
       ))}
     </div>

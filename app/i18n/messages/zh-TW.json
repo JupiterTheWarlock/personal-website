@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "games": "遊戲",
+    "exploring": "探索",
+    "notes": "筆記",
+    "contact": "聯絡",
+    "label": "主要導覽"
+  },
+  "language": "選擇語言",
+  "hero": {
+    "title": "術士木星",
+    "subtitle": "獨立遊戲開發者與設計師",
+    "slogan": "殺死舊自我，成為新人類"
+  },
+  "meta": {
+    "title": "術士木星 — 獨立遊戲開發者與設計師",
+    "description": "術士木星的遊戲作品、開源專案與開發筆記。"
+  },
+  "animations": {
+    "title": "ASCII 動畫展示",
+    "comingSoon": "即將推出…"
+  },
+  "social": {
+    "bilibili": "嗶哩嗶哩",
+    "zhihu": "知乎",
+    "gcores": "機核"
+  },
+  "content": {
+    "orbital-throw": {
+      "title": "你拋不過我你信嗎？",
+      "description": "一款透過錨定隕石，讓太空船旋轉蓄能並加速的街機遊戲。2026 CiGA Game Jam 廣州站作品。"
+    },
+    "nest-of-rectangles": {
+      "title": "矩形之巢+分形之巢+矩形之墓+繭+天空盒",
+      "description": "當你走進矩形之巢時，它就不會只是矩形之巢了。"
+    },
+    "yeshit-rhapsody": {
+      "title": "野食狂想曲 YeShit Rhapsody",
+      "description": "東漢末年，局勢動盪，戰事連連，民不聊生，食不果腹。走投無路的三人逃到深山中，吃起了屎。"
+    },
+    "reluctant-salted-fish": {
+      "title": "鹹魚不想死 The Reluctant Salted Fish",
+      "description": "2024 GGJ 活動作品，獲得廣州攻殼站票選第四名。"
+    },
+    "single-vector-strike": {
+      "title": "單向量打擊",
+      "description": "逃離單向量打擊。"
+    },
+    "king-of-petroleum": {
+      "title": "石油之王",
+      "description": "2025 GGJ 作品，支援 2–4 人本機多人遊玩（僅支援控制器）。"
+    },
+    "godot-game-dev-skill": {
+      "title": "godot-game-dev-skill",
+      "description": "為 AI 程式設計助手提供可攜的 Godot 遊戲開發知識技能。"
+    },
+    "game-design-skill": {
+      "title": "game-design-skill",
+      "description": "從 Claude-Code-Game-Studios 提煉、有來源依據的遊戲設計方法，適用於 Claude Code 和 Codex。"
+    },
+    "llm-wiki-cli": {
+      "title": "llm-wiki-cli",
+      "description": "AI 原生個人知識引擎命令列工具。"
+    },
+    "jthewl-skills": {
+      "title": "jthewl-skills",
+      "description": "術士木星的個人 Agent Skills Marketplace。"
+    },
+    "ai-game-music": {
+      "title": "用 AI 零基礎做出像《小丑牌》一樣的遊戲配樂",
+      "description": "我一直很羨慕那些一聽就能認出來的遊戲音樂。畫面都不用出現，前幾個音一響，玩過的人就知道是哪款遊戲。"
+    },
+    "ai-native-game": {
+      "title": "AI 原生遊戲不是讓 AI 接管世界",
+      "description": "我現在越來越覺得，很多關於 AI 原生遊戲的討論，一開始就把問題想偏了。"
+    }
+  }
+}

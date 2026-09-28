@@ -1,30 +1,20 @@
 import React from 'react';
-import { locales } from '@/app/i18n/config';
+import { isLocale } from '@/app/i18n/config';
+import { getMessages } from '@/app/i18n/messages';
+import { localizedMetadata } from '@/app/i18n/metadata';
+import { notFound } from 'next/navigation';
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+export function generateMetadata({ params }: { params: { locale: string } }) {
+  if (!isLocale(params.locale)) notFound();
+  return localizedMetadata(params.locale, 'animations/');
 }
 
-const translations = {
-  'zh-CN': {
-    title: 'ASCII 动画展示',
-    comingSoon: '即将推出...',
-    back: '返回首页',
-  },
-  'en-US': {
-    title: 'ASCII Animation Showcase',
-    comingSoon: 'Coming Soon...',
-    back: 'Back to Home',
-  },
-};
-
-export default async function AnimationsPage({
+export default function AnimationsPage({
   params
 }: {
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }) {
-  const { locale } = await params;
-  const t = translations[locale as keyof typeof translations] || translations['zh-CN'];
+  const t = getMessages(params.locale).animations;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[50vh] gap-6">

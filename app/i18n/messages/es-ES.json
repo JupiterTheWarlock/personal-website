@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "games": "Juegos",
+    "exploring": "Explorar",
+    "notes": "Notas",
+    "contact": "Contacto",
+    "label": "Navegación principal"
+  },
+  "language": "Elegir idioma",
+  "hero": {
+    "title": "Jupiter The Warlock",
+    "subtitle": "Desarrollador y diseñador de videojuegos independiente",
+    "slogan": "Mata a tu antiguo yo. Conviértete en un nuevo ser humano."
+  },
+  "meta": {
+    "title": "Jupiter The Warlock — Desarrollador y diseñador de videojuegos independiente",
+    "description": "Juegos, proyectos de código abierto y notas de desarrollo de Jupiter The Warlock."
+  },
+  "animations": {
+    "title": "Galería de animaciones ASCII",
+    "comingSoon": "Próximamente…"
+  },
+  "social": {
+    "bilibili": "Bilibili",
+    "zhihu": "Zhihu",
+    "gcores": "Gcores"
+  },
+  "content": {
+    "orbital-throw": {
+      "title": "¿A que no lanzas más lejos que yo?",
+      "description": "Un juego arcade en el que te anclas a asteroides para hacer girar tu nave, acumular energía y acelerar. Creado en la sede de Guangzhou del CiGA Game Jam 2026."
+    },
+    "nest-of-rectangles": {
+      "title": "Nido de rectángulos + Nido de fractales + Tumba de rectángulos + Capullo + Skybox",
+      "description": "Cuando entres en el Nido de rectángulos, ya no será solo un nido de rectángulos."
+    },
+    "yeshit-rhapsody": {
+      "title": "YeShit Rhapsody",
+      "description": "Al final de la dinastía Han Oriental, la guerra y el caos dejan al pueblo hambriento. Tres personas desesperadas huyen a las montañas y empiezan a comer mierda."
+    },
+    "reluctant-salted-fish": {
+      "title": "El pescado salado que no quiere morir",
+      "description": "Un juego del Global Game Jam 2024, cuarto en la votación de la sede Gongke de Guangzhou."
+    },
+    "single-vector-strike": {
+      "title": "Ataque de vector único",
+      "description": "Escapa del ataque de vector único."
+    },
+    "king-of-petroleum": {
+      "title": "Rey del petróleo",
+      "description": "Un juego del Global Game Jam 2025 para 2–4 jugadores en local. Solo con mandos."
+    },
+    "godot-game-dev-skill": {
+      "title": "godot-game-dev-skill",
+      "description": "Una habilidad portátil de conocimientos de desarrollo de juegos con Godot para agentes de programación de IA."
+    },
+    "game-design-skill": {
+      "title": "game-design-skill",
+      "description": "Metodología de diseño de juegos basada en fuentes, extraída de Claude-Code-Game-Studios para Claude Code y Codex."
+    },
+    "llm-wiki-cli": {
+      "title": "llm-wiki-cli",
+      "description": "Motor personal de conocimiento nativo de IA por línea de comandos."
+    },
+    "jthewl-skills": {
+      "title": "jthewl-skills",
+      "description": "El catálogo personal Agent Skills Marketplace de Jupiter The Warlock."
+    },
+    "ai-game-music": {
+      "title": "Crear con IA una banda sonora de juego como la de Balatro, desde cero",
+      "description": "Siempre he envidiado esas músicas de videojuegos que se reconocen al instante. Antes de que aparezca una imagen, las primeras notas ya dicen de qué juego se trata a quienes lo han jugado."
+    },
+    "ai-native-game": {
+      "title": "Los juegos nativos de IA no consisten en dejar que la IA controle el mundo",
+      "description": "Cada vez siento más que muchas conversaciones sobre juegos nativos de IA parten de un enfoque equivocado del problema."
+    }
+  }
+}

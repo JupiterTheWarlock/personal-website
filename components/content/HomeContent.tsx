@@ -3,18 +3,16 @@
 /* eslint-disable @next/next/no-img-element */
 import {
   avatarUrl,
-  explorations,
-  games,
-  notes,
   type ContentCardData,
 } from '@/app/content/home';
+import type { Messages } from '@/app/i18n/messages';
 import { usePresentationModeCycle } from '@/hooks/usePresentationModeCycle';
 import { useTiltCardMotion } from '@/hooks/useTiltCardMotion';
 import SocialLinks from './SocialLinks';
 
 interface HomeContentProps {
-  locale: string;
-  title: string;
+  copy: Pick<Messages, 'hero' | 'nav' | 'social'>;
+  content: { games: ContentCardData[]; explorations: ContentCardData[]; notes: ContentCardData[] };
 }
 
 function excerpt(text: string, length = 88) {
@@ -57,8 +55,8 @@ function ContentGrid({
   );
 }
 
-export default function HomeContent({ locale, title }: HomeContentProps) {
-  const isZh = locale === 'zh-CN';
+export default function HomeContent({ copy, content }: HomeContentProps) {
+  const { games, explorations, notes } = content;
   usePresentationModeCycle();
   useTiltCardMotion();
 
@@ -66,45 +64,45 @@ export default function HomeContent({ locale, title }: HomeContentProps) {
     <div className="home-shell">
       <section id="home" className="lab-hero">
         <div className="hero-copy">
-          <h1>{title}</h1>
-          <p className="hero-subtitle">{isZh ? '独立游戏开发者与设计师' : 'Indie game developer and designer'}</p>
-          <p className="hero-slogan">{isZh ? '杀死旧自我，成为新人类' : 'Kill the old self. Become a new human.'}</p>
+          <h1>{copy.hero.title}</h1>
+          <p className="hero-subtitle">{copy.hero.subtitle}</p>
+          <p className="hero-slogan">{copy.hero.slogan}</p>
         </div>
       </section>
 
       <div className="home-panels">
         <section id="games" className="lab-section">
           <div className="section-heading">
-            <h2>{isZh ? '游戏' : 'Games'}</h2>
+            <h2>{copy.nav.games}</h2>
           </div>
           <ContentGrid items={games} />
         </section>
 
         <section id="exploring" className="lab-section">
           <div className="section-heading">
-            <h2>{isZh ? '探索' : 'Exploring'}</h2>
+            <h2>{copy.nav.exploring}</h2>
           </div>
           <ContentGrid items={explorations} />
         </section>
 
         <section id="notes" className="lab-section">
           <div className="section-heading">
-            <h2>{isZh ? '笔记' : 'Notes'}</h2>
+            <h2>{copy.nav.notes}</h2>
           </div>
           <ContentGrid items={notes} articleLayout />
         </section>
 
         <section id="contact" className="lab-section">
           <div className="section-heading">
-            <h2>{isZh ? '联系' : 'Contact'}</h2>
+            <h2>{copy.nav.contact}</h2>
           </div>
           <div className="contact-card">
-            <img className="contact-avatar" src={avatarUrl} alt={title} loading="lazy" />
+            <img className="contact-avatar" src={avatarUrl} alt={copy.hero.title} loading="lazy" />
             <div className="contact-details">
               <a className="contact-email" href="mailto:jupiterthewarlock679@gmail.com">
                 jupiterthewarlock679@gmail.com ↗
               </a>
-              <SocialLinks />
+              <SocialLinks labels={copy.social} />
             </div>
           </div>
         </section>

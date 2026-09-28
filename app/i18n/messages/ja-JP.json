@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "games": "ゲーム",
+    "exploring": "探求",
+    "notes": "ノート",
+    "contact": "連絡先",
+    "label": "メインナビゲーション"
+  },
+  "language": "言語を選択",
+  "hero": {
+    "title": "Jupiter The Warlock",
+    "subtitle": "インディーゲーム開発者・デザイナー",
+    "slogan": "古い自分を殺し、新しい人間になる。"
+  },
+  "meta": {
+    "title": "Jupiter The Warlock — インディーゲーム開発者・デザイナー",
+    "description": "Jupiter The Warlock のゲーム作品、オープンソースプロジェクト、開発ノート。"
+  },
+  "animations": {
+    "title": "ASCII アニメーション展示",
+    "comingSoon": "近日公開…"
+  },
+  "social": {
+    "bilibili": "Bilibili",
+    "zhihu": "Zhihu",
+    "gcores": "Gcores"
+  },
+  "content": {
+    "orbital-throw": {
+      "title": "僕より遠くに投げられないって、信じる？",
+      "description": "小惑星にアンカーを打ち、宇宙船を回転させてエネルギーを蓄え、加速するアーケードゲーム。CiGA Game Jam 2026 広州会場の作品。"
+    },
+    "nest-of-rectangles": {
+      "title": "矩形の巣＋フラクタルの巣＋矩形の墓＋繭＋スカイボックス",
+      "description": "矩形の巣に足を踏み入れた瞬間、そこはもう単なる矩形の巣ではなくなる。"
+    },
+    "yeshit-rhapsody": {
+      "title": "野食狂想曲 — YeShit Rhapsody",
+      "description": "後漢末期、戦乱が続き、人々は飢えに苦しんでいた。追い詰められた三人は山奥へ逃げ込み、クソを食べ始める。"
+    },
+    "reluctant-salted-fish": {
+      "title": "死にたくない塩漬け魚",
+      "description": "Global Game Jam 2024 の作品。広州・攻殻会場の投票で第4位。"
+    },
+    "single-vector-strike": {
+      "title": "単一ベクトル攻撃",
+      "description": "単一ベクトル攻撃から逃げろ。"
+    },
+    "king-of-petroleum": {
+      "title": "石油王",
+      "description": "Global Game Jam 2025 の作品。2〜4人のローカルマルチプレイに対応（コントローラー専用）。"
+    },
+    "godot-game-dev-skill": {
+      "title": "godot-game-dev-skill",
+      "description": "AI コーディングエージェント向けの、持ち運び可能な Godot ゲーム開発知識スキル。"
+    },
+    "game-design-skill": {
+      "title": "game-design-skill",
+      "description": "Claude-Code-Game-Studios から抽出した、出典に基づくゲームデザイン手法。Claude Code と Codex 向け。"
+    },
+    "llm-wiki-cli": {
+      "title": "llm-wiki-cli",
+      "description": "AI ネイティブな個人用知識エンジンの CLI。"
+    },
+    "jthewl-skills": {
+      "title": "jthewl-skills",
+      "description": "Jupiter The Warlock 個人の Agent Skills Marketplace。"
+    },
+    "ai-game-music": {
+      "title": "知識ゼロから AI で『Balatro』のようなゲーム音楽を作る",
+      "description": "聴いた瞬間にわかるゲーム音楽に、ずっと憧れていた。画面が映る前でも、最初の数音で、遊んだことのある人には何のゲームかわかる。"
+    },
+    "ai-native-game": {
+      "title": "AI ネイティブゲームは、AI に世界を任せることではない",
+      "description": "AI ネイティブゲームをめぐる議論の多くは、最初から問題の捉え方がずれていると、最近ますます感じる。"
+    }
+  }
+}

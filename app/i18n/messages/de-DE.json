@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "games": "Spiele",
+    "exploring": "Entdecken",
+    "notes": "Notizen",
+    "contact": "Kontakt",
+    "label": "Hauptnavigation"
+  },
+  "language": "Sprache wählen",
+  "hero": {
+    "title": "Jupiter The Warlock",
+    "subtitle": "Indie-Spieleentwickler und Designer",
+    "slogan": "Töte dein altes Ich. Werde ein neuer Mensch."
+  },
+  "meta": {
+    "title": "Jupiter The Warlock — Indie-Spieleentwickler und Designer",
+    "description": "Spiele, Open-Source-Projekte und Entwicklungsnotizen von Jupiter The Warlock."
+  },
+  "animations": {
+    "title": "ASCII-Animationen",
+    "comingSoon": "Demnächst…"
+  },
+  "social": {
+    "bilibili": "Bilibili",
+    "zhihu": "Zhihu",
+    "gcores": "Gcores"
+  },
+  "content": {
+    "orbital-throw": {
+      "title": "Wetten, du wirfst nicht weiter als ich?",
+      "description": "Ein Arcade-Spiel, in dem du dich an Asteroiden verankerst, um dein Raumschiff durch Rotation aufzuladen und zu beschleunigen. Entstanden beim CiGA Game Jam 2026 in Guangzhou."
+    },
+    "nest-of-rectangles": {
+      "title": "Nest der Rechtecke + Nest der Fraktale + Grab der Rechtecke + Kokon + Skybox",
+      "description": "Sobald du das Nest der Rechtecke betrittst, ist es nicht mehr nur ein Nest aus Rechtecken."
+    },
+    "yeshit-rhapsody": {
+      "title": "YeShit Rhapsody",
+      "description": "Am Ende der Östlichen Han-Dynastie herrschen Krieg, Unruhen und Hunger. Drei verzweifelte Menschen fliehen tief in die Berge und beginnen, Scheiße zu essen."
+    },
+    "reluctant-salted-fish": {
+      "title": "Der Salzfisch, der nicht sterben will",
+      "description": "Ein Beitrag zum Global Game Jam 2024. Platz vier bei der Abstimmung am Gongke-Standort in Guangzhou."
+    },
+    "single-vector-strike": {
+      "title": "Einzelvektor-Angriff",
+      "description": "Entkomme dem Einzelvektor-Angriff."
+    },
+    "king-of-petroleum": {
+      "title": "König des Erdöls",
+      "description": "Ein Beitrag zum Global Game Jam 2025 für 2–4 lokale Spieler. Nur mit Controllern spielbar."
+    },
+    "godot-game-dev-skill": {
+      "title": "godot-game-dev-skill",
+      "description": "Portabler Skill mit Wissen zur Godot-Spieleentwicklung für KI-Programmieragenten."
+    },
+    "game-design-skill": {
+      "title": "game-design-skill",
+      "description": "Quellenbasierte Spieldesign-Methodik aus Claude-Code-Game-Studios für Claude Code und Codex."
+    },
+    "llm-wiki-cli": {
+      "title": "llm-wiki-cli",
+      "description": "KI-native persönliche Wissensverwaltung per Kommandozeile."
+    },
+    "jthewl-skills": {
+      "title": "jthewl-skills",
+      "description": "Der persönliche Agent Skills Marketplace von Jupiter The Warlock."
+    },
+    "ai-game-music": {
+      "title": "Mit KI ohne Vorkenntnisse einen Spiele-Soundtrack wie in Balatro erstellen",
+      "description": "Ich habe Spielemusik, die man sofort erkennt, schon immer beneidet. Noch bevor ein Bild erscheint, verraten die ersten Töne allen, die es gespielt haben, welches Spiel es ist."
+    },
+    "ai-native-game": {
+      "title": "KI-native Spiele bedeuten nicht, der KI die Welt zu überlassen",
+      "description": "Ich habe zunehmend das Gefühl, dass viele Diskussionen über KI-native Spiele die Frage von Anfang an aus dem falschen Blickwinkel betrachten."
+    }
+  }
+}
