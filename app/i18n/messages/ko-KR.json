@@ -26,6 +26,10 @@
     "gcores": "Gcores"
   },
   "content": {
+    "pixel-cosmos-studio": {
+      "title": "Pixel Cosmos Studio",
+      "description": "픽셀 및 복셀 행성, 움직이는 구름, 우주 스카이박스를 생성하고 게임용 에셋으로 내보낼 수 있습니다."
+    },
     "orbital-throw": {
       "title": "나보다 멀리 못 던진다니까?",
       "description": "소행성에 닻을 걸어 우주선을 회전시키고 에너지를 모아 가속하는 아케이드 게임. 2026 CiGA Game Jam 광저우 행사 출품작."

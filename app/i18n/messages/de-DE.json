@@ -26,6 +26,10 @@
     "gcores": "Gcores"
   },
   "content": {
+    "pixel-cosmos-studio": {
+      "title": "Pixel Cosmos Studio",
+      "description": "Erstelle Pixel- und Voxelplaneten, animierte Wolken und Weltraum-Skyboxen. Exportiere Assets für dein Spiel."
+    },
     "orbital-throw": {
       "title": "Wetten, du wirfst nicht weiter als ich?",
       "description": "Ein Arcade-Spiel, in dem du dich an Asteroiden verankerst, um dein Raumschiff durch Rotation aufzuladen und zu beschleunigen. Entstanden beim CiGA Game Jam 2026 in Guangzhou."

@@ -3,10 +3,21 @@ export interface ContentCardData {
   title: string;
   description: string;
   image?: string;
+  imageFit?: 'contain';
   url: string;
 }
 
+const pixelCosmosStudio: ContentCardData = {
+  id: 'pixel-cosmos-studio',
+  title: 'Pixel Cosmos Studio',
+  description: '生成像素与体素星球、动态云层和星空天空盒，并导出游戏可用素材。',
+  image: 'https://img.itch.zone/aW1nLzMwMzk5NDE4LnBuZw==/original/Wxb%2BpQ.png',
+  imageFit: 'contain',
+  url: 'https://jupiter-the-warlock.itch.io/pixel-cosmos-studio',
+};
+
 export const games: ContentCardData[] = [
+  pixelCosmosStudio,
   {
     id: 'orbital-throw',
     title: '你抛不过我你信吗？',
@@ -52,6 +63,7 @@ export const games: ContentCardData[] = [
 ];
 
 export const explorations: ContentCardData[] = [
+  pixelCosmosStudio,
   {
     id: 'godot-game-dev-skill',
     title: 'godot-game-dev-skill',

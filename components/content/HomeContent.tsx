@@ -41,7 +41,7 @@ function ContentGrid({
           rel="noopener noreferrer"
         >
           {item.image ? (
-            <span className="content-card-image">
+            <span className={`content-card-image${item.imageFit === 'contain' ? ' content-card-image--contain' : ''}`}>
               <img src={item.image} alt="" loading="lazy" />
             </span>
           ) : null}

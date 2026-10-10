@@ -26,6 +26,10 @@
     "gcores": "机核"
   },
   "content": {
+    "pixel-cosmos-studio": {
+      "title": "Pixel Cosmos Studio",
+      "description": "生成像素与体素星球、动态云层和星空天空盒，并导出游戏可用素材。"
+    },
     "orbital-throw": {
       "title": "你抛不过我你信吗？",
       "description": "一款通过锚定陨石来给飞船旋转充能加速的街机游戏。2026 CiGA Game Jam 广州站作品。"

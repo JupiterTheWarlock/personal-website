@@ -488,6 +488,12 @@ body.business-card-mode .lab-hero {
   will-change: transform;
 }
 
+.content-card-image--contain img {
+  object-fit: contain;
+  transform: none;
+  will-change: auto;
+}
+
 .content-card-copy {
   min-width: 0;
   display: grid;

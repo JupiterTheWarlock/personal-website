@@ -26,6 +26,10 @@
     "gcores": "Gcores"
   },
   "content": {
+    "pixel-cosmos-studio": {
+      "title": "Pixel Cosmos Studio",
+      "description": "ピクセルやボクセルの惑星、動く雲、宇宙のスカイボックスを生成し、ゲーム用の素材として書き出せます。"
+    },
     "orbital-throw": {
       "title": "僕より遠くに投げられないって、信じる？",
       "description": "小惑星にアンカーを打ち、宇宙船を回転させてエネルギーを蓄え、加速するアーケードゲーム。CiGA Game Jam 2026 広州会場の作品。"

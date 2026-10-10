@@ -65,7 +65,7 @@ test('locale replacement preserves page, query parameters and anchor', () => {
 
 test('all nine dictionaries have complete UI and content translations', () => {
   const cards = [...games, ...explorations, ...notes];
-  const ids = cards.map((card) => card.id).sort();
+  const ids = [...new Set(cards.map((card) => card.id))].sort();
   assert.equal(locales.length, 9);
   function checkShape(source, value, keyPath) {
     if (typeof source === 'string') return assert.ok(typeof value === 'string' && value.trim(), keyPath);
@@ -93,7 +93,7 @@ test('missing content fields fall back to English then source without losing car
 });
 
 test('delisted game stays removed; notes link to the two requested X articles', () => {
-  assert.equal(games.length, 6);
+  assert.equal(games.length, 7);
   assert.ok(!games.some((game) => game.url.includes('thejunkyardoftheend')));
   assert.deepEqual(notes.map((note) => note.url), [
     'https://x.com/JupiterTheWL/status/2100813911104872633?s=20',

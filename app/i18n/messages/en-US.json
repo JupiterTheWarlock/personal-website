@@ -26,6 +26,10 @@
     "gcores": "Gcores"
   },
   "content": {
+    "pixel-cosmos-studio": {
+      "title": "Pixel Cosmos Studio",
+      "description": "Create pixel and voxel planets, animated clouds, and space skyboxes. Export assets for your game."
+    },
     "orbital-throw": {
       "title": "Bet You Can’t Out-Throw Me!",
       "description": "An arcade game where you anchor to asteroids to spin up and accelerate your spaceship. Made at the Guangzhou site of CiGA Game Jam 2026."

@@ -26,6 +26,10 @@
     "gcores": "Gcores"
   },
   "content": {
+    "pixel-cosmos-studio": {
+      "title": "Pixel Cosmos Studio",
+      "description": "Crea planetas de píxeles y vóxeles, nubes animadas y skyboxes espaciales. Exporta recursos para tu juego."
+    },
     "orbital-throw": {
       "title": "¿A que no lanzas más lejos que yo?",
       "description": "Un juego arcade en el que te anclas a asteroides para hacer girar tu nave, acumular energía y acelerar. Creado en la sede de Guangzhou del CiGA Game Jam 2026."
