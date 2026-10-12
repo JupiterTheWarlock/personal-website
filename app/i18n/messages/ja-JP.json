@@ -9,11 +9,12 @@
   "language": "言語を選択",
   "hero": {
     "title": "Jupiter The Warlock",
-    "subtitle": "インディーゲーム開発者・デザイナー",
-    "slogan": "古い自分を殺し、新しい人間になる。"
+    "subtitle": "インディーゲームデザイナー & 開発者",
+    "slogan": "AI ゲーム開発のデモ・プロトタイプ・実験を発信中",
+    "motto": "古い自分を殺し、新しい人間になる。"
   },
   "meta": {
-    "title": "Jupiter The Warlock — インディーゲーム開発者・デザイナー",
+    "title": "Jupiter The Warlock — インディーゲームデザイナー & 開発者",
     "description": "Jupiter The Warlock のゲーム作品、オープンソースプロジェクト、開発ノート。"
   },
   "animations": {

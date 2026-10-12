@@ -106,6 +106,12 @@ export default function HomeContent({ copy, content }: HomeContentProps) {
             </div>
           </div>
         </section>
+
+        <footer className="footer">
+          <div className="footer-panel">
+            <span>{copy.hero.motto}</span>
+          </div>
+        </footer>
       </div>
     </div>
   );

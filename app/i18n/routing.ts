@@ -2,13 +2,7 @@ import { fallbackLocale, isLocale, type Locale } from './config';
 
 const countryLocales: Record<string, Locale> = {
   CN: 'zh-CN', TW: 'zh-TW', HK: 'zh-TW', MO: 'zh-TW',
-  JP: 'ja-JP', KR: 'ko-KR', DE: 'de-DE', AT: 'de-DE', LI: 'de-DE',
-  FR: 'fr-FR', MC: 'fr-FR', ES: 'es-ES', MX: 'es-ES', AR: 'es-ES',
-  BO: 'es-ES', CL: 'es-ES', CO: 'es-ES', CR: 'es-ES', CU: 'es-ES',
-  DO: 'es-ES', EC: 'es-ES', GT: 'es-ES', HN: 'es-ES', NI: 'es-ES',
-  PA: 'es-ES', PE: 'es-ES', PR: 'es-ES', PY: 'es-ES', SV: 'es-ES',
-  UY: 'es-ES', VE: 'es-ES', BR: 'pt-BR', PT: 'pt-BR', AO: 'pt-BR', MZ: 'pt-BR',
-  US: 'en-US', GB: 'en-US', AU: 'en-US', NZ: 'en-US', IE: 'en-US',
+  JP: 'ja-JP', US: 'en-US', GB: 'en-US', AU: 'en-US', NZ: 'en-US', IE: 'en-US',
 };
 
 export function matchLanguage(language: string): Locale | undefined {
@@ -19,10 +13,7 @@ export function matchLanguage(language: string): Locale | undefined {
     if (parts.includes('hans')) return 'zh-CN';
     return parts.some((part) => ['tw', 'hk', 'mo'].includes(part)) ? 'zh-TW' : 'zh-CN';
   }
-  const languages: Record<string, Locale> = {
-    en: 'en-US', ja: 'ja-JP', ko: 'ko-KR', de: 'de-DE',
-    fr: 'fr-FR', es: 'es-ES', pt: 'pt-BR',
-  };
+  const languages: Record<string, Locale> = { en: 'en-US', ja: 'ja-JP' };
   return languages[tag.split('-')[0]];
 }
 

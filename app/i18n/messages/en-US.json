@@ -9,11 +9,12 @@
   "language": "Choose language",
   "hero": {
     "title": "Jupiter The Warlock",
-    "subtitle": "Indie game developer and designer",
-    "slogan": "Kill the old self. Become a new human."
+    "subtitle": "Indie game designer & developer",
+    "slogan": "Shipping AI game dev demos, prototypes and experiments",
+    "motto": "Kill the old self. Become a new human."
   },
   "meta": {
-    "title": "Jupiter The Warlock — Indie Game Developer and Designer",
+    "title": "Jupiter The Warlock — Indie Game Designer & Developer",
     "description": "Games, open-source projects, and development notes by Jupiter The Warlock."
   },
   "animations": {
