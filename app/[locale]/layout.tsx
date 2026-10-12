@@ -38,7 +38,7 @@ export default function LocaleLayout({
             {children}
           </main>
         </div>
-        <Script src="/junkyard-scene/host.js" data-brand-profile="home" strategy="afterInteractive" />
+        <Script src="/junkyard-scene/host.js?v=1.0.7" data-brand-profile="home" strategy="afterInteractive" />
       </body>
     </html>
   );

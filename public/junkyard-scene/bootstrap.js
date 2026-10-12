@@ -26,7 +26,6 @@ jellyfish.setState('idle', { force: true });
 jellyfish.setMotionTuning(developerTuning.jellyfishMotion);
 
 let jellyfishProjection = null;
-let pointerGazeUntil = 0;
 let gazeInitialized = false;
 
 function pointJellyfishAt(clientX, clientY, options) {
@@ -52,7 +51,7 @@ const scene = mountJunkyardSystemView(stage, projection, {
   reducedMotion: prefersStillScene(),
   homeJellyfishSvg: jellyfish.svg,
   onBeforeRender: (timestamp) => {
-    if (prefersStillScene() || timestamp >= pointerGazeUntil) pointJellyfishAtCenter();
+    pointJellyfishAtCenter();
     jellyfish.advance(timestamp);
   },
   onAnimationLoopChange: () => {},
@@ -87,19 +86,10 @@ const onVisibilityChange = () => scene.setVisibility(!document.hidden);
 document.addEventListener('visibilitychange', onVisibilityChange);
 onVisibilityChange();
 
-const onParentPointer = (event) => {
-  if (event.origin !== window.location.origin || event.data?.type !== 'junkyard-pointer') return;
-  if (event.source !== window.parent || prefersStillScene() || document.hidden) return;
-  pointerGazeUntil = performance.now() + 1800;
-  pointJellyfishAt(Number(event.data.clientX) || 0, Number(event.data.clientY) || 0);
-};
-window.addEventListener('message', onParentPointer);
-
 window.addEventListener('pagehide', () => {
   motionQuery.removeEventListener('change', onMotionChange);
   mobileQuery.removeEventListener('change', onMotionChange);
   document.removeEventListener('visibilitychange', onVisibilityChange);
-  window.removeEventListener('message', onParentPointer);
   delete window.__junkyardBackground;
   scene.dispose();
   jellyfish.destroy();

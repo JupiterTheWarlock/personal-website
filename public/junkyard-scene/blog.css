@@ -14,7 +14,7 @@
   --headerFont: var(--brand-font-body);
   --codeFont: var(--brand-font-ui);
 }
-body { background: var(--brand-bg); }
+html, body { background: var(--brand-bg, #0A0908); }
 #quartz-root { position: relative; z-index: 1; }
 .page > #quartz-body > .center {
   box-sizing: border-box;

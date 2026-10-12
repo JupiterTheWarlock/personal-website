@@ -1,6 +1,6 @@
 {
   "package": "@jthewl/brand",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "source": "tools/jthewl-brand/scene",
   "files": {
     "assets/pixel-cosmos/PIXEL_COSMOS_LICENSE.txt": "f3dcbc0145394e1aed26bb71eda87414b27b0845068c162b43b615f3b5786a76",
@@ -25,11 +25,11 @@
     "assets/pixel-cosmos/voxel/lava.preset.json": "48cdd824751578c0944e6dc8326bf33d8c9cd1d71815ce27ca71a432e515ad70",
     "assets/pixel-cosmos/voxel/ocean.glb": "079a49a7b489ca0750c37d0acb42503ca292f5f5cff0501f4bdfe90c6c68df20",
     "assets/pixel-cosmos/voxel/ocean.preset.json": "28e6d65e3aea437a9483d814adcf05221edca6f0b4d66d6fb38cb1c62fa99b0e",
-    "blog.css": "99c514c1038bae69907881e057f5e46f972d464079a754817ce917789dc4948d",
-    "bootstrap.js": "042b7daa98e6200bf8e96cbf7c9499dd2307309202d497b846918db96e983667",
+    "blog.css": "72bc8f330fb48342a2f005d1bd9df207f9667a17a893dff48eed40d52981d232",
+    "bootstrap.js": "d57a510a773c39960dabd4ec86f04060e40ab4eb81bd04f2fe2ead5bc10d5a43",
     "brand.css": "11c04ac8546de930f9bf88ed57b7daa12a539eacf3b36ba1eb0cec0b526a27ba",
-    "host.js": "a0a71b2fe37d4e2f4be8b4e55207bca004a2195292848f6655808fdd0a5e67ad",
-    "index.html": "e6e5069ccb4cdb2ac4b3a2202eafbec67011ab66a97fa849919370f724bc4ebc",
+    "host.js": "638682e684238f15b102f67eb6f590f978580579ca40afd3b94abfb84432ee53",
+    "index.html": "b3a9131bd4726320ee0c7db3d27cdf1bb5e34f96d99abe224c4112d111616f6d",
     "runtime/canvas_data_probe.mjs": "b219e835c99e257f11bba7c2dcdb83bfd111503baddfafc834d5d917a8c92d6f",
     "runtime/overlay_label_layout.mjs": "c8d87c394f174698a5b445d4dc59def6340d4797122eff5f314a498286789760",
     "runtime/pixel_cosmos.js": "91f688c24b6d7fcbc60057ff5ccf2e99c88a23daad1bac1ea157641e978af09b",

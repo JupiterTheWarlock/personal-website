@@ -3,7 +3,7 @@
   if (window.__jthewlBrandHost) return;
   const script = document.currentScript;
   const profile = script?.dataset.brandProfile || 'home';
-  const sceneUrl = new URL(`index.html?profile=${encodeURIComponent(profile)}`, script.src).href;
+  const sceneUrl = new URL(`index.html?profile=${encodeURIComponent(profile)}&v=1.0.7`, script.src).href;
   const ensureFrame = () => {
     document.body.dataset.brandProfile = profile;
     let frame = document.querySelector('iframe[data-jthewl-scene]');
@@ -62,10 +62,4 @@
       document.documentElement.classList.remove('mobile-no-scroll');
     });
   }
-  document.addEventListener('pointermove', (event) => {
-    if (event.pointerType === 'touch') return;
-    document.querySelector('iframe[data-jthewl-scene]')?.contentWindow?.postMessage({
-      type: 'junkyard-pointer', clientX: event.clientX, clientY: event.clientY,
-    }, location.origin);
-  }, { passive: true });
 })();
