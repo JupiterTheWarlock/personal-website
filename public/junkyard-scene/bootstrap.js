@@ -1,9 +1,10 @@
-import { mountJunkyardSystemView } from './runtime/spatial_maps.js';
+// Keep changed modules on the same release URL; browsers may cache them for hours.
+import { mountJunkyardSystemView } from './runtime/spatial_maps.js?v=1.0.6';
 import {
   gazeVectorFromClientPoint,
   gazeVectorFromProjectedEye,
   mountVoidJellyfish,
-} from './runtime/void_jellyfish.js';
+} from './runtime/void_jellyfish.js?v=1.0.6';
 import { appearanceState, developerTuning, projection } from './scene-data.js';
 
 const stage = document.querySelector('#junkyardSystemStage');
