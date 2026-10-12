@@ -1396,6 +1396,7 @@ export function mountJunkyardSystemView(container, projection, options = {}) {
   let reducedMotion = Boolean(currentOptions.reducedMotion);
   let visible = currentOptions.visible !== false;
   let contextLost = false;
+  let homeJellyfishHasRendered = false;
   homeJellyfishSkySphere?.setReducedMotion(reducedMotion);
   let disposed = false;
   let renderRequested = 0;
@@ -1576,7 +1577,6 @@ export function mountJunkyardSystemView(container, projection, options = {}) {
     });
     if (homeJellyfishSkySphere) {
       homeJellyfishSkySphere.updateAttachment();
-      homeJellyfishSkySphere.update(timestamp);
       runtime.junkyard.getWorldPosition(junkyardProjected);
       junkyardProjected.project(camera);
       const junkyardCenter = {
@@ -1643,6 +1643,9 @@ export function mountJunkyardSystemView(container, projection, options = {}) {
         tentacleCount: homeJellyfishSkySphere.policy.tentacleCount,
         irisLight: true,
       });
+      // The projection callback initializes the gaze before geometry is drawn.
+      homeJellyfishSkySphere.update(timestamp, !homeJellyfishHasRendered || reducedMotion);
+      homeJellyfishHasRendered = true;
     }
     if (homePostFx.enabled) {
       homeTarget.setSize(canvas.width, canvas.height);

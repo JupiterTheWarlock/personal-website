@@ -1,0 +1,88 @@
+{
+  "generator": "Pixel Cosmos Studio",
+  "url": "https://jupiter-the-warlock.itch.io/pixel-cosmos-studio",
+  "sourceCommit": "01b36f68ff42742a9de1a75d3b899ea5d16e39ae",
+  "sourceDirty": false,
+  "engine": "Godot 4.4.1, GL Compatibility",
+  "recipe": "tools/jthewl-brand/cosmos-presets.json",
+  "animation": "cosmos-periodic-warp-v1, real-time GLSL; lava adds periodic domain warp",
+  "exportedAt": "2026-10-10T10:17:37.209Z",
+  "files": {
+    "voxel/amber.glb": {
+      "bytes": 245216,
+      "sha256": "164155cadebe8b10c579733c3cdea21a9b455b5d2972724909b2714bc89f9e9c"
+    },
+    "voxel/amber.preset.json": {
+      "bytes": 1631,
+      "sha256": "cfccd78e5c8b0036e461cb77889e5bcf6ae2d0be48d73c9960dbf893e50e1a1f"
+    },
+    "voxel/ocean.glb": {
+      "bytes": 1226584,
+      "sha256": "079a49a7b489ca0750c37d0acb42503ca292f5f5cff0501f4bdfe90c6c68df20"
+    },
+    "voxel/ocean.preset.json": {
+      "bytes": 1620,
+      "sha256": "28e6d65e3aea437a9483d814adcf05221edca6f0b4d66d6fb38cb1c62fa99b0e"
+    },
+    "voxel/ice.glb": {
+      "bytes": 148756,
+      "sha256": "060988203fb9c0333c551ffcd1da10f099a2862c7c8dee5722b8a158044aea1d"
+    },
+    "voxel/ice.preset.json": {
+      "bytes": 1622,
+      "sha256": "f4422ae364ec14e4b0194affbb74c68f7230657767235743fd31c61386db588f"
+    },
+    "voxel/lava.glb": {
+      "bytes": 274968,
+      "sha256": "dc52ae5a58f77a4b7740b7066d8e85e3d314f3c0f8f74edf4f172d0e3454ae31"
+    },
+    "voxel/lava.preset.json": {
+      "bytes": 1624,
+      "sha256": "48cdd824751578c0944e6dc8326bf33d8c9cd1d71815ce27ca71a432e515ad70"
+    },
+    "pixel/amber.glb": {
+      "bytes": 504972,
+      "sha256": "4b9c1162ca4771089e570a23af5cabe762fb9262700bba9798a9f160652778d7"
+    },
+    "pixel/amber.preset.json": {
+      "bytes": 1632,
+      "sha256": "6e3db0de4b8e60ab1b5d8b1352434ca47f48573b6649a376f967e07a7e749c1d"
+    },
+    "pixel/ocean.glb": {
+      "bytes": 808420,
+      "sha256": "2371083b7c479c067058bd3e16387865075134af95c312810992a36d1738b57a"
+    },
+    "pixel/ocean.preset.json": {
+      "bytes": 1621,
+      "sha256": "88a2ce1bc799cde10242a36c17316b2add4d3c88b185b7cb069a45020ba336a0"
+    },
+    "pixel/ice.glb": {
+      "bytes": 403204,
+      "sha256": "520e00dfc73937bed3d3e750b676e55201dc493aecf82051abf1d7a3f8d8cde0"
+    },
+    "pixel/ice.preset.json": {
+      "bytes": 1623,
+      "sha256": "195efe531515684f9903c7ad4956934b27a7cc89619feae77964f53dba6b301f"
+    },
+    "pixel/lava.glb": {
+      "bytes": 413892,
+      "sha256": "2966df39e2a82582a208ed2053076d264289d9f99e4d172ed4bd59b0533bff15"
+    },
+    "pixel/lava.preset.json": {
+      "bytes": 1625,
+      "sha256": "f8fdcad62bcaf97cc8e2c042fe95e21436deffce667413779da57ec12bad31b2"
+    },
+    "sky.png": {
+      "bytes": 107515,
+      "sha256": "fb60658628dd340f9d648477f21bd763926a7a3182c3bf55e0bc61291949bbc3"
+    },
+    "sky.preset.json": {
+      "bytes": 1189,
+      "sha256": "dd0efbf6040c6673f81ec10f8dfbf52ded7eecb919d3b1b4b43e9dfd1c75a53f"
+    },
+    "noise-core.glsl": {
+      "bytes": 10849,
+      "sha256": "4f9752684910ee82600f7ef91f2f52c5060b4ec37bc430f9a340e04a4c871a5a"
+    }
+  }
+}

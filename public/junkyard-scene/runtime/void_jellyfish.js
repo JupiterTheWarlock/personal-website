@@ -602,8 +602,17 @@ export class VoidJellyfish {
     this.showTentacles = Boolean(visible);
   }
 
-  lookAt(x, y, duration = 1000) {
-    this.pointerGaze = { x: clamp(x, -1, 1), y: clamp(y, -1, 1), until: performance.now() + duration };
+  lookAt(x, y, duration = 1000, { immediate = false } = {}) {
+    const now = performance.now();
+    this.pointerGaze = { x: clamp(x, -1, 1), y: clamp(y, -1, 1), until: now + duration };
+    if (immediate) {
+      this._updateTargets(now);
+      for (const key of ['gazeX', 'gazeY']) {
+        this.current[key] = this.target[key];
+        this.velocity[key] = 0;
+      }
+      this._render(now);
+    }
   }
 
   lookAtClient(clientX, clientY, duration = 1800) {
