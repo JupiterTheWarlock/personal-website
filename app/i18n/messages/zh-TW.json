@@ -26,7 +26,33 @@
     "zhihu": "知乎",
     "gcores": "機核"
   },
+  "sewerKing": {
+    "title": "AAA下水道清理大王",
+    "description": "瞄準、發射彈球，清理下水道裡的怪物，再回到事務所準備下一次下井。",
+    "back": "所有遊戲",
+    "edition": "網頁版",
+    "play": "開始試玩",
+    "openStandalone": "獨立開啟",
+    "downloadNote": "首次載入約 84 MB，可能需要一些時間。",
+    "controlsTitle": "怎麼玩",
+    "controls": "用滑鼠或觸控瞄準並發射彈球。進入遊戲後，跟隨箭頭前往水井開始戰鬥。",
+    "gameLanguage": "遊戲內語言：簡體中文。",
+    "saveTitle": "關於存檔",
+    "saveNote": "進度儲存在目前的瀏覽器，重新整理後可以繼續。不同瀏覽器與裝置不共用存檔；清除網站資料會移除進度。",
+    "close": "關閉遊戲",
+    "fullscreen": "全螢幕",
+    "exitFullscreen": "離開全螢幕",
+    "fullscreenUnavailable": "目前瀏覽器無法進入全螢幕，可以獨立開啟遊戲。",
+    "frameTitle": "AAA下水道清理大王線上試玩",
+    "loading": "正在載入遊戲",
+    "ready": "遊戲已準備好，請點擊進入",
+    "running": "遊戲執行中"
+  },
   "content": {
+    "aaa-sewer-king": {
+      "title": "AAA下水道清理大王",
+      "description": "瞄準、發射彈球，清理下水道裡的怪物。直接在瀏覽器試玩。"
+    },
     "pixel-cosmos-studio": {
       "title": "Pixel Cosmos Studio",
       "description": "生成像素與體素星球、動態雲層和星空天空盒，並匯出遊戲可用素材。"

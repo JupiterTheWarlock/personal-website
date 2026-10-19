@@ -26,7 +26,33 @@
     "zhihu": "Zhihu",
     "gcores": "Gcores"
   },
+  "sewerKing": {
+    "title": "AAA Sewer King",
+    "description": "Aim and launch bouncing balls to clear monsters from the sewers, then return to the office to prepare for your next descent.",
+    "back": "All games",
+    "edition": "Browser edition",
+    "play": "Play now",
+    "openStandalone": "Open standalone",
+    "downloadNote": "The first load downloads about 84 MB and may take a little while.",
+    "controlsTitle": "How to play",
+    "controls": "Aim and launch balls with your mouse or touch screen. Follow the arrow to the well to start your first battle.",
+    "gameLanguage": "In-game language: Simplified Chinese.",
+    "saveTitle": "Your save",
+    "saveNote": "Progress is saved in this browser and can be continued after a refresh. Saves are not shared between browsers or devices. Clearing site data removes your progress.",
+    "close": "Close game",
+    "fullscreen": "Fullscreen",
+    "exitFullscreen": "Exit fullscreen",
+    "fullscreenUnavailable": "Fullscreen is unavailable in this browser. You can open the game standalone.",
+    "frameTitle": "Play AAA Sewer King",
+    "loading": "Loading game",
+    "ready": "Game ready. Click to enter",
+    "running": "Game running"
+  },
   "content": {
+    "aaa-sewer-king": {
+      "title": "AAA Sewer King",
+      "description": "Aim and launch bouncing balls to clear monsters from the sewers. Play directly in your browser."
+    },
     "pixel-cosmos-studio": {
       "title": "Pixel Cosmos Studio",
       "description": "Create pixel and voxel planets, animated clouds, and space skyboxes. Export assets for your game."

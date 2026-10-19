@@ -27,6 +27,7 @@
     "@smithy/node-http-handler": "4.12.1",
     "@types/node": "22.10.2",
     "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.7",
     "eslint": "8",
     "eslint-config-next": "14.2.15",
     "https-proxy-agent": "9.1.0",

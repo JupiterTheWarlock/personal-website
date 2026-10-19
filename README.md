@@ -73,14 +73,14 @@ npm start
 
 ### Unity 游戏接入约定
 
-以下是交付接口，待游戏会话提供并验证 Unity 0.3.6 Web 包后接入；当前没有发布占位介绍页或无效试玩按钮。
+主站接入 Unity 0.3.6 正式 `web-r5` 包，首页作品卡片进入四语言介绍页，点击“开始试玩”才加载游戏。
 
 - 介绍页：`/{locale}/games/aaa-sewer-king/`。
 - 运行入口：`/games/aaa-sewer-king/play/index.html`。Pages 会规范跳转到同目录 `/games/aaa-sewer-king/play/`；目录跨版本保持不变，也不随语言变化，避免浏览器存档分散。
-- 按游戏会话的更新接口，介绍页挂载 iframe 前先卸载垃圾场背景，关闭游戏后恢复；父页同时校验消息的 `origin` 和 iframe `source`，主动移除 iframe 时自行恢复背景。另提供独立打开运行入口。此交互将在正式包验收后接入。
+- 介绍页挂载 iframe 前先卸载垃圾场背景，关闭游戏或离开介绍页后恢复；父页同时校验消息的 `origin` 和 iframe `source`。另提供独立打开和全屏操作。
 - 资源放现有 R2/CDN 的独立版本目录，包含内容哈希的目录不可覆盖；Pages 只生成固定路径的运行壳。不将 Unity 工程、大型构建产物或未完成的 `web-r4` 加入本仓库。
 - `scripts/unity-r2.mjs` 准备清单、配置 CORS、上传与检查；`scripts/prepare-unity.mjs` 在 Pages 构建时读取已批准的发布清单，校验运行壳的 SHA-256，再把 loader、data、framework、wasm 和 StreamingAssets URL 接到该版本的 CDN。
-- 发布清单 `config/aaa-sewer-king.release.json` 尚不存在，因此当前构建不会生成游戏运行页。完整步骤见 [Unity 发布说明](docs/unity-r2-release.md)。
+- 发布清单 `config/aaa-sewer-king.release.json` 固定经交接核验的 r5 文件与哈希，后续构建自动保留运行入口。完整步骤见 [Unity 发布说明](docs/unity-r2-release.md)。
 - `aaa-sewer-king`、`runawayengine` 和 `booom2026` 的新旧独立游戏域名保持退役。
 
 ## 🌐 多语言

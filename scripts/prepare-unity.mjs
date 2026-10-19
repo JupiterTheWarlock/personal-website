@@ -11,7 +11,18 @@ try { manifest = validateManifest(JSON.parse(await readFile(manifestFile, 'utf8'
 catch (error) { if (error.code === 'ENOENT') process.exit(0); throw error; }
 const shell = manifest.files.find(file => file.path === 'index.html');
 if (!shell || shell.bytes > 25 * 1024 * 1024) throw new Error('Invalid Pages runtime shell');
-const response = await getAsset(assetUrl(manifest.assetBase, shell.path), {}, shell.bytes + 1);
+// Compare the original HTML, without Cloudflare's optional transport compression.
+let response;
+for (let attempt = 1; attempt <= 3; attempt++) {
+  try {
+    response = await getAsset(assetUrl(manifest.assetBase, shell.path), { 'Accept-Encoding': 'identity' }, shell.bytes + 1);
+    if (response.status >= 500) throw new Error(`CDN returned ${response.status}`);
+    break;
+  } catch (error) {
+    if (attempt === 3) throw error;
+    console.warn(`Retrying runtime shell download (${attempt}/3)`);
+  }
+}
 if (response.status !== 200 || response.body.length !== shell.bytes || sha256(response.body) !== shell.sha256) throw new Error('CDN shell does not match the approved release');
 const html = wireShell(response.body.toString('utf8'), manifest);
 const destination = path.join(root, 'out', PLAY_PATH.slice(1));

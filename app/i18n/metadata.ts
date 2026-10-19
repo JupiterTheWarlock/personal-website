@@ -11,11 +11,11 @@ export function languageAlternates(path = '') {
   };
 }
 
-export function localizedMetadata(locale: Locale, path = ''): Metadata {
+export function localizedMetadata(locale: Locale, path = '', page?: { title: string; description: string }): Metadata {
   const messages = getMessages(locale);
   return {
-    title: path ? `${messages.animations.title} — ${messages.hero.title}` : messages.meta.title,
-    description: messages.meta.description,
+    title: page ? `${page.title} — ${messages.hero.title}` : path ? `${messages.animations.title} — ${messages.hero.title}` : messages.meta.title,
+    description: page?.description || messages.meta.description,
     metadataBase: new URL(siteUrl),
     alternates: {
       canonical: `${siteUrl}/${locale}/${path}`,

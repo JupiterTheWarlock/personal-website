@@ -55,6 +55,16 @@ for (const locale of locales) {
   const animation = await fetch(`${base}/${locale}/animations/`);
   assert.equal(animation.status, 200);
   assert.ok((await animation.text()).includes(escape(messages.animations.title)));
+  assert.ok(html.includes(`href="/${locale}/games/aaa-sewer-king/"`));
+  const game = await fetch(`${base}/${locale}/games/aaa-sewer-king/`);
+  assert.equal(game.status, 200);
+  const gameHtml = await game.text();
+  assert.ok(gameHtml.includes(`<h1>${escape(messages.sewerKing.title)}</h1>`));
+  assert.ok(gameHtml.includes(`rel="canonical" href="${canonicalOrigin}/${locale}/games/aaa-sewer-king/"`));
+  assert.ok(gameHtml.includes('class="language-select"'));
+  assert.ok(gameHtml.includes('data-jthewl-scene'));
+  assert.ok(!gameHtml.includes('data-unity-game='), 'Unity must wait for the visitor to start');
+  assert.ok(!gameHtml.includes('<script src="/junkyard-scene/host.js'), 'React owns the background lifecycle');
   console.log(`${locale}: localized page, content, dropdown, metadata and subpage passed`);
 }
 
@@ -62,6 +72,16 @@ assert.equal((await fetch(`${base}/xx-XX/`)).status, 404);
 assert.equal((await fetch(`${base}/junkyard-scene/host.js`)).status, 200);
 const sitemap = await (await fetch(`${base}/sitemap.xml`)).text();
 for (const locale of locales) assert.ok(sitemap.includes(`${canonicalOrigin}/${locale}/`));
+for (const locale of locales) assert.ok(sitemap.includes(`${canonicalOrigin}/${locale}/games/aaa-sewer-king/`));
+assert.ok(!sitemap.includes('/play/'));
+const runtime = await fetch(`${base}/games/aaa-sewer-king/play/`);
+assert.equal(runtime.status, 200);
+assert.match(runtime.headers.get('cache-control'), /no-cache/);
+const runtimeHtml = await runtime.text();
+assert.ok(runtimeHtml.includes('content="noindex"'));
+assert.ok(runtimeHtml.includes('autoSyncPersistentDataPath:true'));
+assert.ok(runtimeHtml.includes('https://cfr2cdn.jthewl.cc/games/aaa-sewer-king/releases/0.3.6-'));
+assert.ok(!runtimeHtml.includes('data-jthewl-scene'));
 const robots = await (await fetch(`${base}/robots.txt`)).text();
 assert.ok(robots.includes(`Sitemap: ${canonicalOrigin}/sitemap.xml`));
 console.log('Saved preferences, legacy paths, 404, assets and static SEO files passed on Pages.');

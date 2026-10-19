@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "game": "aaa-sewer-king",
+  "version": "0.3.6",
+  "digest": "a3dde185d50117e6f5e3fd17a8a17ed6310b4c46d3737f37c0df8cdbaaebeedb",
+  "prefix": "games/aaa-sewer-king/releases/0.3.6-a3dde185d50117e6f5e3",
+  "assetBase": "https://cfr2cdn.jthewl.cc/games/aaa-sewer-king/releases/0.3.6-a3dde185d50117e6f5e3",
+  "playPath": "/games/aaa-sewer-king/play/",
+  "files": [
+    {
+      "path": "Build/173bdb7ac9501c5890f7051f178320db.framework.js.gz",
+      "bytes": 98557,
+      "sha256": "4f28a919d5c90780bcf96010b887b6c29cad0fc70d78b90ceb4ecf898658da1b",
+      "contentType": "application/javascript",
+      "contentEncoding": "gzip",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "Build/a30fa91cb0c29bf92ebdb8a062839648.data.gz",
+      "bytes": 71555070,
+      "sha256": "ac9a20530756ff7b850dd355be351a7b10722f3c6150099af9a8e72ea208a252",
+      "contentType": "application/octet-stream",
+      "contentEncoding": "gzip",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "Build/d751a09bdb84f19cb6b13f682b37fc11.wasm.gz",
+      "bytes": 16234082,
+      "sha256": "98ac2a5a71e5e71e3e6139497a2b9efe0f797915b690c68499378f99b9ad227a",
+      "contentType": "application/wasm",
+      "contentEncoding": "gzip",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "Build/fce529832fcc48662e72b767ad3604e0.loader.js",
+      "bytes": 26982,
+      "sha256": "47b20a5024a34b64edead7a4ecbf9ebaee73706d9c78b3786eef22edc3dded13",
+      "contentType": "application/javascript",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "index.html",
+      "bytes": 3635,
+      "sha256": "adc317ed060ca4cddfb2036e03321f987e17e35e2349c10468a0f30917fdec1c",
+      "contentType": "text/html; charset=utf-8",
+      "cacheControl": "public, max-age=31536000, immutable"
+    }
+  ]
+}

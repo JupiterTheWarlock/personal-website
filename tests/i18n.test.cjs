@@ -32,6 +32,19 @@ const { games, explorations, notes } = loadTypeScript('app/content/home.ts');
 const { localizeCards, getHomeContent } = loadTypeScript('app/content/localized.ts');
 const { languageRedirect } = loadTypeScript('app/i18n/request-routing.ts');
 const { onRequest } = loadTypeScript('functions/_middleware.ts');
+const { isUnityMessage } = loadTypeScript('lib/unity-message.ts');
+
+test('Unity messages require both the runtime window and origin, and a known game event', () => {
+  const frame = {};
+  const event = { origin: 'https://jupiterthewarlock.com', source: frame, data: { game:'aaa-sewer-king', type:'aaa-sewer-king:closed' } };
+  assert.equal(isUnityMessage(event, frame, event.origin), true);
+  assert.equal(isUnityMessage({ ...event, source:{} }, frame, event.origin), false);
+  assert.equal(isUnityMessage({ ...event, origin:'https://example.com' }, frame, event.origin), false);
+  assert.equal(isUnityMessage({ ...event, data:null }, frame, event.origin), false);
+  assert.equal(isUnityMessage({ ...event, data:{ ...event.data, game:'other' } }, frame, event.origin), false);
+  assert.equal(isUnityMessage({ ...event, data:{ ...event.data, type:'unknown' } }, frame, event.origin), false);
+  assert.equal(isUnityMessage(event, null, event.origin), false);
+});
 
 test('Pages redirects preserve host, query and private language preferences', async () => {
   const request = new Request('https://preview.pages.dev/?from=home', {
@@ -129,7 +142,7 @@ test('all four dictionaries have complete UI and content translations', () => {
     assert.deepEqual(Object.keys(dictionaries[locale].content).sort(), ids, locale);
     const localized = getHomeContent(locale);
     const entries = [...localized.games, ...localized.explorations, ...localized.notes];
-    assert.deepEqual(entries.map(({ url, image }) => ({ url, image })), cards.map(({ url, image }) => ({ url, image })));
+    assert.deepEqual(entries.map(({ url, image }) => ({ url, image })), cards.map(({ url, image }) => ({ url: url.startsWith('/') ? `/${locale}${url}` : url, image })));
     if (!locale.startsWith('zh') && locale !== 'ja-JP') {
       for (const card of entries) assert.doesNotMatch(card.description, /[\u3400-\u9fff]/u, `${locale}: ${card.id}`);
     }
@@ -145,7 +158,9 @@ test('missing content fields fall back to English then source without losing car
 });
 
 test('delisted game stays removed; notes link to the two requested X articles', () => {
-  assert.equal(games.length, 7);
+  assert.equal(games.length, 8);
+  assert.equal(games.find(game => game.id === 'aaa-sewer-king').url, '/games/aaa-sewer-king/');
+  assert.ok(!games.some(game => /(?:aaa-sewer-king|runawayengine|booom2026)\.(?:jthewl\.cc|jupiterthewarlock\.com)/.test(game.url)));
   assert.ok(!games.some((game) => game.url.includes('thejunkyardoftheend')));
   assert.deepEqual(notes.map((note) => note.url), [
     'https://x.com/JupiterTheWL/status/2100813911104872633?s=20',

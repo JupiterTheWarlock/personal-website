@@ -26,7 +26,33 @@
     "zhihu": "Zhihu",
     "gcores": "Gcores"
   },
+  "sewerKing": {
+    "title": "AAA 下水道清掃王",
+    "description": "狙いを定めてボールを発射し、下水道のモンスターを退治。事務所に戻って、次の探索に備えましょう。",
+    "back": "ゲーム一覧",
+    "edition": "ブラウザー版",
+    "play": "プレイする",
+    "openStandalone": "単独で開く",
+    "downloadNote": "初回は約84 MBを読み込むため、少し時間がかかる場合があります。",
+    "controlsTitle": "遊び方",
+    "controls": "マウスまたはタッチ操作で狙いを定め、ボールを発射します。ゲームに入ったら、矢印に従って井戸へ進むと戦闘が始まります。",
+    "gameLanguage": "ゲーム内の言語：中国語（簡体字）。",
+    "saveTitle": "セーブについて",
+    "saveNote": "進行状況は現在のブラウザーに保存され、再読み込み後も続けられます。別のブラウザーや端末とは共有されません。サイトデータを削除すると、進行状況も失われます。",
+    "close": "ゲームを閉じる",
+    "fullscreen": "全画面",
+    "exitFullscreen": "全画面を終了",
+    "fullscreenUnavailable": "このブラウザーでは全画面にできません。ゲームを単独で開くことができます。",
+    "frameTitle": "AAA 下水道清掃王をプレイ",
+    "loading": "ゲームを読み込み中",
+    "ready": "準備ができました。クリックして開始してください",
+    "running": "ゲーム実行中"
+  },
   "content": {
+    "aaa-sewer-king": {
+      "title": "AAA 下水道清掃王",
+      "description": "狙いを定めてボールを発射し、下水道のモンスターを退治。ブラウザーですぐに遊べます。"
+    },
     "pixel-cosmos-studio": {
       "title": "Pixel Cosmos Studio",
       "description": "ピクセルやボクセルの惑星、動く雲、宇宙のスカイボックスを生成し、ゲーム用の素材として書き出せます。"

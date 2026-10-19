@@ -1,7 +1,6 @@
 import React from 'react';
-import Script from 'next/script';
 import Header from '@/components/layout/Header';
-import JunkyardLegacyBackground from '@/components/content/JunkyardLegacyBackground';
+import SceneProvider from '@/components/content/SceneProvider';
 import { notFound } from 'next/navigation';
 import { locales, isLocale } from '@/app/i18n/config';
 import { getMessages } from '@/app/i18n/messages';
@@ -30,15 +29,15 @@ export default function LocaleLayout({
 
   return (
     <html lang={params.locale}>
-      <body className="min-h-screen text-[var(--text-primary)]">
-        <JunkyardLegacyBackground />
-        <div className="min-h-screen flex flex-col relative z-10">
-          <Header locale={params.locale} nav={messages.nav} languageLabel={messages.language} />
-          <main className="flex-1">
-            {children}
-          </main>
-        </div>
-        <Script src="/junkyard-scene/host.js?v=1.0.7" data-brand-profile="home" strategy="afterInteractive" />
+      <body className="min-h-screen text-[var(--text-primary)]" data-brand-profile="home">
+        <SceneProvider>
+          <div className="min-h-screen flex flex-col relative z-10">
+            <Header locale={params.locale} nav={messages.nav} languageLabel={messages.language} />
+            <main className="flex-1">
+              {children}
+            </main>
+          </div>
+        </SceneProvider>
       </body>
     </html>
   );
