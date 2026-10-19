@@ -4,7 +4,9 @@
 
 批准包共 5 个文件、87,918,326 字节，完整清单见 `config/aaa-sewer-king.release.json`。资源位于 `https://cfr2cdn.jthewl.cc/games/aaa-sewer-king/releases/0.3.6-a3dde185d50117e6f5e3/`。其中 data.gz 为 71,555,070 字节（68.24 MiB），由 R2 提供，不进入 Pages 或 Git。
 
-原始 ZIP 为 `AAASewerKing-Web-0.3.6-20261019.zip`（87,112,920 字节），SHA-256 为 `0b40fcb71493ed11722020f10e49c1842a430c6d007bf247f753af2aae3028dc`。主站卡片截图来自该版本验收资料 `windows-map-arrow.png`，保留原图。
+原始 ZIP 为 `AAASewerKing-Web-0.3.6-20261019.zip`（87,112,920 字节），SHA-256 为 `0b40fcb71493ed11722020f10e49c1842a430c6d007bf247f753af2aae3028dc`。
+
+四语言介绍与操作说明以游戏侧 `Docs/Deployment/web-036-content.md` 为准。主站卡片与介绍页封面来自 `Docs/Deployment/taptap-submission-2026-10-18/title-wenkai/`：简体中文使用 `promo-1920x1080.jpg`，其他语言使用同一插画的无标题原图 `recommend-no-logo-1920x1080.jpg`；两张图均原样复制，并明确标为宣传插画。页面说明游戏内仍为简体中文、部分资产使用 AI 生成、移动能力需研究解锁、实体手机浏览器尚未实测，以及网页与原生包存档不互通。
 
 ## 固定入口与资源位置
 

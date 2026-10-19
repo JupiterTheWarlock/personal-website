@@ -142,7 +142,12 @@ test('all four dictionaries have complete UI and content translations', () => {
     assert.deepEqual(Object.keys(dictionaries[locale].content).sort(), ids, locale);
     const localized = getHomeContent(locale);
     const entries = [...localized.games, ...localized.explorations, ...localized.notes];
-    assert.deepEqual(entries.map(({ url, image }) => ({ url, image })), cards.map(({ url, image }) => ({ url: url.startsWith('/') ? `/${locale}${url}` : url, image })));
+    assert.deepEqual(entries.map(({ url, image }) => ({ url, image })), cards.map(({ id, url, image }) => ({
+      url: url.startsWith('/') ? `/${locale}${url}` : url,
+      image: id === 'aaa-sewer-king'
+        ? `/images/games/aaa-sewer-king-promo${locale === 'zh-CN' ? '-zh-CN' : ''}.jpg`
+        : image,
+    })));
     if (!locale.startsWith('zh') && locale !== 'ja-JP') {
       for (const card of entries) assert.doesNotMatch(card.description, /[\u3400-\u9fff]/u, `${locale}: ${card.id}`);
     }

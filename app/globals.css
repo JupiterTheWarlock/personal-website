@@ -15,6 +15,12 @@
 .game-version { color: var(--accent-bright); font-size: .9rem; margin: 0 0 .75rem; }
 .game-heading h1 { color: var(--text-bright); font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.25; margin: 0 0 1rem; overflow-wrap: anywhere; }
 .game-description { color: var(--text-primary); font-size: 1.05rem; line-height: 1.8; }
+.game-note { color: var(--text-secondary); font-size: .9rem; line-height: 1.8; }
+.game-overview { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 2rem; margin: 2.5rem 0; }
+.game-overview > * { min-width: 0; }
+.game-artwork { margin: 0; }
+.game-artwork img { width: 100%; height: auto; object-fit: contain; border: 1px solid var(--border-light); }
+.game-artwork figcaption { margin-top: .5rem; color: var(--text-secondary); font-size: .85rem; }
 .unity-player { margin: 2rem 0; }
 .game-launch { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; padding: 1.5rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
 .game-launch p { flex-basis: 100%; color: var(--text-secondary); margin: 0; font-size: .9rem; }
@@ -34,11 +40,14 @@
 .game-inline-message { padding: .5rem 1rem; color: var(--text-primary); }
 .game-details { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
 .game-details h2 { font-size: 1.1rem; color: var(--text-bright); margin: 0 0 .75rem; }
+.game-details h2:not(:first-child) { margin-top: 2rem; }
+.game-details h3 { font-size: 1rem; color: var(--text-primary); margin: 1.25rem 0 .5rem; }
 .game-details p { color: var(--text-secondary); line-height: 1.8; margin: .5rem 0; }
 @media (max-width: 600px) {
   .game-page { width: calc(100% - 32px); padding-top: 5.5rem; }
   .game-page::before { inset: 4.5rem -.5rem 2rem; }
   .game-details { grid-template-columns: 1fr; gap: 1.5rem; }
+  .game-overview { grid-template-columns: 1fr; gap: 1rem; }
   .game-toolbar { gap: .5rem; }
   .game-toolbar .game-button { padding: .5rem .65rem; font-size: .85rem; }
   .game-frame { height: 72svh; min-height: 400px; }

@@ -20,9 +20,9 @@ export const games: ContentCardData[] = [
   {
     id: 'aaa-sewer-king',
     title: 'AAA下水道清理大王',
-    description: '瞄准、发射弹球，清理下水道里的怪物。直接在浏览器试玩。',
-    // Actual 0.3.6 map screenshot from the game's release QA.
-    image: '/images/games/aaa-sewer-king-map.png',
+    description: '弹珠清污，收工升级，再下一口井。',
+    // Approved promotional illustration from the game's 0.3.6 handoff.
+    image: '/images/games/aaa-sewer-king-promo-zh-CN.jpg',
     imageFit: 'contain',
     url: '/games/aaa-sewer-king/',
   },

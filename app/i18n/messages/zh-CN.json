@@ -28,17 +28,16 @@
   },
   "sewerKing": {
     "title": "AAA下水道清理大王",
-    "description": "瞄准、发射弹球，清理下水道里的怪物，再回到事务所准备下一次下井。",
+    "description": "守在井口发射弹珠，借井壁反弹清理不断爬升的怪物。每趟作业赚取铜币，回事务所升级知识树，解锁更多弹珠、附魔和设备。在不断上涨的井水中打通三片街区，再挑战最深处的最终 Boss。",
     "back": "所有游戏",
-    "edition": "网页版",
+    "edition": "开发中试玩版",
     "play": "开始试玩",
     "openStandalone": "独立打开",
     "downloadNote": "首次加载约 84 MB，可能需要一些时间。",
     "controlsTitle": "怎么玩",
-    "controls": "用鼠标或触屏瞄准并发射弹球。进入游戏后，跟随箭头前往水井开始战斗。",
-    "gameLanguage": "游戏内语言：简体中文。",
+    "gameLanguage": "游戏内文字：简体中文。",
     "saveTitle": "关于存档",
-    "saveNote": "进度保存在当前浏览器，可以刷新后继续。不同浏览器和设备不共享存档；清除网站数据会移除进度。",
+    "saveNote": "进度保存在当前浏览器，可以刷新后继续。不同浏览器和设备不共享存档，网页与原生包也不互通。清除网站数据或使用无痕模式可能无法保留进度。",
     "close": "关闭游戏",
     "fullscreen": "全屏",
     "exitFullscreen": "退出全屏",
@@ -46,12 +45,24 @@
     "frameTitle": "AAA下水道清理大王在线试玩",
     "loading": "正在加载游戏",
     "ready": "游戏已准备好，请点击进入",
-    "running": "游戏运行中"
+    "running": "游戏运行中",
+    "tagline": "弹珠清污，收工升级，再下一口井。",
+    "assetNote": "部分游戏资产使用 AI 生成。",
+    "artworkAlt": "AAA下水道清理大王宣传插画",
+    "artworkCaption": "宣传插画",
+    "desktopTitle": "电脑操作",
+    "desktopCombat": "鼠标瞄准，按住左键连续发射。购买移动研究后，使用 A/D 或 ←/→ 移动。按 Esc 或暂停按钮打开设置。",
+    "desktopMap": "地图与知识树：点击设施或研究节点，拖动平移，滚轮缩放。地图中按住右键横向拖动可旋转视角。",
+    "touchTitle": "触屏操作",
+    "touchControls": "在屏幕右半边按住并拖动瞄准，偏离摇杆中心后自动发射，松手停止。解锁移动后，点按左侧方向按钮移动。局外单指点选或拖动，双指缩放；知识节点先点阅读，再点研究。",
+    "platformNote": "网页版已在 Windows Chrome 实测。触屏操作已在 Android 模拟器的原生包中验证，实体手机浏览器尚未实测。",
+    "beginnerTitle": "第一次下井",
+    "beginnerNote": "第一次作业结束后，点击“事务所”，用铜币购买永久升级，再下井。开局不能移动是正常的研究解锁流程。"
   },
   "content": {
     "aaa-sewer-king": {
       "title": "AAA下水道清理大王",
-      "description": "瞄准、发射弹球，清理下水道里的怪物。直接在浏览器试玩。"
+      "description": "弹珠清污，收工升级，再下一口井。"
     },
     "pixel-cosmos-studio": {
       "title": "Pixel Cosmos Studio",
