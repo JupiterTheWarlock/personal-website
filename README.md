@@ -65,12 +65,15 @@ npm start
 - 本机手动发布时，先构建并验证，再执行 `npm run deploy`。Wrangler 使用本机授权；凭据、`.wrangler/`、构建产物不提交。
 - `wrangler.toml` 记录项目名、输出目录及与固定 Wrangler 版本匹配的运行兼容日期。
 - 旧 `jthewl.cc`、`www.jthewl.cc` 的 301 在 Cloudflare 保留。
+- `vercel.json` 关闭旧平台的 Git 自动部署，旧部署仅保留作迁移回退。
 
 `next.config.js` 启用 `output: 'export'`。`middleware.ts` 用于 `next dev` 和原 Vercel 备用配置；静态构建提示它不进入导出产物属于预期，Pages 上由 `functions/_middleware.ts` 执行语言跳转。两者复用 `app/i18n/request-routing.ts`。
 
 `public/_routes.json` 让四语言静态页、Next 资源、背景和图片直接由 Pages 提供，其他需要语言判断或兼容旧路径的请求进入 Function。没有全站 SPA 回退，未知页面返回 404。
 
 ### Unity 游戏接入约定
+
+以下是交付接口，待游戏会话提供并验证 Unity 0.3.6 Web 包后接入；当前没有发布占位介绍页或无效试玩按钮。
 
 - 介绍页：`/{locale}/games/aaa-sewer-king/`。
 - 运行入口：`/games/aaa-sewer-king/play/index.html`。Pages 会规范跳转到同目录 `/games/aaa-sewer-king/play/`；目录跨版本保持不变，也不随语言变化，避免浏览器存档分散。
