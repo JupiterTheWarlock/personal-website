@@ -24,7 +24,7 @@ export const games: ContentCardData[] = [
     // Approved promotional illustration from the game's 0.3.6 handoff.
     image: '/images/games/aaa-sewer-king-promo-zh-CN.jpg',
     imageFit: 'contain',
-    url: '/games/aaa-sewer-king/',
+    url: 'https://games.jupiterthewarlock.com/aaa-sewer-king/',
   },
   pixelCosmosStudio,
   {

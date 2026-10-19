@@ -21,7 +21,9 @@ export function getHomeContent(locale: string) {
   return {
     games: localizeCards(games, translated, fallback).map(card => ({
       ...card,
-      url: card.url.startsWith('/') ? `/${isLocale(locale) ? locale : fallbackLocale}${card.url}` : card.url,
+      url: card.id === 'aaa-sewer-king'
+        ? `${card.url}?lang=${isLocale(locale) ? locale : fallbackLocale}`
+        : card.url.startsWith('/') ? `/${isLocale(locale) ? locale : fallbackLocale}${card.url}` : card.url,
       image: card.id === 'aaa-sewer-king' ? sewerKingArtwork(locale) : card.image,
     })),
     explorations: localizeCards(explorations, translated, fallback),

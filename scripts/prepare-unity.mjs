@@ -25,7 +25,10 @@ for (let attempt = 1; attempt <= 3; attempt++) {
 }
 if (response.status !== 200 || response.body.length !== shell.bytes || sha256(response.body) !== shell.sha256) throw new Error('CDN shell does not match the approved release');
 const html = wireShell(response.body.toString('utf8'), manifest);
-const destination = path.join(root, 'out', PLAY_PATH.slice(1));
+const outputDirectory = process.argv[2] || 'out';
+const playPath = process.argv[3] || PLAY_PATH;
+if (!['out', 'games-site/out'].includes(outputDirectory) || ![PLAY_PATH, '/aaa-sewer-king/play/'].includes(playPath)) throw new Error('Unexpected Unity output directory');
+const destination = path.join(root, outputDirectory, playPath.slice(1));
 await mkdir(destination, { recursive: true });
 await writeFile(path.join(destination, 'index.html'), html);
-console.log(`Prepared ${manifest.game} ${manifest.version} at ${PLAY_PATH}`);
+console.log(`Prepared ${manifest.game} ${manifest.version} at ${playPath}`);

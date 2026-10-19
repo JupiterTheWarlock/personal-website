@@ -11,11 +11,11 @@ export function useBackgroundSuspension() {
   return setter;
 }
 
-export default function SceneProvider({ children }: { children: ReactNode }) {
+export default function SceneProvider({ children, background = true }: { children: ReactNode; background?: boolean }) {
   const [suspended, setSuspended] = useState(false);
   return (
     <SceneContext.Provider value={setSuspended}>
-      {!suspended && <JunkyardLegacyBackground />}
+      {background && !suspended && <JunkyardLegacyBackground />}
       {children}
     </SceneContext.Provider>
   );

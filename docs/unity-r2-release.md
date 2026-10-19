@@ -1,5 +1,7 @@
 # Unity Web 与 R2 发布
 
+2026-10-19 后续更新：用户要求社交分享入口与个人主页分离。当前介绍页为 `https://games.jupiterthewarlock.com/aaa-sewer-king/`，运行目录为同域名 `/aaa-sewer-king/play/`，四语言通过 `?lang=` 选择。游戏站独立 Pages 项目 `jupiter-games`；根目录只提供游戏列表。部署与路由见 [游戏站说明](../games-site/README.md)。下文原主站运行目录保留供旧浏览器存档使用；新旧域名存档不自动迁移，不清理旧数据。
+
 当前接入游戏会话已验收的 Unity 0.3.6 `web-r5`（2026-10-19）。`web-r4` 有音频解码错误，禁止使用；也不使用退役的 `web/` Demo。
 
 批准包共 5 个文件、87,918,326 字节，完整清单见 `config/aaa-sewer-king.release.json`。资源位于 `https://cfr2cdn.jthewl.cc/games/aaa-sewer-king/releases/0.3.6-a3dde185d50117e6f5e3/`。其中 data.gz 为 71,555,070 字节（68.24 MiB），由 R2 提供，不进入 Pages 或 Git。
@@ -41,7 +43,7 @@ node scripts/unity-r2.mjs upload <已验收的完整目录> .local/unity-release
 
 ## 跨域与验收
 
-R2 规则 `personal-site-unity` 允许主站、www、正式 `pages.dev` 及本机测试地址的 GET/HEAD，支持 Range，并暴露 Content-Length、Content-Encoding、Content-Type、ETag、Accept-Ranges、Content-Range、Last-Modified。动态 Pages 预览域名尚未加入，验包使用固定默认域名或本机测试地址。
+R2 规则 `personal-site-unity` 允许主站、www、`games.jupiterthewarlock.com`、两站正式 `pages.dev` 及本机测试地址的 GET/HEAD，支持 Range，并暴露 Content-Length、Content-Encoding、Content-Type、ETag、Accept-Ranges、Content-Range、Last-Modified。动态 Pages 预览域名尚未加入，验包使用固定默认域名或本机测试地址。
 
 只有请求包含 `Origin` 时 R2 才会返回 CORS 响应头；已有缓存可能需要刷新，因此新资源使用新目录。依据：[Cloudflare R2 CORS](https://developers.cloudflare.com/r2/buckets/cors/)。Pages 的多条匹配规则会合并同名响应头，主站通配规则只设置 noindex/nosniff，缓存规则单独匹配运行壳。依据：[Pages 响应头规则](https://developers.cloudflare.com/pages/configuration/headers/)。
 

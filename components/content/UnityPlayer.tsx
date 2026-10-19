@@ -6,9 +6,7 @@ import type { Messages } from '@/app/i18n/messages';
 import { useBackgroundSuspension } from './SceneProvider';
 import { isUnityMessage } from '@/lib/unity-message';
 
-const runtimePath = '/games/aaa-sewer-king/play/';
-
-export default function UnityPlayer({ copy }: { copy: Messages['sewerKing'] }) {
+export default function UnityPlayer({ copy, runtimePath = '/games/aaa-sewer-king/play/' }: { copy: Messages['sewerKing']; runtimePath?: string }) {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<'loading' | 'ready' | 'running'>('loading');
   const [fullscreen, setFullscreen] = useState(false);

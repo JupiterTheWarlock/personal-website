@@ -1,0 +1,24 @@
+:root {
+  --brand-bg: #18181B; --brand-panel: #222225; --brand-panel-strong: #222225;
+  --brand-border: #3A3A40; --brand-border-light: #3A3A40;
+  --brand-text: #ECE8E1; --brand-muted: #B0ABA5; --brand-bright: #ECE8E1;
+  --brand-accent: #DA7756; --brand-accent-bright: #E8985C; --brand-accent-dim: #B85D3A;
+  --brand-accent-glow: rgba(218,119,86,.2);
+  --brand-font-body: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+body.games-site { background: var(--brand-bg); }
+.games-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; width: min(1080px, calc(100% - 48px)); margin: auto; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+.games-brand { font-size: 1.1rem; font-weight: 700; }
+.games-brand:hover { color: var(--accent); }
+.games-site .game-page { padding-top: 2.5rem; }
+.games-site .game-page::before { display: none; }
+.games-home { width: min(1080px, calc(100% - 48px)); margin: auto; padding: 2.5rem 0 4rem; }
+.games-home h1 { font-size: 1.8rem; margin: 0 0 1.5rem; }
+.games-card { display: block; max-width: 600px; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--bg-panel); }
+.games-card:hover { border-color: var(--accent); }
+.games-card img { width: 100%; height: auto; }
+.games-card > div { padding: 1.25rem; }
+.games-card h2 { margin: 0; font-size: 1.3rem; }
+.games-card p { line-height: 1.7; }
+.games-card span { color: var(--text-secondary); font-size: .9rem; }
+@media(max-width:600px) { .games-header, .games-home { width: calc(100% - 32px); } .games-site .game-page { padding-top: 2rem; } }

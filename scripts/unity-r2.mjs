@@ -25,7 +25,7 @@ function connection() {
   return new S3Client({ region: 'auto', endpoint: env.R2_ENDPOINT || `https://${env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`, credentials: { accessKeyId: env.R2_ACCESS_KEY, secretAccessKey: env.R2_SECRET_KEY }, requestHandler: new NodeHttpHandler({ httpsAgent: proxyAgent(), connectionTimeout: 15000, requestTimeout: 120000, throwOnRequestTimeout: true }), requestChecksumCalculation: 'WHEN_REQUIRED', responseChecksumValidation: 'WHEN_REQUIRED', maxAttempts: 2 });
 }
 
-const origins = ['https://jupiterthewarlock.com', 'https://www.jupiterthewarlock.com', 'https://jupiterthewarlock.pages.dev', 'http://localhost:3456', 'http://127.0.0.1:3456', 'http://localhost:8096', 'http://127.0.0.1:8096'];
+const origins = ['https://jupiterthewarlock.com', 'https://www.jupiterthewarlock.com', 'https://jupiterthewarlock.pages.dev', 'https://games.jupiterthewarlock.com', 'https://jupiter-games.pages.dev', 'http://localhost:3456', 'http://127.0.0.1:3456', 'http://localhost:8096', 'http://127.0.0.1:8096'];
 const corsRule = { ID: 'personal-site-unity', AllowedOrigins: origins, AllowedMethods: ['GET', 'HEAD'], AllowedHeaders: ['Range'], ExposeHeaders: ['Content-Length', 'Content-Encoding', 'Content-Type', 'ETag', 'Accept-Ranges', 'Content-Range', 'Last-Modified'], MaxAgeSeconds: 3600 };
 
 if (command === 'plan') {

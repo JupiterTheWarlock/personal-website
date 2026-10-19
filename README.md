@@ -73,6 +73,8 @@ npm start
 
 ### Unity 游戏接入约定
 
+游戏的当前公开分享入口为 **https://games.jupiterthewarlock.com/aaa-sewer-king/**，由独立 Pages 项目 `jupiter-games` 承载。删除 slug 只会进入游戏列表，游戏站没有个人主页导航。主站作品卡片和旧介绍页转到该地址，四种语言继续保留。完整构建和发布方式见 [独立游戏站](games-site/README.md)。下述原主站运行路径继续保留以支持旧存档；新游戏站固定运行路径是 `/aaa-sewer-king/play/`，新旧域名的浏览器存档相互独立。
+
 主站接入 Unity 0.3.6 正式 `web-r5` 包，首页作品卡片进入四语言介绍页，点击“开始试玩”才加载游戏。
 
 - 介绍页：`/{locale}/games/aaa-sewer-king/`。

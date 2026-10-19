@@ -1,0 +1,6 @@
+{
+  "name": "jupiter-games",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": { "build": "npm --prefix .. ci && npm --prefix .. run build:games" }
+}

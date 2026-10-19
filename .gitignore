@@ -21,6 +21,7 @@ pnpm-lock.yaml
 # ========================================
 .next/
 /out/
+/games-site/out/
 sw.js
 build/
 
@@ -93,6 +94,7 @@ public/games/aaa-sewer-king/play/StreamingAssets/
 *.tsbuildinfo
 next-env.d.ts
 tsconfig.json
+!games-site/tsconfig.json
 tsconfig.tsbuildinfo
 *.d.ts.map
 

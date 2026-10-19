@@ -33,6 +33,30 @@ const { localizeCards, getHomeContent } = loadTypeScript('app/content/localized.
 const { languageRedirect } = loadTypeScript('app/i18n/request-routing.ts');
 const { onRequest } = loadTypeScript('functions/_middleware.ts');
 const { isUnityMessage } = loadTypeScript('lib/unity-message.ts');
+const gamesWorker = loadTypeScript('games-site/worker.ts').default;
+
+test('game host serves only game pages at short URLs and keeps locale choices private', async () => {
+  const requested = [];
+  const env = { ASSETS: { async fetch(request) { requested.push(new URL(request.url).pathname); return new Response('game page'); } } };
+  for (const [path, cookie, expected] of [
+    ['/aaa-sewer-king/?lang=ja-JP', 'NEXT_LOCALE=zh-CN', '/ja-JP/aaa-sewer-king/'],
+    ['/', 'NEXT_LOCALE=zh-TW', '/zh-TW/'],
+    ['/aaa-sewer-king/?lang=bad', 'NEXT_LOCALE=%broken', '/en-US/aaa-sewer-king/'],
+  ]) {
+    const response = await gamesWorker.fetch(new Request(`https://games.example${path}`, { headers: { cookie, 'accept-language':'en' } }), env);
+    assert.equal(response.status, 200);
+    assert.equal(requested.at(-1), expected);
+    assert.match(response.headers.get('cache-control'), /private.*no-store/);
+  }
+  for (const path of ['/zh-CN/', '/animations/', '/personal-website/', '/notes/', '/not-a-game/']) {
+    const response = await gamesWorker.fetch(new Request(`https://games.example${path}`), env);
+    assert.equal(response.status, 404, path);
+    assert.equal(requested.at(-1), '/404.html');
+  }
+  const response = await gamesWorker.fetch(new Request('https://games.example/aaa-sewer-king/play/index.html?from=share'), env);
+  assert.equal(response.status, 308);
+  assert.equal(response.headers.get('location'), 'https://games.example/aaa-sewer-king/play/?from=share');
+});
 
 test('Unity messages require both the runtime window and origin, and a known game event', () => {
   const frame = {};
@@ -143,7 +167,7 @@ test('all four dictionaries have complete UI and content translations', () => {
     const localized = getHomeContent(locale);
     const entries = [...localized.games, ...localized.explorations, ...localized.notes];
     assert.deepEqual(entries.map(({ url, image }) => ({ url, image })), cards.map(({ id, url, image }) => ({
-      url: url.startsWith('/') ? `/${locale}${url}` : url,
+      url: id === 'aaa-sewer-king' ? `${url}?lang=${locale}` : url.startsWith('/') ? `/${locale}${url}` : url,
       image: id === 'aaa-sewer-king'
         ? `/images/games/aaa-sewer-king-promo${locale === 'zh-CN' ? '-zh-CN' : ''}.jpg`
         : image,
@@ -164,7 +188,7 @@ test('missing content fields fall back to English then source without losing car
 
 test('delisted game stays removed; notes link to the two requested X articles', () => {
   assert.equal(games.length, 8);
-  assert.equal(games.find(game => game.id === 'aaa-sewer-king').url, '/games/aaa-sewer-king/');
+  assert.equal(games.find(game => game.id === 'aaa-sewer-king').url, 'https://games.jupiterthewarlock.com/aaa-sewer-king/');
   assert.ok(!games.some(game => /(?:aaa-sewer-king|runawayengine|booom2026)\.(?:jthewl\.cc|jupiterthewarlock\.com)/.test(game.url)));
   assert.ok(!games.some((game) => game.url.includes('thejunkyardoftheend')));
   assert.deepEqual(notes.map((note) => note.url), [
