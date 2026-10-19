@@ -6,7 +6,8 @@ const baseUrl = new URL(process.env.TEST_BASE_URL || 'http://localhost:3456');
 // Start local checks on that same host so language cookies remain available.
 if (['127.0.0.1', '[::1]'].includes(baseUrl.hostname)) baseUrl.hostname = 'localhost';
 const base = baseUrl.origin;
-const locales = ['zh-CN', 'zh-TW', 'en-US', 'ja-JP', 'ko-KR', 'de-DE', 'fr-FR', 'es-ES', 'pt-BR'];
+const locales = ['zh-CN', 'zh-TW', 'en-US', 'ja-JP'];
+const canonicalOrigin = 'https://jupiterthewarlock.com';
 const escape = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#x27;');
 
 async function redirect(path, headers, expected) {
@@ -18,14 +19,14 @@ async function redirect(path, headers, expected) {
   assert.match(response.headers.get('cache-control'), /no-store/);
 }
 
-for (const [country, locale] of Object.entries({ CN:'zh-CN', TW:'zh-TW', JP:'ja-JP', KR:'ko-KR', US:'en-US', DE:'de-DE', FR:'fr-FR', ES:'es-ES', BR:'pt-BR' })) {
+for (const [country, locale] of Object.entries({ CN:'zh-CN', TW:'zh-TW', JP:'ja-JP', KR:'en-US', US:'en-US', DE:'en-US', FR:'en-US', ES:'en-US', BR:'en-US' })) {
   await redirect('/?source=test', { 'x-vercel-ip-country':country, 'accept-language':'en' }, `/${locale}/?source=test`);
 }
-await redirect('/', { cookie:'NEXT_LOCALE=de-DE', 'x-vercel-ip-country':'CN' }, '/de-DE/');
+await redirect('/', { cookie:'NEXT_LOCALE=zh-TW', 'x-vercel-ip-country':'CN' }, '/zh-TW/');
 await redirect('/', { 'accept-language':'ru,ja;q=0.9,en;q=0.5' }, '/ja-JP/');
 await redirect('/', { 'accept-language':'ru' }, '/en-US/');
-await redirect('/animations/?source=test', { cookie:'NEXT_LOCALE=fr-FR' }, '/fr-FR/animations/?source=test');
-await redirect('/personal-website/', { cookie:'NEXT_LOCALE=ko-KR' }, '/ko-KR/');
+await redirect('/animations/?source=test', { cookie:'NEXT_LOCALE=ja-JP' }, '/ja-JP/animations/?source=test');
+await redirect('/personal-website/', { cookie:'NEXT_LOCALE=en-US' }, '/en-US/');
 await redirect('/zh-Hant/', {}, '/zh-TW/');
 
 for (const locale of locales) {
@@ -38,7 +39,7 @@ for (const locale of locales) {
   assert.ok(html.includes(`<title>${escape(messages.meta.title)}</title>`), `${locale}: metadata`);
   const select = html.match(/<select\b[^>]*class="language-select"[^>]*>([\s\S]*?)<\/select>/)?.[1];
   assert.ok(select, `${locale}: real language dropdown`);
-  assert.equal([...select.matchAll(/<option\b/g)].length, 9);
+  assert.equal([...select.matchAll(/<option\b/g)].length, locales.length);
   assert.match(select, new RegExp(`<option[^>]*value="${locale}"[^>]*selected=""`));
   assert.ok(!html.includes('language-button'));
   assert.ok(!html.includes('thejunkyardoftheend'));
@@ -47,9 +48,9 @@ for (const locale of locales) {
   }
   const notes = html.match(/<section id="notes"[^>]*>([\s\S]*?)<\/section>/)?.[1];
   assert.ok(notes.includes('2100813911104872633?s=20') && notes.includes('2064052795721085254?s=20'));
-  assert.ok(!notes.includes('blog.jthewl.cc'));
-  assert.ok(html.includes(`href="https://www.jthewl.cc/${locale}/"`));
-  assert.equal([...html.matchAll(/hrefLang="/g)].length, 10);
+  assert.ok(!notes.includes('blog.jthewl.cc') && !notes.includes('blog.jupiterthewarlock.com'));
+  assert.ok(html.includes(`rel="canonical" href="${canonicalOrigin}/${locale}/"`));
+  assert.equal([...html.matchAll(/hrefLang="/g)].length, locales.length + 1);
   const animation = await fetch(`${base}/${locale}/animations/`);
   assert.equal(animation.status, 200);
   assert.ok((await animation.text()).includes(escape(messages.animations.title)));
@@ -59,5 +60,7 @@ for (const locale of locales) {
 assert.equal((await fetch(`${base}/xx-XX/`)).status, 404);
 assert.equal((await fetch(`${base}/junkyard-scene/host.js`)).status, 200);
 const sitemap = await (await fetch(`${base}/sitemap.xml`)).text();
-for (const locale of locales) assert.ok(sitemap.includes(`https://www.jthewl.cc/${locale}/`));
+for (const locale of locales) assert.ok(sitemap.includes(`${canonicalOrigin}/${locale}/`));
+const robots = await (await fetch(`${base}/robots.txt`)).text();
+assert.ok(robots.includes(`Sitemap: ${canonicalOrigin}/sitemap.xml`));
 console.log('Region, saved preference, browser fallback, legacy paths, 404 and asset checks passed.');

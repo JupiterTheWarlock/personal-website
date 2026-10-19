@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { locales, type Locale } from './config';
 import { getMessages } from './messages';
 
-export const siteUrl = 'https://www.jthewl.cc';
+export const siteUrl = 'https://jupiterthewarlock.com';
 
 export function languageAlternates(path = '') {
   return {

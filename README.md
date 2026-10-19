@@ -108,7 +108,7 @@ npm run test:site
 - **GitHub**: https://github.com/JupiterTheWarlock
 - **itch.io**: https://jupiter-the-warlock.itch.io/
 - **Makerworld**: https://makerworld.com.cn/zh/@JtheWL
-- **博客**: https://blog.jthewl.cc
+- **博客**: https://blog.jupiterthewarlock.com
 
 ## 📄 许可
 
