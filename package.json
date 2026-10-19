@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node scripts/prepare-unity.mjs",
     "start": "wrangler pages dev out --port 3456",
     "deploy": "wrangler pages deploy out --branch main",
     "lint": "next lint",
-    "test": "node --test tests/i18n.test.cjs",
+    "test": "node --test tests/i18n.test.cjs tests/unity-assets.test.mjs",
+    "unity:r2": "node scripts/unity-r2.mjs",
     "test:site": "node tests/check-site.mjs"
   },
   "dependencies": {
@@ -22,10 +23,13 @@
     "three": "^0.182.0"
   },
   "devDependencies": {
+    "@aws-sdk/client-s3": "3.1063.0",
+    "@smithy/node-http-handler": "4.12.1",
     "@types/node": "22.10.2",
     "@types/react": "18.3.12",
     "eslint": "8",
     "eslint-config-next": "14.2.15",
+    "https-proxy-agent": "9.1.0",
     "tailwindcss": "3.4.17",
     "typescript": "5.7.3",
     "wrangler": "4.107.0"

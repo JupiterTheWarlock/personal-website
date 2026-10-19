@@ -77,8 +77,10 @@ npm start
 
 - 介绍页：`/{locale}/games/aaa-sewer-king/`。
 - 运行入口：`/games/aaa-sewer-king/play/index.html`。Pages 会规范跳转到同目录 `/games/aaa-sewer-king/play/`；目录跨版本保持不变，也不随语言变化，避免浏览器存档分散。
-- 从介绍页以普通链接在当前标签页打开 Unity 文档；离开主站文档会卸载垃圾场背景。不在背景上嵌套 Unity iframe，也不另开标签。
-- 构建包、压缩响应头、缓存及大文件托管按实际交付包核对后接入；不将 Unity 工程或大型构建产物加入本仓库。
+- 按游戏会话的更新接口，介绍页挂载 iframe 前先卸载垃圾场背景，关闭游戏后恢复；父页同时校验消息的 `origin` 和 iframe `source`，主动移除 iframe 时自行恢复背景。另提供独立打开运行入口。此交互将在正式包验收后接入。
+- 资源放现有 R2/CDN 的独立版本目录，包含内容哈希的目录不可覆盖；Pages 只生成固定路径的运行壳。不将 Unity 工程、大型构建产物或未完成的 `web-r4` 加入本仓库。
+- `scripts/unity-r2.mjs` 准备清单、配置 CORS、上传与检查；`scripts/prepare-unity.mjs` 在 Pages 构建时读取已批准的发布清单，校验运行壳的 SHA-256，再把 loader、data、framework、wasm 和 StreamingAssets URL 接到该版本的 CDN。
+- 发布清单 `config/aaa-sewer-king.release.json` 尚不存在，因此当前构建不会生成游戏运行页。完整步骤见 [Unity 发布说明](docs/unity-r2-release.md)。
 - `aaa-sewer-king`、`runawayengine` 和 `booom2026` 的新旧独立游戏域名保持退役。
 
 ## 🌐 多语言

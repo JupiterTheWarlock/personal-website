@@ -82,6 +82,10 @@ Thumbs.db
 .vercel
 .wrangler/
 .dev.vars*
+.local/
+# Unity binaries stay in versioned R2 releases, not Git or Pages.
+public/games/aaa-sewer-king/play/Build/
+public/games/aaa-sewer-king/play/StreamingAssets/
 
 # ========================================
 # TypeScript
