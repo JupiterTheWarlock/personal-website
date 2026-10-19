@@ -1,0 +1,6 @@
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/games/aaa-sewer-king/play/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff

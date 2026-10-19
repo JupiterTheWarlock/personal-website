@@ -2,8 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 
 const baseUrl = new URL(process.env.TEST_BASE_URL || 'http://localhost:3456');
-// Next.js 14 normalizes loopback IPs to localhost in middleware redirects.
-// Start local checks on that same host so language cookies remain available.
+// Use the same host throughout the preview so language cookies remain available.
 if (['127.0.0.1', '[::1]'].includes(baseUrl.hostname)) baseUrl.hostname = 'localhost';
 const base = baseUrl.origin;
 const locales = ['zh-CN', 'zh-TW', 'en-US', 'ja-JP'];
@@ -19,15 +18,17 @@ async function redirect(path, headers, expected) {
   assert.match(response.headers.get('cache-control'), /no-store/);
 }
 
-for (const [country, locale] of Object.entries({ CN:'zh-CN', TW:'zh-TW', JP:'ja-JP', KR:'en-US', US:'en-US', DE:'en-US', FR:'en-US', ES:'en-US', BR:'en-US' })) {
-  await redirect('/?source=test', { 'x-vercel-ip-country':country, 'accept-language':'en' }, `/${locale}/?source=test`);
+// Country and Accept-Language fallback are tested with real Pages context objects in
+// i18n.test.cjs. The live platform supplies trusted request.cf data, not a spoofable header.
+for (const locale of locales) {
+  await redirect('/?source=test', { cookie:`NEXT_LOCALE=${locale}`, 'accept-language':'en' }, `/${locale}/?source=test`);
 }
 await redirect('/', { cookie:'NEXT_LOCALE=zh-TW', 'x-vercel-ip-country':'CN' }, '/zh-TW/');
-await redirect('/', { 'accept-language':'ru,ja;q=0.9,en;q=0.5' }, '/ja-JP/');
-await redirect('/', { 'accept-language':'ru' }, '/en-US/');
 await redirect('/animations/?source=test', { cookie:'NEXT_LOCALE=ja-JP' }, '/ja-JP/animations/?source=test');
 await redirect('/personal-website/', { cookie:'NEXT_LOCALE=en-US' }, '/en-US/');
 await redirect('/zh-Hant/', {}, '/zh-TW/');
+await redirect('/personal-website/ja-JP/animations/?ref=legacy', {}, '/ja-JP/animations/?ref=legacy');
+await redirect('/personal-website/images/notes/ai-game-music.jpg', {}, '/images/notes/ai-game-music.jpg');
 
 for (const locale of locales) {
   const response = await fetch(`${base}/${locale}/`, { headers:{ cookie:'NEXT_LOCALE=fr-FR', 'x-vercel-ip-country':'CN' } });
@@ -63,4 +64,4 @@ const sitemap = await (await fetch(`${base}/sitemap.xml`)).text();
 for (const locale of locales) assert.ok(sitemap.includes(`${canonicalOrigin}/${locale}/`));
 const robots = await (await fetch(`${base}/robots.txt`)).text();
 assert.ok(robots.includes(`Sitemap: ${canonicalOrigin}/sitemap.xml`));
-console.log('Region, saved preference, browser fallback, legacy paths, 404 and asset checks passed.');
+console.log('Saved preferences, legacy paths, 404, assets and static SEO files passed on Pages.');

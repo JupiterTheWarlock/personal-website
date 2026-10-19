@@ -10,10 +10,10 @@
 
 ## 🛠️ 技术栈
 
-- **框架**: Next.js 14.2.15 (修复 CVE-2025-66478)
+- **框架**: Next.js 14.2.15（静态导出）
 - **语言**: TypeScript
 - **样式**: Tailwind CSS 3.4.17
-- **部署**: GitHub Pages / Vercel
+- **部署**: Cloudflare Pages + Pages Functions
 
 ## 📁 项目结构
 
@@ -34,8 +34,9 @@ personal-website/
 │   │   └── LanguageSwitcher.tsx
 │   └── content/          # 内容组件
 │       └── SocialLinks.tsx
-├── vercel.json           # Vercel 配置
-├── .nvmrc               # Node 版本 (18)
+├── functions/            # Pages 语言跳转
+├── wrangler.toml         # Pages 配置
+├── .nvmrc                # Node 版本 (22)
 └── lib/                  # 工具函数
 ```
 
@@ -51,40 +52,37 @@ npm run dev
 # 构建生产版本
 npm run build
 
-# 启动生产服务器
+# 启动 Pages 本地预览（http://localhost:3456）
 npm start
 ```
 
 ## 📦 部署
 
-### GitHub Pages
+正式网址：https://jupiterthewarlock.com 。Pages 项目为 `jupiterthewarlock`，预览地址为 `jupiterthewarlock.pages.dev`。
 
-1. 构建静态网站:
-```bash
-npm run build
-```
+- Git 仓库：`JupiterTheWarlock/personal-website`，生产分支 `main`。
+- 构建命令：`npm run build`；输出目录：`out`；Node.js 22。
+- 本机手动发布时，先构建并验证，再执行 `npm run deploy`。Wrangler 使用本机授权；凭据、`.wrangler/`、构建产物不提交。
+- `wrangler.toml` 记录项目名、输出目录及与固定 Wrangler 版本匹配的运行兼容日期。
+- 旧 `jthewl.cc`、`www.jthewl.cc` 的 301 在 Cloudflare 保留。
 
-2. 推送到 GitHub
+`next.config.js` 启用 `output: 'export'`。`middleware.ts` 用于 `next dev` 和原 Vercel 备用配置；静态构建提示它不进入导出产物属于预期，Pages 上由 `functions/_middleware.ts` 执行语言跳转。两者复用 `app/i18n/request-routing.ts`。
 
-3. 在 GitHub 仓库设置中启用 GitHub Pages:
-   - Settings → Pages
-   - Source: `main` 分支
-   - Root: `/`
+`public/_routes.json` 让四语言静态页、Next 资源、背景和图片直接由 Pages 提供，其他需要语言判断或兼容旧路径的请求进入 Function。没有全站 SPA 回退，未知页面返回 404。
 
-### Vercel
+### Unity 游戏接入约定
 
-Vercel 应该会自动检测到新提交并部署。
-
-如果需要手动触发：
-1. 访问：https://vercel.com/dashboard
-2. 选择项目：`JupiterTheWarlock/personal-website`
-3. 点击 "Redeploy" → "Redeploy to Production"
+- 介绍页：`/{locale}/games/aaa-sewer-king/`。
+- 运行入口：`/games/aaa-sewer-king/play/index.html`。Pages 会规范跳转到同目录 `/games/aaa-sewer-king/play/`；目录跨版本保持不变，也不随语言变化，避免浏览器存档分散。
+- 从介绍页以普通链接在当前标签页打开 Unity 文档；离开主站文档会卸载垃圾场背景。不在背景上嵌套 Unity iframe，也不另开标签。
+- 构建包、压缩响应头、缓存及大文件托管按实际交付包核对后接入；不将 Unity 工程或大型构建产物加入本仓库。
+- `aaa-sewer-king`、`runawayengine` 和 `booom2026` 的新旧独立游戏域名保持退役。
 
 ## 🌐 多语言
 
-支持 9 个语种：简体中文、繁体中文、英语、日语、韩语、德语、法语、西班牙语、葡萄牙语。导航栏使用语言下拉选框；界面、项目标题与描述、笔记摘录以及页面元信息一起切换。
+支持 4 个语种：简体中文、繁体中文、英语、日语。导航栏使用语言下拉选框；界面、项目标题与描述、笔记摘录以及页面元信息一起切换。
 
-- 首次访问无语言前缀的首页：按 Vercel 的访问地区选择语言；地区没有映射时参考浏览器语言，最终使用英语。
+- 首次访问无语言前缀的首页：按 Cloudflare 的访问地区选择语言；地区没有映射时参考浏览器语言，最终使用英语。
 - 手动选择会保存一年，并优先于地区判断；直接打开某个语言的链接时尊重该链接。
 - 切换语言保留当前子页面、查询参数与锚点。
 - 原始内容和链接存放在 `app/content/home.ts`，译文存放在 `app/i18n/messages/`，通过稳定 ID 关联。内容缺译时逐字段回退英语，再回退原始内容。
@@ -95,12 +93,12 @@ Vercel 应该会自动检测到新提交并部署。
 ```bash
 npm test
 npm run build
-npm start -- -p 3456
-# 在另一个终端检查 9 个语言页面及地区跳转
+npm start
+# 在另一个终端检查 4 个语言页面及跳转
 npm run test:site
 ```
 
-`test:site` 默认访问 `http://localhost:3456`，可通过 `TEST_BASE_URL` 修改。地区模拟使用 `x-vercel-ip-country` 请求头，应在本地运行；Vercel 在线环境使用平台提供的真实地区信息。
+`test:site` 默认访问 `http://localhost:3456`，可通过 `TEST_BASE_URL` 修改为 Pages 预览或正式站。国家与浏览器语言回退通过单元测试验证；线上国家来自 Cloudflare，不能通过伪造请求头模拟。自动跳转使用 `private, no-store`，避免公共缓存固定访客的语言。
 
 ## 🔗 链接
 

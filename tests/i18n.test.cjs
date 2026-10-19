@@ -30,6 +30,56 @@ const { locales } = loadTypeScript('app/i18n/config.ts');
 const { dictionaries } = loadTypeScript('app/i18n/messages.ts');
 const { games, explorations, notes } = loadTypeScript('app/content/home.ts');
 const { localizeCards, getHomeContent } = loadTypeScript('app/content/localized.ts');
+const { languageRedirect } = loadTypeScript('app/i18n/request-routing.ts');
+const { onRequest } = loadTypeScript('functions/_middleware.ts');
+
+test('Pages redirects preserve host, query and private language preferences', async () => {
+  const request = new Request('https://preview.pages.dev/?from=home', {
+    headers: { cookie: 'other=1; NEXT_LOCALE=ja-JP', 'accept-language': 'en' },
+  });
+  Object.defineProperty(request, 'cf', { value: { country: 'CN' } });
+  const response = await onRequest({ request, next() { assert.fail('must redirect'); } });
+  assert.equal(response.status, 307);
+  assert.equal(response.headers.get('location'), 'https://preview.pages.dev/ja-JP/?from=home');
+  assert.match(response.headers.get('cache-control'), /private.*no-store/);
+  assert.match(response.headers.get('vary'), /Cookie/);
+  assert.match(response.headers.get('vary'), /Accept-Language/);
+});
+
+test('Pages uses trusted country metadata and safely ignores malformed saved preferences', async () => {
+  for (const [country, locale] of Object.entries({ CN:'zh-CN', TW:'zh-TW', JP:'ja-JP', DE:'en-US' })) {
+    const request = new Request('https://example.com/', {
+      headers: { cookie: 'NEXT_LOCALE=%broken', 'accept-language': 'en', 'cf-ipcountry': 'TW' },
+    });
+    Object.defineProperty(request, 'cf', { value: { country } });
+    const response = await onRequest({ request, next() { assert.fail('must redirect'); } });
+    assert.equal(new URL(response.headers.get('location')).pathname, `/${locale}/`);
+  }
+  const response = languageRedirect(new Request('https://example.com/', { headers: { 'accept-language': 'ru,ja;q=0.8' } }));
+  assert.equal(new URL(response.headers.get('location')).pathname, '/ja-JP/');
+});
+
+test('legacy and aliased routes retain their content path, query and fragment', () => {
+  for (const [input, expected] of [
+    ['/personal-website/zh-CN/animations/?x=1#demo', '/zh-CN/animations/?x=1#demo'],
+    ['/zh-Hant/animations/', '/zh-TW/animations/'],
+    ['/personal-website/images/notes/ai-game-music.jpg', '/images/notes/ai-game-music.jpg'],
+    ['/games/aaa-sewer-king/?ref=home', '/en-US/games/aaa-sewer-king/?ref=home'],
+  ]) {
+    const response = languageRedirect(new Request(`https://example.com${input}`));
+    assert.equal(response.headers.get('location'), `https://example.com${expected}`);
+  }
+});
+
+test('explicit locales, Unity runtime and assets bypass language routing', async () => {
+  const asset = new Response('asset', { headers: { 'content-type': 'application/wasm' } });
+  for (const path of ['/zh-CN/', '/ja-JP/animations/', '/games/aaa-sewer-king/play/',
+    '/games/aaa-sewer-king/play/index.html', '/games/aaa-sewer-king/play/Build/game.wasm',
+    '/junkyard-scene/index.html', '/sitemap.xml', '/xx-XX/']) {
+    const request = new Request(`https://example.com${path}`, { headers: { cookie:'NEXT_LOCALE=zh-TW' } });
+    assert.equal(await onRequest({ request, next: async () => asset }), asset, path);
+  }
+});
 
 test('manual preference wins over region and browser; invalid cookies are ignored', () => {
   assert.equal(detectLocale({ saved: 'zh-TW', country: 'CN', acceptLanguage: 'ja' }), 'zh-TW');
