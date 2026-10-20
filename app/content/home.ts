@@ -26,7 +26,6 @@ export const games: ContentCardData[] = [
     imageFit: 'contain',
     url: 'https://games.jupiterthewarlock.com/aaa-sewer-king/',
   },
-  pixelCosmosStudio,
   {
     id: 'orbital-throw',
     title: '你抛不过我你信吗？',
@@ -71,8 +70,17 @@ export const games: ContentCardData[] = [
   },
 ];
 
-export const explorations: ContentCardData[] = [
+export const tools: ContentCardData[] = [
+  {
+    id: 'game-art-style',
+    title: '美术风格图鉴',
+    description: '按风格浏览游戏画面，查看并复制美术与场景提示词。',
+    url: '/gameartstyle/',
+  },
   pixelCosmosStudio,
+];
+
+export const explorations: ContentCardData[] = [
   {
     id: 'godot-game-dev-skill',
     title: 'godot-game-dev-skill',

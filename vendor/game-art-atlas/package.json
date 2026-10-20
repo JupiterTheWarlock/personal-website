@@ -1,0 +1,14 @@
+{
+  "name": "game-art-atlas",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node scripts/check.mjs",
+    "build": "node scripts/build.mjs",
+    "assets": "node scripts/prepare-assets.mjs",
+    "data": "node scripts/finalize-catalog.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

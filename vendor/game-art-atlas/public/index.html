@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+  <meta name="theme-color" content="#18181B">
+  <meta name="description" content="从熟悉的游戏出发，用真实游戏画面整理像素、绘画、图形与三维美术风格。">
+  <title>游戏美术图鉴</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到内容</a>
+  <header class="site-header shell">
+    <a class="brand" href="./" aria-label="游戏美术图鉴首页">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span>游戏美术图鉴</span>
+    </a>
+    <nav aria-label="主导航">
+      <a href="./" data-nav="gallery">风格画廊</a>
+      <a href="./games/" data-nav="games">游戏索引 <span class="nav-count">243</span></a>
+      <a href="./about/" data-nav="about">关于图鉴</a>
+      <a href="https://jupiterthewarlock.com/" class="home-link">个人主页 ↗</a>
+    </nav>
+  </header>
+  <main id="main" class="shell" tabindex="-1">
+    <div class="initial-state"><span class="loading-dot"></span>正在展开图鉴…</div>
+  </main>
+  <footer class="site-footer shell">
+    <span>从真实画面，认识每一种风格。</span>
+    <span>截图归各游戏创作者所有 <span class="footer-dot">·</span> <a href="./about/">分类与来源</a></span>
+  </footer>
+  <dialog id="viewer" class="viewer" aria-label="游戏截图">
+    <div class="viewer-top">
+      <div><strong id="viewer-title"></strong><span id="viewer-developer"></span></div>
+      <div class="viewer-top-actions"><span id="viewer-count"></span><button type="button" id="viewer-zoom" class="icon-button" aria-label="放大画面" aria-pressed="false"></button><button type="button" id="viewer-close" class="icon-button" aria-label="关闭截图" autofocus></button></div>
+    </div>
+    <div class="viewer-content">
+      <div class="viewer-stage">
+        <button type="button" id="viewer-prev" class="viewer-arrow" aria-label="上一张截图"></button>
+        <img id="viewer-image" alt="">
+        <button type="button" id="viewer-next" class="viewer-arrow" aria-label="下一张截图"></button>
+        <div id="viewer-error" class="image-failure" hidden><p>画面暂时没有加载出来</p><button type="button" class="button" id="viewer-retry">重新加载</button></div>
+      </div>
+      <aside class="viewer-prompt">
+        <div class="prompt-heading"><h2>画面提示词</h2><button type="button" class="button" id="viewer-copy">复制</button></div>
+        <p id="viewer-scene"></p>
+        <pre tabindex="0"><code id="viewer-prompt"></code></pre>
+        <span class="prompt-note">根据画面特征编写 · 英文</span>
+      </aside>
+    </div>
+    <div class="viewer-bottom">
+      <span id="viewer-caption">官方游戏截图</span>
+      <div><a id="viewer-source" target="_blank" rel="noopener">官方来源 ↗</a><a id="viewer-download" download>下载原图</a></div>
+    </div>
+    <div id="viewer-thumbnails" class="viewer-thumbnails"></div>
+  </dialog>
+  <div id="asset-menu" class="asset-menu" role="menu" aria-label="图片操作" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="shell">请启用 JavaScript，以浏览风格分类和游戏截图。</p></noscript>
+</body>
+</html>

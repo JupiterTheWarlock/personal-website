@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/prepare-unity.mjs",
+    "build": "next build && node scripts/prepare-unity.mjs && node scripts/prepare-tools.mjs",
     "build:games": "next build games-site && node scripts/prepare-games.mjs && node scripts/prepare-unity.mjs games-site/out /aaa-sewer-king/play/",
     "start": "wrangler pages dev out --port 3456",
     "start:games": "cd games-site && wrangler pages dev out --port 8096",

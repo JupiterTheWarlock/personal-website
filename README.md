@@ -71,6 +71,24 @@ npm start
 
 `public/_routes.json` 让四语言静态页、Next 资源、背景和图片直接由 Pages 提供，其他需要语言判断或兼容旧路径的请求进入 Function。没有全站 SPA 回退，未知页面返回 404。
 
+### 工具菜单与美术风格图鉴
+
+顶部“工具”下拉目前只有美术风格图鉴和星空生成器，不另增首页分区。菜单标题和描述支持四种语言，星空生成器继续链接现有 Pixel Cosmos Studio 页面。
+
+图鉴发布路径为 `/gameartstyle/`，它是独立的中文工具页面，不随主站的语言前缀跳转。独立源码由 `JupiterTheWarlock/GameArtAtlas` 管理，主站在 `vendor/game-art-atlas` 保留公开网页所需文件的发布快照。`snapshot.json` 记录源提交和文件校验值；截图缓存、Steam 原始账户记录和本机操作服务不进入该目录的版本控制。
+
+`scripts/prepare-tools.mjs` 校验快照、下载缺少的公开截图，再将图鉴合入 `out/gameartstyle/`。GitHub 触发的 Pages 构建只需主站仓库与 Node.js 22，不需要私人仓库权限或 Steam 登录。所有页面一起发布到现有 Pages 项目。
+
+更新图鉴时，先在独立项目中修改、检查并提交，再同步主站的快照：
+
+```powershell
+# 在个人站目录中；默认寻找工作区下平级的 GameArtAtlas
+node scripts/sync-atlas.mjs --with-assets
+npm run build
+```
+
+其他目录布局可设置 `ATLAS_SOURCE_PATH`。该变量也允许本地构建直接使用图鉴源码；正式自动构建默认使用已提交的快照。不要只部署图鉴产物覆盖整个个人站。发布前检查工具菜单、图鉴深层链接、图片复制及 `/gameartstyle/recreate-prompt.zh-CN.txt`。提交工具改动时保留并排除其他尚未完成的背景修改。
+
 ### Unity 游戏接入约定
 
 游戏的当前公开分享入口为 **https://games.jupiterthewarlock.com/aaa-sewer-king/**，由独立 Pages 项目 `jupiter-games` 承载。删除 slug 只会进入游戏列表，游戏站没有个人主页导航。主站作品卡片和旧介绍页转到该地址，四种语言继续保留。完整构建和发布方式见 [独立游戏站](games-site/README.md)。下述原主站运行路径继续保留以支持旧存档；新游戏站固定运行路径是 `/aaa-sewer-king/play/`，新旧域名的浏览器存档相互独立。

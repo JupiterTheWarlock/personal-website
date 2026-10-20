@@ -1,4 +1,4 @@
-import { games, explorations, notes, type ContentCardData } from './home';
+import { games, tools, explorations, notes, type ContentCardData } from './home';
 import { fallbackLocale, isLocale } from '../i18n/config';
 import { getMessages, type CardText } from '../i18n/messages';
 import { sewerKingArtwork } from './sewer-king';
@@ -26,6 +26,7 @@ export function getHomeContent(locale: string) {
         : card.url.startsWith('/') ? `/${isLocale(locale) ? locale : fallbackLocale}${card.url}` : card.url,
       image: card.id === 'aaa-sewer-king' ? sewerKingArtwork(locale) : card.image,
     })),
+    tools: localizeCards(tools, translated, fallback),
     explorations: localizeCards(explorations, translated, fallback),
     notes: localizeCards(notes, translated, fallback),
   };

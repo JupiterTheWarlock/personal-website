@@ -2,8 +2,10 @@ import React from 'react';
 import type { Locale } from '@/app/i18n/config';
 import type { Messages } from '@/app/i18n/messages';
 import LanguageSwitcher from './LanguageSwitcher';
+import ToolsMenu from './ToolsMenu';
+import { getHomeContent } from '@/app/content/localized';
 
-const navItems = ['games', 'exploring', 'notes', 'contact'] as const;
+const navItems = ['games', 'tools', 'exploring', 'notes', 'contact'] as const;
 
 export default function Header({ locale, nav, languageLabel }: {
   locale: Locale;
@@ -16,6 +18,7 @@ export default function Header({ locale, nav, languageLabel }: {
       <div className="site-header-inner">
         <nav className="site-nav" aria-label={nav.label}>
           {navItems.map((item) => {
+            if (item === 'tools') return <ToolsMenu key={item} label={nav.tools} items={getHomeContent(locale).tools} />;
             return (
               <a key={item} href={`/${locale}/#${item}`} className="nav-link">
                 {nav[item]}

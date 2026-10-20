@@ -28,7 +28,7 @@ function loadTypeScript(filename) {
 const { detectLocale, browserLocale, matchLanguage, localizedPath } = loadTypeScript('app/i18n/routing.ts');
 const { locales } = loadTypeScript('app/i18n/config.ts');
 const { dictionaries } = loadTypeScript('app/i18n/messages.ts');
-const { games, explorations, notes } = loadTypeScript('app/content/home.ts');
+const { games, tools, explorations, notes } = loadTypeScript('app/content/home.ts');
 const { localizeCards, getHomeContent } = loadTypeScript('app/content/localized.ts');
 const { languageRedirect } = loadTypeScript('app/i18n/request-routing.ts');
 const { onRequest } = loadTypeScript('functions/_middleware.ts');
@@ -112,7 +112,7 @@ test('explicit locales, Unity runtime and assets bypass language routing', async
   const asset = new Response('asset', { headers: { 'content-type': 'application/wasm' } });
   for (const path of ['/zh-CN/', '/ja-JP/animations/', '/games/aaa-sewer-king/play/',
     '/games/aaa-sewer-king/play/index.html', '/games/aaa-sewer-king/play/Build/game.wasm',
-    '/junkyard-scene/index.html', '/sitemap.xml', '/xx-XX/']) {
+    '/junkyard-scene/index.html', '/gameartstyle/', '/gameartstyle/styles/watercolor/', '/gameartstyle/data/games.json', '/sitemap.xml', '/xx-XX/']) {
     const request = new Request(`https://example.com${path}`, { headers: { cookie:'NEXT_LOCALE=zh-TW' } });
     assert.equal(await onRequest({ request, next: async () => asset }), asset, path);
   }
@@ -153,7 +153,7 @@ test('locale replacement preserves page, query parameters and anchor', () => {
 });
 
 test('all four dictionaries have complete UI and content translations', () => {
-  const cards = [...games, ...explorations, ...notes];
+  const cards = [...games, ...tools, ...explorations, ...notes];
   const ids = [...new Set(cards.map((card) => card.id))].sort();
   assert.deepEqual([...locales], ['zh-CN', 'zh-TW', 'en-US', 'ja-JP']);
   function checkShape(source, value, keyPath) {
@@ -165,9 +165,9 @@ test('all four dictionaries have complete UI and content translations', () => {
     checkShape(dictionaries['zh-CN'], dictionaries[locale], locale);
     assert.deepEqual(Object.keys(dictionaries[locale].content).sort(), ids, locale);
     const localized = getHomeContent(locale);
-    const entries = [...localized.games, ...localized.explorations, ...localized.notes];
+    const entries = [...localized.games, ...localized.tools, ...localized.explorations, ...localized.notes];
     assert.deepEqual(entries.map(({ url, image }) => ({ url, image })), cards.map(({ id, url, image }) => ({
-      url: id === 'aaa-sewer-king' ? `${url}?lang=${locale}` : url.startsWith('/') ? `/${locale}${url}` : url,
+      url: id === 'aaa-sewer-king' ? `${url}?lang=${locale}` : url.startsWith('/') && id !== 'game-art-style' ? `/${locale}${url}` : url,
       image: id === 'aaa-sewer-king'
         ? `/images/games/aaa-sewer-king-promo${locale === 'zh-CN' ? '-zh-CN' : ''}.jpg`
         : image,
@@ -187,7 +187,10 @@ test('missing content fields fall back to English then source without losing car
 });
 
 test('delisted game stays removed; notes link to the two requested X articles', () => {
-  assert.equal(games.length, 8);
+  assert.equal(games.length, 7);
+  assert.deepEqual(tools.map(tool => tool.id), ['game-art-style', 'pixel-cosmos-studio']);
+  assert.equal(tools[0].url, '/gameartstyle/');
+  assert.ok(!games.some(game => game.id === 'pixel-cosmos-studio'));
   assert.equal(games.find(game => game.id === 'aaa-sewer-king').url, 'https://games.jupiterthewarlock.com/aaa-sewer-king/');
   assert.ok(!games.some(game => /(?:aaa-sewer-king|runawayengine|booom2026)\.(?:jthewl\.cc|jupiterthewarlock\.com)/.test(game.url)));
   assert.ok(!games.some((game) => game.url.includes('thejunkyardoftheend')));

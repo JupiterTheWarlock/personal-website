@@ -245,6 +245,16 @@ body.business-card-mode .lab-hero {
   justify-self: end;
 }
 
+.tools-trigger { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+.tools-trigger svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.tools-trigger.is-open { color: var(--accent-bright); border-color: var(--border-light); background: rgba(218,119,86,.1); }
+.tools-dropdown { position: fixed; z-index: 100; width: 300px; max-width: calc(100vw - 24px); padding: 6px; background: #18181b; border: 1px solid #3a3a40; border-radius: 4px; box-shadow: 0 14px 40px #0008; }
+.tools-dropdown a { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; padding: 14px 12px; border-radius: 3px; color: #ece8e1; text-decoration: none; }
+.tools-dropdown a:hover, .tools-dropdown a:focus-visible { background: #da775620; outline: 1px solid #da7756; }
+.tools-dropdown strong { display: block; font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+.tools-dropdown small { display: block; font-size: 11px; line-height: 1.8; color: #b0aba5; }
+.tools-dropdown a > span:last-child { color: #da7756; }
+
 .language-switcher .sr-only {
   position: absolute;
   width: 1px;

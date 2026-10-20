@@ -4,7 +4,8 @@
     "exploring": "探索",
     "notes": "笔记",
     "contact": "联系",
-    "label": "主导航"
+    "label": "主导航",
+    "tools": "工具"
   },
   "language": "选择语言",
   "hero": {
@@ -65,7 +66,7 @@
       "description": "弹珠清污，收工升级，再下一口井。"
     },
     "pixel-cosmos-studio": {
-      "title": "Pixel Cosmos Studio",
+      "title": "星空生成器",
       "description": "生成像素与体素星球、动态云层和星空天空盒，并导出游戏可用素材。"
     },
     "orbital-throw": {
@@ -115,6 +116,10 @@
     "ai-native-game": {
       "title": "AI 原生游戏不是让 AI 接管世界",
       "description": "我现在越来越觉得，很多关于 AI 原生游戏的讨论，一开始就把问题想偏了。"
+    },
+    "game-art-style": {
+      "title": "美术风格图鉴",
+      "description": "按风格浏览游戏画面，查看并复制美术与场景提示词。"
     }
   }
 }

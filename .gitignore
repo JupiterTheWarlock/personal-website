@@ -84,6 +84,7 @@ Thumbs.db
 .wrangler/
 .dev.vars*
 .local/
+/vendor/game-art-atlas/public/media/
 # Unity binaries stay in versioned R2 releases, not Git or Pages.
 public/games/aaa-sewer-king/play/Build/
 public/games/aaa-sewer-king/play/StreamingAssets/
@@ -93,7 +94,6 @@ public/games/aaa-sewer-king/play/StreamingAssets/
 # ========================================
 *.tsbuildinfo
 next-env.d.ts
-tsconfig.json
 !games-site/tsconfig.json
 tsconfig.tsbuildinfo
 *.d.ts.map

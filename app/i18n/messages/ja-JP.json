@@ -4,7 +4,8 @@
     "exploring": "探求",
     "notes": "ノート",
     "contact": "連絡先",
-    "label": "メインナビゲーション"
+    "label": "メインナビゲーション",
+    "tools": "ツール"
   },
   "language": "言語を選択",
   "hero": {
@@ -65,7 +66,7 @@
       "description": "ビー玉で下水道を清掃。作業後に強化し、次の井戸へ。"
     },
     "pixel-cosmos-studio": {
-      "title": "Pixel Cosmos Studio",
+      "title": "星空・惑星ジェネレーター",
       "description": "ピクセルやボクセルの惑星、動く雲、宇宙のスカイボックスを生成し、ゲーム用の素材として書き出せます。"
     },
     "orbital-throw": {
@@ -115,6 +116,10 @@
     "ai-native-game": {
       "title": "AI ネイティブゲームは、AI に世界を任せることではない",
       "description": "AI ネイティブゲームをめぐる議論の多くは、最初から問題の捉え方がずれていると、最近ますます感じる。"
+    },
+    "game-art-style": {
+      "title": "ゲームアート図鑑",
+      "description": "画風ごとにゲーム画面を比較し、アート方針やシーンのプロンプトをコピー。"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
   "version": 1,
   "include": ["/*"],
-  "exclude": ["/zh-CN/*", "/zh-TW/*", "/en-US/*", "/ja-JP/*", "/_next/*", "/junkyard-scene/*", "/images/*", "/games/aaa-sewer-king/play/*", "/sitemap.xml", "/robots.txt", "/404.html"]
+  "exclude": ["/zh-CN/*", "/zh-TW/*", "/en-US/*", "/ja-JP/*", "/_next/*", "/junkyard-scene/*", "/images/*", "/gameartstyle/*", "/games/aaa-sewer-king/play/*", "/sitemap.xml", "/robots.txt", "/404.html"]
 }

@@ -1,0 +1,2690 @@
+{
+  "groups": [
+    {
+      "id": "pixel",
+      "name": "像素与复古"
+    },
+    {
+      "id": "paint",
+      "name": "绘画与线条"
+    },
+    {
+      "id": "shape",
+      "name": "图形与编排"
+    },
+    {
+      "id": "3d",
+      "name": "三维与影像"
+    }
+  ],
+  "styles": [
+    {
+      "id": "watercolor",
+      "group": "paint",
+      "name": "水彩晕染",
+      "description": "柔软的色层、细线与留白共同构成空间，纸张和颜料的痕迹也是画面的一部分。",
+      "coverGame": 683320,
+      "coverIndex": 0,
+      "tags": [
+        "水彩晕染",
+        "watercolor illustration",
+        "色层有浓淡",
+        "留白组织空间",
+        "软硬边缘交替"
+      ],
+      "observations": [
+        {
+          "title": "色层有浓淡",
+          "text": "用渗化边缘与纸感区分自然色层，避免每一处都同样均匀。"
+        },
+        {
+          "title": "留白组织空间",
+          "text": "空旷区域让小人物、枝叶和建筑形状更突出。"
+        },
+        {
+          "title": "软硬边缘交替",
+          "text": "远景轻柔，近景少量清晰线条建立焦点。"
+        }
+      ],
+      "games": [
+        {
+          "id": 683320,
+          "note": "淡青树枝与透明叶片横跨米白和珊瑚红色块，小红衣人物悬在中央，纸纹和晕染共同塑造画面。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using watercolor illustration. Establish one coherent visual identity that can be maintained across a complete project.\n\nBuild shapes from translucent washes with uneven pigment density, faint paper grain and softly feathered edges. Use a restrained family of complementary colors, large quiet areas and a few sharp silhouettes. Distinguish delicate linework from broad atmospheric color fields. Let distant objects dissolve into pale washes while foreground accents remain precise. Characters should be small, readable silhouettes; interface elements should inherit the same airy spacing and gentle value range.\n\nSpecify a consistent contour language, edge treatment, palette and detail density for characters, backgrounds, interface illustrations and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "rubber-hose",
+      "group": "paint",
+      "name": "复古手绘动画",
+      "description": "醒目的黑线、夸张比例和有笔触的背景，组成早期手绘动画般的画面。",
+      "coverGame": 268910,
+      "coverIndex": 0,
+      "tags": [
+        "复古手绘动画",
+        "vintage hand-drawn theatrical animation",
+        "轮廓先于细节",
+        "平涂与笔触对照",
+        "夸张但有秩序"
+      ],
+      "observations": [
+        {
+          "title": "轮廓先于细节",
+          "text": "圆润大形和弧线肢体使角色缩小后仍可辨认。"
+        },
+        {
+          "title": "平涂与笔触对照",
+          "text": "前景人物颜色明确，背景保留绘画痕迹。"
+        },
+        {
+          "title": "夸张但有秩序",
+          "text": "表情和姿态放大，画面层级依旧清晰。"
+        }
+      ],
+      "games": [
+        {
+          "id": 268910,
+          "note": "木制舞台上红绿笑脸赛车与黄色长颈玩具挤满赛道，小杯头角色在布景前跃起。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using vintage hand-drawn theatrical animation. Establish one coherent visual identity that can be maintained across a complete project.\n\nConstruct exaggerated characters with rounded forms, elastic curved limbs, large expressive faces and unmistakable silhouettes. Wrap flat, clearly separated colors in confident dark outlines. Contrast clean character drawings with lightly textured, painterly backgrounds and softened vintage hues. Keep poses broad and readable, with curved motion paths and squash-and-stretch cues. Interface borders, lettering shapes and impact graphics should feel drawn for the same animated world, without film dirt overwhelming the image.\n\nSpecify a consistent contour language, edge treatment, palette and detail density for characters, backgrounds, interface illustrations and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "detailed-pixel",
+      "group": "pixel",
+      "name": "精细像素画面",
+      "description": "细密的色块和纹样承载丰富细节，像素颗粒与清楚的动作轮廓并存。",
+      "coverGame": 588650,
+      "coverIndex": 0,
+      "tags": [
+        "精细像素画面",
+        "high-detail pixel art",
+        "成组像素造型",
+        "远近密度不同",
+        "亮色指出重点"
+      ],
+      "observations": [
+        {
+          "title": "成组像素造型",
+          "text": "用连续色块表达结构，细节服从轮廓。"
+        },
+        {
+          "title": "远近密度不同",
+          "text": "近景纹理更密，远景降低对比。"
+        },
+        {
+          "title": "亮色指出重点",
+          "text": "角色与效果从环境色中清楚分离。"
+        }
+      ],
+      "games": [
+        {
+          "id": 588650,
+          "note": "像素角色在紫色光柱前跃起挥出红色大弧线，蓝色灯点与橙色火焰照亮暗石平台和敌人轮廓。"
+        },
+        {
+          "id": 2764460,
+          "note": "侧视工厂由密集橙色管道、输送线与蓝色空间组成，左侧成排竖直机械形成整齐模块。"
+        },
+        {
+          "id": 3862670,
+          "note": "蓝色海水中小潜水员被白色气泡与粉色水母包围，右侧黄色台阶状海壁向下延伸。"
+        },
+        {
+          "id": 953490,
+          "note": "红色触手横穿长满绿植的暗色设施，梯子与倾斜金属步道包围中央肉块，左下暖光形成亮点。"
+        },
+        {
+          "id": 774361,
+          "note": "尖盔战士站在黑灰石砌地牢的平台上，左侧绿色闪电怪物与右下白色飞行物形成少量亮色。"
+        },
+        {
+          "id": 2440890,
+          "note": "昏暗酒吧里两名小像素人物隔着柜台站立，左下大幅灰发立绘覆盖场景，紫粉窗光照亮木柜和瓶架。"
+        },
+        {
+          "id": 2612700,
+          "note": "街景画面中央叠着视频窗口，短发少女在橙粉夕阳前抬起手掌，外围像素街道和黑色标题栏保持清楚分层。"
+        },
+        {
+          "id": 1477070,
+          "note": "黑色复古汽车停在六边形铺装街道左侧，三名小人物站在蒸汽之间，下方金边黑色选项框占据半幅画面。"
+        },
+        {
+          "id": 1726120,
+          "note": "紫衣小高尔夫球手站在左侧绿草平台，右方浅黄沙坡伸入绿色洞穴，粉紫尖刺和巨型石柱点缀远近。"
+        },
+        {
+          "id": 599140,
+          "note": "暖色像素农院里木屋立于左上，右侧六块空地覆盖绿色建造网格，树木、石墙和工作台沿正交小路分布。"
+        },
+        {
+          "id": 1147560,
+          "note": "森林遗迹中的小战士被大团荧绿魔法和黑色旋涡包围，草皮平台、木架与蓝色远景由细密像素拼出。"
+        },
+        {
+          "id": 311690,
+          "note": "暗色砖地房间里红色巨型弹头怪盘踞右上，小枪手从左下发射黄色直线，粉红与白色环状弹幕穿过中央。"
+        },
+        {
+          "id": 1498040,
+          "note": "黑色方砖战场中央挤满浅色分节肢体与粉紫旋涡，白色圆弹横向穿越，顶部红心与外缘血红色光晕围住密集像素战斗。"
+        },
+        {
+          "id": 881100,
+          "note": "横向像素洞窟被黑暗分隔，药瓶架、绿色积液与橙色熔岩在细碎岩层之间发亮。"
+        },
+        {
+          "id": 2151580,
+          "note": "暗青色像素战场以紫衣小人为中心，绿色骷髅环、橙蓝弹幕和密集伤害数字向外扩散。"
+        },
+        {
+          "id": 512900,
+          "note": "像素酒馆以木地板、吧台和圆桌组成俯视空间，蓝色墙砖与紫色灯光划分室内区域。"
+        },
+        {
+          "id": 1794680,
+          "note": "深绿像素草地被蝙蝠般的敌群填满，蓝色经验亮点与横扫中央的白色攻击轨迹交错。"
+        },
+        {
+          "id": 105600,
+          "note": "蓝天下三栋木屋以像素剖面展示房间、家具与楼梯，地下黑色土层和顶部红心界面构成上下边界。"
+        },
+        {
+          "id": 400180,
+          "note": "成群像素小人站在蓝灰色古典神庙前，石柱、三角山墙与左右火盆组成正面集体构图。"
+        },
+        {
+          "id": 665180,
+          "note": "白发尖耳女性立绘覆盖木质像素房间右半边，底部半透明对话框与左下头像衬出前后两种绘画尺度。"
+        },
+        {
+          "id": 1282730,
+          "note": "粗细像素道路环绕黑暗中心连成回路，右侧装备格与底部卡牌包围白骨色和暗红色的微型地图。"
+        },
+        {
+          "id": 701160,
+          "note": "暗紫夜色中飞马骑手与人群沿岸边横向排开，红月、远山和火山倒映在下方黑色水面中。"
+        },
+        {
+          "id": 1562700,
+          "note": "粉桃色天空与白色卷云层叠在暗紫山峰前，几名像素小人站在绿色草平台和稀疏枯树之间。"
+        },
+        {
+          "id": 1059980,
+          "note": "四名圆润像素小人围住巨型绿黑树怪，怪物张开黄色亮口并横持银色镰刀，暗绿林地围住战场。"
+        },
+        {
+          "id": 445980,
+          "note": "俯视像素庭院中红衣角色面对数名黑衣敌人，白色星状法术亮起，青藤石墙、木箱和旗帜围住草地。"
+        },
+        {
+          "id": 1337520,
+          "note": "暗蓝像素横版战场上大量白色半透明飞行形体挤在上半部，小角色与紫红法术贴近下方石台。"
+        },
+        {
+          "id": 753420,
+          "note": "蓝天远山前的多层木屋以精细像素展示梁柱、窗户与露台，几名小人物站在石墙上方的横向平台。"
+        },
+        {
+          "id": 686200,
+          "note": "横向像素砖墙剖面夹住水面与平台，持枪小人和黄色弹道分布左右，中央巨大拱形栅门连接上下空间。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using high-detail pixel art. Establish one coherent visual identity that can be maintained across a complete project.\n\nPreserve an intentional pixel grid while building rich silhouettes, architecture and surface patterns from coherent pixel clusters. Use controlled ramps of light and shadow rather than indiscriminate single-pixel noise. Layer foreground, playable plane and distant scenery with progressively lower contrast. Reserve strong chroma and bright highlights for characters, interactions and effects. Effects may glow gently, but sharp pixel contours and readable action shapes must survive the lighting.\n\nSpecify a stable pixel scale, readable cluster shapes, palette roles and a common resolution for character sprites, terrain, interface icons and effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "ink-comic",
+      "group": "paint",
+      "name": "手绘漫画与描边",
+      "description": "轮廓线直接参与造型，成块阴影与夸张姿态形成漫画感。",
+      "coverGame": 262060,
+      "coverIndex": 0,
+      "tags": [
+        "手绘漫画与描边",
+        "inked comic illustration",
+        "外轮廓明确",
+        "阴影归纳成块",
+        "姿态表达性格"
+      ],
+      "observations": [
+        {
+          "title": "外轮廓明确",
+          "text": "人物与装备通过线条或硬边分开。"
+        },
+        {
+          "title": "阴影归纳成块",
+          "text": "黑影和色块构成体积，减少细碎渐变。"
+        },
+        {
+          "title": "姿态表达性格",
+          "text": "表情、比例和剪影承担主要辨识信息。"
+        }
+      ],
+      "games": [
+        {
+          "id": 262060,
+          "note": "暗色哥特地牢中两组人物隔着侧视地面相对，粗黑阴影吞没石拱与披甲轮廓，下半部排列状态栏和小地图。"
+        },
+        {
+          "id": 1931770,
+          "note": "青蓝与暗红平涂的高大厅堂正面展开，中央巨像立在阶梯尽头，两侧细线建筑保持严格对称。"
+        },
+        {
+          "id": 322330,
+          "note": "木筏上的大眼人物站在轮盘旁，后方营地布满火堆与尖木栅栏，棕黑排线统一人物和木板。"
+        },
+        {
+          "id": 2868840,
+          "note": "暗绿色神殿中蓝黄战士面对一只蓝色长尾猛兽，底部卡牌扇形展开，人物以描线和平涂阴影塑造。"
+        },
+        {
+          "id": 3395140,
+          "note": "秋林背景前的米色行动窗口排列行医、挖矿和锻造三幅黑线卡图，底部人物属性栏沿横向展开。"
+        },
+        {
+          "id": 397540,
+          "note": "戴防毒面具的赤膊男子站在木板街道中央，黄褐棚屋与歪斜电线挤满背后，粗黑线条刻画肌肉和衣料。"
+        },
+        {
+          "id": 1796220,
+          "note": "苍白天空前交错着巨大的枯木枝与红色铁链，几名蓝绿敌人立在枝头，小骑手从中间空隙跃过。"
+        },
+        {
+          "id": 1859910,
+          "note": "林间对话中蓝衣女子与拄杖灰衣老人分立两侧，背景粗树枝遮住柔和日光，墨线与斑驳笔触刻画衣褶。"
+        },
+        {
+          "id": 646570,
+          "note": "深绿地牢中披斗篷的单个角色面对亮绿色长颈怪物，暖烛光、白色电弧和下方生命条突出横向对峙。"
+        },
+        {
+          "id": 1191840,
+          "note": "灰色菱格棋盘上排满手绘小型生物，红绿圆点区分站位，左侧装备栏与底部候选生物列围住中央棋面。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using inked comic illustration. Establish one coherent visual identity that can be maintained across a complete project.\n\nPrioritize bold silhouette design, expressive poses and angular or sweeping contour strokes. Organize shading into graphic masses instead of smooth photographic gradients. Use deep ink shadows to anchor forms, with restrained accent colors guiding attention. Give faces, clothing folds and props selective line detail; leave quieter surfaces uncomplicated. Translate the same stroke weight and shadow language into menus, icons, dialogue framing and impact effects. Keep foreground action distinct from denser background hatching.\n\nSpecify a consistent contour language, edge treatment, palette and detail density for characters, backgrounds, interface illustrations and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "stylized-3d",
+      "group": "3d",
+      "name": "简化造型的三维世界",
+      "description": "大体块与大色面承担信息，简洁的物体轮廓和光影建立空间。",
+      "coverGame": 361420,
+      "coverIndex": 0,
+      "tags": [
+        "简化造型的三维世界",
+        "simplified geometric 3D",
+        "体块概括物体",
+        "颜色分区明确",
+        "光影交代空间"
+      ],
+      "observations": [
+        {
+          "title": "体块概括物体",
+          "text": "山石、树木与建筑先让人读到形状。"
+        },
+        {
+          "title": "颜色分区明确",
+          "text": "不同区域通过成片颜色组织。"
+        },
+        {
+          "title": "光影交代空间",
+          "text": "落地阴影、遮挡与空气色拉开距离。"
+        }
+      ],
+      "games": [
+        {
+          "id": 361420,
+          "note": "白色圆润宇航员散布在亮粉紫草原中，低矮设施、三角框架与巨大卷曲云团构成几何化异星景色。"
+        },
+        {
+          "id": 2085540,
+          "note": "侧视剖面的多层办公室里，红蓝火柴人在暖黄色吊灯下交战，梯子贯穿深色楼板。"
+        },
+        {
+          "id": 3624140,
+          "note": "斜俯视草原上两座移动城堡与密集小兵交战，右侧两团明亮爆炸照亮绿色地面。"
+        },
+        {
+          "id": 4134650,
+          "note": "深紫背景上悬着方形等距战棋台，灰白小兵密集分布，局部环绕紫色特效。"
+        },
+        {
+          "id": 4587610,
+          "note": "深色网格骰盘中散落着白色、黑色和棕色立体骰子，左侧黄字分数由木框面板包围。"
+        },
+        {
+          "id": 3105960,
+          "note": "高位斜俯视的灰石基地中，浅绿道路连接圆形机器与黑灰设施，远处淡蓝山谷被雾气弱化。"
+        },
+        {
+          "id": 4421010,
+          "note": "斜俯视暗色桌面上聚集粉色圆形角色，金币、纸张和破碎器皿向四周飞散。"
+        },
+        {
+          "id": 3784030,
+          "note": "青绿机壳包围橙色硬币推盘，白色图案币与彩色球体堆在前景，后方斜台继续铺满金币。"
+        },
+        {
+          "id": 2062430,
+          "note": "赭黄色峡谷中的长方形战场从下方向上延伸，球体弹道穿过小角色，顶端密集排列怪物和伤害数字。"
+        },
+        {
+          "id": 346010,
+          "note": "悬浮式小村庄中央爆出橙色火团，木制攻城器械列在右侧，碎石与树冠被冲击掀起。"
+        },
+        {
+          "id": 2001070,
+          "note": "高楼视角俯瞰粉紫暮色城市，青色发光塔楼矗立中部，左前景细长金属杆斜入画面。"
+        },
+        {
+          "id": 1333910,
+          "note": "浅绿背景中央悬浮一块小岛，黄色草地上立着紫色风车和高塔树木，厚重阴影落在右后方。"
+        },
+        {
+          "id": 548430,
+          "note": "第一人称青灰枪械指向橙红洞穴中的绿色爆炸，白色棱形矿晶从地面和岩壁伸出。"
+        },
+        {
+          "id": 591630,
+          "note": "小蜡烛带着橙色火苗站在暗蓝地面，巨大青蓝发光水母悬在四周，暖冷光点形成鲜明尺度差。"
+        },
+        {
+          "id": 1869270,
+          "note": "斜俯视橄榄绿坦克停在粗糙草地上，主炮塔后方叠着大型多面体炮塔，右侧仓库网格展示可替换部件。"
+        },
+        {
+          "id": 2239150,
+          "note": "紫红地表被青蓝溪流与巨大石块分割，亮黄树簇和小型房屋沿弯曲道路分布，右上桥梁跨过河道。"
+        },
+        {
+          "id": 3328720,
+          "note": "多只大头动漫公仔分散站在浅灰背景上，服装覆盖红蓝黑白等色，脚下柔软阴影强化实体模型感。"
+        },
+        {
+          "id": 2162800,
+          "note": "高位斜视工厂中橙色升降结构整齐排成多列，黑灰输送带在蓝色图标间反复转弯，机械表面保持光洁。"
+        },
+        {
+          "id": 3291350,
+          "note": "深灰竞技场上少量小人物向右侧绿色敌人发射蓝黄弹道，强侧光将近处白色角色的长影投向右下。"
+        },
+        {
+          "id": 1562430,
+          "note": "小渔船漂在左下青色海面，左岸红白灯塔亮着暖灯，夕阳从右侧森林后落下，块状岩面和云层保持简化造型。"
+        },
+        {
+          "id": 1623730,
+          "note": "红发蓝甲玩家背对镜头站在清澈水池中，巨大的粉色莲花状生物在前方发出蓝白微光，岩壁与水晶围住池岸。"
+        },
+        {
+          "id": 2010980,
+          "note": "红青低多边形草株覆盖外星平原，小型机械角色位于中央偏下，左侧褐色异物和右侧白色岩块被星云天空压住尺度。"
+        },
+        {
+          "id": 1868140,
+          "note": "明亮蓝海中的珊瑚礁以层层浅色石台组成，粉紫珊瑚和细小鱼群铺满体块边缘，中央小潜水员只占很小面积。"
+        },
+        {
+          "id": 2214260,
+          "note": "俯视灰黑地面上的悬浮战斗载具向前喷射金黄弹幕，青色护板与远处高楼形成明确体块。"
+        },
+        {
+          "id": 1097150,
+          "note": "圆润糖豆角色跑过浅蓝平台，左右粉红横向障碍与后方悬垂摆锤构成明亮的三维闯关场。"
+        },
+        {
+          "id": 3167020,
+          "note": "斜俯视小鸭站在木屋外的红色箱子旁，左侧几何树冠、长墙阴影与右侧虚化地面强化微缩模型感。"
+        },
+        {
+          "id": 220200,
+          "note": "三名圆眼绿色宇航员挤在四轮月球车内，紫色荒原与粉紫天空让黑灰车架和橡胶车轮突出。"
+        },
+        {
+          "id": 632360,
+          "note": "橙色夕阳从几何松林与断崖之间照入，近处深色树干和巨石框住跨越峡谷的平坦岩台。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using simplified geometric 3D. Establish one coherent visual identity that can be maintained across a complete project.\n\nReduce terrain, vegetation, buildings and characters to a small vocabulary of strong geometric masses. Use broad color regions and restrained texture detail. Allow planar facets or softly rounded forms to remain visually deliberate instead of adding photographic surface noise. Establish depth through clear overlap, contact shadows, soft ambient lighting and controlled atmospheric falloff. Characters and props need distinct silhouettes at distance. Interfaces and effects should echo the same economical geometry and color grouping.\n\nSpecify a common level of geometric detail, material response, lighting contrast and atmospheric depth for characters, props, environments and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "atmospheric-pixel",
+      "group": "pixel",
+      "name": "氛围光影像素",
+      "description": "像素构成环境，局部亮点、暗部和层次决定整体气氛。",
+      "coverGame": 881100,
+      "coverIndex": 0,
+      "tags": [
+        "氛围光影像素",
+        "atmospheric pixel art",
+        "亮部有明确位置",
+        "细节融入环境",
+        "层次表达尺度"
+      ],
+      "observations": [
+        {
+          "title": "亮部有明确位置",
+          "text": "少数光源打破暗场，牵引视线。"
+        },
+        {
+          "title": "细节融入环境",
+          "text": "颗粒与纹理受统一色调约束。"
+        },
+        {
+          "title": "层次表达尺度",
+          "text": "前景剪影与逐渐褪色的远景形成纵深。"
+        }
+      ],
+      "games": [
+        {
+          "id": 881100,
+          "note": "横向像素洞窟被黑暗分隔，药瓶架、绿色积液与橙色熔岩在细碎岩层之间发亮。"
+        },
+        {
+          "id": 953490,
+          "note": "红色触手横穿长满绿植的暗色设施，梯子与倾斜金属步道包围中央肉块，左下暖光形成亮点。"
+        },
+        {
+          "id": 312520,
+          "note": "灰绿废墟中两只深色长颈生物占据高柱，小白角色沿底部平台前行，红色细草从黑色前景探出。"
+        },
+        {
+          "id": 774361,
+          "note": "尖盔战士站在黑灰石砌地牢的平台上，左侧绿色闪电怪物与右下白色飞行物形成少量亮色。"
+        },
+        {
+          "id": 813230,
+          "note": "深蓝地下厅中巨型动物石像立在细柱之间，垂直水线与悬绳连接上下空间，底部小角色几乎被黑暗吞没。"
+        },
+        {
+          "id": 701160,
+          "note": "暗紫夜色中飞马骑手与人群沿岸边横向排开，红月、远山和火山倒映在下方黑色水面中。"
+        },
+        {
+          "id": 1562700,
+          "note": "粉桃色天空与白色卷云层叠在暗紫山峰前，几名像素小人站在绿色草平台和稀疏枯树之间。"
+        },
+        {
+          "id": 588650,
+          "note": "像素角色在紫色光柱前跃起挥出红色大弧线，蓝色灯点与橙色火焰照亮暗石平台和敌人轮廓。"
+        },
+        {
+          "id": 1337520,
+          "note": "暗蓝像素横版战场上大量白色半透明飞行形体挤在上半部，小角色与紫红法术贴近下方石台。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using atmospheric pixel art. Establish one coherent visual identity that can be maintained across a complete project.\n\nBuild a tangible pixel environment whose mood depends on light placement, environmental layering and restrained color. Use large areas of subdued values, broken by carefully chosen luminous openings, fire, particles or silhouettes. Preserve readable terrain clusters beneath haze and glow. Fade distant architecture into a shared atmospheric hue and let dark foreground shapes frame the action. Characters remain small but identifiable. Effects should illuminate or punctuate the environment rather than turn every surface into a competing light source.\n\nSpecify a stable pixel scale, readable cluster shapes, palette roles and a common resolution for character sprites, terrain, interface icons and effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "storybook",
+      "group": "paint",
+      "name": "温暖的手绘世界",
+      "description": "亲切的线条、柔和配色与生活细节，让场景像故事书的一页。",
+      "coverGame": 972660,
+      "coverIndex": 0,
+      "tags": [
+        "温暖的手绘世界",
+        "welcoming storybook illustration",
+        "线条保留手画感",
+        "配色协调柔和",
+        "关系成为中心"
+      ],
+      "observations": [
+        {
+          "title": "线条保留手画感",
+          "text": "轮廓自然连贯，减少机械般锐利的边。"
+        },
+        {
+          "title": "配色协调柔和",
+          "text": "小面积亮色承接视线。"
+        },
+        {
+          "title": "关系成为中心",
+          "text": "姿态、距离和日常物件帮助表达情绪。"
+        }
+      ],
+      "games": [
+        {
+          "id": 972660,
+          "note": "红顶集市帐篷置于青绿树林中，大蘑菇商人站在柜台后，小角色与货箱沿木制步道排列。"
+        },
+        {
+          "id": 322330,
+          "note": "木筏上的大眼人物站在轮盘旁，后方营地布满火堆与尖木栅栏，棕黑排线统一人物和木板。"
+        },
+        {
+          "id": 2988300,
+          "note": "彩虹与蓝天覆盖手绘花园，巨型花草、糖果建筑和小昆虫立在棕色土层上，地下剖面可见水池。"
+        },
+        {
+          "id": 939400,
+          "note": "深蓝星空中两个简笔情侣站在白色弯曲平台上，粉裙与蓝围巾形成柔和对比，下方排列三项对白选择。"
+        },
+        {
+          "id": 2540860,
+          "note": "俯视小餐馆里两张圆桌和红蓝椅子摆在灰色地砖上，中央柜台放着食物，白色幽灵厨师漂在右上。"
+        },
+        {
+          "id": 2501600,
+          "note": "一只白鹅站在石桥中央面对镜头，右侧前景露出灰蓝盾牌与卡牌，远处绿色田野和风车由细线与淡彩描出。"
+        },
+        {
+          "id": 2524360,
+          "note": "米黄斑驳纸面上漂浮白色云状平台，蓝发小像素人物悬在木凳上方，下方黑字叙述写在一条白云内。"
+        },
+        {
+          "id": 1634860,
+          "note": "俯视热带战场上红色弹丸围着绿色地面盘旋，下方两株棕榈树夹住橙沙通道，小白蓝飞船停在中央偏下。"
+        },
+        {
+          "id": 434650,
+          "note": "两个红褐色树怪在暗绿地牢中包围小战士，右侧树怪吐出火光，粉红弹道与绿色药瓶打破低饱和背景。"
+        },
+        {
+          "id": 2427700,
+          "note": "羊皮纸色商店界面左侧背包塞满武器、护甲与饰品，右侧三层木架陈列盾牌和杯具，两名卡通商人站在下方。"
+        },
+        {
+          "id": 1710100,
+          "note": "沙桃色横版荒野以叠山和剪影拉开距离，小人物跃在空中，圆饼状道具分散悬浮。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using welcoming storybook illustration. Establish one coherent visual identity that can be maintained across a complete project.\n\nUse approachable character proportions, gently irregular contours and harmonious, softened colors. Simplify anatomy and objects without losing gesture or personality. Favor hand-drawn curves, broad painted fills and a selective amount of small domestic detail. Compose scenes around relationships between characters, with calm negative space and inviting pools of light. Backgrounds should support rather than compete with expressions. Carry the same softness and spacing into dialogue panels, icons and transitions; keep effects light, readable and illustrative.\n\nSpecify a consistent contour language, edge treatment, palette and detail density for characters, backgrounds, interface illustrations and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "monochrome",
+      "group": "paint",
+      "name": "单色漫画线描",
+      "description": "颜色退场后，线条密度、黑白面积和网点成为主要表达材料。",
+      "coverGame": 913740,
+      "coverIndex": 0,
+      "tags": [
+        "单色漫画线描",
+        "monochrome graphic drawing",
+        "黑白决定重心",
+        "点线代替色阶",
+        "疏密带来节奏"
+      ],
+      "observations": [
+        {
+          "title": "黑白决定重心",
+          "text": "大片留黑与高亮区域形成强对比。"
+        },
+        {
+          "title": "点线代替色阶",
+          "text": "排线、网点和细密笔触表达阴影。"
+        },
+        {
+          "title": "疏密带来节奏",
+          "text": "细节密集区与空白相互呼应。"
+        }
+      ],
+      "games": [
+        {
+          "id": 913740,
+          "note": "黑白像素网点组成海湾小镇、灯塔与喷烟火山，右侧状态栏和人物头像将宽阔风景压成漫画式窗口。"
+        },
+        {
+          "id": 1989270,
+          "note": "星空下孤屋坐落在草坡顶部，黑白排线描出两侧森林与前景石壁，底部字幕叠在弯曲小路上。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using monochrome graphic drawing. Establish one coherent visual identity that can be maintained across a complete project.\n\nLimit the image to black, white and a tightly controlled intermediate value or single tint. Describe volume through hatching, stippling, dense pixel marks or assertive linework rather than full-spectrum color. Balance substantial dark shapes with uncluttered light areas. Give faces and essential props the clearest marks while allowing backgrounds to alternate between dense detail and open paper. Panels, typography areas and icons must use the same contrast logic. Keep every added texture purposeful and legible at normal viewing size.\n\nSpecify a consistent contour language, edge treatment, palette and detail density for characters, backgrounds, interface illustrations and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "coarse-pixel",
+      "group": "pixel",
+      "name": "清晰颗粒的复古像素",
+      "description": "清楚的像素边缘、小型角色和重复图块共同建立世界。",
+      "coverGame": 105600,
+      "coverIndex": 0,
+      "tags": [
+        "清晰颗粒的复古像素",
+        "classic coarse-grid pixel art",
+        "颗粒一眼可见",
+        "形状简练鲜明",
+        "图块组织空间"
+      ],
+      "observations": [
+        {
+          "title": "颗粒一眼可见",
+          "text": "阶梯边缘是造型的一部分。"
+        },
+        {
+          "title": "形状简练鲜明",
+          "text": "少量色块交代人物和物件。"
+        },
+        {
+          "title": "图块组织空间",
+          "text": "稳定的颗粒尺度让地形与建筑连贯。"
+        }
+      ],
+      "games": [
+        {
+          "id": 105600,
+          "note": "蓝天下三栋木屋以像素剖面展示房间、家具与楼梯，地下黑色土层和顶部红心界面构成上下边界。"
+        },
+        {
+          "id": 3361470,
+          "note": "黑色背景中的小型俯视矿区由灰石与橙红熔岩像素组成，上方悬着绿色进度条。"
+        },
+        {
+          "id": 4945040,
+          "note": "鲜红色颗粒背景中央向外放射白色连锁轨迹，两侧黑色弧形结构包围绿色小目标。"
+        },
+        {
+          "id": 4271160,
+          "note": "左侧深蓝购买栏挤满小图标，右侧绿色战场被竖直黄白光柱与成群像素单位填满。"
+        },
+        {
+          "id": 250900,
+          "note": "昏暗棕色地牢中几块黑色岩障围出通道，右上小角色向下发射细长红色光束。"
+        },
+        {
+          "id": 1206560,
+          "note": "蓝色海面上岛屿排列成卷曲生物轮廓，绿色林地与灰色山脉由细小像素拼出，黄色圆形标记位于中央。"
+        },
+        {
+          "id": 3650050,
+          "note": "俯视小白车沿黑色直角赛道漂移，白烟与黑胎印叠在弯道，青绿色纹样草地围住道路。"
+        },
+        {
+          "id": 2784470,
+          "note": "等距绿地网格上排列像素城堡与风车，四周树木、石墙和左下水岸以同一粗像素尺度绘制。"
+        },
+        {
+          "id": 247080,
+          "note": "黑色背景中的方格地牢铺着紫金相间地砖，多色怪物和宝箱密集分布，顶部红心与左侧装备图标围住战场。"
+        },
+        {
+          "id": 2780710,
+          "note": "青绿色俯视战场挤满红色小怪与紫色蘑菇，顶部黄绿战斗区域叠着白色伤害数字，树木用粗像素描出。"
+        },
+        {
+          "id": 893680,
+          "note": "第一人称黑色枪管指向雪地中举臂扑来的白色怪物，冷青雾气笼罩像素松树和左侧石墙。"
+        },
+        {
+          "id": 391540,
+          "note": "黑色背景中的灰紫通道向下收窄，中央小紫衣人物躺在黄色花簇与一圈绿色地面上。"
+        },
+        {
+          "id": 1229380,
+          "note": "蓝黑舞台上黄色头发的长肢角色站在方格路尽头，前方青蓝音符障碍朝底部红色小角色延伸。"
+        },
+        {
+          "id": 2951770,
+          "note": "浅杏色土地中切开深棕地下通道，白色小人物站在左侧火堆旁，地表绿树覆盖上方天际。"
+        },
+        {
+          "id": 1404850,
+          "note": "鲜橙界面中央白色转轮网格塞满苹果、宝石、动物与食物像素图标，底部蓝框旋转按钮被金币数字包围。"
+        },
+        {
+          "id": 1883840,
+          "note": "碧蓝海水包围鲜绿小岛，像素树木、动物与资源散布地表，右下角密集建筑区闪着粉橙光。"
+        },
+        {
+          "id": 932850,
+          "note": "薄荷色海域中一条浅黄岛带向两侧伸展，中央绿色小村与深棕地块并排，下方动作卡栏覆盖部分海岸。"
+        },
+        {
+          "id": 736260,
+          "note": "棕色荒地中央围着黄绿色栅栏，白色小生物与粉色规则字块位于框内，外围石墙和枯草由简短像素图块组成。"
+        },
+        {
+          "id": 2404510,
+          "note": "中央四列老虎机符号显示宝石、闪电、武器与金条，上方废墟里骑士与火球敌人对峙，蓝红状态面板分列两侧。"
+        },
+        {
+          "id": 1409530,
+          "note": "紫色地砖上挤满圆头骷髅像素小怪，红色弹道和亮绿色弧线穿过下方战斗区域。"
+        },
+        {
+          "id": 1794680,
+          "note": "深绿像素草地被蝙蝠般的敌群填满，蓝色经验亮点与横扫中央的白色攻击轨迹交错。"
+        },
+        {
+          "id": 2379780,
+          "note": "绿色桌面上分三层铺开小丑牌、出牌和手牌，左侧黑色计分栏与像素数字组成紧凑对局界面。"
+        },
+        {
+          "id": 751780,
+          "note": "鲜绿方块岛屿被亮蓝海水切开，圆头树木、矿石与木桥散布其中，左上巨树树屋成为主要地标。"
+        },
+        {
+          "id": 358130,
+          "note": "六边格地图用绿色林地、蓝色湖面和灰白山峰区分区域，紫色路径通向左侧，右边林地被橙红火焰吞没。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using classic coarse-grid pixel art. Establish one coherent visual identity that can be maintained across a complete project.\n\nUse a clearly visible, consistent pixel scale and deliberately stepped contours. Reduce characters, objects and terrain to compact, memorable shapes. Reuse modular tiles with variation in arrangement rather than relying on excessive surface texture. Keep color ramps short and value boundaries readable. Build visual hierarchy through silhouette, spacing and color grouping. Letterforms, symbols and effects should fit the same pixel grid. Avoid smoothing away the pixel structure or mixing unrelated resolutions without an explicit compositional reason.\n\nSpecify a stable pixel scale, readable cluster shapes, palette roles and a common resolution for character sprites, terrain, interface icons and effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "cute-pixel",
+      "group": "pixel",
+      "name": "圆润可爱的像素",
+      "description": "小巧圆润的像素形状与明快颜色，让角色和道具显得亲切。",
+      "coverGame": 751780,
+      "coverIndex": 0,
+      "tags": [
+        "圆润可爱的像素",
+        "rounded playful pixel art",
+        "圆润的小形体",
+        "颜色明快有秩序",
+        "细节有所取舍"
+      ],
+      "observations": [
+        {
+          "title": "圆润的小形体",
+          "text": "少量像素塑造面部和胖瘦比例。"
+        },
+        {
+          "title": "颜色明快有秩序",
+          "text": "亮色集中在角色和可交互物件。"
+        },
+        {
+          "title": "细节有所取舍",
+          "text": "干净边缘优先于密集纹理。"
+        }
+      ],
+      "games": [
+        {
+          "id": 751780,
+          "note": "鲜绿方块岛屿被亮蓝海水切开，圆头树木、矿石与木桥散布其中，左上巨树树屋成为主要地标。"
+        },
+        {
+          "id": 3862670,
+          "note": "蓝色海水中小潜水员被白色气泡与粉色水母包围，右侧黄色台阶状海壁向下延伸。"
+        },
+        {
+          "id": 2780710,
+          "note": "青绿色俯视战场挤满红色小怪与紫色蘑菇，顶部黄绿战斗区域叠着白色伤害数字，树木用粗像素描出。"
+        },
+        {
+          "id": 3167550,
+          "note": "粗像素红熊猫占据中央，树屋、绿色山包与白色小动物环绕，底部还露出浅绿色桌面任务栏。"
+        },
+        {
+          "id": 1999520,
+          "note": "黑白小猫沿绿色森林平台前行，左侧木箱与橙色小道具压住前景，淡黄斜光穿过成层树叶。"
+        },
+        {
+          "id": 1883840,
+          "note": "碧蓝海水包围鲜绿小岛，像素树木、动物与资源散布地表，右下角密集建筑区闪着粉橙光。"
+        },
+        {
+          "id": 932850,
+          "note": "薄荷色海域中一条浅黄岛带向两侧伸展，中央绿色小村与深棕地块并排，下方动作卡栏覆盖部分海岸。"
+        },
+        {
+          "id": 1726120,
+          "note": "紫衣小高尔夫球手站在左侧绿草平台，右方浅黄沙坡伸入绿色洞穴，粉紫尖刺和巨型石柱点缀远近。"
+        },
+        {
+          "id": 311690,
+          "note": "暗色砖地房间里红色巨型弹头怪盘踞右上，小枪手从左下发射黄色直线，粉红与白色环状弹幕穿过中央。"
+        },
+        {
+          "id": 1059980,
+          "note": "四名圆润像素小人围住巨型绿黑树怪，怪物张开黄色亮口并横持银色镰刀，暗绿林地围住战场。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using rounded playful pixel art. Establish one coherent visual identity that can be maintained across a complete project.\n\nShape tiny characters and props with rounded clusters, friendly proportions and clearly separated silhouettes. Use cheerful but coordinated color families, compact shadows and a small number of facial marks. Favor clean silhouettes over noisy detail. Repeat simple environmental motifs with enough spacing to remain readable. Use small bright accents for interactions and soft, economical particle shapes for feedback. Design icons, borders and lettering on the same pixel scale, keeping dense collections of objects orderly rather than visually crowded.\n\nSpecify a stable pixel scale, readable cluster shapes, palette roles and a common resolution for character sprites, terrain, interface icons and effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "limited-palette",
+      "group": "pixel",
+      "name": "限色与强对比像素",
+      "description": "少量颜色与强烈明暗关系，让像素画面形成集中、鲜明的气质。",
+      "coverGame": 1966900,
+      "coverIndex": 0,
+      "tags": [
+        "限色与强对比像素",
+        "restricted-palette pixel art",
+        "调色板受到限制",
+        "亮点数量克制",
+        "形状承担差异"
+      ],
+      "observations": [
+        {
+          "title": "调色板受到限制",
+          "text": "少数色组贯穿场景与界面。"
+        },
+        {
+          "title": "亮点数量克制",
+          "text": "重点依靠稀少的亮色突出。"
+        },
+        {
+          "title": "形状承担差异",
+          "text": "在颜色有限时更依赖剪影与间距。"
+        }
+      ],
+      "games": [
+        {
+          "id": 1966900,
+          "note": "黑青战场上的敌群围绕暗色旋涡聚集，米白色火焰、粉红弹点与少量界面亮色形成强对比。"
+        },
+        {
+          "id": 4945040,
+          "note": "鲜红色颗粒背景中央向外放射白色连锁轨迹，两侧黑色弧形结构包围绿色小目标。"
+        },
+        {
+          "id": 312520,
+          "note": "灰绿废墟中两只深色长颈生物占据高柱，小白角色沿底部平台前行，红色细草从黑色前景探出。"
+        },
+        {
+          "id": 3650050,
+          "note": "俯视小白车沿黑色直角赛道漂移，白烟与黑胎印叠在弯道，青绿色纹样草地围住道路。"
+        },
+        {
+          "id": 391540,
+          "note": "黑色背景中的灰紫通道向下收窄，中央小紫衣人物躺在黄色花簇与一圈绿色地面上。"
+        },
+        {
+          "id": 1229380,
+          "note": "蓝黑舞台上黄色头发的长肢角色站在方格路尽头，前方青蓝音符障碍朝底部红色小角色延伸。"
+        },
+        {
+          "id": 2951770,
+          "note": "浅杏色土地中切开深棕地下通道，白色小人物站在左侧火堆旁，地表绿树覆盖上方天际。"
+        },
+        {
+          "id": 813230,
+          "note": "深蓝地下厅中巨型动物石像立在细柱之间，垂直水线与悬绳连接上下空间，底部小角色几乎被黑暗吞没。"
+        },
+        {
+          "id": 736260,
+          "note": "棕色荒地中央围着黄绿色栅栏，白色小生物与粉色规则字块位于框内，外围石墙和枯草由简短像素图块组成。"
+        },
+        {
+          "id": 1409530,
+          "note": "紫色地砖上挤满圆头骷髅像素小怪，红色弹道和亮绿色弧线穿过下方战斗区域。"
+        },
+        {
+          "id": 913740,
+          "note": "黑白像素网点组成海湾小镇、灯塔与喷烟火山，右侧状态栏和人物头像将宽阔风景压成漫画式窗口。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using restricted-palette pixel art. Establish one coherent visual identity that can be maintained across a complete project.\n\nChoose a small, explicit palette and use value grouping to do most of the compositional work. Separate the dominant background family from one or two high-priority accent colors. Build figures and terrain from crisp pixel clusters with selective dithering where a transition is necessary. Keep dark regions coherent and bright areas scarce. Unify interface, enemies and effects under the same color restrictions while preserving their roles through shape and spacing. Avoid introducing isolated colors that weaken the palette hierarchy.\n\nSpecify a stable pixel scale, readable cluster shapes, palette roles and a common resolution for character sprites, terrain, interface icons and effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "pixel-isometric",
+      "group": "pixel",
+      "name": "斜视角的像素空间",
+      "description": "斜向地面、立体图块和细小生活物件，让像素场景像可观察的模型。",
+      "coverGame": 2784470,
+      "coverIndex": 0,
+      "tags": [
+        "斜视角的像素空间",
+        "oblique and isometric pixel environments",
+        "地面方向统一",
+        "色阶表达体积",
+        "遮挡建立前后"
+      ],
+      "observations": [
+        {
+          "title": "地面方向统一",
+          "text": "物件沿一致角度排列，空间容易读懂。"
+        },
+        {
+          "title": "色阶表达体积",
+          "text": "不同朝向的面有稳定明暗。"
+        },
+        {
+          "title": "遮挡建立前后",
+          "text": "建筑和小物件通过层叠形成空间。"
+        }
+      ],
+      "games": [
+        {
+          "id": 2784470,
+          "note": "等距绿地网格上排列像素城堡与风车，四周树木、石墙和左下水岸以同一粗像素尺度绘制。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using oblique and isometric pixel environments. Establish one coherent visual identity that can be maintained across a complete project.\n\nUse an oblique or isometric viewpoint with a coherent set of ground-plane angles. Construct buildings, furniture and terrain from readable pixel volumes, using consistent light-facing and shadow-facing color ramps. Keep object footprints and occlusion easy to understand. Favor layered room arrangements and miniature environmental details that reinforce scale. Characters should remain visible against ground textures. Align interface icons and effects with the pixel density, while avoiding perspective contradictions between neighboring props.\n\nSpecify a stable pixel scale, readable cluster shapes, palette roles and a common resolution for character sprites, terrain, interface icons and effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "retro-fps",
+      "group": "pixel",
+      "name": "复古三维与像素贴图",
+      "description": "粗颗粒贴图、简化空间与正面精灵图，共同组成复古三维画面。",
+      "coverGame": 893680,
+      "coverIndex": 0,
+      "tags": [
+        "复古三维与像素贴图",
+        "retro first-person pixel-textured 3D",
+        "贴图保留像素",
+        "空间形状简洁",
+        "前景框住视角"
+      ],
+      "observations": [
+        {
+          "title": "贴图保留像素",
+          "text": "墙面与物件纹理具有明显颗粒。"
+        },
+        {
+          "title": "空间形状简洁",
+          "text": "通道和房间由清楚平面组成。"
+        },
+        {
+          "title": "前景框住视角",
+          "text": "近处物件与远处场景形成强烈尺度差。"
+        }
+      ],
+      "games": [
+        {
+          "id": 893680,
+          "note": "第一人称黑色枪管指向雪地中举臂扑来的白色怪物，冷青雾气笼罩像素松树和左侧石墙。"
+        },
+        {
+          "id": 3265700,
+          "note": "第一人称图书馆战斗中蓝色弹丸飞向绿紫怪物，底部斧头与圣经卡牌叠在粗颗粒透视书架之前。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using retro first-person pixel-textured 3D. Establish one coherent visual identity that can be maintained across a complete project.\n\nCombine simple three-dimensional spaces with visibly low-resolution textures and sharply readable sprites or blocky figures. Keep surfaces flat enough for texture pixels to remain apparent. Use strong wall and floor color families, limited lighting transitions and bold contrast at doorways. Large foreground props should frame the perspective without obscuring the environment. Interface graphics and effects should feel native to the same coarse visual resolution. Avoid physically perfect reflections or dense modern surface detail that breaks the retro texture language.\n\nSpecify a stable pixel scale, readable cluster shapes, palette roles and a common resolution for character sprites, terrain, interface icons and effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "anime-illustration",
+      "group": "paint",
+      "name": "动漫插画与立绘",
+      "description": "明确的角色设计、干净线条与分块明暗，让人物成为画面的中心。",
+      "coverGame": 412830,
+      "coverIndex": 0,
+      "tags": [
+        "动漫插画与立绘",
+        "anime character illustration",
+        "人物轮廓鲜明",
+        "明暗经过归纳",
+        "背景烘托人物"
+      ],
+      "observations": [
+        {
+          "title": "人物轮廓鲜明",
+          "text": "发型、服装和姿态各有清楚识别点。"
+        },
+        {
+          "title": "明暗经过归纳",
+          "text": "阴影边界服务于脸部与衣褶结构。"
+        },
+        {
+          "title": "背景烘托人物",
+          "text": "环境色与留白帮助集中视线。"
+        }
+      ],
+      "games": [
+        {
+          "id": 412830,
+          "note": "浅蓝宽檐帽少女的大幅立绘遮住左侧会场背景，蓝眼与细密发丝清晰可见，底部黑色对白栏覆盖座椅。"
+        },
+        {
+          "id": 2161700,
+          "note": "低机位将机械手臂推到前景，人物以硬边明暗塑形，黄绿色逆光与蓝色眼睛形成对比。"
+        },
+        {
+          "id": 1687950,
+          "note": "浅灰双马尾少女占据校园画面中央，金发男生和黑发学生站在身后，晴天绿植与蓝天衬托清晰动画描线。"
+        },
+        {
+          "id": 2440890,
+          "note": "昏暗酒吧里两名小像素人物隔着柜台站立，左下大幅灰发立绘覆盖场景，紫粉窗光照亮木柜和瓶架。"
+        },
+        {
+          "id": 2273430,
+          "note": "暗红高厅中小角色挥出巨大彩虹弧光，右侧黄色圆脸猫形效果与青白闪光成为中心。"
+        },
+        {
+          "id": 2612700,
+          "note": "街景画面中央叠着视频窗口，短发少女在橙粉夕阳前抬起手掌，外围像素街道和黑色标题栏保持清楚分层。"
+        },
+        {
+          "id": 2563550,
+          "note": "灰米色角色创建界面中竖排动漫头像与黑字输入栏并列，性别按钮和五行彩色圆标占据下方。"
+        },
+        {
+          "id": 3328720,
+          "note": "多只大头动漫公仔分散站在浅灰背景上，服装覆盖红蓝黑白等色，脚下柔软阴影强化实体模型感。"
+        },
+        {
+          "id": 1832640,
+          "note": "绿发眼镜角色坐在冷蓝控制室的棋盘前，制服红领结与硬边卡通明暗衬出正面居中的人物。"
+        },
+        {
+          "id": 665180,
+          "note": "白发尖耳女性立绘覆盖木质像素房间右半边，底部半透明对话框与左下头像衬出前后两种绘画尺度。"
+        },
+        {
+          "id": 644560,
+          "note": "左侧彩色宝石方格与右侧金紫服饰的女性立绘并列，深红背景上的连击数字与圆形图标包围两者。"
+        },
+        {
+          "id": 1007350,
+          "note": "深红角色选择界面以中央白发面具人物卡片为焦点，左右卡片叠放，底部缩略图排成横列。"
+        },
+        {
+          "id": 686190,
+          "note": "倾斜的战斗窗口内，黑发持剑小人与尖刺怪物交锋于浅绿草地，左下叠放动漫头像和状态条。"
+        },
+        {
+          "id": 680320,
+          "note": "蓝白衣装的金发女性立绘占据左侧，右侧日文介绍与深蓝暗色人物剪影构成宣传式人物卡。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using anime character illustration. Establish one coherent visual identity that can be maintained across a complete project.\n\nUse designed character silhouettes, expressive faces and clean, selective contour lines. Separate skin, hair and clothing into controlled color regions with deliberate shadow shapes. Let hair highlights, fabric folds and accessories reinforce form without excessive rendering noise. Backgrounds may be more detailed, but should support the character palette and focal hierarchy. Compose dialogue framing and icons around negative space, preserving clear faces and poses. Keep proportions and line treatment consistent across portraits, scene art and decorative UI elements.\n\nSpecify a consistent contour language, edge treatment, palette and detail density for characters, backgrounds, interface illustrations and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "graphic-cartoon",
+      "group": "paint",
+      "name": "平涂卡通与粗线条",
+      "description": "夸张剪影、粗线条与清楚的色块，把人物和物件变成鲜明图形。",
+      "coverGame": 1313140,
+      "coverIndex": 0,
+      "tags": [
+        "平涂卡通与粗线条",
+        "flat graphic cartoon illustration",
+        "大形决定识别",
+        "颜色归纳为块",
+        "线条粗细一致"
+      ],
+      "observations": [
+        {
+          "title": "大形决定识别",
+          "text": "角色先靠比例与剪影被认出。"
+        },
+        {
+          "title": "颜色归纳为块",
+          "text": "阴影简化，边界清楚。"
+        },
+        {
+          "title": "线条粗细一致",
+          "text": "人物、物件和图标共享视觉语言。"
+        }
+      ],
+      "games": [
+        {
+          "id": 1313140,
+          "note": "黑红描线的教堂围住圆形祭坛，青色红眼巨像、彩窗与斜射光衬出前景小羊。"
+        },
+        {
+          "id": 4135750,
+          "note": "俯视的黄绿色草地上，紫色蚁后被小蚂蚁与蓝莓包围，右侧立着紫色机器。"
+        },
+        {
+          "id": 4279120,
+          "note": "浅灰背景中央是一块黑线勾边的绿草垫，几只红黑昆虫分散在白色虚线框内。"
+        },
+        {
+          "id": 3399960,
+          "note": "夕阳橙粉天空下，一艘堆满鱼获的小船停在青绿色海面，低矮岸线横贯远景。"
+        },
+        {
+          "id": 4508020,
+          "note": "黑背景中的浅棕洞穴以柔软波浪边界围合，彩色怪物和绿色药瓶散落在裂开的房间内。"
+        },
+        {
+          "id": 4605210,
+          "note": "薄荷绿矩形场地中央是一只白橙猫，四角小敌人和左侧属性文字均以平滑粗线勾边。"
+        },
+        {
+          "id": 2988300,
+          "note": "彩虹与蓝天覆盖手绘花园，巨型花草、糖果建筑和小昆虫立在棕色土层上，地下剖面可见水池。"
+        },
+        {
+          "id": 939400,
+          "note": "深蓝星空中两个简笔情侣站在白色弯曲平台上，粉裙与蓝围巾形成柔和对比，下方排列三项对白选择。"
+        },
+        {
+          "id": 581660,
+          "note": "黑灰洞窟底部横排五片巨大白色圆锯，红蓝小角色悬在上方黄圈中，尖锐岩层与细小血迹形成强烈对比。"
+        },
+        {
+          "id": 40800,
+          "note": "棕灰悬崖间排列窄平台、铁网和圆锯，红色小方块贴着右侧墙壁下落，浅色远景从深谷中透出。"
+        },
+        {
+          "id": 2228030,
+          "note": "森林机械背景前竖立深灰拼图井，彩色肉块堆在底部，中央橙色火焰与左侧传送装置形成动态焦点。"
+        },
+        {
+          "id": 2966850,
+          "note": "黑红横向房间仅以细白轮廓勾边，圆形白头角色与红色碎屑位于中央，通道和平台保持简练几何形状。"
+        },
+        {
+          "id": 2667120,
+          "note": "青色背景前金字塔形弹珠盘被大量黄红轨迹和金币数字覆盖，两侧埃及人物、棕榈树与金色边框采用平滑黑线。"
+        },
+        {
+          "id": 2273430,
+          "note": "暗红高厅中小角色挥出巨大彩虹弧光，右侧黄色圆脸猫形效果与青白闪光成为中心。"
+        },
+        {
+          "id": 1352930,
+          "note": "橙色背光照亮废弃厂房窗格，蓝色冲刺残影掠过右侧半空，小人物与金色弧光位于侧视平台底部。"
+        },
+        {
+          "id": 2540860,
+          "note": "俯视小餐馆里两张圆桌和红蓝椅子摆在灰色地砖上，中央柜台放着食物，白色幽灵厨师漂在右上。"
+        },
+        {
+          "id": 2726870,
+          "note": "深绿色场地上成圈符号与卡通敌人被青色连线贯穿，顶部三条长红血条和中央白色伤害数字密集重叠。"
+        },
+        {
+          "id": 2356780,
+          "note": "紫色抓娃娃机占据画面上方，玻璃箱里堆满圆形道具，底部小角色面对两只长嘴怪物，黑线和粉彩色贯穿界面。"
+        },
+        {
+          "id": 2751050,
+          "note": "深灰背景上的浅沙色岛屿布满细黑轮廓的小树、房屋和单位，左侧米色建造菜单紧贴海岸。"
+        },
+        {
+          "id": 1634860,
+          "note": "俯视热带战场上红色弹丸围着绿色地面盘旋，下方两株棕榈树夹住橙沙通道，小白蓝飞船停在中央偏下。"
+        },
+        {
+          "id": 434650,
+          "note": "两个红褐色树怪在暗绿地牢中包围小战士，右侧树怪吐出火光，粉红弹道与绿色药瓶打破低饱和背景。"
+        },
+        {
+          "id": 2101080,
+          "note": "浅棕色名册用三排带姓名的卡通头像显示代际关系，上方筛选框与红色关闭按钮围住内容。"
+        },
+        {
+          "id": 1737340,
+          "note": "淡绿战场挤满粗线条小怪，中央分叉白色闪电与黄色爆点覆盖大半交战区域。"
+        },
+        {
+          "id": 1365010,
+          "note": "深绿树墙围出方形草地，戴帽小角色、圆润敌人和方块灌木采用统一的粗黑描边。"
+        },
+        {
+          "id": 1144910,
+          "note": "灰绿横版竞技场中，小角色夹在两只圆滚怪物之间，后方密集骷髅观众与垂藤组成舞台。"
+        },
+        {
+          "id": 1942280,
+          "note": "灰色地面上的圆润紫色敌群追逐小角色，绿色掉落物和黑色描边让各个小形状保持清楚。"
+        },
+        {
+          "id": 1189490,
+          "note": "白灰描线的仙山建筑绕着圆形露台层叠铺开，青绿屋檐、竖直石峰和淡色云雾组成绘画式空中城景。"
+        },
+        {
+          "id": 1948280,
+          "note": "浅绿桌面散放资源和人物卡片，顶部黑色卡包、左侧米白任务栏与手绘边框形成平面牌桌。"
+        },
+        {
+          "id": 2103140,
+          "note": "夜色俯视营地被蓝绿树丛包围，紫色帐篷、蓝色传送门、橙色篝火与中央石台排成松散环形。"
+        },
+        {
+          "id": 1245540,
+          "note": "淡蓝雪地上分布粗黑轮廓的积雪圆树，中央红衣小人与白蓝法术交战，界面图标沿左侧和底部排列。"
+        },
+        {
+          "id": 861540,
+          "note": "黄绿木地板场景中白色天鹅与红衣人物分立两侧，中央彩色装备面板和底部白骰子覆盖前景。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using flat graphic cartoon illustration. Establish one coherent visual identity that can be maintained across a complete project.\n\nBuild characters from simple, exaggerated silhouettes with confident outlines and broad flat colors. Use only the shadows necessary to separate overlapping parts. Favor playful proportions, distinct eyes and compact, symbolic props. Backgrounds should use quieter shapes and fewer competing contours. Keep icons, menus and effects within the same rounded or angular shape vocabulary. Strong color coding and clean spacing must make even crowded compositions readable. Avoid realistic skin, complex material shading or gratuitous line detail.\n\nSpecify a consistent contour language, edge treatment, palette and detail density for characters, backgrounds, interface illustrations and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "ink-brush",
+      "group": "paint",
+      "name": "东方笔触与淡彩",
+      "description": "笔锋、淡彩与留白参与造型，深浅轮廓让山水和人物保持节奏。",
+      "coverGame": 1468810,
+      "coverIndex": 0,
+      "tags": [
+        "东方笔触与淡彩",
+        "brush-led ink and restrained color illustration",
+        "笔触带有轻重",
+        "色彩有所收敛",
+        "空白参与构图"
+      ],
+      "observations": [
+        {
+          "title": "笔触带有轻重",
+          "text": "轮廓不是等粗描线，转折有干湿变化。"
+        },
+        {
+          "title": "色彩有所收敛",
+          "text": "墨色与少量环境色相互支撑。"
+        },
+        {
+          "title": "空白参与构图",
+          "text": "景物间距与淡化远景形成呼吸感。"
+        }
+      ],
+      "games": [
+        {
+          "id": 1468810,
+          "note": "淡墨山水地图被青绿树林与灰黑峰峦分层，中央飞舟、蓝色闪电和右侧橙色圆形光罩打破留白。"
+        },
+        {
+          "id": 4304230,
+          "note": "黄袍人物背对镜头俯瞰浅赭色宫城，倒悬建筑与飞鸟融入大片米白云气。"
+        },
+        {
+          "id": 1859910,
+          "note": "林间对话中蓝衣女子与拄杖灰衣老人分立两侧，背景粗树枝遮住柔和日光，墨线与斑驳笔触刻画衣褶。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using brush-led ink and restrained color illustration. Establish one coherent visual identity that can be maintained across a complete project.\n\nUse expressive brush contours, dry-brush breaks and pooled dark values to establish form. Pair ink-like marks with restrained mineral or earth colors and generous breathing space. Let landscape elements emerge through layered silhouettes and soft atmospheric transitions. Characters and props should share the same calligraphic rhythm without relying on copied historical ornaments. Interface framing should be quiet, with deliberate spacing and subtle paper texture. Effects may resemble flowing strokes or dispersed pigment rather than generic luminous particles.\n\nSpecify a consistent contour language, edge treatment, palette and detail density for characters, backgrounds, interface illustrations and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "collage",
+      "group": "paint",
+      "name": "实物拼贴与异质材料",
+      "description": "照片片段、纸片与真实物件重新组合，材料之间的差异成为视觉特征。",
+      "coverGame": 1839810,
+      "coverIndex": 0,
+      "tags": [
+        "实物拼贴与异质材料",
+        "photographic object collage",
+        "材料保留原貌",
+        "拼接边缘有意义",
+        "杂而有重心"
+      ],
+      "observations": [
+        {
+          "title": "材料保留原貌",
+          "text": "真实纹理与平面片段同时可见。"
+        },
+        {
+          "title": "拼接边缘有意义",
+          "text": "裁切、叠放和比例差帮助组织画面。"
+        },
+        {
+          "title": "杂而有重心",
+          "text": "用统一色调或光线收拢不同材料。"
+        }
+      ],
+      "games": [
+        {
+          "id": 1839810,
+          "note": "椭圆镜框中央拼出由眼睛、鼻子和嘴部照片组成的脸，两侧小照片卡片与底部数字形成冷灰色界面。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using photographic object collage. Establish one coherent visual identity that can be maintained across a complete project.\n\nAssemble the scene from recognizable photographic fragments, cut-paper shapes and deliberately mismatched physical materials. Make edges, scale changes and overlaps part of the visual design instead of hiding every seam. Use a controlled palette or lighting treatment to hold the disparate pieces together. Give the main object a strong silhouette and keep secondary fragments quieter. Interface elements may echo labels, cutouts and assembled objects. Preserve a clear hierarchy so the unusual material combination feels intentional rather than randomly layered.\n\nSpecify a consistent contour language, edge treatment, palette and detail density for characters, backgrounds, interface illustrations and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "painted-scenery",
+      "group": "paint",
+      "name": "可见笔触的绘画场景",
+      "description": "笔触与色面直接塑造物体，画面细节围绕重点有松有紧。",
+      "coverGame": 1610440,
+      "coverIndex": 0,
+      "tags": [
+        "可见笔触的绘画场景",
+        "painterly illustrated scenery",
+        "笔触构成形体",
+        "边缘有松有紧",
+        "整体色调连贯"
+      ],
+      "observations": [
+        {
+          "title": "笔触构成形体",
+          "text": "颜色变化解释体积，而非只是附加纹理。"
+        },
+        {
+          "title": "边缘有松有紧",
+          "text": "焦点更清楚，背景处理更概括。"
+        },
+        {
+          "title": "整体色调连贯",
+          "text": "冷暖与明暗变化让不同物件融为一体。"
+        }
+      ],
+      "games": [
+        {
+          "id": 1610440,
+          "note": "夜晚街区中的人物站在橙色路锥之间，紫绿招牌和蓝红小店照亮手绘建筑与远处密集楼窗。"
+        },
+        {
+          "id": 3399960,
+          "note": "夕阳橙粉天空下，一艘堆满鱼获的小船停在青绿色海面，低矮岸线横贯远景。"
+        },
+        {
+          "id": 4304230,
+          "note": "黄袍人物背对镜头俯瞰浅赭色宫城，倒悬建筑与飞鸟融入大片米白云气。"
+        },
+        {
+          "id": 683320,
+          "note": "淡青树枝与透明叶片横跨米白和珊瑚红色块，小红衣人物悬在中央，纸纹和晕染共同塑造画面。"
+        },
+        {
+          "id": 1796220,
+          "note": "苍白天空前交错着巨大的枯木枝与红色铁链，几名蓝绿敌人立在枝头，小骑手从中间空隙跃过。"
+        },
+        {
+          "id": 2524360,
+          "note": "米黄斑驳纸面上漂浮白色云状平台，蓝发小像素人物悬在木凳上方，下方黑字叙述写在一条白云内。"
+        },
+        {
+          "id": 1057090,
+          "note": "发白光的小精灵坐在张翼飞翔的深色猫头鹰背上，紫蓝湖面倒映针叶林和粉色暮光，左侧亮区把角色从薄雾中托出。"
+        },
+        {
+          "id": 1710100,
+          "note": "沙桃色横版荒野以叠山和剪影拉开距离，小人物跃在空中，圆饼状道具分散悬浮。"
+        },
+        {
+          "id": 1296830,
+          "note": "深蓝石殿的地砖向后汇聚，墙面浮雕与沿墙烛光围住中央小人物。"
+        },
+        {
+          "id": 1189490,
+          "note": "白灰描线的仙山建筑绕着圆形露台层叠铺开，青绿屋檐、竖直石峰和淡色云雾组成绘画式空中城景。"
+        },
+        {
+          "id": 646570,
+          "note": "深绿地牢中披斗篷的单个角色面对亮绿色长颈怪物，暖烛光、白色电弧和下方生命条突出横向对峙。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using painterly illustrated scenery. Establish one coherent visual identity that can be maintained across a complete project.\n\nDescribe surfaces with intentional brush shapes and color planes instead of photographic texture. Group local colors into a coherent scene palette, using warmer and cooler strokes to suggest volume. Keep focal objects more sharply defined while letting secondary regions remain loosely painted. Design characters and environmental props with compatible edge softness and detail density. UI and effects should borrow the same color accents and mark-making rhythm. Avoid uniformly sharpening every surface or treating painted texture as a decorative overlay.\n\nSpecify a consistent contour language, edge treatment, palette and detail density for characters, backgrounds, interface illustrations and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "glyphs",
+      "group": "shape",
+      "name": "字形与符号世界",
+      "description": "文字和符号直接成为场景材料，排列方式同时表达空间与含义。",
+      "coverGame": 1109570,
+      "coverIndex": 0,
+      "tags": [
+        "字形与符号世界",
+        "typographic and symbolic environments",
+        "字形也是物件",
+        "间距建立秩序",
+        "颜色传递差异"
+      ],
+      "observations": [
+        {
+          "title": "字形也是物件",
+          "text": "文字进入地形和主体区域。"
+        },
+        {
+          "title": "间距建立秩序",
+          "text": "网格与重复符号组织画面。"
+        },
+        {
+          "title": "颜色传递差异",
+          "text": "少量明度或色彩变化标记重点。"
+        }
+      ],
+      "games": [
+        {
+          "id": 1109570,
+          "note": "黑色画布中白字与青字排成树木、冰层与建筑轮廓，上方一行叙事文字与留白共同组织场景。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using typographic and symbolic environments. Establish one coherent visual identity that can be maintained across a complete project.\n\nConstruct the image from readable glyphs, short text fragments and highly simplified symbols. Use alignment, repetition and spacing to define paths, boundaries and objects. Keep the type scale consistent enough for the composition to read as a coherent world. Restrict decorative color and distinguish important roles through measured contrast or small accent shifts. Text must remain legible and intentionally placed, with interface elements sharing the same typographic system. Avoid ornamental graphics that obscure the relationships between symbols.\n\nSpecify a reusable system of proportions, spacing, symbol sizes, color roles and emphasis states across every screen and visual element. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "flat-cards",
+      "group": "shape",
+      "name": "卡牌与平面图形",
+      "description": "卡片轮廓、边框和留白组织画面，叠放关系建立清楚层级。",
+      "coverGame": 2379780,
+      "coverIndex": 0,
+      "tags": [
+        "卡牌与平面图形",
+        "card-based graphic composition",
+        "重复轮廓统一画面",
+        "背景服务于信息",
+        "叠放与间距分组"
+      ],
+      "observations": [
+        {
+          "title": "重复轮廓统一画面",
+          "text": "卡面变化发生在稳定边界之内。"
+        },
+        {
+          "title": "背景服务于信息",
+          "text": "统一底色让前景卡片突出。"
+        },
+        {
+          "title": "叠放与间距分组",
+          "text": "少量阴影就能说明前后关系。"
+        }
+      ],
+      "games": [
+        {
+          "id": 2379780,
+          "note": "绿色桌面上分三层铺开小丑牌、出牌和手牌，左侧黑色计分栏与像素数字组成紧凑对局界面。"
+        },
+        {
+          "id": 3948120,
+          "note": "木桌中央铺着蓝色刮奖卡，硬币图案与白色未刮区域并列，升级栏分列左右。"
+        },
+        {
+          "id": 3967760,
+          "note": "紫色桌布上绿色麻将面板层层排列，白色牌面与黄紫数字区构成密集的正面布局。"
+        },
+        {
+          "id": 3265700,
+          "note": "第一人称图书馆战斗中蓝色弹丸飞向绿紫怪物，底部斧头与圣经卡牌叠在粗颗粒透视书架之前。"
+        },
+        {
+          "id": 2868840,
+          "note": "暗绿色神殿中蓝黄战士面对一只蓝色长尾猛兽，底部卡牌扇形展开，人物以描线和平涂阴影塑造。"
+        },
+        {
+          "id": 3395140,
+          "note": "秋林背景前的米色行动窗口排列行医、挖矿和锻造三幅黑线卡图，底部人物属性栏沿横向展开。"
+        },
+        {
+          "id": 2501600,
+          "note": "一只白鹅站在石桥中央面对镜头，右侧前景露出灰蓝盾牌与卡牌，远处绿色田野和风车由细线与淡彩描出。"
+        },
+        {
+          "id": 2230280,
+          "note": "炭灰背景中央排列小块资源卡片，动物、房屋、粮食和工具图标以淡彩黑线描绘，底部少量计数器留出大量空白。"
+        },
+        {
+          "id": 1092790,
+          "note": "第一人称纸牌桌向黑暗中的对手延伸，蓝色格纹卡背、橙色螳螂牌和左侧天平被两支蜡烛照亮。"
+        },
+        {
+          "id": 1007350,
+          "note": "深红角色选择界面以中央白发面具人物卡片为焦点，左右卡片叠放，底部缩略图排成横列。"
+        },
+        {
+          "id": 1948280,
+          "note": "浅绿桌面散放资源和人物卡片，顶部黑色卡包、左侧米白任务栏与手绘边框形成平面牌桌。"
+        },
+        {
+          "id": 861540,
+          "note": "黄绿木地板场景中白色天鹅与红衣人物分立两侧，中央彩色装备面板和底部白骰子覆盖前景。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using card-based graphic composition. Establish one coherent visual identity that can be maintained across a complete project.\n\nOrganize the visual field around repeated card silhouettes, compact symbols and deliberate whitespace. Establish a consistent card ratio, border language and internal hierarchy for illustration, numerals and labels. Keep the surrounding surface quieter than the cards. Use overlap, spacing and minimal shadows to communicate grouping and depth. Decorative card art may be hand-drawn or pixelated, but it must respect the shared frame system. Keep effects localized and avoid burying important card shapes under excessive glow or texture.\n\nSpecify a reusable system of proportions, spacing, symbol sizes, color roles and emphasis states across every screen and visual element. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "geometric-minimal",
+      "group": "shape",
+      "name": "极简几何与色块",
+      "description": "几何形状与色块承担主要信息，细节被收敛到足够辨认的程度。",
+      "coverGame": 3107330,
+      "coverIndex": 0,
+      "tags": [
+        "极简几何与色块",
+        "minimal geometric graphics",
+        "形状数量克制",
+        "空白主动分隔",
+        "层级依靠对比"
+      ],
+      "observations": [
+        {
+          "title": "形状数量克制",
+          "text": "少数基本形体组成整个画面。"
+        },
+        {
+          "title": "空白主动分隔",
+          "text": "留空帮助区分功能和视觉重心。"
+        },
+        {
+          "title": "层级依靠对比",
+          "text": "大小、位置与明度代替复杂装饰。"
+        }
+      ],
+      "games": [
+        {
+          "id": 3107330,
+          "note": "深灰界面中央的彩色方形节点由细线连接，选中节点弹出黑底升级说明。"
+        },
+        {
+          "id": 1931770,
+          "note": "青蓝与暗红平涂的高大厅堂正面展开，中央巨像立在阶梯尽头，两侧细线建筑保持严格对称。"
+        },
+        {
+          "id": 2966850,
+          "note": "黑红横向房间仅以细白轮廓勾边，圆形白头角色与红色碎屑位于中央，通道和平台保持简练几何形状。"
+        },
+        {
+          "id": 2853160,
+          "note": "深紫背景中央青蓝光圈包住白色棱片与小飞船，中心圆形图标和左右斜排状态条保持发光几何语言。"
+        },
+        {
+          "id": 1473350,
+          "note": "炭灰画布中白色碎片向左上喷射，右下明亮碎石堆被彩色小点包围，底部细线建筑和右侧清单保持克制。"
+        },
+        {
+          "id": 3291350,
+          "note": "深灰竞技场上少量小人物向右侧绿色敌人发射蓝黄弹道，强侧光将近处白色角色的长影投向右下。"
+        },
+        {
+          "id": 1335940,
+          "note": "柔青背景中的半透明圆形场地被细线和星形节点分割，一条亮白横束穿过中心，右侧白色刻度与左侧分数字样包住圆盘。"
+        },
+        {
+          "id": 1783200,
+          "note": "灰黑烟雾背景中央排列十字形灰格与红色方块，粉紫伤害字浮在右侧，下方密集彩色物品栏与钥匙计数贯穿底边。"
+        },
+        {
+          "id": 1667700,
+          "note": "黑色方形竞技场里白色三角与桃色多边形挤满画面，蓝红小矩形弹幕绕过中央圆环，橙色外框承载竖直量表。"
+        },
+        {
+          "id": 1255650,
+          "note": "青蓝发光矩形框围住黑底竞技场，白蓝几何块和光点包围中央金黄爆环，左右白字构成数值栏。"
+        },
+        {
+          "id": 1988550,
+          "note": "暗色星空下粒子球面从底部弯曲抬升，白色六角圆环、细密彩点与红色长束围绕中央亮点交错。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using minimal geometric graphics. Establish one coherent visual identity that can be maintained across a complete project.\n\nReduce subjects to a restrained vocabulary of circles, rectangles, straight segments and simple silhouettes. Use generous negative space and carefully limited colors. Encode hierarchy through size, position and contrast rather than decorative texture. Keep boundaries crisp and visual density predictable. UI elements should be part of the same geometric composition, with clearly separated levels of emphasis. Effects can briefly vary scale, line weight or brightness but should not dissolve the underlying clarity of the forms.\n\nSpecify a reusable system of proportions, spacing, symbol sizes, color roles and emphasis states across every screen and visual element. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "neon-vector",
+      "group": "shape",
+      "name": "霓虹线条与发光几何",
+      "description": "明亮线框、饱和色与深色背景形成强反差，光晕仍服务于几何轮廓。",
+      "coverGame": 1255650,
+      "coverIndex": 0,
+      "tags": [
+        "霓虹线条与发光几何",
+        "luminous vector-like geometry",
+        "亮边保持清晰",
+        "颜色各有职责",
+        "轨迹提示方向"
+      ],
+      "observations": [
+        {
+          "title": "亮边保持清晰",
+          "text": "发光轮廓的形状仍然可读。"
+        },
+        {
+          "title": "颜色各有职责",
+          "text": "少量高饱和色区分重点。"
+        },
+        {
+          "title": "轨迹提示方向",
+          "text": "粒子和拖尾服从画面运动关系。"
+        }
+      ],
+      "games": [
+        {
+          "id": 1255650,
+          "note": "青蓝发光矩形框围住黑底竞技场，白蓝几何块和光点包围中央金黄爆环，左右白字构成数值栏。"
+        },
+        {
+          "id": 2853160,
+          "note": "深紫背景中央青蓝光圈包住白色棱片与小飞船，中心圆形图标和左右斜排状态条保持发光几何语言。"
+        },
+        {
+          "id": 1848130,
+          "note": "深色界面以蓝紫圆环与小型标签组成中央示意图，左侧三枚圆形菜单和底部箭头留出大片空白。"
+        },
+        {
+          "id": 1988550,
+          "note": "暗色星空下粒子球面从底部弯曲抬升，白色六角圆环、细密彩点与红色长束围绕中央亮点交错。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using luminous vector-like geometry. Establish one coherent visual identity that can be maintained across a complete project.\n\nPlace crisp geometric silhouettes and thin luminous outlines against a coherent dark field. Use a small set of saturated accent hues with distinct roles. Keep glow close enough to each shape that edges remain readable, and let motion trails reinforce direction rather than blanket the frame. Maintain clear separation between foreground targets, decorative particles and interface indicators. Background patterns should be subdued and rhythmic. Avoid indiscriminate bloom or adding surface textures that compete with the clean graphic language.\n\nSpecify a reusable system of proportions, spacing, symbol sizes, color roles and emphasis states across every screen and visual element. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "diagram-interface",
+      "group": "shape",
+      "name": "图表式界面与图标",
+      "description": "面板、数值、图标和连接关系构成画面，稳定的布局规则优先。",
+      "coverGame": 1267910,
+      "coverIndex": 0,
+      "tags": [
+        "图表式界面与图标",
+        "diagrammatic interface composition",
+        "面板构成空间",
+        "图标承担识别",
+        "重点受到限制"
+      ],
+      "observations": [
+        {
+          "title": "面板构成空间",
+          "text": "分栏与留白帮助组织大量内容。"
+        },
+        {
+          "title": "图标承担识别",
+          "text": "简洁符号减少阅读负担。"
+        },
+        {
+          "title": "重点受到限制",
+          "text": "边框、明度与少量颜色建立层级。"
+        }
+      ],
+      "games": [
+        {
+          "id": 1267910,
+          "note": "深蓝战斗管理界面以三列面板排列属性、装备与敌人信息，右侧灰白奶牛图标对应红色血条与下方数据。"
+        },
+        {
+          "id": 3107330,
+          "note": "深灰界面中央的彩色方形节点由细线连接，选中节点弹出黑底升级说明。"
+        },
+        {
+          "id": 3948120,
+          "note": "木桌中央铺着蓝色刮奖卡，硬币图案与白色未刮区域并列，升级栏分列左右。"
+        },
+        {
+          "id": 4271160,
+          "note": "左侧深蓝购买栏挤满小图标，右侧绿色战场被竖直黄白光柱与成群像素单位填满。"
+        },
+        {
+          "id": 3967760,
+          "note": "紫色桌布上绿色麻将面板层层排列，白色牌面与黄紫数字区构成密集的正面布局。"
+        },
+        {
+          "id": 2056210,
+          "note": "两艘模块化飞船左右对射，蓝白与橙黄能量束在中央相撞，方形船舱和红色星球共同构成俯视太空战。"
+        },
+        {
+          "id": 1454400,
+          "note": "大型曲奇占据左栏，中央横向生产区层层堆叠人物与工厂，右侧商店列表与顶部升级图标挤满整屏。"
+        },
+        {
+          "id": 2563550,
+          "note": "灰米色角色创建界面中竖排动漫头像与黑字输入栏并列，性别按钮和五行彩色圆标占据下方。"
+        },
+        {
+          "id": 1404850,
+          "note": "鲜橙界面中央白色转轮网格塞满苹果、宝石、动物与食物像素图标，底部蓝框旋转按钮被金币数字包围。"
+        },
+        {
+          "id": 2726870,
+          "note": "深绿色场地上成圈符号与卡通敌人被青色连线贯穿，顶部三条长红血条和中央白色伤害数字密集重叠。"
+        },
+        {
+          "id": 1863750,
+          "note": "浅米背景上三个深灰表格并排展示候选角色、属性和技能，彩色中文字与数字形成整齐行列，下方黑色导航栏贯穿全屏。"
+        },
+        {
+          "id": 233450,
+          "note": "俯视监狱在灰色走道间排布医疗室、停尸间、牢房与绿地，小人物和家具沿正交网格排列，蓝色工具栏贴住底边。"
+        },
+        {
+          "id": 2230280,
+          "note": "炭灰背景中央排列小块资源卡片，动物、房屋、粮食和工具图标以淡彩黑线描绘，底部少量计数器留出大量空白。"
+        },
+        {
+          "id": 2427700,
+          "note": "羊皮纸色商店界面左侧背包塞满武器、护甲与饰品，右侧三层木架陈列盾牌和杯具，两名卡通商人站在下方。"
+        },
+        {
+          "id": 2404510,
+          "note": "中央四列老虎机符号显示宝石、闪电、武器与金条，上方废墟里骑士与火球敌人对峙，蓝红状态面板分列两侧。"
+        },
+        {
+          "id": 2490280,
+          "note": "深蓝黑背景中小型方格战斗盘居左，红色选中格与白色符号对照，上方彩色数值表和底部技能图标组成紧凑界面。"
+        },
+        {
+          "id": 1783200,
+          "note": "灰黑烟雾背景中央排列十字形灰格与红色方块，粉紫伤害字浮在右侧，下方密集彩色物品栏与钥匙计数贯穿底边。"
+        },
+        {
+          "id": 2101080,
+          "note": "浅棕色名册用三排带姓名的卡通头像显示代际关系，上方筛选框与红色关闭按钮围住内容。"
+        },
+        {
+          "id": 1848130,
+          "note": "深色界面以蓝紫圆环与小型标签组成中央示意图，左侧三枚圆形菜单和底部箭头留出大片空白。"
+        },
+        {
+          "id": 2539350,
+          "note": "浅黄色页面以细线连接灰色文字节点，少量小图标标记关系，底部状态格与笔记本按钮保留大量留白。"
+        },
+        {
+          "id": 568220,
+          "note": "近黑背景上三个部门面板经彩色细线相连，黄绿橙框线、人物小头像与右侧雇员资料栏组成管理图表。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using diagrammatic interface composition. Establish one coherent visual identity that can be maintained across a complete project.\n\nTreat panels, icons, meters and connections as the primary visual architecture. Establish a measured grid, predictable margins and a small hierarchy of text and symbol sizes. Group related information with spacing, restrained borders and subtle background-value changes. Use illustrations sparingly as recognizable anchors. Color should indicate meaningful relationships and emphasis rather than decorate every panel. Keep numbers and labels legible, and make interaction states visually distinct without disrupting the overall layout.\n\nSpecify a reusable system of proportions, spacing, symbol sizes, color roles and emphasis states across every screen and visual element. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "map-illustration",
+      "group": "shape",
+      "name": "地图与图块叙事",
+      "description": "区域轮廓、地貌符号和路径组成可阅读的世界，整张地图也是构图。",
+      "coverGame": 3035500,
+      "coverIndex": 0,
+      "tags": [
+        "地图与图块叙事",
+        "illustrated maps and symbolic terrain",
+        "符号表达地貌",
+        "区域容易分辨",
+        "全局构图优先"
+      ],
+      "observations": [
+        {
+          "title": "符号表达地貌",
+          "text": "山林、城镇与道路共享图形规则。"
+        },
+        {
+          "title": "区域容易分辨",
+          "text": "边界和色彩区分相邻区域。"
+        },
+        {
+          "title": "全局构图优先",
+          "text": "标注和纹理不遮挡主要空间关系。"
+        }
+      ],
+      "games": [
+        {
+          "id": 3035500,
+          "note": "蓝色经纬网格上铺开橙绿粉等色国家版图，黑色边界和英文国名密集覆盖不规则海岸与岛屿。"
+        },
+        {
+          "id": 1206560,
+          "note": "蓝色海面上岛屿排列成卷曲生物轮廓，绿色林地与灰色山脉由细小像素拼出，黄色圆形标记位于中央。"
+        },
+        {
+          "id": 2013240,
+          "note": "灰红火山岛上分散着小型建筑与圆形设施，彩色方格路径连接各区，周围橙色熔岩火口围住海岸。"
+        },
+        {
+          "id": 1423330,
+          "note": "俯视战略地形以雪山、森林和浅黄丘陵分区，城镇名牌与圆形人物标记散布道路之间，顶部黑金资源栏覆盖地图。"
+        },
+        {
+          "id": 1468810,
+          "note": "淡墨山水地图被青绿树林与灰黑峰峦分层，中央飞舟、蓝色闪电和右侧橙色圆形光罩打破留白。"
+        },
+        {
+          "id": 1282730,
+          "note": "粗细像素道路环绕黑暗中心连成回路，右侧装备格与底部卡牌包围白骨色和暗红色的微型地图。"
+        },
+        {
+          "id": 358130,
+          "note": "六边格地图用绿色林地、蓝色湖面和灰白山峰区分区域，紫色路径通向左侧，右边林地被橙红火焰吞没。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using illustrated maps and symbolic terrain. Establish one coherent visual identity that can be maintained across a complete project.\n\nBuild a readable bird-eye map from region shapes, repeated terrain motifs, routes and compact place markers. Use a coherent projection and controlled scale for mountains, forests and settlements. Separate neighboring territories through restrained color variation or boundary marks while preserving a unified palette. Labels and interface framing should leave terrain legible. Use texture to suggest paper or material only where it supports the map, and avoid overloading every region with equally dense detail.\n\nSpecify a reusable system of proportions, spacing, symbol sizes, color roles and emphasis states across every screen and visual element. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "miniature-world",
+      "group": "3d",
+      "name": "微缩场景与模型感",
+      "description": "俯视构图、收拢的场景边界和小型物件，让世界像桌上的模型。",
+      "coverGame": 1333910,
+      "coverIndex": 0,
+      "tags": [
+        "微缩场景与模型感",
+        "miniature diorama 3D",
+        "空间可以一眼读完",
+        "细节体现微缩尺度",
+        "阴影让物件落地"
+      ],
+      "observations": [
+        {
+          "title": "空间可以一眼读完",
+          "text": "场景范围与主要路径清楚。"
+        },
+        {
+          "title": "细节体现微缩尺度",
+          "text": "小物件之间的比例和距离明确。"
+        },
+        {
+          "title": "阴影让物件落地",
+          "text": "柔和接触阴影强化模型感。"
+        }
+      ],
+      "games": [
+        {
+          "id": 1333910,
+          "note": "浅绿背景中央悬浮一块小岛，黄色草地上立着紫色风车和高塔树木，厚重阴影落在右后方。"
+        },
+        {
+          "id": 3624140,
+          "note": "斜俯视草原上两座移动城堡与密集小兵交战，右侧两团明亮爆炸照亮绿色地面。"
+        },
+        {
+          "id": 4134650,
+          "note": "深紫背景上悬着方形等距战棋台，灰白小兵密集分布，局部环绕紫色特效。"
+        },
+        {
+          "id": 4587610,
+          "note": "深色网格骰盘中散落着白色、黑色和棕色立体骰子，左侧黄字分数由木框面板包围。"
+        },
+        {
+          "id": 3784030,
+          "note": "青绿机壳包围橙色硬币推盘，白色图案币与彩色球体堆在前景，后方斜台继续铺满金币。"
+        },
+        {
+          "id": 346010,
+          "note": "悬浮式小村庄中央爆出橙色火团，木制攻城器械列在右侧，碎石与树冠被冲击掀起。"
+        },
+        {
+          "id": 2239150,
+          "note": "紫红地表被青蓝溪流与巨大石块分割，亮黄树簇和小型房屋沿弯曲道路分布，右上桥梁跨过河道。"
+        },
+        {
+          "id": 2656540,
+          "note": "夜间古风城镇被密集亭台楼阁填满，红绿灯笼与暖色招牌沿窄街闪亮，前后景模糊强化微缩模型感。"
+        },
+        {
+          "id": 400180,
+          "note": "成群像素小人站在蓝灰色古典神庙前，石柱、三角山墙与左右火盆组成正面集体构图。"
+        },
+        {
+          "id": 3167020,
+          "note": "斜俯视小鸭站在木屋外的红色箱子旁，左侧几何树冠、长墙阴影与右侧虚化地面强化微缩模型感。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using miniature diorama 3D. Establish one coherent visual identity that can be maintained across a complete project.\n\nPresent a compact, carefully bounded environment from an elevated or gently oblique viewpoint. Emphasize the relationship between small props, simplified buildings and a clearly readable ground platform. Use friendly proportions, coherent color families and soft contact shadows to suggest a crafted miniature. Keep textures restrained and focal detail selective. Characters should feel appropriately small within the model. Interface framing and effects must preserve the sense of observing a complete, intentionally arranged little world.\n\nSpecify a common level of geometric detail, material response, lighting contrast and atmospheric depth for characters, props, environments and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "cel-shaded",
+      "group": "3d",
+      "name": "硬边明暗与卡通渲染",
+      "description": "三维体积被归纳为明确色面，硬边阴影和强轮廓带来图形感。",
+      "coverGame": 2138710,
+      "coverIndex": 0,
+      "tags": [
+        "硬边明暗与卡通渲染",
+        "graphic cel-like 3D shading",
+        "明暗边界明确",
+        "轮廓优先",
+        "材质细节收敛"
+      ],
+      "observations": [
+        {
+          "title": "明暗边界明确",
+          "text": "光照被压缩为几层可读色面。"
+        },
+        {
+          "title": "轮廓优先",
+          "text": "复杂环境中仍能辨认人物姿态。"
+        },
+        {
+          "title": "材质细节收敛",
+          "text": "纹理帮助造型，不抢走主要结构。"
+        }
+      ],
+      "games": [
+        {
+          "id": 2138710,
+          "note": "橙黄色背光透过室内大窗，一名黑衣人物跃踢向左侧对手，其他打手的剪影与倒地人物分布周围。"
+        },
+        {
+          "id": 1588550,
+          "note": "背着红灰大包的攀登者紧贴浅灰岩壁，绳索斜连右侧装备，硬边蓝灰阴影划分石面。"
+        },
+        {
+          "id": 423230,
+          "note": "紫红竞技场中两名战士近身交锋，青蓝竖直能量柱照亮六边形地砖，橙色弧线强调中心动作。"
+        },
+        {
+          "id": 2161700,
+          "note": "低机位将机械手臂推到前景，人物以硬边明暗塑形，黄绿色逆光与蓝色眼睛形成对比。"
+        },
+        {
+          "id": 1144770,
+          "note": "蓝色人物戴着叉号眼罩坐在电脑旁，橙色楼梯与紫红房间由粗描线和大块阴影构成。"
+        },
+        {
+          "id": 2275150,
+          "note": "第一人称视角斜望桃粉墙上的笑脸圆形招牌，右侧简化书架与下方灰色管道被深色线条勾出。"
+        },
+        {
+          "id": 557340,
+          "note": "黄色人物悬挂在街道上方的细线上，青蓝高楼与红色墙面夹住纵深街谷，右下爆炸形成大片白光。"
+        },
+        {
+          "id": 397540,
+          "note": "戴防毒面具的赤膊男子站在木板街道中央，黄褐棚屋与歪斜电线挤满背后，粗黑线条刻画肌肉和衣料。"
+        },
+        {
+          "id": 1562430,
+          "note": "小渔船漂在左下青色海面，左岸红白灯塔亮着暖灯，夕阳从右侧森林后落下，块状岩面和云层保持简化造型。"
+        },
+        {
+          "id": 1832640,
+          "note": "绿发眼镜角色坐在冷蓝控制室的棋盘前，制服红领结与硬边卡通明暗衬出正面居中的人物。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using graphic cel-like 3D shading. Establish one coherent visual identity that can be maintained across a complete project.\n\nUse three-dimensional form with deliberately simplified light and shadow bands. Design strong silhouettes and retain clear boundaries between lit planes, shadow planes and local color. Surface detail should support broad form rather than reproduce photographic material noise. Outlines may be selective instead of uniformly enclosing every edge. Compose environments with large color groups and intentional perspective. Carry the same sharp value divisions into characters, effects and graphic UI, preserving readable poses under different lighting.\n\nSpecify a common level of geometric detail, material response, lighting contrast and atmospheric depth for characters, props, environments and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "cinematic",
+      "group": "3d",
+      "name": "电影感写实画面",
+      "description": "可信材质与经过取舍的镜头、光线共同建立真实感，主体有明确重心。",
+      "coverGame": 2358720,
+      "coverIndex": 0,
+      "tags": [
+        "电影感写实画面",
+        "cinematic naturalistic 3D",
+        "材质之间有差异",
+        "光线组织重心",
+        "空气建立纵深"
+      ],
+      "observations": [
+        {
+          "title": "材质之间有差异",
+          "text": "金属、织物与石木对光的反应不同。"
+        },
+        {
+          "title": "光线组织重心",
+          "text": "亮部与阴影集中观众视线。"
+        },
+        {
+          "title": "空气建立纵深",
+          "text": "远景受到雾、尘与环境色影响。"
+        }
+      ],
+      "games": [
+        {
+          "id": 2358720,
+          "note": "雪地中的披甲战士面对右侧敌人，燃烧长棍横跨前景，黑色枯树与灰白岩壁在飘落火星后退向远处。"
+        },
+        {
+          "id": 4115450,
+          "note": "灰暗竹林里斗笠剑客背对镜头站在前景，另一名人物从薄雾中腾跃逼近。"
+        },
+        {
+          "id": 1475810,
+          "note": "雨夜街口低机位贴近积水，蹲着的人伸手抚摸柴犬，蓝白霓虹在湿路面形成明亮反射。"
+        },
+        {
+          "id": 1943950,
+          "note": "暖黄荧光灯照亮空荡后室，近处墙柱挡住部分视野，褪色墙纸与浅色地毯反复延伸。"
+        },
+        {
+          "id": 860510,
+          "note": "蓝黑色竖井里悬着两块木制平台，左侧墙洞中露出小小黄帽人物，狭窄冷光勾出绳索与板边。"
+        },
+        {
+          "id": 942970,
+          "note": "冷蓝审讯室里长发女子双手交握坐在桌后，单盏顶灯照亮手指和金属桌边，面部沉入阴影。"
+        },
+        {
+          "id": 1850570,
+          "note": "背负大型货箱的行者沿绿色坡地奔跑，右侧盘旋状废墟被苔草覆盖，灰白天空与黑色上下画幅强化电影感。"
+        },
+        {
+          "id": 1601570,
+          "note": "背着青色发光设备的宇航员站在黑岩前景，前方断裂峭壁间涌出粉橙熔光，冷蓝山脉退向云层。"
+        },
+        {
+          "id": 490110,
+          "note": "夜色城市警局门前两辆警车停在石阶下，红蓝警灯映在砖地上，高位斜俯视同时展示路口与任务面板。"
+        },
+        {
+          "id": 960910,
+          "note": "狭窄灰暗室内两名男子近距离对视，左侧黑夹克男子与右侧穿背心的纹身壮汉形成紧张的半身双人镜头。"
+        },
+        {
+          "id": 2527660,
+          "note": "黑甲剑士占据石殿左前景，数名灰白敌人从中央阶地逼近，破碎地砖与墙角火焰保留低饱和质感。"
+        },
+        {
+          "id": 1517290,
+          "note": "荒草小路通向正在喷发的火山，赤红熔岩沿黑坡流下，巨大灰黑烟柱在蓝色风暴云间翻卷。"
+        },
+        {
+          "id": 1604030,
+          "note": "高位视角俯瞰林中小路，黑色小人物走在中央，左侧杉树和右侧巨石把阳光切成大片暖绿亮区与深蓝阴影。"
+        },
+        {
+          "id": 1696440,
+          "note": "白头黑翼的大鸟迎面滑翔于暮色山脊上方，左侧圆月与右侧粉灰晚霞分占天空，远山逐层退入浅雾。"
+        },
+        {
+          "id": 992300,
+          "note": "背对镜头的长兵器战士立在石铺圆形广场，低角度夕阳从远处屋顶间穿入，人物长影投向左下前景。"
+        },
+        {
+          "id": 1824220,
+          "note": "第一人称双手与带血刀刃伸入近景，穿蓝色罩衣的铠甲士兵在阴冷草地上密集交锋。"
+        },
+        {
+          "id": 1128920,
+          "note": "机翼与喷焰伸入左侧近景，飞船正对蓝色太空中的破碎岩体和橙色爆炸，远处亮星提供逆光。"
+        },
+        {
+          "id": 1293830,
+          "note": "黑色复古赛车贴近镜头沿沙地转弯，后方车队扬起尘土，沿海围栏与模糊车辙强调速度。"
+        },
+        {
+          "id": 955050,
+          "note": "第一人称枪械瞄向灰暗砖石大厅，左侧火光照亮墙柱，远处一名人物立在掩体旁。"
+        },
+        {
+          "id": 1238810,
+          "note": "两名戴头盔的士兵占据近景，灰蓝海面、岸边炮火、空中飞机与烟柱在背后延伸。"
+        },
+        {
+          "id": 1238840,
+          "note": "低机位围住倾斜的重型装甲车辆，左侧持枪士兵和右侧近景人物被沙尘与强烈日光分开。"
+        },
+        {
+          "id": 578080,
+          "note": "两辆越野车驶在金色高草中，车上人物、远处村镇和右侧巨大橙色爆炸构成写实动作场面。"
+        },
+        {
+          "id": 391220,
+          "note": "女角色蹲伏在右侧树枝上俯视夜间营地，左侧高篝火与中央白色探照灯照亮木架和地面。"
+        },
+        {
+          "id": 292030,
+          "note": "白发剑士背对镜头站在绿色山坡，左侧棕色飞鸟展开双翼，远处针叶林与雪山占据宽阔背景。"
+        },
+        {
+          "id": 356190,
+          "note": "披甲人物与巨型兽人分布在近景两侧，燃烧的木石要塞和拥挤队伍沿中央通道向深处延伸。"
+        },
+        {
+          "id": 233130,
+          "note": "第一人称握刀的手占据右侧，带角红色怪物贴近中央，左侧火光与远处塔楼衬出夜间庭院。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using cinematic naturalistic 3D. Establish one coherent visual identity that can be maintained across a complete project.\n\nBuild convincing proportions and differentiated materials, then organize the scene around intentional camera placement and motivated light. Use coherent surface roughness, selective small-scale detail and plausible environmental wear. Shape the composition with pools of light, silhouettes and atmospheric depth rather than uniform visibility. Keep faces, hands and important props readable. Color grading should unite the scene without flattening material differences. Interfaces and effects should remain restrained and spatially believable alongside the detailed environment.\n\nSpecify a common level of geometric detail, material response, lighting contrast and atmospheric depth for characters, props, environments and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "naturalistic-3d",
+      "group": "3d",
+      "name": "写实材质与自然光",
+      "description": "物理材质、自然光与环境细节共同塑造可信的物体和空间。",
+      "coverGame": 1293830,
+      "coverIndex": 0,
+      "tags": [
+        "写实材质与自然光",
+        "natural-light material realism",
+        "表面反应有区别",
+        "光照方向一致",
+        "环境提供尺度"
+      ],
+      "observations": [
+        {
+          "title": "表面反应有区别",
+          "text": "反射与粗糙程度表达不同材质。"
+        },
+        {
+          "title": "光照方向一致",
+          "text": "阴影和亮面支撑可信体积。"
+        },
+        {
+          "title": "环境提供尺度",
+          "text": "周围建筑、路面或物件说明大小关系。"
+        }
+      ],
+      "games": [
+        {
+          "id": 1293830,
+          "note": "黑色复古赛车贴近镜头沿沙地转弯，后方车队扬起尘土，沿海围栏与模糊车辙强调速度。"
+        },
+        {
+          "id": 2950790,
+          "note": "狭窄机械驾驶舱中，两只红色手轮夹着绿色仪表，管道和磨损金属面板挤满四周。"
+        },
+        {
+          "id": 4115450,
+          "note": "灰暗竹林里斗笠剑客背对镜头站在前景，另一名人物从薄雾中腾跃逼近。"
+        },
+        {
+          "id": 447040,
+          "note": "清晨金色阳光照亮前景林地，金门大桥从低空白雾中伸出，远处城市隐在淡蓝天际。"
+        },
+        {
+          "id": 805550,
+          "note": "蓝白涂装赛车从低机位镜头前驶过，后方赛道上跟着数辆赛车，围栏与山坡带有运动模糊。"
+        },
+        {
+          "id": 1475810,
+          "note": "雨夜街口低机位贴近积水，蹲着的人伸手抚摸柴犬，蓝白霓虹在湿路面形成明亮反射。"
+        },
+        {
+          "id": 1943950,
+          "note": "暖黄荧光灯照亮空荡后室，近处墙柱挡住部分视野，褪色墙纸与浅色地毯反复延伸。"
+        },
+        {
+          "id": 613100,
+          "note": "明亮厨房中木色冰箱柜与白色台面围成转角，条纹地毯、百叶窗和粉色边墙使室内层次清晰。"
+        },
+        {
+          "id": 1244460,
+          "note": "高位全景俯瞰绿色山谷中的湖泊和园区，左侧玻璃穹顶位于林边，陡峭石崖包围远景。"
+        },
+        {
+          "id": 261550,
+          "note": "沙漠骑兵队列从右前方向左奔行，圆盾和长矛在尘土中反光，后方成片骑手越过淡色沙丘。"
+        },
+        {
+          "id": 2290180,
+          "note": "骑手俯身穿过橙红峡谷，强烈扬尘和运动模糊包围身体，远处浅色天光从狭窄岩壁之间透入。"
+        },
+        {
+          "id": 621060,
+          "note": "斜俯视木桌上摆着显示器、键盘和敞开机箱，后方紫色墙面贴有硬件海报，线缆跨过桌面。"
+        },
+        {
+          "id": 2538880,
+          "note": "岩石竞技场中央两名拳手近身碰撞，橙色冲击光与环绕的蓝色碎片分别照亮两侧身体。"
+        },
+        {
+          "id": 1850570,
+          "note": "背负大型货箱的行者沿绿色坡地奔跑，右侧盘旋状废墟被苔草覆盖，灰白天空与黑色上下画幅强化电影感。"
+        },
+        {
+          "id": 490110,
+          "note": "夜色城市警局门前两辆警车停在石阶下，红蓝警灯映在砖地上，高位斜俯视同时展示路口与任务面板。"
+        },
+        {
+          "id": 3244220,
+          "note": "第一人称钻具从右下指向深不见底的棕色土坑，入口草皮围着圆形洞口，石块与白色杂物卡在坑壁。"
+        },
+        {
+          "id": 960910,
+          "note": "狭窄灰暗室内两名男子近距离对视，左侧黑夹克男子与右侧穿背心的纹身壮汉形成紧张的半身双人镜头。"
+        },
+        {
+          "id": 306130,
+          "note": "六名披甲人物在灰石城堡前并排站立，蓝黄红盾牌打破暗色金属盔甲，右侧墙面爬满绿藤。"
+        },
+        {
+          "id": 1086940,
+          "note": "四名冒险者背对镜头立在长满花草的悬崖边，左侧大树框住远处薄雾山谷，明亮日光沿岩壁展开。"
+        },
+        {
+          "id": 2527660,
+          "note": "黑甲剑士占据石殿左前景，数名灰白敌人从中央阶地逼近，破碎地砖与墙角火焰保留低饱和质感。"
+        },
+        {
+          "id": 1517290,
+          "note": "荒草小路通向正在喷发的火山，赤红熔岩沿黑坡流下，巨大灰黑烟柱在蓝色风暴云间翻卷。"
+        },
+        {
+          "id": 1423330,
+          "note": "俯视战略地形以雪山、森林和浅黄丘陵分区，城镇名牌与圆形人物标记散布道路之间，顶部黑金资源栏覆盖地图。"
+        },
+        {
+          "id": 2358720,
+          "note": "雪地中的披甲战士面对右侧敌人，燃烧长棍横跨前景，黑色枯树与灰白岩壁在飘落火星后退向远处。"
+        },
+        {
+          "id": 1604030,
+          "note": "高位视角俯瞰林中小路，黑色小人物走在中央，左侧杉树和右侧巨石把阳光切成大片暖绿亮区与深蓝阴影。"
+        },
+        {
+          "id": 233860,
+          "note": "两名旅人与一只黑色四足动物停在岩台小火堆旁，红灰荒原向远处平顶山延伸，沙尘将天空压成浅褐色。"
+        },
+        {
+          "id": 242760,
+          "note": "第一人称手握绑绳石斧伸入右前景，密集针叶树和低矮灌木围住通向远处灰白水面的林间空隙。"
+        },
+        {
+          "id": 1696440,
+          "note": "白头黑翼的大鸟迎面滑翔于暮色山脊上方，左侧圆月与右侧粉灰晚霞分占天空，远山逐层退入浅雾。"
+        },
+        {
+          "id": 435150,
+          "note": "高位斜视海边岩岛上的石阶遗迹，巨大的圆形拱架立在右上，红叶树、雕像与蓝色海面围住小型队伍。"
+        },
+        {
+          "id": 992300,
+          "note": "背对镜头的长兵器战士立在石铺圆形广场，低角度夕阳从远处屋顶间穿入，人物长影投向左下前景。"
+        },
+        {
+          "id": 244210,
+          "note": "橙色与黑色两辆宝马沿山壁弯道并排漂移，倾斜低机位压低双黄线，红白护墙和裸岩贴着赛道外缘。"
+        },
+        {
+          "id": 227300,
+          "note": "高山公路上橙色卡车与白色房车迎面交会，灰白碎石路肩压住右侧，蓝天白云下的绿色山谷层层伸向远处。"
+        },
+        {
+          "id": 1824220,
+          "note": "第一人称双手与带血刀刃伸入近景，穿蓝色罩衣的铠甲士兵在阴冷草地上密集交锋。"
+        },
+        {
+          "id": 1222680,
+          "note": "白色跑车车尾占据前景，阳光下的棕榈街道、路旁人群与黄绿紫色旗帜向远处排列。"
+        },
+        {
+          "id": 1237970,
+          "note": "粉色树冠包围湿润的未来街道，巨大机甲立在远处，右侧跃起的人物与蓝色推进光形成动势。"
+        },
+        {
+          "id": 518790,
+          "note": "深棕色驼鹿站在金色草甸前景，湖泊、针叶树林与逆光山峰在宽阔日光中逐层展开。"
+        },
+        {
+          "id": 955050,
+          "note": "第一人称枪械瞄向灰暗砖石大厅，左侧火光照亮墙柱，远处一名人物立在掩体旁。"
+        },
+        {
+          "id": 1238810,
+          "note": "两名戴头盔的士兵占据近景，灰蓝海面、岸边炮火、空中飞机与烟柱在背后延伸。"
+        },
+        {
+          "id": 1238840,
+          "note": "低机位围住倾斜的重型装甲车辆，左侧持枪士兵和右侧近景人物被沙尘与强烈日光分开。"
+        },
+        {
+          "id": 578080,
+          "note": "两辆越野车驶在金色高草中，车上人物、远处村镇和右侧巨大橙色爆炸构成写实动作场面。"
+        },
+        {
+          "id": 391220,
+          "note": "女角色蹲伏在右侧树枝上俯视夜间营地，左侧高篝火与中央白色探照灯照亮木架和地面。"
+        },
+        {
+          "id": 292030,
+          "note": "白发剑士背对镜头站在绿色山坡，左侧棕色飞鸟展开双翼，远处针叶林与雪山占据宽阔背景。"
+        },
+        {
+          "id": 356190,
+          "note": "披甲人物与巨型兽人分布在近景两侧，燃烧的木石要塞和拥挤队伍沿中央通道向深处延伸。"
+        },
+        {
+          "id": 233130,
+          "note": "第一人称握刀的手占据右侧，带角红色怪物贴近中央，左侧火光与远处塔楼衬出夜间庭院。"
+        },
+        {
+          "id": 255520,
+          "note": "红金灯光照亮中式木柱、栏杆和方格地板，近景拖把伸向中央，右侧蓝色投币机靠墙摆放。"
+        },
+        {
+          "id": 48700,
+          "note": "雪地骑兵与步兵贴近镜头交战，右侧白马和盾牌遮住部分背景，远处针叶树在灰云下逐渐变小。"
+        },
+        {
+          "id": 264710,
+          "note": "潜水面罩边缘围住碧青海底，右手持扫描器、左手伸向前方，白色小潜艇、岩拱与彩色珊瑚共同拉开距离。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using natural-light material realism. Establish one coherent visual identity that can be maintained across a complete project.\n\nEmphasize recognizable physical surfaces under coherent daylight or practical lighting. Distinguish painted metal, glass, rubber, concrete, soil and foliage through restrained roughness, reflectance and surface detail. Keep scale, perspective and contact with the ground believable. Use reflections and shadow direction to communicate form, not merely to add spectacle. Compose the view with an identifiable focal object and enough surrounding context to explain its environment. UI should remain unobtrusive, with effects grounded in plausible dust, spray or motion.\n\nSpecify a common level of geometric detail, material response, lighting contrast and atmospheric depth for characters, props, environments and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "stylized-fantasy",
+      "group": "3d",
+      "name": "绘画色彩的三维世界",
+      "description": "可辨认的三维体积与设计过的比例、配色相结合，环境带有绘画感。",
+      "coverGame": 1623730,
+      "coverIndex": 0,
+      "tags": [
+        "绘画色彩的三维世界",
+        "painterly stylized 3D",
+        "比例经过设计",
+        "材质服从配色",
+        "冷暖拉开层次"
+      ],
+      "observations": [
+        {
+          "title": "比例经过设计",
+          "text": "形体比现实更概括或更夸张。"
+        },
+        {
+          "title": "材质服从配色",
+          "text": "纹理与色面一起塑造整体气氛。"
+        },
+        {
+          "title": "冷暖拉开层次",
+          "text": "光色与空气感帮助建立空间。"
+        }
+      ],
+      "games": [
+        {
+          "id": 1623730,
+          "note": "红发蓝甲玩家背对镜头站在清澈水池中，巨大的粉色莲花状生物在前方发出蓝白微光，岩壁与水晶围住池岸。"
+        },
+        {
+          "id": 1588550,
+          "note": "背着红灰大包的攀登者紧贴浅灰岩壁，绳索斜连右侧装备，硬边蓝灰阴影划分石面。"
+        },
+        {
+          "id": 1263240,
+          "note": "低机位下透明棱面滑手踩着滑板掠过暗色地面，巨大的红黑星球占据左侧星空。"
+        },
+        {
+          "id": 860510,
+          "note": "蓝黑色竖井里悬着两块木制平台，左侧墙洞中露出小小黄帽人物，狭窄冷光勾出绳索与板边。"
+        },
+        {
+          "id": 2656540,
+          "note": "夜间古风城镇被密集亭台楼阁填满，红绿灯笼与暖色招牌沿窄街闪亮，前后景模糊强化微缩模型感。"
+        },
+        {
+          "id": 435150,
+          "note": "高位斜视海边岩岛上的石阶遗迹，巨大的圆形拱架立在右上，红叶树、雕像与蓝色海面围住小型队伍。"
+        },
+        {
+          "id": 1993150,
+          "note": "橙红服装的三维人物站在青色发光浮台上，大片蓝紫背景与右侧粉红云光包围主体。"
+        },
+        {
+          "id": 361420,
+          "note": "白色圆润宇航员散布在亮粉紫草原中，低矮设施、三角框架与巨大卷曲云团构成几何化异星景色。"
+        },
+        {
+          "id": 659960,
+          "note": "第三人称人物在深蓝山洞岩径上挥剑，前景青绿弧形刀光、金黄火星与远处敌人拉出纵深。"
+        },
+        {
+          "id": 1203220,
+          "note": "浅色雕花拱门居于阳光庭院右侧，橙红树冠长在古建筑之上，棕榈与台阶围住碧蓝水面。"
+        },
+        {
+          "id": 632360,
+          "note": "橙色夕阳从几何松林与断崖之间照入，近处深色树干和巨石框住跨越峡谷的平坦岩台。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using painterly stylized 3D. Establish one coherent visual identity that can be maintained across a complete project.\n\nCombine clear three-dimensional volumes with designed proportions and painterly color grouping. Simplify surface detail into broad readable patterns, while keeping materials distinct through value and hue. Use expressive silhouettes for characters, architecture and vegetation. Favor deliberate warm-cool relationships and atmosphere over strict photographic matching. Effects should use purposeful color accents and clean shapes. UI icons and decorative framing should share the same stylized forms, keeping the whole world visually consistent rather than mixing unrelated levels of realism.\n\nSpecify a common level of geometric detail, material response, lighting contrast and atmospheric depth for characters, props, environments and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "industrial-sci-fi",
+      "group": "3d",
+      "name": "工业硬表面与科技光效",
+      "description": "机械结构、模块化表面与局部发光细节，形成清楚的工业空间。",
+      "coverGame": 1366540,
+      "coverIndex": 0,
+      "tags": [
+        "工业硬表面与科技光效",
+        "industrial hard-surface 3D",
+        "结构有主次",
+        "发光具有位置",
+        "重复表现尺度"
+      ],
+      "observations": [
+        {
+          "title": "结构有主次",
+          "text": "大框架、组件与小标记逐级分开。"
+        },
+        {
+          "title": "发光具有位置",
+          "text": "灯带和指示光突出关键结构。"
+        },
+        {
+          "title": "重复表现尺度",
+          "text": "模块、管线与排列说明空间大小。"
+        }
+      ],
+      "games": [
+        {
+          "id": 1366540,
+          "note": "低角度镜头仰望环状机械设施，蓝天白云后方衬着青蓝能量轨迹与前景密集的工业装置。"
+        },
+        {
+          "id": 2950790,
+          "note": "狭窄机械驾驶舱中，两只红色手轮夹着绿色仪表，管道和磨损金属面板挤满四周。"
+        },
+        {
+          "id": 2001070,
+          "note": "高楼视角俯瞰粉紫暮色城市，青色发光塔楼矗立中部，左前景细长金属杆斜入画面。"
+        },
+        {
+          "id": 1601570,
+          "note": "背着青色发光设备的宇航员站在黑岩前景，前方断裂峭壁间涌出粉橙熔光，冷蓝山脉退向云层。"
+        },
+        {
+          "id": 548430,
+          "note": "第一人称青灰枪械指向橙红洞穴中的绿色爆炸，白色棱形矿晶从地面和岩壁伸出。"
+        },
+        {
+          "id": 2056210,
+          "note": "两艘模块化飞船左右对射，蓝白与橙黄能量束在中央相撞，方形船舱和红色星球共同构成俯视太空战。"
+        },
+        {
+          "id": 2162800,
+          "note": "高位斜视工厂中橙色升降结构整齐排成多列，黑灰输送带在蓝色图标间反复转弯，机械表面保持光洁。"
+        },
+        {
+          "id": 2214260,
+          "note": "俯视灰黑地面上的悬浮战斗载具向前喷射金黄弹幕，青色护板与远处高楼形成明确体块。"
+        },
+        {
+          "id": 1237970,
+          "note": "粉色树冠包围湿润的未来街道，巨大机甲立在远处，右侧跃起的人物与蓝色推进光形成动势。"
+        },
+        {
+          "id": 1128920,
+          "note": "机翼与喷焰伸入左侧近景，飞船正对蓝色太空中的破碎岩体和橙色爆炸，远处亮星提供逆光。"
+        },
+        {
+          "id": 281990,
+          "note": "深色巨舰从左右两侧伸入太空战场，中央白蓝爆光吞没细节，远处小型舰队与紫色星云分层铺开。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using industrial hard-surface 3D. Establish one coherent visual identity that can be maintained across a complete project.\n\nConstruct machinery and architecture from purposeful panels, joints, supports and repeated modules. Establish a clear hierarchy between large structural masses, secondary components and small surface markings. Contrast matte, worn or metallic surfaces with localized emissive indicators. Use scale cues, cables and layered structures to make space understandable. Keep luminous accents tied to readable functions rather than coating every edge. Interfaces and effects should echo the same mechanical geometry and restrained signal-color system.\n\nSpecify a common level of geometric detail, material response, lighting contrast and atmospheric depth for characters, props, environments and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "retro-lowfi",
+      "group": "3d",
+      "name": "低精度三维与粗粝质感",
+      "description": "简化模型、粗颗粒纹理和不精致的表面共同形成有意保留的粗粝感。",
+      "coverGame": 1144770,
+      "coverIndex": 0,
+      "tags": [
+        "低精度三维与粗粝质感",
+        "deliberately low-fidelity 3D",
+        "低精度是一致选择",
+        "光影有所简化",
+        "粗粝仍有秩序"
+      ],
+      "observations": [
+        {
+          "title": "低精度是一致选择",
+          "text": "形体与纹理保持相近的细节尺度。"
+        },
+        {
+          "title": "光影有所简化",
+          "text": "暗部与亮面更概括直接。"
+        },
+        {
+          "title": "粗粝仍有秩序",
+          "text": "噪点和表面变化服务于整体气氛。"
+        }
+      ],
+      "games": [
+        {
+          "id": 1144770,
+          "note": "蓝色人物戴着叉号眼罩坐在电脑旁，橙色楼梯与紫红房间由粗描线和大块阴影构成。"
+        },
+        {
+          "id": 2275150,
+          "note": "第一人称视角斜望桃粉墙上的笑脸圆形招牌，右侧简化书架与下方灰色管道被深色线条勾出。"
+        },
+        {
+          "id": 2674970,
+          "note": "暗紫房间中央立着发蓝白光的窄老虎机，顶部白色魔面俯视转轮，瓷砖地面和方形长凳退入阴影。"
+        },
+        {
+          "id": 108600,
+          "note": "雪夜居民区以等距街道展开，黑顶房屋和光秃树木散布围墙内，橙色路灯与右下紫光照亮局部积雪。"
+        },
+        {
+          "id": 233860,
+          "note": "两名旅人与一只黑色四足动物停在岩台小火堆旁，红灰荒原向远处平顶山延伸，沙尘将天空压成浅褐色。"
+        },
+        {
+          "id": 1092790,
+          "note": "第一人称纸牌桌向黑暗中的对手延伸，蓝色格纹卡背、橙色螳螂牌和左侧天平被两支蜡烛照亮。"
+        },
+        {
+          "id": 2835570,
+          "note": "长方形牌桌向暗处的骷髅脸对手延伸，桌上猎枪、弹壳与方盒被红褐弱光照亮，左右音响和粗墙线围住空间。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using deliberately low-fidelity 3D. Establish one coherent visual identity that can be maintained across a complete project.\n\nKeep geometry economical and make low-resolution textures, angular shapes and rough surface transitions part of the identity. Use a restricted lighting model or coarse value separation rather than polished modern realism. Compose spaces with strong silhouettes and conspicuous perspective. Texture grain, dithering or screen-like artifacts should be controlled and consistent, not applied as random damage. Characters, props and interface elements must share a compatible fidelity level. Preserve legibility within the intentionally imperfect image.\n\nSpecify a common level of geometric detail, material response, lighting contrast and atmospheric depth for characters, props, environments and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "layered-light",
+      "group": "paint",
+      "name": "层次光影与绘画感",
+      "description": "交叠景物、柔和体积和有方向的光线，共同塑造细腻而有纵深的画面。",
+      "coverGame": 1057090,
+      "coverIndex": 0,
+      "tags": [
+        "层次光影与绘画感",
+        "layered luminous painterly scenery",
+        "光参与构图",
+        "前后景交错",
+        "软硬边缘变化"
+      ],
+      "observations": [
+        {
+          "title": "光参与构图",
+          "text": "光束和亮点把视线引向主体。"
+        },
+        {
+          "title": "前后景交错",
+          "text": "多层遮挡带来丰富空间。"
+        },
+        {
+          "title": "软硬边缘变化",
+          "text": "近景更实，远景逐渐融进光雾。"
+        }
+      ],
+      "games": [
+        {
+          "id": 1057090,
+          "note": "发白光的小精灵坐在张翼飞翔的深色猫头鹰背上，紫蓝湖面倒映针叶林和粉色暮光，左侧亮区把角色从薄雾中托出。"
+        },
+        {
+          "id": 1263240,
+          "note": "低机位下透明棱面滑手踩着滑板掠过暗色地面，巨大的红黑星球占据左侧星空。"
+        },
+        {
+          "id": 423230,
+          "note": "紫红竞技场中两名战士近身交锋，青蓝竖直能量柱照亮六边形地砖，橙色弧线强调中心动作。"
+        },
+        {
+          "id": 557340,
+          "note": "黄色人物悬挂在街道上方的细线上，青蓝高楼与红色墙面夹住纵深街谷，右下爆炸形成大片白光。"
+        },
+        {
+          "id": 1610440,
+          "note": "夜晚街区中的人物站在橙色路锥之间，紫绿招牌和蓝红小店照亮手绘建筑与远处密集楼窗。"
+        },
+        {
+          "id": 1352930,
+          "note": "橙色背光照亮废弃厂房窗格，蓝色冲刺残影掠过右侧半空，小人物与金色弧光位于侧视平台底部。"
+        },
+        {
+          "id": 591630,
+          "note": "小蜡烛带着橙色火苗站在暗蓝地面，巨大青蓝发光水母悬在四周，暖冷光点形成鲜明尺度差。"
+        },
+        {
+          "id": 1313140,
+          "note": "黑红描线的教堂围住圆形祭坛，青色红眼巨像、彩窗与斜射光衬出前景小羊。"
+        },
+        {
+          "id": 1296830,
+          "note": "深蓝石殿的地砖向后汇聚，墙面浮雕与沿墙烛光围住中央小人物。"
+        },
+        {
+          "id": 2103140,
+          "note": "夜色俯视营地被蓝绿树丛包围，紫色帐篷、蓝色传送门、橙色篝火与中央石台排成松散环形。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using layered luminous painterly scenery. Establish one coherent visual identity that can be maintained across a complete project.\n\nCompose a deep scene from overlapping foreground shapes, a readable subject plane and softened distant layers. Use painterly surface treatment with selective crisp detail. Let directional shafts, reflected color and small luminous subjects establish a clear path for the eye. Balance warm and cool light without making every surface equally bright. Vary edge softness with distance and focal importance. Characters and effects should belong to the same luminous environment, while interface elements remain quiet and avoid breaking the spatial illusion.\n\nSpecify a consistent contour language, edge treatment, palette and detail density for characters, backgrounds, interface illustrations and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "live-action",
+      "group": "3d",
+      "name": "实拍影像与镜头构图",
+      "description": "真实人物与真实环境进入镜头，景别、光线和姿态成为主要视觉语言。",
+      "coverGame": 3350200,
+      "coverIndex": 0,
+      "tags": [
+        "实拍影像与镜头构图",
+        "live-action photographic imagery",
+        "镜头决定观看距离",
+        "真实材质保留细节",
+        "界面让出主体"
+      ],
+      "observations": [
+        {
+          "title": "镜头决定观看距离",
+          "text": "景别与透视改变人物和环境的关系。"
+        },
+        {
+          "title": "真实材质保留细节",
+          "text": "皮肤、布料和周围物体具有自然变化。"
+        },
+        {
+          "title": "界面让出主体",
+          "text": "文字与选项避开表情和关键动作。"
+        }
+      ],
+      "games": [
+        {
+          "id": 3350200,
+          "note": "真实男女隔着黑色吧台相对而坐，女子微笑伸手，两个玻璃杯在暖色窗帘与木质背景前反光。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using live-action photographic imagery. Establish one coherent visual identity that can be maintained across a complete project.\n\nUse credible photographic subjects and environments with physically consistent light, scale and material response. Frame people through deliberate camera height, lens perspective, posture and negative space. Keep skin tones natural and preserve small variations in fabric, hair and surroundings. Establish the focal subject through depth, contrast and motivated lighting rather than artificial beauty effects. Text panels and interface overlays should sit in quieter parts of the frame, remaining readable without covering important expressions or gestures.\n\nSpecify a common level of geometric detail, material response, lighting contrast and atmospheric depth for characters, props, environments and visual effects. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    },
+    {
+      "id": "topdown-tiles",
+      "group": "shape",
+      "name": "俯视图块与纸片角色",
+      "description": "俯视图块组织场景，简化人物与小型物件像纸片一样清楚地铺在世界上。",
+      "coverGame": 294100,
+      "coverIndex": 0,
+      "tags": [
+        "俯视图块与纸片角色",
+        "top-down tiled worlds with graphic cutout figures",
+        "俯视网格组织空间",
+        "角色像简洁符号",
+        "地面保持安静"
+      ],
+      "observations": [
+        {
+          "title": "俯视网格组织空间",
+          "text": "房间、道路和物件沿一致网格布置。"
+        },
+        {
+          "title": "角色像简洁符号",
+          "text": "省略细节，用轮廓与颜色区分人物。"
+        },
+        {
+          "title": "地面保持安静",
+          "text": "背景纹理让位于密集的小物件。"
+        }
+      ],
+      "games": [
+        {
+          "id": 294100,
+          "note": "俯视聚落由房间、道路和田地拼接而成，简化人物、建筑与管理面板分布在地图上。"
+        },
+        {
+          "id": 2013240,
+          "note": "灰红火山岛上分散着小型建筑与圆形设施，彩色方格路径连接各区，周围橙色熔岩火口围住海岸。"
+        },
+        {
+          "id": 2751050,
+          "note": "深灰背景上的浅沙色岛屿布满细黑轮廓的小树、房屋和单位，左侧米色建造菜单紧贴海岸。"
+        },
+        {
+          "id": 108600,
+          "note": "雪夜居民区以等距街道展开，黑顶房屋和光秃树木散布围墙内，橙色路灯与右下紫光照亮局部积雪。"
+        },
+        {
+          "id": 233450,
+          "note": "俯视监狱在灰色走道间排布医疗室、停尸间、牢房与绿地，小人物和家具沿正交网格排列，蓝色工具栏贴住底边。"
+        },
+        {
+          "id": 599140,
+          "note": "暖色像素农院里木屋立于左上，右侧六块空地覆盖绿色建造网格，树木、石墙和工作台沿正交小路分布。"
+        },
+        {
+          "id": 1866880,
+          "note": "俯视庭院紧靠青蓝溪流与棕色山岩，粉色树冠、石桌竹林和右侧剖开的木屋铺成平面图块。"
+        },
+        {
+          "id": 955900,
+          "note": "俯视网格中紫色长廊夹在石墙与庭院之间，三座高火盆与上排重复建筑形成清楚横向节奏。"
+        },
+        {
+          "id": 1191840,
+          "note": "灰色菱格棋盘上排满手绘小型生物，红绿圆点区分站位，左侧装备栏与底部候选生物列围住中央棋面。"
+        }
+      ],
+      "promptEn": "Define the art direction for an original game using top-down tiled worlds with graphic cutout figures. Establish one coherent visual identity that can be maintained across a complete project.\n\nBuild an overhead world from a coherent grid of terrain, rooms and small symbolic objects. Use simplified cutout-like characters and broad, readable color regions. Give walls, furniture and vegetation enough overlap and directional shading to explain their function, without introducing inconsistent perspective. Keep the ground quieter than the figures and important props. Establish a common scale for all tiles and a predictable line treatment. Arrange interface panels around the playfield, preserving the legibility of small objects and dense settlements.\n\nSpecify a reusable system of proportions, spacing, symbol sizes, color roles and emphasis states across every screen and visual element. Design a clear hierarchy for primary characters, secondary objects and background scenery. Keep important poses readable at normal gameplay scale, with detail concentrated at the focal point and quieter shapes elsewhere.\n\nExtend these choices into menus, icons, dialogue frames and interaction states. Use motion and effect shapes that reinforce the same visual language: anticipate an action, emphasize its decisive moment and return to a clear resting state. Reserve the strongest contrast for meaningful events; decorative effects should never hide the subject or disrupt the composition.\n\nCreate a compact art bible with palette roles, shape examples, material or texture rules, and a few representative character, environment and interface samples. Check the samples together at their intended display size. Apply these as reusable constraints, developing original characters, environments and graphics rather than reproducing existing game assets or logos."
+    }
+  ]
+}

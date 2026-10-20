@@ -4,7 +4,8 @@
     "exploring": "Exploring",
     "notes": "Notes",
     "contact": "Contact",
-    "label": "Main navigation"
+    "label": "Main navigation",
+    "tools": "Tools"
   },
   "language": "Choose language",
   "hero": {
@@ -65,7 +66,7 @@
       "description": "Clear sewers with marbles. Upgrade, then take on the next well."
     },
     "pixel-cosmos-studio": {
-      "title": "Pixel Cosmos Studio",
+      "title": "Star & Planet Generator",
       "description": "Create pixel and voxel planets, animated clouds, and space skyboxes. Export assets for your game."
     },
     "orbital-throw": {
@@ -115,6 +116,10 @@
     "ai-native-game": {
       "title": "AI-Native Games Don’t Mean Letting AI Take Over the World",
       "description": "I increasingly feel that many discussions of AI-native games start by approaching the problem from the wrong angle."
+    },
+    "game-art-style": {
+      "title": "Game Art Style Atlas",
+      "description": "Explore game imagery by art style and copy art direction and scene prompts."
     }
   }
 }

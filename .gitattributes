@@ -1,3 +1,4 @@
 public/junkyard-scene/** text eol=lf
 public/junkyard-scene/**/*.glb binary
 public/junkyard-scene/**/*.png binary
+vendor/game-art-atlas/** text eol=lf
