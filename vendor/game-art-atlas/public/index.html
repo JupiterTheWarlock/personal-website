@@ -37,6 +37,7 @@
       <div><strong id="viewer-title"></strong><span id="viewer-developer"></span></div>
       <div class="viewer-top-actions"><span id="viewer-count"></span><button type="button" id="viewer-zoom" class="icon-button" aria-label="放大画面" aria-pressed="false"></button><button type="button" id="viewer-close" class="icon-button" aria-label="关闭截图" autofocus></button></div>
     </div>
+    <div class="viewer-browse"><label for="viewer-scope">浏览范围</label><select id="viewer-scope"><option value="style">当前风格</option><option value="game">这款游戏的全部画面</option></select></div>
     <div class="viewer-content">
       <div class="viewer-stage">
         <button type="button" id="viewer-prev" class="viewer-arrow" aria-label="上一张截图"></button>
@@ -48,7 +49,7 @@
         <div class="prompt-heading"><h2>画面提示词</h2><button type="button" class="button" id="viewer-copy">复制</button></div>
         <p id="viewer-scene"></p>
         <pre tabindex="0"><code id="viewer-prompt"></code></pre>
-        <span class="prompt-note">根据画面特征编写 · 英文</span>
+        <span class="prompt-note">根据当前画面编写 · 中文</span>
       </aside>
     </div>
     <div class="viewer-bottom">

@@ -18,10 +18,11 @@ const shapes = {
 const icon = name => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${shapes[name] || shapes.arrow}</svg>`;
 const main=$('#main'), viewer=$('#viewer'), menu=$('#asset-menu'), toast=$('#toast');
 let games,library,styles,groups,byId,byStyle,groupNames,assetMap,activeStyle;
-let localAssets=false,currentRoute='',viewerItems=[],viewerIndex=0,menuAsset,menuFocus,viewerFocus,touchStart,toastTimer,searchTimer;
+let localAssets=false,currentRoute='',viewerItems=[],viewerIndex=0,viewerScope='style',menuAsset,menuFocus,viewerFocus,touchStart,toastTimer,searchTimer;
 const galleryState={query:'',filter:'all'},libraryState={query:'',filter:'all'},scrollPositions=new Map();
 const locationKey=()=>location.pathname+location.search;
-const promptFor=style=>style.promptEn||style.prompt;
+const promptFor=style=>style.promptZh||style.promptEn||style.prompt;
+const matchingShots=(game,style)=>game.screenshots.map((shot,index)=>({shot,index})).filter(({shot})=>!style||!shot.styleIds||shot.styleIds.includes(style.id));
 async function fetchJSON(path,options) {
   const response=await fetch(fileURL(path),options),data=await response.json();
   if(!response.ok) throw new Error(data.error||`请求未完成（${response.status}）`);
@@ -38,7 +39,7 @@ function styleCard(style,index=9) {
   const game=byId.get(style.coverGame);
   return `<a class="style-card" href="${routeURL(`styles/${style.id}/`)}"><div class="card-art">
     ${picture(game,style.coverIndex??game.coverIndex,{thumb:true,eager:index<3})}<span class="card-view">${icon('arrow')}</span></div>
-    <div class="card-kicker"><span>${groupNames[style.group]}</span><span>${style.games.length} 款参考游戏</span></div>
+    <div class="card-kicker"><span>${groupNames[style.group]}</span><span>${style.games.length} 款游戏 · ${style.imageCount||style.games.length} 幅画面</span></div>
     <h2>${esc(style.name)}</h2><p class="card-game">${esc(game.name)}<span class="sep">/</span>${esc(game.developer)}</p></a>`;
 }
 function searchField(placeholder,state) {
@@ -79,7 +80,7 @@ function galleryPage() {
   readQuery(galleryState);
   main.innerHTML=`<section class="page-heading"><div><p class="eyebrow">游戏画面与美术提示词</p><h1>把一种风格，看得更清楚</h1>
     <p class="page-description">从代表画面进入，观察不同游戏的共同语言，带走可以继续创作的提示词。</p></div>
-    <div class="collection-stats"><span class="stat-number">${styles.length}</span><div class="stat-label"><strong>种美术风格</strong><span class="stat-extra">${games.length} 款游戏参考</span></div></div></section>
+    <div class="collection-stats"><span class="stat-number">${styles.length}</span><div class="stat-label"><strong>种美术风格</strong><span class="stat-extra">${games.length} 款游戏 · ${games.reduce((n,g)=>n+g.screenshots.length,0)} 幅画面</span></div></div></section>
     <section class="toolbar" aria-label="搜索与分类">${searchField('搜索风格、游戏或画面特征',galleryState)}${tabs(galleryState,'全部风格')}</section>
     <div class="section-meta"><span>一种风格，一款代表游戏，多种画面参考</span><span id="result-count" role="status"></span></div><section id="results" aria-label="美术风格"></section>`;
   updateGallery();wireSearch(galleryState,updateGallery);
@@ -98,12 +99,16 @@ function updateGallery() {
   syncControls(galleryState);
 }
 function gameEntry(entry) {
-  const g=byId.get(entry.id),hasImage=g.screenshots.length>0,shot=g.screenshots[g.coverIndex||0];
-  return `<article class="game-entry"><button type="button" class="game-image" data-view="${g.id}" data-index="${g.coverIndex||0}"
-    aria-label="查看${esc(g.name)}画面与提示词" ${hasImage?'':'disabled'}>${picture(g)}${hasImage?`<span class="image-enlarge">${icon('expand')}</span>`:''}</button>
+  const g=byId.get(entry.id),matching=matchingShots(g,activeStyle),index=matching.find(s=>s.index===g.coverIndex)?.index??matching[0]?.index;
+  const shot=g.screenshots[index],hasImage=!!shot;
+  return `<article class="game-entry" data-game="${g.id}"><button type="button" class="game-image" data-view="${g.id}" data-index="${index}"
+    aria-label="查看${esc(g.name)}画面与提示词" ${hasImage?'':'disabled'}>${picture(g,index,{thumb:true})}${hasImage?`<span class="image-enlarge">${icon('expand')}</span>`:''}</button>
+    <div class="game-thumbs" style="--thumb-count:${Math.min(matching.length,4)}">${matching.slice(0,4).map(({shot:s,index:i},n)=>`<button type="button" data-view="${g.id}" data-index="${i}" aria-label="查看${esc(g.name)}第${i+1}张：${esc(s.role||'游戏画面')}">${picture(g,i,{thumb:true})}${n===3&&matching.length>4?`<span>+${matching.length-4}</span>`:''}</button>`).join('')}</div>
     <div class="game-heading"><h3>${esc(g.name)}</h3><a href="${esc(shot?.sourceUrl||g.storeUrl)}" target="_blank" rel="noopener" aria-label="${esc(g.name)}的图片来源">${icon('external')}</a></div>
     <p class="game-developer">${esc(g.developer)}</p><p class="game-note">${esc(entry.note||g.visualNote)}</p>
-    ${hasImage?`<button type="button" class="text-action" data-view="${g.id}" data-index="${g.coverIndex||0}" data-scene>${icon('copy')}画面与提示词${icon('arrow')}</button>`:''}
+    ${g.referenceLimit?`<p class="reference-limit">${esc(g.referenceLimit)}</p>`:''}
+    <div class="game-image-count">本类 ${matching.length} 幅画面 · 作品共 ${g.screenshots.length} 幅</div>
+    ${hasImage?`<button type="button" class="text-action" data-view="${g.id}" data-index="${index}" data-scope="game">${icon('image')}查看这款游戏的全部画面${icon('arrow')}</button>`:''}
     <details class="source-disclosure"><summary>图片来源与版权</summary><p>${shot?.sourceType==='community'?'Steam 社区用户上传截图，非官方商店宣传图。':'Steam 官方商店宣传截图。'}画面版权归相应权利人所有。</p>
     <a href="${esc(shot?.sourceUrl||g.storeUrl)}" target="_blank" rel="noopener">${shot?.sourceType==='community'?'社区来源':'官方商店'} ↗</a>${hasImage?`<a href="${esc(shot.originalUrl)}" target="_blank" rel="noopener">查看来源原图 ↗</a>`:''}</details></article>`;
 }
@@ -117,13 +122,13 @@ function detailPage(style) {
   const back=routeURL('')+(query.size?`?${query}`:'');
   main.innerHTML=`<div class="breadcrumb"><a href="${back}">${icon('left')}风格画廊</a><span class="slash">/</span><span>${groupNames[style.group]}</span></div>
     <section class="page-heading detail-heading"><div><h1>${esc(style.name)}</h1><p class="page-description">${esc(style.description)}</p></div>
-    <div class="collection-stats"><span class="stat-number">${style.games.length}</span><div class="stat-label"><strong>款参考游戏</strong></div></div></section>
+    <div class="collection-stats"><span class="stat-number">${style.games.length}</span><div class="stat-label"><strong>款参考游戏</strong><span>${style.imageCount||style.games.length} 幅同类画面</span></div></div></section>
     <section class="style-hero" aria-label="代表画面与观察"><div><button type="button" class="hero-image" data-view="${g.id}" data-index="${index}" aria-label="放大${esc(g.name)}代表画面">
     ${picture(g,index,{eager:true})}<span class="enlarge-label">${icon('expand')}放大画面</span></button><div class="hero-credit"><span>${esc(g.name)}</span><span>${esc(g.developer)}</span></div></div>
     <div class="look-for"><p>从这三个地方看</p>${style.observations.map((o,i)=>`<div class="observation"><span>0${i+1}</span><div><h3>${esc(o.title)}</h3><p>${esc(o.text)}</p></div></div>`).join('')}</div></section>
     <section class="global-prompt" aria-label="全局美术风格提示词"><div class="prompt-heading"><div><h2>全局美术风格提示词</h2><p>统一角色、场景、界面与特效的视觉方向</p></div>
     <button type="button" class="button" data-copy-prompt="${style.id}">${icon('copy')}复制提示词</button></div><pre tabindex="0"><code>${esc(promptFor(style))}</code></pre>
-    <span class="prompt-note">英文提示词 · 可作为项目美术规范的起点</span></section>
+    <span class="prompt-note">${style.promptZh?'中文':'英文'}提示词 · 可作为项目美术规范的起点</span></section>
     <section class="detail-section"><div class="section-heading"><h2>代表游戏</h2><span>${style.games.length} 款 · 每幅画面均有提示词</span></div><div class="games-grid">${style.games.map(gameEntry).join('')}</div></section>
     <section class="detail-section"><div class="section-heading"><h2>继续探索</h2><a href="${back}" class="library-store">全部风格 →</a></div><div class="related-grid">${related.map(styleCard).join('')}</div></section>`;
 }
@@ -144,13 +149,14 @@ function updateLibrary() {
   $('#results').innerHTML=matches.length?matches.map((g,i)=>`<article class="library-row"><span class="library-index">${String(i+1).padStart(3,'0')}</span>
     <div class="library-name"><strong>${esc(g.name)}</strong>${g.englishName&&g.englishName!==g.name?`<small>${esc(g.englishName)}</small>`:''}</div>
     <div class="library-styles">${stylesFor(g.id).map(s=>`<a class="style-chip" href="${routeURL(`styles/${s.id}/`)}">${esc(s.name)}</a>`).join('')}</div>
-    <a class="library-store" href="${esc(byId.get(g.id)?.screenshots[0]?.sourceUrl||g.storeUrl)}" target="_blank" rel="noopener">查看来源 ↗</a></article>`).join(''):emptyState();
+    <div class="library-actions"><button type="button" class="text-action" data-view="${g.id}" data-index="${byId.get(g.id).coverIndex||0}" data-scope="game">浏览 ${byId.get(g.id).screenshots.length} 幅画面</button><a class="library-store" href="${esc(byId.get(g.id)?.screenshots[0]?.sourceUrl||g.storeUrl)}" target="_blank" rel="noopener">查看来源 ↗</a></div></article>`).join(''):emptyState();
   syncControls(libraryState);
 }
 function aboutPage() {
   main.innerHTML=`<article class="about"><p class="eyebrow">关于这本图鉴</p><h1>画面与提示词，一起存下来。</h1>
     <p class="lede">从我熟悉的游戏出发，整理美术风格的形状、配色、材质与光影。看到喜欢的画面，可以继续比较，也可以带走能用于创作的描述。</p>
-    <section class="about-section"><h2>一张卡片，一种风格</h2><p>目前整理了 ${styles.length} 种风格，来自 ${library.length} 款游戏。每种风格用一款游戏作代表，再聚合同类画面。游戏索引帮助查找，画廊始终按风格组织。</p>
+    <section class="about-section"><h2>一张卡片，一种风格</h2><p>目前整理了 ${styles.length} 种风格，来自 ${library.length} 款游戏的 ${games.reduce((n,g)=>n+g.screenshots.length,0)} 幅画面。每种风格用一款游戏作代表，再聚合同类画面。游戏索引帮助查找，画廊始终按风格组织。</p>
+    <p>优先选择多张不同场景交叉观察，资料不足的作品单独注明。风格归到具体画面：同一游戏的场景、人物插画和界面可以分别属于不同类别；风格页只展示符合该类的截图，仍可随时查看作品的全部画面。</p>
     <p>收藏范围是我买过的游戏，以及家庭库中我玩过的游戏；已购买但尚未启动的游戏也保留。</p></section>
     <section class="about-section"><h2>两种提示词，分别解决两件事</h2><p>全局提示词定义整套美术的视觉方向，覆盖角色、环境、界面与效果。画面提示词进一步描述一幅参考画面的视角、构图、色彩和细节。</p>
     <p>提示词根据可见画面重新编写，不是游戏开发者的内部资料，也不代表开发者使用过 AI。分类描述画面效果，不根据截图断言制作技术。</p></section>
@@ -203,8 +209,12 @@ function showImage() {
   const {game:g,shot}=viewerItems[viewerIndex],image=$('#viewer-image');
   $('.viewer-stage').classList.remove('zoomed');$('#viewer-zoom').setAttribute('aria-pressed','false');$('#viewer-zoom').setAttribute('aria-label','放大画面');
   $('#viewer-error').hidden=true;image.src=fileURL(shot.src);image.alt=shot.alt;image.dataset.assetId=shot.id;
-  $('#viewer-title').textContent=g.name;$('#viewer-developer').textContent=g.developer;$('#viewer-count').textContent=`${viewerIndex+1} / ${viewerItems.length}`;
-  $('#viewer-caption').textContent=`${activeStyle?.name||'参考画面'} · ${shot.sourceType==='community'?'Steam 社区截图':'官方商店截图'}`;$('#viewer-source').href=shot.sourceUrl;
+  const shotIndex=g.screenshots.findIndex(s=>s.id===shot.id);
+  $('#viewer-title').textContent=g.name;$('#viewer-developer').textContent=`${g.developer}${g.developer?' · ':''}作品第 ${shotIndex+1} / ${g.screenshots.length} 幅`;$('#viewer-count').textContent=`${viewerIndex+1} / ${viewerItems.length}`;
+  const shotStyles=(shot.styleIds||[g.primaryStyle]).map(id=>byStyle.get(id)?.name).filter(Boolean);
+  $('#viewer-caption').textContent=`${shot.role||'游戏画面'} · ${shotStyles.join(' / ')} · ${shot.sourceType==='community'?'Steam 社区截图':'官方商店截图'}`;$('#viewer-source').href=shot.sourceUrl;
+  $('#viewer-scope').value=viewerScope;$('#viewer-scope option[value="style"]').disabled=!activeStyle;
+  $('#viewer-scope option[value="style"]').textContent=activeStyle?`浏览「${activeStyle.name}」`:'当前风格';
   $('#viewer-source').textContent=shot.sourceType==='community'?'社区来源 ↗':'官方来源 ↗';
   $('#viewer-download').href=fileURL(shot.src);$('#viewer-download').download=`${g.name}-${shot.id}.jpg`;
   $('#viewer-scene').textContent=shot.sceneNote||g.visualNote||'';
@@ -212,14 +222,19 @@ function showImage() {
   $('#viewer-prev').hidden=$('#viewer-next').hidden=viewerItems.length<2;
   const start=Math.max(0,Math.min(viewerIndex-3,viewerItems.length-7));
   $('#viewer-thumbnails').innerHTML=viewerItems.slice(start,start+7).map((entry,i)=>`<button type="button" class="${start+i===viewerIndex?'selected':''}" data-slide="${start+i}"
-    title="${esc(entry.game.name)}" aria-label="查看${esc(entry.game.name)}截图" aria-pressed="${start+i===viewerIndex}">
+    title="${esc(entry.game.name)} · ${esc(entry.shot.role||'游戏画面')}" aria-label="查看${esc(entry.game.name)}第${entry.game.screenshots.indexOf(entry.shot)+1}张截图" aria-pressed="${start+i===viewerIndex}">
     <img src="${esc(fileURL(entry.shot.thumb))}" alt="${esc(entry.shot.alt)}" data-asset-id="${entry.shot.id}"></button>`).join('');
   const next=new Image();next.src=fileURL(viewerItems[(viewerIndex+1)%viewerItems.length].shot.src);
 }
-function openViewer(id,index=0,showPrompt=false) {
+function setViewerItems(game,shot,scope) {
+  viewerScope=activeStyle&&scope!=='game'?'style':'game';
+  viewerItems=(viewerScope==='style'?activeStyle.games.map(e=>byId.get(e.id)):[game]).flatMap(g=>matchingShots(g,viewerScope==='style'?activeStyle:null).map(({shot})=>({game:g,shot})));
+  const exact=viewerItems.findIndex(e=>e.shot.id===shot.id);
+  viewerIndex=exact>=0?exact:Math.max(0,viewerItems.findIndex(e=>e.game.id===game.id));
+}
+function openViewer(id,index=0,showPrompt=false,scope='style') {
   const game=byId.get(Number(id));if(!game?.screenshots.length)return;
-  viewerItems=(activeStyle?activeStyle.games.map(e=>byId.get(e.id)):[game]).flatMap(g=>g.screenshots.map(shot=>({game:g,shot})));
-  viewerIndex=Math.max(0,viewerItems.findIndex(e=>e.shot.id===game.screenshots[Number(index)||0].id));
+  setViewerItems(game,game.screenshots[Number(index)||0]||game.screenshots[0],scope);
   viewerFocus=document.activeElement;showImage();viewer.showModal();
   if(showPrompt&&innerWidth<700)$('.viewer-prompt').scrollIntoView({block:'nearest'});
 }
@@ -244,7 +259,7 @@ main.addEventListener('click',async event=>{
   const state=currentRoute==='games'?libraryState:galleryState,update=currentRoute==='games'?updateLibrary:updateGallery;
   if(b.dataset.filter){state.filter=b.dataset.filter;rememberQuery(state);update();}
   if(b.matches('.search-clear,[data-reset]')){clearTimeout(searchTimer);state.query='';if(b.hasAttribute('data-reset'))state.filter='all';$('#search').value='';rememberQuery(state);update();$('#search').focus();}
-  if(b.dataset.view)openViewer(b.dataset.view,b.dataset.index,b.hasAttribute('data-scene'));
+  if(b.dataset.view)openViewer(b.dataset.view,b.dataset.index,b.hasAttribute('data-scene'),b.dataset.scope);
   if(b.dataset.copyPrompt)await copyText(promptFor(byStyle.get(b.dataset.copyPrompt)),$('.global-prompt code'));
 });
 document.addEventListener('click',event=>{
@@ -258,6 +273,7 @@ for(const [id,name] of [['close','close'],['prev','left'],['next','right'],['zoo
 $('#viewer-image').tabIndex=0;
 $('#viewer-close').onclick=()=>viewer.close();$('#viewer-prev').onclick=()=>stepImage(-1);$('#viewer-next').onclick=()=>stepImage(1);$('#viewer-zoom').onclick=toggleZoom;
 $('#viewer-image').ondblclick=toggleZoom;$('#viewer-copy').onclick=()=>copyText($('#viewer-prompt').textContent,$('#viewer-prompt'));
+$('#viewer-scope').onchange=event=>{const {game,shot}=viewerItems[viewerIndex];setViewerItems(game,shot,event.target.value);showImage();};
 $('#viewer-image').onerror=()=>{$('#viewer-error').hidden=false;};$('#viewer-image').onload=()=>{$('#viewer-error').hidden=true;};
 $('#viewer-retry').onclick=()=>{$('#viewer-image').src=fileURL(viewerItems[viewerIndex].shot.src)+`?retry=${Date.now()}`;};
 $('#viewer-thumbnails').onclick=event=>{const b=event.target.closest('[data-slide]');if(b){viewerIndex=Number(b.dataset.slide);showImage();}};
@@ -283,7 +299,7 @@ document.addEventListener('keydown',event=>{
     if(event.key==='Tab')hideMenu();return;
   }
   if(event.shiftKey&&event.key==='F10'){const el=document.activeElement,image=el.matches('img[data-asset-id]')?el:el.querySelector('img[data-asset-id]');if(image)showMenu(event,image);}
-  if(viewer.open&&['ArrowLeft','ArrowRight','Home','End'].includes(event.key)&&!event.target.closest('pre')){
+  if(viewer.open&&['ArrowLeft','ArrowRight','Home','End'].includes(event.key)&&!event.target.closest('pre,select,input,textarea')){
     event.preventDefault();if(['Home','End'].includes(event.key)){viewerIndex=event.key==='Home'?0:viewerItems.length-1;showImage();}else stepImage(event.key==='ArrowLeft'?-1:1);
   }
 });

@@ -1,17 +1,17 @@
 {
   "repository": "https://github.com/JupiterTheWarlock/GameArtAtlas.git",
-  "revision": "f872bbb534aeaf35f23054c7cdd8e60e9a1cb7d8",
+  "revision": "0706c2df2a3ec9482629d407e36200ba78bfafa7",
   "files": {
-    "package.json": "4a3051e099dc3d5ef5667a50d5a59d6580b4aca4be45088774011b30950c7711",
-    "scripts/build.mjs": "63424527f683b3a04acb99e6c463c78a6af749071f1e36a0aefd6fc48489fbcf",
+    "package.json": "ef2f7f9cf72faabb859aa56b3d074ca0b30256da443b269925ac48663c1b183d",
+    "scripts/build.mjs": "439960a33cd303cd8b0acff36e2b6a068650ae122c0bd87aefe9bc6d50707879",
     "scripts/prepare-assets.mjs": "da718b26094df0d18c3b892a46af592700a93d2a92daa4f6fd3cebd3758cd113",
-    "public/index.html": "7417a2567efbe68a2084feb134e87f3825e05e6c569eba2e51f3eed526e83256",
-    "public/app.js": "7eda0894b9b0bfec81057b489d190af5912fb347c784ed134b6dddf004404f76",
-    "public/styles.css": "7ae037213c5de565ffad1382df3e767d41877140fa9641a9b2a6adc26eae7de4",
+    "public/index.html": "55ba5656985065ae6ffbeb116fcbc7aa9da224a10cb7c67e05fb0d6153c67ad9",
+    "public/app.js": "e14bc5623d66f16e9cd5d21764c6a93e62f74ed4bbc7927bc54d2fd4b4764201",
+    "public/styles.css": "4681cec2a5cd706261c45c53bac33b9526d3cbbd8d1cb8b2924a0c9c327660fd",
     "public/favicon.svg": "410a580eb741f8afc55fe026d3f98c77ea52c8eca208d47a79a10b7ee542acae",
-    "public/recreate-prompt.zh-CN.txt": "9b27169b4be13cefa454e6a9ff9063ad00417cf6bc455b7a4ab8ca08b3768239",
-    "public/data/games.json": "38d3edb80ec52b5d2113afdd9d6dd1e52c5b74a67e367a4fc9ac2652a3363c5b",
+    "public/recreate-prompt.zh-CN.txt": "e676caaf1724ea69014b33057cfceb17f61e6ff1ebef452f5eff4b3dd6b5ceee",
+    "public/data/games.json": "c594de2df3954c786e3708a1dfc8789cb44f60a9bdb5c63bbaac908d6a1c24e6",
     "public/data/library.json": "64f3688514ebfe68cd1a42f55d6af4e4e3b4f9a0ac9555e442f9d79ba0cea3b3",
-    "public/data/styles.json": "c7841c7b1a1bf973ca90e2090fff3a4c9939a12e36205cb9f6c651e4647d2e95"
+    "public/data/styles.json": "7e709d9ff4079ccc3e3c1daf0314218522bcc214453481bf926783c94cecc82a"
   }
 }

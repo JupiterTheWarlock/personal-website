@@ -29,5 +29,5 @@ for(const [route,title] of routes){
   await writeFile(target,html);
 }
 await writeFile(path.join(output,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(([route])=>`<url><loc>https://jupiterthewarlock.com${base}${route}</loc></url>`).join('')}</urlset>`);
-await writeFile(path.join(output,'manifest.json'),JSON.stringify({version:2,base,styles:data.styles.length,games:library.length,images:games.reduce((sum,g)=>sum+g.screenshots.length,0)},null,2));
+await writeFile(path.join(output,'manifest.json'),JSON.stringify({version:3,base,styles:data.styles.length,games:library.length,images:games.reduce((sum,g)=>sum+g.screenshots.length,0)},null,2));
 console.log(JSON.stringify({output,base,routes:routes.length,assets:assets.size,games:games.length}));
