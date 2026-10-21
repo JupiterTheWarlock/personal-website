@@ -72,6 +72,12 @@ export const games: ContentCardData[] = [
 
 export const tools: ContentCardData[] = [
   {
+    id: 'spotlight-gamejam-2026',
+    title: '聚光灯2026gamejam 排行榜',
+    description: '查看本届作品的热度、关注与评分，按类型、开发方式和平台筛选。数据缓存在自己的浏览器。',
+    url: 'https://spotlight.jupiterthewarlock.com',
+  },
+  {
     id: 'game-art-style',
     title: '美术风格图鉴',
     description: '按风格浏览游戏画面，查看并复制美术与场景提示词。',

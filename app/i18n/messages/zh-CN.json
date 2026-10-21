@@ -61,6 +61,10 @@
     "beginnerNote": "第一次作业结束后，点击“事务所”，用铜币购买永久升级，再下井。开局不能移动是正常的研究解锁流程。"
   },
   "content": {
+    "spotlight-gamejam-2026": {
+      "title": "聚光灯2026gamejam 排行榜",
+      "description": "查看本届作品的热度、关注与评分，按类型、开发方式和平台筛选。数据缓存在自己的浏览器。"
+    },
     "aaa-sewer-king": {
       "title": "AAA下水道清理大王",
       "description": "弹珠清污，收工升级，再下一口井。"

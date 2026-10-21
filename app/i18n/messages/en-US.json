@@ -61,6 +61,10 @@
     "beginnerNote": "After your first run, open the office and spend copper coins on permanent upgrades before heading back down. Being unable to move at the start is normal: movement unlocks through research."
   },
   "content": {
+    "spotlight-gamejam-2026": {
+      "title": "Spotlight 2026 GameJam Rankings",
+      "description": "Explore entries by activity, followers and ratings. Filter by genre, development method and platform, with data cached in your browser."
+    },
     "aaa-sewer-king": {
       "title": "AAA Sewer King",
       "description": "Clear sewers with marbles. Upgrade, then take on the next well."

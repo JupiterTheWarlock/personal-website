@@ -73,7 +73,7 @@ npm start
 
 ### 工具菜单与美术风格图鉴
 
-顶部“工具”下拉目前只有美术风格图鉴和星空生成器，不另增首页分区。菜单标题和描述支持四种语言，星空生成器继续链接现有 Pixel Cosmos Studio 页面。
+顶部“工具”下拉包含聚光灯2026gamejam 排行榜、美术风格图鉴和星空生成器，不另增首页分区。菜单标题和描述支持四种语言；排行榜链接 `https://spotlight.jupiterthewarlock.com`，星空生成器继续链接现有 Pixel Cosmos Studio 页面。
 
 图鉴发布路径为 `/gameartstyle/`，它是独立的中文工具页面，不随主站的语言前缀跳转。独立源码由 `JupiterTheWarlock/GameArtAtlas` 管理，主站在 `vendor/game-art-atlas` 保留公开网页所需文件的发布快照。`snapshot.json` 记录源提交和文件校验值；截图缓存、Steam 原始账户记录和本机操作服务不进入该目录的版本控制。
 

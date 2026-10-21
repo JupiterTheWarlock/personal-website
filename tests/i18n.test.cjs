@@ -188,8 +188,9 @@ test('missing content fields fall back to English then source without losing car
 
 test('delisted game stays removed; notes link to the two requested X articles', () => {
   assert.equal(games.length, 7);
-  assert.deepEqual(tools.map(tool => tool.id), ['game-art-style', 'pixel-cosmos-studio']);
-  assert.equal(tools[0].url, '/gameartstyle/');
+  assert.deepEqual(tools.map(tool => tool.id), ['spotlight-gamejam-2026', 'game-art-style', 'pixel-cosmos-studio']);
+  assert.equal(tools.find(tool => tool.id === 'game-art-style').url, '/gameartstyle/');
+  assert.equal(tools.find(tool => tool.id === 'spotlight-gamejam-2026').url, 'https://spotlight.jupiterthewarlock.com');
   assert.ok(!games.some(game => game.id === 'pixel-cosmos-studio'));
   assert.equal(games.find(game => game.id === 'aaa-sewer-king').url, 'https://games.jupiterthewarlock.com/aaa-sewer-king/');
   assert.ok(!games.some(game => /(?:aaa-sewer-king|runawayengine|booom2026)\.(?:jthewl\.cc|jupiterthewarlock\.com)/.test(game.url)));
