@@ -15,6 +15,7 @@ const files=[
   'package.json','scripts/build.mjs','scripts/prepare-assets.mjs',
   'public/index.html','public/app.js','public/styles.css','public/favicon.svg',
   'public/recreate-prompt.zh-CN.txt',
+  'public/social/atlas.png',
   'public/data/games.json','public/data/library.json','public/data/styles.json',
 ];
 const hashes={};

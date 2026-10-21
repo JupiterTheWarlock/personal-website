@@ -1,15 +1,16 @@
 {
   "repository": "https://github.com/JupiterTheWarlock/GameArtAtlas.git",
-  "revision": "52afc9301cdc32a369c4c47c2294147e38244254",
+  "revision": "d7e72aae7418649824605d2467c8ad8e7144d140",
   "files": {
     "package.json": "ef2f7f9cf72faabb859aa56b3d074ca0b30256da443b269925ac48663c1b183d",
-    "scripts/build.mjs": "2f9cfe6511d0033583603cd38363b6e8c5b7b0d9a50dd36cc76badd17a4c519f",
+    "scripts/build.mjs": "3e8382b46e5ffc0a8603a29fd587a384dd2fae54abeaf3c18c9bd4986cff7a19",
     "scripts/prepare-assets.mjs": "da718b26094df0d18c3b892a46af592700a93d2a92daa4f6fd3cebd3758cd113",
     "public/index.html": "55ba5656985065ae6ffbeb116fcbc7aa9da224a10cb7c67e05fb0d6153c67ad9",
     "public/app.js": "34931664991d398c10d0dc43eb41f0570b329bc41fcd263b0102b18ddf0eb04d",
     "public/styles.css": "1d7c9c35bf53a0058fa9aa063d9c6c76921a63199940df2420d124e00ea0ac26",
     "public/favicon.svg": "410a580eb741f8afc55fe026d3f98c77ea52c8eca208d47a79a10b7ee542acae",
     "public/recreate-prompt.zh-CN.txt": "da34fbbd3dd088ac8f99a6434dcc3ab38fdb59a3b07bb7ad3fb8b7ee7d4cdbb5",
+    "public/social/atlas.png": "16afbf85122c7fe26567f8f91febb50b6c5969f29ca3c5bc11ab065f4bc43e0b",
     "public/data/games.json": "c594de2df3954c786e3708a1dfc8789cb44f60a9bdb5c63bbaac908d6a1c24e6",
     "public/data/library.json": "64f3688514ebfe68cd1a42f55d6af4e4e3b4f9a0ac9555e442f9d79ba0cea3b3",
     "public/data/styles.json": "7e709d9ff4079ccc3e3c1daf0314218522bcc214453481bf926783c94cecc82a"

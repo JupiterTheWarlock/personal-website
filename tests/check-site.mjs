@@ -44,9 +44,19 @@ for (const locale of locales) {
   assert.match(select, new RegExp(`<option[^>]*value="${locale}"[^>]*selected=""`));
   assert.ok(!html.includes('language-button'));
   assert.ok(!html.includes('thejunkyardoftheend'));
-  for (const card of Object.values(messages.content)) {
+  for (const [id, card] of Object.entries(messages.content)) {
+    // Tool links render only after opening the menu; this checks static page cards.
+    if (['pixel-cosmos-studio', 'game-art-style'].includes(id)) continue;
     assert.ok(html.includes(`<strong>${escape(card.title)}</strong>`), `${locale}: ${card.title}`);
   }
+  const head = html.split('</head>')[0];
+  assert.ok(head.includes('name="twitter:card" content="summary_large_image"'));
+  const imageUrl = `${canonicalOrigin}/images/social/home-card-en.png`;
+  assert.ok(head.includes(`property="og:image" content="${imageUrl}"`));
+  assert.ok(head.includes(`name="twitter:image" content="${imageUrl}"`));
+  const image = await fetch(`${base}/images/social/home-card-en.png`, { headers: { 'user-agent': 'Twitterbot/1.0' } });
+  assert.equal(image.status, 200);
+  assert.match(image.headers.get('content-type'), /image\/png/);
   const notes = html.match(/<section id="notes"[^>]*>([\s\S]*?)<\/section>/)?.[1];
   assert.ok(notes.includes('2100813911104872633?s=20') && notes.includes('2064052795721085254?s=20'));
   assert.ok(!notes.includes('blog.jthewl.cc') && !notes.includes('blog.jupiterthewarlock.com'));

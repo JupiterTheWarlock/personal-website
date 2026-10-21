@@ -12,6 +12,11 @@ for (const locale of ['zh-CN','zh-TW','en-US','ja-JP']) {
     assert.match(response.headers.get('cache-control'), /private.*no-store/);
     assert.equal(response.headers.get('content-language'), locale);
     const html = await response.text();
+    const head = html.split('</head>')[0];
+    assert.ok(head.includes('name="twitter:card" content="summary_large_image"'));
+    const imageUrl = `${origin}/images/games/aaa-sewer-king-promo${locale === 'zh-CN' ? '-zh-CN' : ''}.jpg`;
+    assert.ok(head.includes(`property="og:image" content="${imageUrl}"`));
+    assert.ok(head.includes(`name="twitter:image" content="${imageUrl}"`));
     assert.ok(html.includes(`<html lang="${locale}">`));
     assert.ok(html.includes(escape(copy.sewerKing.title)));
     assert.ok(html.includes(`rel="canonical" href="${origin}${path}?lang=${locale}"`));
