@@ -1,15 +1,15 @@
 {
   "repository": "https://github.com/JupiterTheWarlock/GameArtAtlas.git",
-  "revision": "0706c2df2a3ec9482629d407e36200ba78bfafa7",
+  "revision": "52afc9301cdc32a369c4c47c2294147e38244254",
   "files": {
     "package.json": "ef2f7f9cf72faabb859aa56b3d074ca0b30256da443b269925ac48663c1b183d",
-    "scripts/build.mjs": "439960a33cd303cd8b0acff36e2b6a068650ae122c0bd87aefe9bc6d50707879",
+    "scripts/build.mjs": "2f9cfe6511d0033583603cd38363b6e8c5b7b0d9a50dd36cc76badd17a4c519f",
     "scripts/prepare-assets.mjs": "da718b26094df0d18c3b892a46af592700a93d2a92daa4f6fd3cebd3758cd113",
     "public/index.html": "55ba5656985065ae6ffbeb116fcbc7aa9da224a10cb7c67e05fb0d6153c67ad9",
-    "public/app.js": "e14bc5623d66f16e9cd5d21764c6a93e62f74ed4bbc7927bc54d2fd4b4764201",
-    "public/styles.css": "4681cec2a5cd706261c45c53bac33b9526d3cbbd8d1cb8b2924a0c9c327660fd",
+    "public/app.js": "34931664991d398c10d0dc43eb41f0570b329bc41fcd263b0102b18ddf0eb04d",
+    "public/styles.css": "1d7c9c35bf53a0058fa9aa063d9c6c76921a63199940df2420d124e00ea0ac26",
     "public/favicon.svg": "410a580eb741f8afc55fe026d3f98c77ea52c8eca208d47a79a10b7ee542acae",
-    "public/recreate-prompt.zh-CN.txt": "e676caaf1724ea69014b33057cfceb17f61e6ff1ebef452f5eff4b3dd6b5ceee",
+    "public/recreate-prompt.zh-CN.txt": "da34fbbd3dd088ac8f99a6434dcc3ab38fdb59a3b07bb7ad3fb8b7ee7d4cdbb5",
     "public/data/games.json": "c594de2df3954c786e3708a1dfc8789cb44f60a9bdb5c63bbaac908d6a1c24e6",
     "public/data/library.json": "64f3688514ebfe68cd1a42f55d6af4e4e3b4f9a0ac9555e442f9d79ba0cea3b3",
     "public/data/styles.json": "7e709d9ff4079ccc3e3c1daf0314218522bcc214453481bf926783c94cecc82a"

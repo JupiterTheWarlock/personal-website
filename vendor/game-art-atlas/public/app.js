@@ -19,7 +19,7 @@ const icon = name => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
 const main=$('#main'), viewer=$('#viewer'), menu=$('#asset-menu'), toast=$('#toast');
 let games,library,styles,groups,byId,byStyle,groupNames,assetMap,activeStyle;
 let localAssets=false,currentRoute='',viewerItems=[],viewerIndex=0,viewerScope='style',menuAsset,menuFocus,viewerFocus,touchStart,toastTimer,searchTimer;
-const galleryState={query:'',filter:'all'},libraryState={query:'',filter:'all'},scrollPositions=new Map();
+const galleryState={query:'',filter:'all'},libraryState={query:'',filter:'all'},scrollPositions=new Map(),libraryFocus=new Map();
 const locationKey=()=>location.pathname+location.search;
 const promptFor=style=>style.promptZh||style.promptEn||style.prompt;
 const matchingShots=(game,style)=>game.screenshots.map((shot,index)=>({shot,index})).filter(({shot})=>!style||!shot.styleIds||shot.styleIds.includes(style.id));
@@ -104,7 +104,7 @@ function gameEntry(entry) {
   return `<article class="game-entry" data-game="${g.id}"><button type="button" class="game-image" data-view="${g.id}" data-index="${index}"
     aria-label="查看${esc(g.name)}画面与提示词" ${hasImage?'':'disabled'}>${picture(g,index,{thumb:true})}${hasImage?`<span class="image-enlarge">${icon('expand')}</span>`:''}</button>
     <div class="game-thumbs" style="--thumb-count:${Math.min(matching.length,4)}">${matching.slice(0,4).map(({shot:s,index:i},n)=>`<button type="button" data-view="${g.id}" data-index="${i}" aria-label="查看${esc(g.name)}第${i+1}张：${esc(s.role||'游戏画面')}">${picture(g,i,{thumb:true})}${n===3&&matching.length>4?`<span>+${matching.length-4}</span>`:''}</button>`).join('')}</div>
-    <div class="game-heading"><h3>${esc(g.name)}</h3><a href="${esc(shot?.sourceUrl||g.storeUrl)}" target="_blank" rel="noopener" aria-label="${esc(g.name)}的图片来源">${icon('external')}</a></div>
+    <div class="game-heading"><h3><a href="${routeURL(`games/${g.id}/`)}">${esc(g.name)}</a></h3><a href="${esc(shot?.sourceUrl||g.storeUrl)}" target="_blank" rel="noopener" aria-label="${esc(g.name)}的图片来源">${icon('external')}</a></div>
     <p class="game-developer">${esc(g.developer)}</p><p class="game-note">${esc(entry.note||g.visualNote)}</p>
     ${g.referenceLimit?`<p class="reference-limit">${esc(g.referenceLimit)}</p>`:''}
     <div class="game-image-count">本类 ${matching.length} 幅画面 · 作品共 ${g.screenshots.length} 幅</div>
@@ -132,25 +132,74 @@ function detailPage(style) {
     <section class="detail-section"><div class="section-heading"><h2>代表游戏</h2><span>${style.games.length} 款 · 每幅画面均有提示词</span></div><div class="games-grid">${style.games.map(gameEntry).join('')}</div></section>
     <section class="detail-section"><div class="section-heading"><h2>继续探索</h2><a href="${back}" class="library-store">全部风格 →</a></div><div class="related-grid">${related.map(styleCard).join('')}</div></section>`;
 }
-const stylesFor=id=>styles.filter(s=>s.games.some(g=>g.id===id));
+const stylesFor=id=>styles.filter(s=>s.games.some(g=>g.id===id)).sort((a,b)=>Number(b.id===byId.get(id)?.primaryStyle)-Number(a.id===byId.get(id)?.primaryStyle));
+function libraryURL() {
+  const query=new URLSearchParams();
+  if(libraryState.query)query.set('q',libraryState.query);
+  if(libraryState.filter!=='all')query.set('category',libraryState.filter);
+  return routeURL('games/')+(query.size?`?${query}`:'');
+}
+function libraryCard(g,index=9) {
+  const related=stylesFor(g.id),primary=byStyle.get(g.primaryStyle);
+  return `<a class="library-card" href="${routeURL(`games/${g.id}/`)}" data-game-link="${g.id}" aria-label="${esc(g.name)}，查看游戏信息">
+    <div class="library-card-art">${picture(g,g.coverIndex,{thumb:true,eager:index<3})}<span class="card-view">${icon('arrow')}</span></div>
+    <div class="library-card-body"><div class="card-kicker"><span>${esc(groupNames[primary?.group]||'游戏收藏')}</span><span>${g.screenshots.length} 幅画面</span></div>
+    <h2>${esc(g.name)}</h2>${g.developer?`<p class="library-card-developer">${esc(g.developer)}</p>`:''}
+    <div class="library-card-styles">${related.slice(0,3).map(s=>`<span class="style-chip ${s.id===g.primaryStyle?'primary-style':''}">${esc(s.name)}</span>`).join('')}${related.length>3?`<span class="style-chip">+${related.length-3}</span>`:''}</div>
+    <p class="library-card-note">${esc(g.visualNote)}</p></div></a>`;
+}
 function libraryPage() {
   readQuery(libraryState);
-  main.innerHTML=`<section class="page-heading library-heading"><div><p class="eyebrow">按游戏查找风格</p><h1>从熟悉的名字，找到画面</h1>
-    <p class="page-description">我买过的游戏，加上家庭库里玩过的游戏。点击风格名称，进入对应的画面与提示词存档。</p></div>
+  main.innerHTML=`<section class="page-heading library-heading"><div><h1>游戏索引</h1>
+    <p class="page-description">从熟悉的游戏，找到画面、美术风格与创作提示词。</p></div>
     <div class="collection-stats"><span class="stat-number">${library.length}</span><div class="stat-label"><strong>款收藏游戏</strong></div></div></section>
-    <section class="toolbar" aria-label="游戏搜索与筛选">${searchField('搜索中文或英文游戏名',libraryState)}${tabs(libraryState,'全部游戏')}</section>
-    <div class="section-meta"><span>同一款游戏可以归入多种风格</span><span id="result-count" role="status"></span></div><section id="results" class="library-list" aria-label="游戏收藏"></section>`;
+    <section class="toolbar" aria-label="游戏搜索与筛选">${searchField('搜索游戏、开发者或美术风格',libraryState)}${tabs(libraryState,'全部游戏')}</section>
+    <div class="section-meta"><span>已购游戏与家庭库中玩过的作品</span><span id="result-count" role="status"></span></div><section id="results" class="library-grid" aria-label="游戏收藏"></section>`;
   updateLibrary();wireSearch(libraryState,updateLibrary);
 }
 function updateLibrary() {
   const q=libraryState.query.trim().toLowerCase();
-  const matches=library.filter(g=>(libraryState.filter==='all'||stylesFor(g.id).some(s=>s.group===libraryState.filter))&&`${g.name} ${g.englishName}`.toLowerCase().includes(q)).sort((a,b)=>a.name.localeCompare(b.name,'zh-CN'));
+  const matches=library.map(entry=>byId.get(entry.id)).filter(g=>{
+    const related=stylesFor(g.id);
+    const text=[g.name,g.englishName,g.originalName,g.developer,g.visualNote,...related.map(s=>s.name)].join(' ').toLowerCase();
+    return(libraryState.filter==='all'||related.some(s=>s.group===libraryState.filter))&&text.includes(q);
+  }).sort((a,b)=>a.name.localeCompare(b.name,'zh-CN'));
   $('#result-count').textContent=`${matches.length} 款游戏`;
-  $('#results').innerHTML=matches.length?matches.map((g,i)=>`<article class="library-row"><span class="library-index">${String(i+1).padStart(3,'0')}</span>
-    <div class="library-name"><strong>${esc(g.name)}</strong>${g.englishName&&g.englishName!==g.name?`<small>${esc(g.englishName)}</small>`:''}</div>
-    <div class="library-styles">${stylesFor(g.id).map(s=>`<a class="style-chip" href="${routeURL(`styles/${s.id}/`)}">${esc(s.name)}</a>`).join('')}</div>
-    <div class="library-actions"><button type="button" class="text-action" data-view="${g.id}" data-index="${byId.get(g.id).coverIndex||0}" data-scope="game">浏览 ${byId.get(g.id).screenshots.length} 幅画面</button><a class="library-store" href="${esc(byId.get(g.id)?.screenshots[0]?.sourceUrl||g.storeUrl)}" target="_blank" rel="noopener">查看来源 ↗</a></div></article>`).join(''):emptyState();
+  $('#results').className=matches.length?'library-grid':'';
+  $('#results').innerHTML=matches.length?matches.map(libraryCard).join(''):emptyState();
   syncControls(libraryState);
+}
+function gamePage(g) {
+  const related=stylesFor(g.id),primary=byStyle.get(g.primaryStyle),cover=g.screenshots[g.coverIndex||0];
+  const sourceTypes=new Set(g.screenshots.map(s=>s.sourceType));
+  const sourceLabel=sourceTypes.size>1?'官方商店与 Steam 社区':sourceTypes.has('community')?'Steam 社区截图':'Steam 官方商店';
+  const sourceLink=sourceTypes.has('store')?g.storeUrl:cover.sourceUrl;
+  const alternateName=[g.englishName,g.originalName].find(name=>name&&name!==g.name);
+  main.innerHTML=`<article class="game-profile" data-game="${g.id}">
+    <div class="breadcrumb"><a href="${libraryURL()}" data-back-library>${icon('left')}游戏索引</a><span class="slash">/</span><span>${esc(g.name)}</span></div>
+    <section class="game-profile-overview" aria-label="游戏信息">
+      <div class="game-profile-visual"><button type="button" class="hero-image" data-view="${g.id}" data-index="${g.coverIndex||0}" data-scope="game" aria-label="放大${esc(g.name)}代表画面">
+        ${picture(g,g.coverIndex,{eager:true})}<span class="enlarge-label">${icon('expand')}画面与提示词</span></button>
+        <div class="hero-credit"><span>${esc(cover.role||'代表画面')}</span><span>${cover.styleIds.map(id=>esc(byStyle.get(id).name)).join(' · ')}</span></div>
+      </div>
+      <div class="game-profile-info"><p class="eyebrow">${esc(groupNames[primary.group])}</p><h1>${esc(g.name)}</h1>
+        ${alternateName?`<p class="game-original-name">${esc(alternateName)}</p>`:''}
+        <p class="game-profile-note">${esc(g.visualNote)}</p>
+        <dl class="game-facts">${g.developer?`<div><dt>开发者</dt><dd>${esc(g.developer)}</dd></div>`:''}<div><dt>收录画面</dt><dd>${g.screenshots.length} 幅 · ${related.length} 种画面风格</dd></div><div><dt>图片来源</dt><dd><a href="${esc(sourceLink)}" target="_blank" rel="noopener">${sourceLabel} ${icon('external')}</a></dd></div></dl>
+        <div class="game-profile-styles"><span class="field-label">主要风格</span><a class="game-primary-style" href="${routeURL(`styles/${primary.id}/`)}">${esc(primary.name)}${icon('arrow')}</a>
+        ${related.length>1?`<span class="field-label">其他画面风格</span><div class="game-other-styles">${related.filter(s=>s.id!==g.primaryStyle).map(s=>`<a class="style-chip" href="${routeURL(`styles/${s.id}/`)}">${esc(s.name)}</a>`).join('')}</div>`:''}</div>
+        ${g.classificationReason?`<details class="classification-note"><summary>为什么这样归类</summary><p>${esc(g.classificationReason)}</p></details>`:''}
+        ${g.referenceLimit?`<p class="reference-limit">${esc(g.referenceLimit)}</p>`:''}
+      </div>
+    </section>
+    <section class="game-scenes" aria-labelledby="game-scenes-title"><div class="section-heading"><h2 id="game-scenes-title">画面与提示词</h2><span>${g.screenshots.length} 幅画面</span></div>
+      <div class="scene-grid">${g.screenshots.map((shot,index)=>`<article class="scene-card"><button type="button" class="scene-image" data-view="${g.id}" data-index="${index}" data-scope="game" aria-label="查看${esc(shot.role||'游戏画面')}与提示词">${picture(g,index,{thumb:true})}<span class="image-enlarge">${icon('expand')}</span></button>
+        <div class="scene-heading"><span>${String(index+1).padStart(2,'0')}</span><h3>${esc(shot.role||'游戏画面')}</h3></div>
+        <div class="scene-styles">${shot.styleIds.map(id=>`<a class="style-chip" href="${routeURL(`styles/${id}/`)}">${esc(byStyle.get(id).name)}</a>`).join('')}</div>
+        <p class="scene-note">${esc(shot.sceneNote)}</p><div class="scene-actions"><button type="button" class="text-action" data-view="${g.id}" data-index="${index}" data-scope="game" data-scene>查看提示词 ${icon('arrow')}</button><a href="${esc(shot.sourceUrl)}" target="_blank" rel="noopener">${shot.sourceType==='community'?'社区来源':'官方来源'} ↗</a></div></article>`).join('')}</div>
+    </section>
+    <div class="game-profile-footer"><a class="text-action" href="${libraryURL()}" data-back-library>${icon('left')}返回游戏索引</a><span>画面版权归相应权利人所有</span></div>
+  </article>`;
 }
 function aboutPage() {
   main.innerHTML=`<article class="about"><p class="eyebrow">关于这本图鉴</p><h1>画面与提示词，一起存下来。</h1>
@@ -165,19 +214,33 @@ function aboutPage() {
     <section class="about-section"><h2>用自己的游戏库做一本</h2><p>把这份中文提示词复制给能够读取本机资料、浏览网页并编写代码的 AI 助手，即可从自己的 Steam 收藏开始制作。</p>
     <a class="button" href="${fileURL('recreate-prompt.zh-CN.txt')}" target="_blank" rel="noopener">打开复现提示词 ↗</a></section></article>`;
 }
-function navigate(url) {scrollPositions.set(locationKey(),scrollY);history.pushState({},'',url);renderRoute();}
+function navigate(url) {
+  scrollPositions.set(locationKey(),scrollY);
+  const card=document.activeElement.closest('[data-game-link]');
+  if(card)libraryFocus.set(locationKey(),card.dataset.gameLink);
+  const libraryReturn=currentRoute==='games'?{url:locationKey(),scroll:scrollY,focus:card?.dataset.gameLink}:history.state?.libraryReturn;
+  history.replaceState({...history.state,scroll:scrollY,focusGame:card?.dataset.gameLink},'',location.href);
+  history.pushState({libraryState:{...libraryState},libraryReturn},'',url);renderRoute();
+}
 function renderRoute() {
   clearTimeout(searchTimer);if(viewer.open)viewer.close();hideMenu();activeStyle=null;
-  const route=location.pathname.slice(base.pathname.length).replace(/^\/|\/$/g,''),detail=route.match(/^styles\/([a-z0-9-]+)$/);
+  if(history.state?.libraryState)Object.assign(libraryState,history.state.libraryState);
+  const route=location.pathname.slice(base.pathname.length).replace(/^\/|\/$/g,''),detail=route.match(/^styles\/([a-z0-9-]+)$/),gameDetail=route.match(/^games\/(\d+)$/);
   let active='gallery',title='游戏美术图鉴';
   if(route==='games'){libraryPage();active='games';title='游戏索引 · 游戏美术图鉴';}
+  else if(gameDetail&&byId.has(Number(gameDetail[1]))){const g=byId.get(Number(gameDetail[1]));gamePage(g);active='games';title=`${g.name} · 游戏美术图鉴`;}
   else if(route==='about'){aboutPage();active='about';title='关于图鉴 · 游戏美术图鉴';}
   else if(detail&&byStyle.has(detail[1])){const s=byStyle.get(detail[1]);detailPage(s);title=`${s.name} · 游戏美术图鉴`;}
   else if(!route||route==='index.html')galleryPage();
   else main.innerHTML=`<div class="empty-state"><h1>这一页还没有收录</h1><a class="button" href="${routeURL('')}">返回风格画廊</a></div>`;
   $$('[data-nav]').forEach(a=>{a.classList.toggle('active',a.dataset.nav===active);if(a.dataset.nav===active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
   document.title=title;currentRoute=route;
-  requestAnimationFrame(()=>{main.focus({preventScroll:true});scrollTo({top:scrollPositions.get(locationKey())||0,behavior:'instant'});});
+  requestAnimationFrame(()=>{
+    const context=history.state?.libraryReturn?.url===locationKey()?history.state.libraryReturn:null;
+    const previous=libraryFocus.get(locationKey())||history.state?.focusGame||context?.focus;
+    const focus=previous?$(`[data-game-link="${previous}"]`)||main:main;
+    focus.focus({preventScroll:true});scrollTo({top:scrollPositions.get(locationKey())??history.state?.scroll??context?.scroll??0,behavior:'instant'});
+  });
 }
 function showToast(message) {
   (viewer.open?viewer:document.body).append(toast);toast.textContent=message;toast.classList.add('visible');

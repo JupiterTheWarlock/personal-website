@@ -21,7 +21,7 @@ for(const asset of assets){
   const target=path.join(output,relative);await mkdir(path.dirname(target),{recursive:true});await copyFile(path.join(source,relative),target);
 }
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
-const routes=[['','游戏美术图鉴'],['games/','游戏索引 · 游戏美术图鉴'],['about/','关于图鉴 · 游戏美术图鉴'],...data.styles.map(s=>[`styles/${s.id}/`,`${s.name} · 游戏美术图鉴`])];
+const routes=[['','游戏美术图鉴'],['games/','游戏索引 · 游戏美术图鉴'],['about/','关于图鉴 · 游戏美术图鉴'],...data.styles.map(s=>[`styles/${s.id}/`,`${s.name} · 游戏美术图鉴`]),...games.map(g=>[`games/${g.id}/`,`${g.name} · 游戏美术图鉴`])];
 for(const [route,title] of routes){
   const target=path.join(output,route,'index.html');
   await mkdir(path.dirname(target),{recursive:true});
