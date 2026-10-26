@@ -112,7 +112,7 @@ test('explicit locales, Unity runtime and assets bypass language routing', async
   const asset = new Response('asset', { headers: { 'content-type': 'application/wasm' } });
   for (const path of ['/zh-CN/', '/ja-JP/animations/', '/games/aaa-sewer-king/play/',
     '/games/aaa-sewer-king/play/index.html', '/games/aaa-sewer-king/play/Build/game.wasm',
-    '/junkyard-scene/index.html', '/gameartstyle/', '/gameartstyle/styles/watercolor/', '/gameartstyle/data/games.json', '/sitemap.xml', '/xx-XX/']) {
+    '/junkyard-scene/index.html', '/sitemap.xml', '/xx-XX/']) {
     const request = new Request(`https://example.com${path}`, { headers: { cookie:'NEXT_LOCALE=zh-TW' } });
     assert.equal(await onRequest({ request, next: async () => asset }), asset, path);
   }
@@ -189,7 +189,7 @@ test('missing content fields fall back to English then source without losing car
 test('delisted game stays removed; notes link to the two requested X articles', () => {
   assert.equal(games.length, 7);
   assert.deepEqual(tools.map(tool => tool.id), ['art-inspiration', 'spotlight-gamejam-2026', 'game-art-style', 'pixel-cosmos-studio']);
-  assert.equal(tools.find(tool => tool.id === 'game-art-style').url, '/gameartstyle/');
+  assert.equal(tools.find(tool => tool.id === 'game-art-style').url, 'https://mygamesartstyle.jupiterthewarlock.com/');
   assert.equal(tools.find(tool => tool.id === 'spotlight-gamejam-2026').url, 'https://spotlight.jupiterthewarlock.com');
   assert.ok(!games.some(game => game.id === 'pixel-cosmos-studio'));
   assert.equal(games.find(game => game.id === 'aaa-sewer-king').url, 'https://games.jupiterthewarlock.com/aaa-sewer-king/');
@@ -199,4 +199,18 @@ test('delisted game stays removed; notes link to the two requested X articles', 
     'https://x.com/JupiterTheWL/status/2100813911104872633?s=20',
     'https://x.com/JupiterTheWL/status/2064052795721085254?s=20',
   ]);
+});
+
+test('legacy atlas URLs keep deep links and queries on their dedicated domains', async () => {
+  for (const [prefix, host] of [['/gameartstyle', 'mygamesartstyle.jupiterthewarlock.com'], ['/art-inspiration', '73artstyles.jupiterthewarlock.com']]) {
+    for (const suffix of ['', '/', '/games/1868140/?q=pixel', '//example.com/?q=test']) {
+      const response = await onRequest({request: new Request(`https://jupiterthewarlock.com${prefix}${suffix}`), next: () => assert.fail('must redirect')});
+      const target = new URL(response.headers.get('location'));
+      assert.equal(response.status, 301);
+      assert.equal(target.host, host);
+      const source = new URL(`https://jupiterthewarlock.com${prefix}${suffix}`);
+      assert.equal(target.pathname, source.pathname.slice(prefix.length) || '/');
+      assert.equal(target.search, source.search);
+    }
+  }
 });

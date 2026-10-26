@@ -73,11 +73,11 @@ export const games: ContentCardData[] = [
 export const tools: ContentCardData[] = [
   {
     id: 'art-inspiration',
-    title: '73 种 2D 美术风格图鉴',
+    title: '73 AWESOME 2D Art Styles',
     description: '把 Tim Ruswick 的美术风格视频整理成图鉴，按图选风格，复制中文提示词。',
-    image: 'https://artstyles.jupiterthewarlock.com/media/social/index.jpg',
+    image: 'https://73artstyles.jupiterthewarlock.com/media/social/index.jpg',
     imageFit: 'contain',
-    url: 'https://artstyles.jupiterthewarlock.com/',
+    url: 'https://73artstyles.jupiterthewarlock.com/',
   },
   {
     id: 'spotlight-gamejam-2026',
@@ -87,9 +87,9 @@ export const tools: ContentCardData[] = [
   },
   {
     id: 'game-art-style',
-    title: '美术风格图鉴',
+    title: '我的游戏美术风格图鉴',
     description: '按风格浏览游戏画面，查看并复制美术与场景提示词。',
-    url: '/gameartstyle/',
+    url: 'https://mygamesartstyle.jupiterthewarlock.com/',
   },
   pixelCosmosStudio,
 ];
