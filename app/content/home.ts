@@ -75,9 +75,9 @@ export const tools: ContentCardData[] = [
     id: 'art-inspiration',
     title: '73 种 2D 美术风格图鉴',
     description: '把 Tim Ruswick 的美术风格视频整理成图鉴，按图选风格，复制中文提示词。',
-    image: '/art-inspiration/media/social/index.jpg',
+    image: 'https://artstyles.jupiterthewarlock.com/media/social/index.jpg',
     imageFit: 'contain',
-    url: '/art-inspiration/',
+    url: 'https://artstyles.jupiterthewarlock.com/',
   },
   {
     id: 'spotlight-gamejam-2026',

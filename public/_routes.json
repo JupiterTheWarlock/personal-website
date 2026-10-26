@@ -15,7 +15,6 @@
     "/games/aaa-sewer-king/play/*",
     "/sitemap.xml",
     "/robots.txt",
-    "/404.html",
-    "/art-inspiration/*"
+    "/404.html"
   ]
 }
