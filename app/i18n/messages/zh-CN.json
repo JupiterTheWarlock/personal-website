@@ -61,6 +61,10 @@
     "beginnerNote": "第一次作业结束后，点击“事务所”，用铜币购买永久升级，再下井。开局不能移动是正常的研究解锁流程。"
   },
   "content": {
+    "art-inspiration": {
+      "title": "73 种 2D 美术风格图鉴",
+      "description": "把 Tim Ruswick 的美术风格视频整理成图鉴，按图选风格，复制中文提示词。"
+    },
     "spotlight-gamejam-2026": {
       "title": "聚光灯2026gamejam 排行榜",
       "description": "查看本届作品的热度、关注与评分，按类型、开发方式和平台筛选。数据缓存在自己的浏览器。"

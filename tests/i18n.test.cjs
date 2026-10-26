@@ -167,7 +167,7 @@ test('all four dictionaries have complete UI and content translations', () => {
     const localized = getHomeContent(locale);
     const entries = [...localized.games, ...localized.tools, ...localized.explorations, ...localized.notes];
     assert.deepEqual(entries.map(({ url, image }) => ({ url, image })), cards.map(({ id, url, image }) => ({
-      url: id === 'aaa-sewer-king' ? `${url}?lang=${locale}` : url.startsWith('/') && id !== 'game-art-style' ? `/${locale}${url}` : url,
+      url: id === 'aaa-sewer-king' ? `${url}?lang=${locale}` : url.startsWith('/') && !['game-art-style', 'art-inspiration'].includes(id) ? `/${locale}${url}` : url,
       image: id === 'aaa-sewer-king'
         ? `/images/games/aaa-sewer-king-promo${locale === 'zh-CN' ? '-zh-CN' : ''}.jpg`
         : image,
@@ -188,7 +188,7 @@ test('missing content fields fall back to English then source without losing car
 
 test('delisted game stays removed; notes link to the two requested X articles', () => {
   assert.equal(games.length, 7);
-  assert.deepEqual(tools.map(tool => tool.id), ['spotlight-gamejam-2026', 'game-art-style', 'pixel-cosmos-studio']);
+  assert.deepEqual(tools.map(tool => tool.id), ['art-inspiration', 'spotlight-gamejam-2026', 'game-art-style', 'pixel-cosmos-studio']);
   assert.equal(tools.find(tool => tool.id === 'game-art-style').url, '/gameartstyle/');
   assert.equal(tools.find(tool => tool.id === 'spotlight-gamejam-2026').url, 'https://spotlight.jupiterthewarlock.com');
   assert.ok(!games.some(game => game.id === 'pixel-cosmos-studio'));

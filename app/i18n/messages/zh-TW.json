@@ -61,6 +61,10 @@
     "beginnerNote": "第一次作業結束後，點擊「事務所」，用銅幣購買永久升級，再下井。開局無法移動是正常的研究解鎖流程。"
   },
   "content": {
+    "art-inspiration": {
+      "title": "73 種 2D 美術風格圖鑑",
+      "description": "將 Tim Ruswick 的美術風格影片整理成圖鑑，看圖選風格，複製中文提示詞。"
+    },
     "spotlight-gamejam-2026": {
       "title": "聚光燈2026gamejam 排行榜",
       "description": "查看本屆作品的熱度、關注與評分，依類型、開發方式和平台篩選。資料快取在自己的瀏覽器。"

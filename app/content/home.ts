@@ -72,6 +72,14 @@ export const games: ContentCardData[] = [
 
 export const tools: ContentCardData[] = [
   {
+    id: 'art-inspiration',
+    title: '73 种 2D 美术风格图鉴',
+    description: '把 Tim Ruswick 的美术风格视频整理成图鉴，按图选风格，复制中文提示词。',
+    image: '/art-inspiration/media/social/index.jpg',
+    imageFit: 'contain',
+    url: '/art-inspiration/',
+  },
+  {
     id: 'spotlight-gamejam-2026',
     title: '聚光灯2026gamejam 排行榜',
     description: '查看本届作品的热度、关注与评分，按类型、开发方式和平台筛选。数据缓存在自己的浏览器。',

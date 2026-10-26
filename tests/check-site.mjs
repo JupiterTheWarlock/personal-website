@@ -46,7 +46,7 @@ for (const locale of locales) {
   assert.ok(!html.includes('thejunkyardoftheend'));
   for (const [id, card] of Object.entries(messages.content)) {
     // Tool links render only after opening the menu; this checks static page cards.
-    if (['pixel-cosmos-studio', 'game-art-style', 'spotlight-gamejam-2026'].includes(id)) continue;
+    if (['art-inspiration', 'pixel-cosmos-studio', 'game-art-style', 'spotlight-gamejam-2026'].includes(id)) continue;
     assert.ok(html.includes(`<strong>${escape(card.title)}</strong>`), `${locale}: ${card.title}`);
   }
   const head = html.split('</head>')[0];

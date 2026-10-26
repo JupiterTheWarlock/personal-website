@@ -61,6 +61,10 @@
     "beginnerNote": "After your first run, open the office and spend copper coins on permanent upgrades before heading back down. Being unable to move at the start is normal: movement unlocks through research."
   },
   "content": {
+    "art-inspiration": {
+      "title": "73 2D Art Styles — Visual Atlas",
+      "description": "Browse visual references from Tim Ruswick’s art style video, with analysis and Chinese prompts."
+    },
     "spotlight-gamejam-2026": {
       "title": "Spotlight 2026 GameJam Rankings",
       "description": "Explore entries by activity, followers and ratings. Filter by genre, development method and platform, with data cached in your browser."

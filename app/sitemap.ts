@@ -6,5 +6,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [...[''].flatMap(path => locales.map((locale) => ({
     url: `${siteUrl}/${locale}/${path}`,
     alternates: { languages: languageAlternates(path) },
-  }))), { url: `${siteUrl}/gameartstyle/` }];
+  }))), { url: `${siteUrl}/gameartstyle/` }, { url: `${siteUrl}/art-inspiration/` }];
 }

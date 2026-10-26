@@ -24,3 +24,5 @@ execFileSync(process.execPath,[path.join(atlas,'scripts/prepare-assets.mjs')],{
 execFileSync(process.execPath, [builder, '--base', '/gameartstyle/', '--out', path.join(root, 'out/gameartstyle')], {
   cwd: atlas, stdio: 'inherit', windowsHide: true,
 });
+
+execFileSync(process.execPath, [path.join(root, "scripts/prepare-art-inspiration.mjs")], { cwd: root, stdio: "inherit", windowsHide: true });
