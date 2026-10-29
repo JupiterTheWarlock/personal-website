@@ -53,9 +53,9 @@ test('game host serves only game pages at short URLs and keeps locale choices pr
     assert.equal(response.status, 404, path);
     assert.equal(requested.at(-1), '/404.html');
   }
-  const response = await gamesWorker.fetch(new Request('https://games.example/aaa-sewer-king/play/index.html?from=share'), env);
-  assert.equal(response.status, 308);
-  assert.equal(response.headers.get('location'), 'https://games.example/aaa-sewer-king/play/?from=share');
+  const removed = await gamesWorker.fetch(new Request('https://games.example/aaa-sewer-king/play/'), env);
+  assert.equal(removed.status, 301);
+  assert.equal(removed.headers.get('location'), 'https://www.taptap.cn/app/978232');
 });
 
 test('Unity messages require both the runtime window and origin, and a known game event', () => {
@@ -108,13 +108,20 @@ test('legacy and aliased routes retain their content path, query and fragment', 
   }
 });
 
-test('explicit locales, Unity runtime and assets bypass language routing', async () => {
+test('explicit locales and assets bypass language routing', async () => {
   const asset = new Response('asset', { headers: { 'content-type': 'application/wasm' } });
-  for (const path of ['/zh-CN/', '/ja-JP/animations/', '/games/aaa-sewer-king/play/',
-    '/games/aaa-sewer-king/play/index.html', '/games/aaa-sewer-king/play/Build/game.wasm',
+  for (const path of ['/zh-CN/', '/ja-JP/animations/',
     '/junkyard-scene/index.html', '/sitemap.xml', '/xx-XX/']) {
     const request = new Request(`https://example.com${path}`, { headers: { cookie:'NEXT_LOCALE=zh-TW' } });
     assert.equal(await onRequest({ request, next: async () => asset }), asset, path);
+  }
+});
+
+test('retired WebGL runtime redirects to TapTap', async () => {
+  for (const path of ['/games/aaa-sewer-king/play/', '/games/aaa-sewer-king/play/index.html', '/games/aaa-sewer-king/play/Build/game.wasm']) {
+    const response = await onRequest({ request: new Request(`https://example.com${path}`), next: () => { assert.fail('must redirect'); } });
+    assert.equal(response.status, 301);
+    assert.equal(response.headers.get('location'), 'https://www.taptap.cn/app/978232');
   }
 });
 

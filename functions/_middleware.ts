@@ -19,6 +19,10 @@ export function onRequest({ request, next }: PagesContext) {
     target.search = url.search;
     return Response.redirect(target.toString(), 301);
   }
+  // The WebGL runtime is retired; keep old links from reaching a stale shell.
+  if (url.pathname === '/games/aaa-sewer-king/play' || url.pathname.startsWith('/games/aaa-sewer-king/play/')) {
+    return Response.redirect('https://www.taptap.cn/app/978232', 301);
+  }
   const country = request.cf?.country ?? request.headers.get('cf-ipcountry');
   return languageRedirect(request, country) ?? next();
 }

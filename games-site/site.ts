@@ -5,7 +5,6 @@ import { sewerKingArtwork } from '../app/content/sewer-king';
 
 export const gamesOrigin = 'https://games.jupiterthewarlock.com';
 export const gameSlug = 'aaa-sewer-king';
-export const runtimePath = `/${gameSlug}/play/`;
 export const gamesPath = (path: string, locale: Locale) => `${path}?lang=${locale}`;
 
 export function gamesMetadata(locale: Locale, game = false): Metadata {

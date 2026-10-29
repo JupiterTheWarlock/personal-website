@@ -7,9 +7,11 @@ export default {
   async fetch(request: Request & { cf?: { country?: string } }, env: { ASSETS: Assets }) {
     const url = new URL(request.url);
     const path = url.pathname;
+    if (path === '/aaa-sewer-king/play' || path.startsWith('/aaa-sewer-king/play/')) {
+      return Response.redirect('https://www.taptap.cn/app/978232', 301);
+    }
     const redirect = (pathname: string) => { url.pathname = pathname; return Response.redirect(url.href, 308); };
     if (path === '/aaa-sewer-king') return redirect('/aaa-sewer-king/');
-    if (path === '/aaa-sewer-king/play' || path === '/aaa-sewer-king/play/index.html') return redirect('/aaa-sewer-king/play/');
     if (path === '/' || path === '/aaa-sewer-king/') {
       let saved;
       try { saved = decodeURIComponent(request.headers.get('cookie')?.split(';').map(part => part.trim()).find(part => part.startsWith(`${localeCookie}=`))?.slice(localeCookie.length + 1) || ''); } catch { /* Ignore malformed cookies. */ }
@@ -25,7 +27,7 @@ export default {
       response.headers.set('Content-Language', locale);
       return response;
     }
-    if (/^\/(?:_next|images)\//.test(path) || ['/aaa-sewer-king/play/', '/sitemap.xml', '/robots.txt', '/favicon.ico'].includes(path)) return env.ASSETS.fetch(request);
+    if (/^\/(?:_next|images)\//.test(path) || ['/sitemap.xml', '/robots.txt', '/favicon.ico'].includes(path)) return env.ASSETS.fetch(request);
     const asset = await env.ASSETS.fetch(new Request(new URL('/404.html', url), request));
     return new Response(asset.body, { status: 404, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' } });
   },

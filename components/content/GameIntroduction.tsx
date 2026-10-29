@@ -2,10 +2,10 @@ import Image from 'next/image';
 import { getMessages } from '@/app/i18n/messages';
 import type { Locale } from '@/app/i18n/config';
 import { sewerKingArtwork } from '@/app/content/sewer-king';
-import UnityPlayer from './UnityPlayer';
+import TapTapPlay from './TapTapPlay';
 
-export default function GameIntroduction({ locale, backHref, runtimePath }: {
-  locale: Locale; backHref: string; runtimePath?: string;
+export default function GameIntroduction({ locale, backHref }: {
+  locale: Locale; backHref: string;
 }) {
   const copy = getMessages(locale).sewerKing;
   return (
@@ -17,7 +17,7 @@ export default function GameIntroduction({ locale, backHref, runtimePath }: {
         <p className="game-description">{copy.tagline}</p>
         <p className="game-note">{copy.gameLanguage}</p>
       </header>
-      <UnityPlayer copy={copy} runtimePath={runtimePath} />
+      <TapTapPlay copy={copy} />
       <div className="game-overview">
         <figure className="game-artwork">
           <Image src={sewerKingArtwork(locale)} alt={copy.artworkAlt} width={1920} height={1080} />

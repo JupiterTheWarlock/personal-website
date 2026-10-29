@@ -1,5 +1,7 @@
 # Unity Web 与 R2 发布
 
+2026-10-29 更新：Web 试玩下线修改必须提交并推送到 `main`，避免后续 Git 自动部署恢复旧入口。介绍页的“在 TapTap 上试玩”按钮打开 https://www.taptap.cn/app/978232 ，主站与游戏站旧 `/play/` 路径均 301 到 TapTap，不再生成运行壳；R2 上的 0.3.6 构建保留。下文为历史发布流程，当前构建不再执行 `prepare-unity.mjs`，仅供将来明确要求恢复 Web 试玩时参考。
+
 2026-10-19 后续更新：用户要求社交分享入口与个人主页分离。当前介绍页为 `https://games.jupiterthewarlock.com/aaa-sewer-king/`，运行目录为同域名 `/aaa-sewer-king/play/`，四语言通过 `?lang=` 选择。游戏站独立 Pages 项目 `jupiter-games`；根目录只提供游戏列表。部署与路由见 [游戏站说明](../games-site/README.md)。下文原主站运行目录保留供旧浏览器存档使用；新旧域名存档不自动迁移，不清理旧数据。
 
 当前接入游戏会话已验收的 Unity 0.3.6 `web-r5`（2026-10-19）。`web-r4` 有音频解码错误，禁止使用；也不使用退役的 `web/` Demo。

@@ -91,16 +91,13 @@ npm run build
 
 ### Unity 游戏接入约定
 
-游戏的当前公开分享入口为 **https://games.jupiterthewarlock.com/aaa-sewer-king/**，由独立 Pages 项目 `jupiter-games` 承载。删除 slug 只会进入游戏列表，游戏站没有个人主页导航。主站作品卡片和旧介绍页转到该地址，四种语言继续保留。完整构建和发布方式见 [独立游戏站](games-site/README.md)。下述原主站运行路径继续保留以支持旧存档；新游戏站固定运行路径是 `/aaa-sewer-king/play/`，新旧域名的浏览器存档相互独立。
+游戏的当前公开分享入口为 **https://games.jupiterthewarlock.com/aaa-sewer-king/**，由独立 Pages 项目 `jupiter-games` 承载。删除 slug 只会进入游戏列表，游戏站没有个人主页导航。主站作品卡片和旧介绍页转到该地址，四种语言继续保留。完整构建和发布方式见 [独立游戏站](games-site/README.md)。
 
-主站接入 Unity 0.3.6 正式 `web-r5` 包，首页作品卡片进入四语言介绍页，点击“开始试玩”才加载游戏。
+2026-10-26 起 Web 试玩下线：介绍页的“在 TapTap 上试玩”按钮打开 https://www.taptap.cn/app/978232 ，不再挂载 iframe；主站与游戏站都不再生成 `/play/` 运行壳。R2 上的 0.3.6 构建保留，发布清单 `config/aaa-sewer-king.release.json` 和 `scripts/unity-r2.mjs`、`scripts/prepare-unity.mjs` 保留，供将来恢复 Web 试玩时使用。
 
 - 介绍页：`/{locale}/games/aaa-sewer-king/`。
-- 运行入口：`/games/aaa-sewer-king/play/index.html`。Pages 会规范跳转到同目录 `/games/aaa-sewer-king/play/`；目录跨版本保持不变，也不随语言变化，避免浏览器存档分散。
-- 介绍页挂载 iframe 前先卸载垃圾场背景，关闭游戏或离开介绍页后恢复；父页同时校验消息的 `origin` 和 iframe `source`。另提供独立打开和全屏操作。
-- 资源放现有 R2/CDN 的独立版本目录，包含内容哈希的目录不可覆盖；Pages 只生成固定路径的运行壳。不将 Unity 工程、大型构建产物或未完成的 `web-r4` 加入本仓库。
-- `scripts/unity-r2.mjs` 准备清单、配置 CORS、上传与检查；`scripts/prepare-unity.mjs` 在 Pages 构建时读取已批准的发布清单，校验运行壳的 SHA-256，再把 loader、data、framework、wasm 和 StreamingAssets URL 接到该版本的 CDN。
-- 发布清单 `config/aaa-sewer-king.release.json` 固定经交接核验的 r5 文件与哈希，后续构建自动保留运行入口。完整步骤见 [Unity 发布说明](docs/unity-r2-release.md)。
+- 主站旧地址 `/{locale}/games/aaa-sewer-king/` 继续 301 到游戏站；主站和游戏站旧 `/play/` 入口均 301 到 TapTap。
+- 资源放现有 R2/CDN 的独立版本目录；当前不再由 Pages 生成运行壳，也不再随构建更新。
 - `aaa-sewer-king`、`runawayengine` 和 `booom2026` 的新旧独立游戏域名保持退役。
 
 ## 分享卡片
